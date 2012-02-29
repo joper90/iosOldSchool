@@ -10,4 +10,19 @@
 
 @implementation BlastedEngine
 
+@synthesize currentScore;
+
+static BlastedEngine* blastedEngine = nil;
+
++(BlastedEngine*) instance
+{
+    if (blastedEngine == nil)
+    {
+        //Alive for the duration of the game
+        blastedEngine = [[BlastedEngine alloc]init];
+        CCLOG(@"Engine init complete....");
+    }
+    return blastedEngine;
+}
+
 @end

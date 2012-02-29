@@ -10,8 +10,9 @@
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "HelloWorldLayer.h"
 #import "RootViewController.h"
+#import "BlastedEngine.h"
+#import "FlashScene.h"
 
 @implementation AppDelegate
 
@@ -109,8 +110,11 @@
 	// Removes the startup flicker
 	[self removeStartupFlicker];
 	
+    //Init the BlastedEngine
+    [BlastedEngine instance];
+    
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+	[[CCDirector sharedDirector] runWithScene: [FlashScene scene]];
 }
 
 

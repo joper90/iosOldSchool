@@ -10,4 +10,14 @@
 
 @implementation FlashScene
 
+
++(CCScene *) scene
+{
+    CCScene *scene = [CCScene node];
+	
+	FlashFGLayer* flashLayer = [FlashFGLayer node];
+    [scene addChild:flashLayer z:0 tag:T_FLASH_FG_LAYER];
+	return scene;
+}        
+
 @end

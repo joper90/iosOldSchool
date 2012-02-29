@@ -7,7 +7,11 @@
 //
 
 #import "CCLayer.h"
+#import "CoreImports.h"
 
 @interface FlashFGLayer : CCLayer
-
+{
+    
+}
+-(void)timeToGo:(ccTime) delta;
 @end

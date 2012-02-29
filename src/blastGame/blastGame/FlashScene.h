@@ -6,8 +6,15 @@
 //  Copyright (c) 2012 funkvoodoo.com. All rights reserved.
 //
 
-#import "CCScene.h"
+#import "cocos2d.h"
+#import "CoreImports.h"
+#import "FlashFGLayer.h"
 
 @interface FlashScene : CCScene
+{
+    
+}
+
++(CCScene*) scene;
 
 @end

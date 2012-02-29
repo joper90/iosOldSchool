@@ -2,12 +2,20 @@
 //  MainScene.h
 //  blastGame
 //
-//  Created by AppleUser on 28/02/2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Joeh on 28/02/2012.
+//  Copyright (c) 2012 funkmonkey.com All rights reserved.
 //
 
-#import "CCLayer.h"
+#import "cocos2d.h"
+#import "CoreImports.h"
 
 @interface MainScene : CCLayer
+{
+    
+}
+
+//This scence's static constructor.
++(CCScene*) scene;
+
 
 @end

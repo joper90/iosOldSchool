@@ -123,6 +123,14 @@
 		CE270E5B14FCEB0700C2DBA3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E5A14FCEB0700C2DBA3 /* RootViewController.m */; };
 		CE270E5E14FCEB0700C2DBA3 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E5D14FCEB0700C2DBA3 /* HelloWorldLayer.m */; };
 		CE270E6B14FCEE2500C2DBA3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E6A14FCEE2500C2DBA3 /* Utils.m */; };
+		CE270E6F14FCF48F00C2DBA3 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E6E14FCF48F00C2DBA3 /* MainScene.m */; };
+		CEB042EE14FD16840005EF2B /* MainBGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042ED14FD16840005EF2B /* MainBGLayer.m */; };
+		CEB042F314FD16DC0005EF2B /* cocos2d_template.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042F214FD16DC0005EF2B /* cocos2d_template.m */; };
+		CEB042F614FD17620005EF2B /* BlastedEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042F514FD17620005EF2B /* BlastedEngine.m */; };
+		CEB042FA14FD1A1C0005EF2B /* TitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042F914FD1A1C0005EF2B /* TitleScene.m */; };
+		CEB042FD14FD1AEA0005EF2B /* TitleBGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042FC14FD1AEA0005EF2B /* TitleBGLayer.m */; };
+		CEB0430014FD1B5F0005EF2B /* FlashScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042FF14FD1B5F0005EF2B /* FlashScene.m */; };
+		CEB0430314FD32FB0005EF2B /* FlashFGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -365,6 +373,22 @@
 		CE270E6814FCEDD500C2DBA3 /* CoreImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImports.h; sourceTree = "<group>"; };
 		CE270E6914FCEE2500C2DBA3 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		CE270E6A14FCEE2500C2DBA3 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		CE270E6D14FCF48F00C2DBA3 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
+		CE270E6E14FCF48F00C2DBA3 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
+		CEB042EC14FD16840005EF2B /* MainBGLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBGLayer.h; sourceTree = "<group>"; };
+		CEB042ED14FD16840005EF2B /* MainBGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBGLayer.m; sourceTree = "<group>"; };
+		CEB042F114FD16DC0005EF2B /* cocos2d_template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cocos2d_template.h; sourceTree = "<group>"; };
+		CEB042F214FD16DC0005EF2B /* cocos2d_template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cocos2d_template.m; sourceTree = "<group>"; };
+		CEB042F414FD17620005EF2B /* BlastedEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlastedEngine.h; sourceTree = "<group>"; };
+		CEB042F514FD17620005EF2B /* BlastedEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlastedEngine.m; sourceTree = "<group>"; };
+		CEB042F814FD1A1C0005EF2B /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
+		CEB042F914FD1A1C0005EF2B /* TitleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleScene.m; sourceTree = "<group>"; };
+		CEB042FB14FD1AEA0005EF2B /* TitleBGLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleBGLayer.h; sourceTree = "<group>"; };
+		CEB042FC14FD1AEA0005EF2B /* TitleBGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleBGLayer.m; sourceTree = "<group>"; };
+		CEB042FE14FD1B5F0005EF2B /* FlashScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashScene.h; sourceTree = "<group>"; };
+		CEB042FF14FD1B5F0005EF2B /* FlashScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashScene.m; sourceTree = "<group>"; };
+		CEB0430114FD32FB0005EF2B /* FlashFGLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashFGLayer.h; sourceTree = "<group>"; };
+		CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashFGLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,14 +445,14 @@
 		CE270D0414FCEB0000C2DBA3 /* blastGame */ = {
 			isa = PBXGroup;
 			children = (
+				CE270E6C14FCF42800C2DBA3 /* scene */,
 				CE270E6514FCEC0F00C2DBA3 /* runTime */,
-				CE270E5C14FCEB0700C2DBA3 /* HelloWorldLayer.h */,
-				CE270E5D14FCEB0700C2DBA3 /* HelloWorldLayer.m */,
-				CE270E5F14FCEB0700C2DBA3 /* GameConfig.h */,
 				CE270D0514FCEB0000C2DBA3 /* Resources */,
 				CE270D1914FCEB0100C2DBA3 /* libs */,
 				CE270E5214FCEB0700C2DBA3 /* Supporting Files */,
 				CE270E6714FCECC500C2DBA3 /* importClasses */,
+				CEB042F014FD16A80005EF2B /* layers */,
+				CEB042F714FD17690005EF2B /* engine */,
 			);
 			path = blastGame;
 			sourceTree = "<group>";
@@ -775,12 +799,52 @@
 		CE270E6714FCECC500C2DBA3 /* importClasses */ = {
 			isa = PBXGroup;
 			children = (
+				CE270E5F14FCEB0700C2DBA3 /* GameConfig.h */,
 				CE270E6614FCECBE00C2DBA3 /* Statics.h */,
 				CE270E6814FCEDD500C2DBA3 /* CoreImports.h */,
 				CE270E6914FCEE2500C2DBA3 /* Utils.h */,
 				CE270E6A14FCEE2500C2DBA3 /* Utils.m */,
 			);
 			name = importClasses;
+			sourceTree = "<group>";
+		};
+		CE270E6C14FCF42800C2DBA3 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				CE270E5C14FCEB0700C2DBA3 /* HelloWorldLayer.h */,
+				CE270E5D14FCEB0700C2DBA3 /* HelloWorldLayer.m */,
+				CE270E6D14FCF48F00C2DBA3 /* MainScene.h */,
+				CE270E6E14FCF48F00C2DBA3 /* MainScene.m */,
+				CEB042F814FD1A1C0005EF2B /* TitleScene.h */,
+				CEB042F914FD1A1C0005EF2B /* TitleScene.m */,
+				CEB042FE14FD1B5F0005EF2B /* FlashScene.h */,
+				CEB042FF14FD1B5F0005EF2B /* FlashScene.m */,
+			);
+			name = scene;
+			sourceTree = "<group>";
+		};
+		CEB042F014FD16A80005EF2B /* layers */ = {
+			isa = PBXGroup;
+			children = (
+				CEB042EC14FD16840005EF2B /* MainBGLayer.h */,
+				CEB042ED14FD16840005EF2B /* MainBGLayer.m */,
+				CEB042F114FD16DC0005EF2B /* cocos2d_template.h */,
+				CEB042F214FD16DC0005EF2B /* cocos2d_template.m */,
+				CEB042FB14FD1AEA0005EF2B /* TitleBGLayer.h */,
+				CEB042FC14FD1AEA0005EF2B /* TitleBGLayer.m */,
+				CEB0430114FD32FB0005EF2B /* FlashFGLayer.h */,
+				CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */,
+			);
+			name = layers;
+			sourceTree = "<group>";
+		};
+		CEB042F714FD17690005EF2B /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				CEB042F414FD17620005EF2B /* BlastedEngine.h */,
+				CEB042F514FD17620005EF2B /* BlastedEngine.m */,
+			);
+			name = engine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -810,6 +874,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = funkvoodoo.com;
 			};
 			buildConfigurationList = CE270CEA14FCEAFF00C2DBA3 /* Build configuration list for PBXProject "blastGame" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -951,6 +1016,14 @@
 				CE270E5B14FCEB0700C2DBA3 /* RootViewController.m in Sources */,
 				CE270E5E14FCEB0700C2DBA3 /* HelloWorldLayer.m in Sources */,
 				CE270E6B14FCEE2500C2DBA3 /* Utils.m in Sources */,
+				CE270E6F14FCF48F00C2DBA3 /* MainScene.m in Sources */,
+				CEB042EE14FD16840005EF2B /* MainBGLayer.m in Sources */,
+				CEB042F314FD16DC0005EF2B /* cocos2d_template.m in Sources */,
+				CEB042F614FD17620005EF2B /* BlastedEngine.m in Sources */,
+				CEB042FA14FD1A1C0005EF2B /* TitleScene.m in Sources */,
+				CEB042FD14FD1AEA0005EF2B /* TitleBGLayer.m in Sources */,
+				CEB0430014FD1B5F0005EF2B /* FlashScene.m in Sources */,
+				CEB0430314FD32FB0005EF2B /* FlashFGLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1048,6 +1121,7 @@
 				CE270E6414FCEB0800C2DBA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

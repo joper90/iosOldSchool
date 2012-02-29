@@ -6,8 +6,14 @@
 //  Copyright (c) 2012 funkvoodoo.com. All rights reserved.
 //
 
-#import "CCLayer.h"
+#import "cocos2d.h"
+#import "CoreImports.h"
 
 @interface TitleScene : CCLayer
+{
+    
+}
 
+//This scence's static constructor.
++(CCScene*) scene;
 @end
