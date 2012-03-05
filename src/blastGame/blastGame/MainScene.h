@@ -8,6 +8,7 @@
 
 #import "cocos2d.h"
 #import "CoreImports.h"
+#import "MainLayer.h"
 
 @interface MainScene : CCLayer
 {

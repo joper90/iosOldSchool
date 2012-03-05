@@ -10,4 +10,27 @@
 
 @implementation cocos2d_template
 
+-(id) init
+{
+	if( (self=[super init])) 
+    {
+
+	}
+	return self;
+}
+
+-(void)draw
+{
+    
+}
+
+-(void)update:(ccTime) delta
+{
+    
+}
+
+-(void)dealloc
+{
+    [super dealloc];
+}
 @end

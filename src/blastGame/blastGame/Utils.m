@@ -34,10 +34,15 @@ static Utils* utils = nil;
     return self;
 }
 
--(CGPoint) locationFromTouch:(NSSet *)touches
-
+-(CGPoint) locationFromTouchSinglePoint:(UITouch *)touch
 {
-    UITouch *touch = [touches anyObject];    
+    CGPoint touchLocation = [touch locationInView:[touch view]];
+    return [[CCDirector sharedDirector] convertToGL:touchLocation];
+}
+
+-(CGPoint) locationFromTouchMultiPoint:(NSSet *)touches
+{
+    UITouch *touch = [touches anyObject];
     CGPoint touchLocation = [touch locationInView:[touch view]];
     return [[CCDirector sharedDirector] convertToGL:touchLocation];
 }
@@ -46,6 +51,13 @@ static Utils* utils = nil;
 
 {
     return ccp(screenWidth/2, screenHeight/2);
+}
+
+-(float)distanceBetweenPoints:(CGPoint)startPoint endPoint:(CGPoint)endPoint
+{
+    CGFloat dx = endPoint.x - startPoint.x;
+    CGFloat dy = endPoint.y - startPoint.y;
+    return sqrt(dx*dx + dy*dy);
 }
 
 @end

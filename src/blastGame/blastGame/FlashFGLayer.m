@@ -33,5 +33,10 @@
     //remove this scheduler
     [self unschedule:_cmd];
     CCLOG(@"Timed OUT....");
+    
+    //Insert transistion here to mailScene
+    CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:2 scene:[MainScene scene]];
+    
+    [[CCDirector sharedDirector]pushScene:ccFade];
 }
 @end

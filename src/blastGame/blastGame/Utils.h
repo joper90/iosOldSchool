@@ -19,7 +19,9 @@
 @property float screenHeight;
 
 +(Utils*) instance;
--(CGPoint) locationFromTouch:(NSSet *)touches;
+-(CGPoint) locationFromTouchSinglePoint:(UITouch *)touch;
+-(CGPoint) locationFromTouchMultiPoint:(NSSet*)touches;
 -(CGPoint) center;
+-(float) distanceBetweenPoints:(CGPoint) startPoint endPoint:(CGPoint) endPoint;
 
 @end

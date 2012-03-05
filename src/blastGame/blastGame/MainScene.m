@@ -10,4 +10,14 @@
 
 @implementation MainScene
 
+
++(CCScene*) scene
+{
+    CCScene *scene = [CCScene node];
+	
+	MainLayer* mainLayer = [MainLayer node];
+    [scene addChild:mainLayer z:0 tag:T_MAIN_LAYER];
+	return scene;
+}        
+
 @end

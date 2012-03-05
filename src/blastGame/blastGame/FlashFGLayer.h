@@ -8,6 +8,7 @@
 
 #import "CCLayer.h"
 #import "CoreImports.h"
+#import "MainScene.h"
 
 @interface FlashFGLayer : CCLayer
 {

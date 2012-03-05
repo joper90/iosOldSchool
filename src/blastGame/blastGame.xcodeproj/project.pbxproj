@@ -131,6 +131,8 @@
 		CEB042FD14FD1AEA0005EF2B /* TitleBGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042FC14FD1AEA0005EF2B /* TitleBGLayer.m */; };
 		CEB0430014FD1B5F0005EF2B /* FlashScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042FF14FD1B5F0005EF2B /* FlashScene.m */; };
 		CEB0430314FD32FB0005EF2B /* FlashFGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */; };
+		CEEE4B6614FE2D8A002621BC /* MainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE4B6514FE2D8A002621BC /* MainLayer.m */; };
+		CEEE4B6F14FE3897002621BC /* MobElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE4B6E14FE3897002621BC /* MobElement.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -389,6 +391,10 @@
 		CEB042FF14FD1B5F0005EF2B /* FlashScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashScene.m; sourceTree = "<group>"; };
 		CEB0430114FD32FB0005EF2B /* FlashFGLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashFGLayer.h; sourceTree = "<group>"; };
 		CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashFGLayer.m; sourceTree = "<group>"; };
+		CEEE4B6414FE2D8A002621BC /* MainLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainLayer.h; sourceTree = "<group>"; };
+		CEEE4B6514FE2D8A002621BC /* MainLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainLayer.m; sourceTree = "<group>"; };
+		CEEE4B6D14FE3897002621BC /* MobElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobElement.h; sourceTree = "<group>"; };
+		CEEE4B6E14FE3897002621BC /* MobElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobElement.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +451,7 @@
 		CE270D0414FCEB0000C2DBA3 /* blastGame */ = {
 			isa = PBXGroup;
 			children = (
+				CEEE4B6B14FE32CA002621BC /* elements */,
 				CE270E6C14FCF42800C2DBA3 /* scene */,
 				CE270E6514FCEC0F00C2DBA3 /* runTime */,
 				CE270D0514FCEB0000C2DBA3 /* Resources */,
@@ -834,6 +841,8 @@
 				CEB042FC14FD1AEA0005EF2B /* TitleBGLayer.m */,
 				CEB0430114FD32FB0005EF2B /* FlashFGLayer.h */,
 				CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */,
+				CEEE4B6414FE2D8A002621BC /* MainLayer.h */,
+				CEEE4B6514FE2D8A002621BC /* MainLayer.m */,
 			);
 			name = layers;
 			sourceTree = "<group>";
@@ -845,6 +854,15 @@
 				CEB042F514FD17620005EF2B /* BlastedEngine.m */,
 			);
 			name = engine;
+			sourceTree = "<group>";
+		};
+		CEEE4B6B14FE32CA002621BC /* elements */ = {
+			isa = PBXGroup;
+			children = (
+				CEEE4B6D14FE3897002621BC /* MobElement.h */,
+				CEEE4B6E14FE3897002621BC /* MobElement.m */,
+			);
+			name = elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1024,6 +1042,8 @@
 				CEB042FD14FD1AEA0005EF2B /* TitleBGLayer.m in Sources */,
 				CEB0430014FD1B5F0005EF2B /* FlashScene.m in Sources */,
 				CEB0430314FD32FB0005EF2B /* FlashFGLayer.m in Sources */,
+				CEEE4B6614FE2D8A002621BC /* MainLayer.m in Sources */,
+				CEEE4B6F14FE3897002621BC /* MobElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
