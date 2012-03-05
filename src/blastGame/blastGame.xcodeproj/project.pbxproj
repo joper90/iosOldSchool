@@ -121,7 +121,6 @@
 		CE270E5514FCEB0700C2DBA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E5414FCEB0700C2DBA3 /* main.m */; };
 		CE270E5814FCEB0700C2DBA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E5714FCEB0700C2DBA3 /* AppDelegate.m */; };
 		CE270E5B14FCEB0700C2DBA3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E5A14FCEB0700C2DBA3 /* RootViewController.m */; };
-		CE270E5E14FCEB0700C2DBA3 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E5D14FCEB0700C2DBA3 /* HelloWorldLayer.m */; };
 		CE270E6B14FCEE2500C2DBA3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E6A14FCEE2500C2DBA3 /* Utils.m */; };
 		CE270E6F14FCF48F00C2DBA3 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E6E14FCF48F00C2DBA3 /* MainScene.m */; };
 		CEB042EE14FD16840005EF2B /* MainBGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042ED14FD16840005EF2B /* MainBGLayer.m */; };
@@ -133,6 +132,7 @@
 		CEB0430314FD32FB0005EF2B /* FlashFGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */; };
 		CEEE4B6614FE2D8A002621BC /* MainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE4B6514FE2D8A002621BC /* MainLayer.m */; };
 		CEEE4B6F14FE3897002621BC /* MobElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE4B6E14FE3897002621BC /* MobElement.m */; };
+		CEEE4B7E1504DD6E002621BC /* efmi.TTF in Resources */ = {isa = PBXBuildFile; fileRef = CEEE4B7D1504DD6E002621BC /* efmi.TTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -368,8 +368,6 @@
 		CE270E5714FCEB0700C2DBA3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CE270E5914FCEB0700C2DBA3 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		CE270E5A14FCEB0700C2DBA3 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		CE270E5C14FCEB0700C2DBA3 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		CE270E5D14FCEB0700C2DBA3 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		CE270E5F14FCEB0700C2DBA3 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		CE270E6614FCECBE00C2DBA3 /* Statics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statics.h; sourceTree = "<group>"; };
 		CE270E6814FCEDD500C2DBA3 /* CoreImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImports.h; sourceTree = "<group>"; };
@@ -395,6 +393,7 @@
 		CEEE4B6514FE2D8A002621BC /* MainLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainLayer.m; sourceTree = "<group>"; };
 		CEEE4B6D14FE3897002621BC /* MobElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobElement.h; sourceTree = "<group>"; };
 		CEEE4B6E14FE3897002621BC /* MobElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobElement.m; sourceTree = "<group>"; };
+		CEEE4B7D1504DD6E002621BC /* efmi.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = efmi.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -467,6 +466,7 @@
 		CE270D0514FCEB0000C2DBA3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEEE4B7D1504DD6E002621BC /* efmi.TTF */,
 				CE270D0614FCEB0000C2DBA3 /* Default.png */,
 				CE270D0814FCEB0000C2DBA3 /* fps_images.png */,
 				CE270D0A14FCEB0000C2DBA3 /* Icon-72.png */,
@@ -818,8 +818,6 @@
 		CE270E6C14FCF42800C2DBA3 /* scene */ = {
 			isa = PBXGroup;
 			children = (
-				CE270E5C14FCEB0700C2DBA3 /* HelloWorldLayer.h */,
-				CE270E5D14FCEB0700C2DBA3 /* HelloWorldLayer.m */,
 				CE270E6D14FCF48F00C2DBA3 /* MainScene.h */,
 				CE270E6E14FCF48F00C2DBA3 /* MainScene.m */,
 				CEB042F814FD1A1C0005EF2B /* TitleScene.h */,
@@ -925,6 +923,7 @@
 				CE270D1314FCEB0000C2DBA3 /* Icon.png in Resources */,
 				CE270D1514FCEB0000C2DBA3 /* Icon@2x.png in Resources */,
 				CE270D1814FCEB0100C2DBA3 /* iTunesArtwork in Resources */,
+				CEEE4B7E1504DD6E002621BC /* efmi.TTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1032,7 +1031,6 @@
 				CE270E5514FCEB0700C2DBA3 /* main.m in Sources */,
 				CE270E5814FCEB0700C2DBA3 /* AppDelegate.m in Sources */,
 				CE270E5B14FCEB0700C2DBA3 /* RootViewController.m in Sources */,
-				CE270E5E14FCEB0700C2DBA3 /* HelloWorldLayer.m in Sources */,
 				CE270E6B14FCEE2500C2DBA3 /* Utils.m in Sources */,
 				CE270E6F14FCF48F00C2DBA3 /* MainScene.m in Sources */,
 				CEB042EE14FD16840005EF2B /* MainBGLayer.m in Sources */,

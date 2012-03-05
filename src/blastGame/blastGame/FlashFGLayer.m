@@ -15,12 +15,25 @@
 	if( (self=[super init])) {
 		
 		// create and initialize a Label
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"funkVoodoo" fontName:@"Futura" fontSize:48];
+		CCLabelTTF *companyLabel = [CCLabelTTF labelWithString:@"funkVoodoo" fontName:@"efmi" fontSize:48];
+        CCLabelTTF *companySubtext = [CCLabelTTF labelWithString:@"productions" fontName:@"efmi" fontSize:25];
+        CCLabelTTF *copyrightMessage = [CCLabelTTF labelWithString:@"(c) 2012 funkVoodoo productions" fontName:@"Arial" fontSize:10];
         
 		// position the label on the center of the screen
-		label.position =  [[Utils instance]center];		
+        CGPoint centerPos= [[Utils instance]center];
+		companyLabel.position =  centerPos;
+        
+        CGPoint companySubtextPostion = ccp(centerPos.x + 40 , centerPos.y - 30);
+		companySubtext.position = companySubtextPostion;
+        
+        CGPoint copyrightMessagePosition = ccp(centerPos.x , centerPos.y -150);
+        copyrightMessage.position = copyrightMessagePosition;
+        
+        
 		// add the label as a child to this Layer
-		[self addChild: label];
+		[self addChild: companyLabel];
+        [self addChild: companySubtext];
+        [self addChild: copyrightMessage];
         
         //Add the timeout scheduler
         [self schedule:@selector(timeToGo:) interval:5.0f];
