@@ -1,0 +1,59 @@
+{
+  "levels": [
+    {
+      "levelId": "1",
+      "levelInfo": "normal",
+      "rowData": [
+        {
+          "row": "111",
+          "pattern": "222"
+        },
+        {
+          "row": "333",
+          "pattern": "444"
+        },
+        {
+          "row": "555",
+          "pattern": "666"
+        }
+      ]
+    },
+    {
+      "levelId": "2",
+      "levelInfo": "normal",
+      "rowData": [
+        {
+          "row": "1111",
+          "pattern": "2222"
+        },
+        {
+          "row": "3333",
+          "pattern": "4444"
+        },
+        {
+          "row": "5555",
+          "pattern": "6666"
+        }
+      ]
+    },
+    {
+      "levelId": "3",
+      "levelInfo": "normal",
+      "rowData": [
+        {
+          "row": "11111",
+          "pattern": "22222"
+        },
+        {
+          "row": "33333",
+          "pattern": "33333"
+        },
+        {
+          "row": "44444",
+          "pattern": "55555"
+        }
+      ]
+    }
+
+  ]
+}
