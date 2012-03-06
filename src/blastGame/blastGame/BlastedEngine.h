@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "CoreImports.h"
 #import "MobElement.h"
+#import "LevelElementData.h"
+#import "LevelLoader.h"
 
 @interface BlastedEngine : NSObject
 {
@@ -23,19 +25,27 @@
     
     //Array the mobs
     NSMutableArray* mobsArray;
+    
+    //Array of the levels
+    CCArray* levelList; 
+    
 }
 
 @property (assign, readwrite) int currentScore;
 @property (assign, readwrite) int level;
-@property (assign, readwrite) NSMutableArray* mobsArray;
+@property (retain, readwrite) NSMutableArray* mobsArray;
+@property (retain, readwrite) CCArray* levelList;
 
 
 
 //singleton of the engine
 +(BlastedEngine*) instance;
+
 -(BOOL)isValid;
 -(BOOL)loadLevel:(int) levelToLoad;
 -(MobElement*)getMobBySpriteTag:(int) tag;
+-(void)addLevelToLevelList:(LevelElementData*) levelDataElement;
+
 
 //Intersection testing
 -(MobElement*)whichMobTouched:(CGPoint) touchPoint;

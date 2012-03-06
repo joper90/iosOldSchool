@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CoreImports.h"
+#import "CJSONDeserializer.h"
+#import "LevelElementData.h"
 
 @interface LevelLoader : NSObject
 {
-    
+    NSString* jsonFile;
 }
 +(LevelLoader*) instance;
+-(BOOL)loadAndParseLevelFile;
+-(void)processMap:(NSDictionary*) dict;
 @end

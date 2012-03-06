@@ -8,9 +8,10 @@
 
 #import "BlastedEngine.h"
 
+
 @implementation BlastedEngine
 
-@synthesize currentScore, mobsArray, level;
+@synthesize currentScore, mobsArray, level, levelList;
 
 static BlastedEngine* blastedEngine = nil;
 
@@ -37,6 +38,7 @@ static BlastedEngine* blastedEngine = nil;
         level = 1;
         
         //Load the level information.
+        [[LevelLoader instance]loadAndParseLevelFile];
         [self loadLevel:1];
     }
     return self;
@@ -116,6 +118,13 @@ static BlastedEngine* blastedEngine = nil;
     }
     
     return mob;
+}
+
+//Level Loading and setting
+-(void)addLevelToLevelList:(LevelElementData *)levelDataElement
+{
+    //need to retain?
+    [levelList addObject:levelDataElement];
 }
 
 -(void)dealloc

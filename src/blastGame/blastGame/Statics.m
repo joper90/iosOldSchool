@@ -10,4 +10,6 @@
 
 @implementation Statics
 
+NSString *const JSON_FILE = @"jsonTest.json";
+
 @end

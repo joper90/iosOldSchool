@@ -23,5 +23,6 @@
 -(CGPoint) locationFromTouchMultiPoint:(NSSet*)touches;
 -(CGPoint) center;
 -(float) distanceBetweenPoints:(CGPoint) startPoint endPoint:(CGPoint) endPoint;
+-(NSString*)getActualPath:(NSString*) path;
 
 @end

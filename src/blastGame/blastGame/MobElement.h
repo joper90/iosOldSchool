@@ -16,7 +16,7 @@
     int spriteTag;
     
     //Type of mob
-    MOBTYPE mobType;
+    MOB_COLOUR mobType;
     
     
     //TESTING TO BE REMOVED
@@ -24,7 +24,7 @@
 }
 
 //@property (readwrite, assign) CCSprite* sprite;
-@property (readwrite, assign) MOBTYPE mobType;
+@property (readwrite, assign) MOB_COLOUR mobType;
 @property (readwrite, assign) int spriteTag;
 @property (readwrite, assign) CGPoint initPos;
 

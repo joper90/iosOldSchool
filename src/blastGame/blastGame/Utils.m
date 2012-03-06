@@ -60,4 +60,11 @@ static Utils* utils = nil;
     return sqrt(dx*dx + dy*dy);
 }
 
+-(NSString*) getActualPath:(NSString *)path
+{
+    NSArray* bits = [path componentsSeparatedByString:@"."];
+    NSString* actualPath = [[NSBundle mainBundle]pathForResource:[bits objectAtIndex:0] ofType:[bits objectAtIndex:1]];
+    return actualPath;
+}
+
 @end

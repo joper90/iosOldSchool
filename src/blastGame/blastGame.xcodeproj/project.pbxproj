@@ -130,6 +130,7 @@
 		CEB042FD14FD1AEA0005EF2B /* TitleBGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042FC14FD1AEA0005EF2B /* TitleBGLayer.m */; };
 		CEB0430014FD1B5F0005EF2B /* FlashScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042FF14FD1B5F0005EF2B /* FlashScene.m */; };
 		CEB0430314FD32FB0005EF2B /* FlashFGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */; };
+		CEB505E515062BB600B31F27 /* Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB505E415062BB600B31F27 /* Statics.m */; };
 		CEEE4B6614FE2D8A002621BC /* MainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE4B6514FE2D8A002621BC /* MainLayer.m */; };
 		CEEE4B6F14FE3897002621BC /* MobElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE4B6E14FE3897002621BC /* MobElement.m */; };
 		CEEE4B7E1504DD6E002621BC /* efmi.TTF in Resources */ = {isa = PBXBuildFile; fileRef = CEEE4B7D1504DD6E002621BC /* efmi.TTF */; };
@@ -372,7 +373,6 @@
 		CE270E5914FCEB0700C2DBA3 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		CE270E5A14FCEB0700C2DBA3 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		CE270E5F14FCEB0700C2DBA3 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
-		CE270E6614FCECBE00C2DBA3 /* Statics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statics.h; sourceTree = "<group>"; };
 		CE270E6814FCEDD500C2DBA3 /* CoreImports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImports.h; sourceTree = "<group>"; };
 		CE270E6914FCEE2500C2DBA3 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		CE270E6A14FCEE2500C2DBA3 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
@@ -392,6 +392,8 @@
 		CEB042FF14FD1B5F0005EF2B /* FlashScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashScene.m; sourceTree = "<group>"; };
 		CEB0430114FD32FB0005EF2B /* FlashFGLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashFGLayer.h; sourceTree = "<group>"; };
 		CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashFGLayer.m; sourceTree = "<group>"; };
+		CEB505E315062BB600B31F27 /* Statics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statics.h; sourceTree = "<group>"; };
+		CEB505E415062BB600B31F27 /* Statics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statics.m; sourceTree = "<group>"; };
 		CEEE4B6414FE2D8A002621BC /* MainLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainLayer.h; sourceTree = "<group>"; };
 		CEEE4B6514FE2D8A002621BC /* MainLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainLayer.m; sourceTree = "<group>"; };
 		CEEE4B6D14FE3897002621BC /* MobElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobElement.h; sourceTree = "<group>"; };
@@ -817,9 +819,10 @@
 			children = (
 				CE270E6914FCEE2500C2DBA3 /* Utils.h */,
 				CE270E5F14FCEB0700C2DBA3 /* GameConfig.h */,
-				CE270E6614FCECBE00C2DBA3 /* Statics.h */,
 				CE270E6814FCEDD500C2DBA3 /* CoreImports.h */,
 				CE270E6A14FCEE2500C2DBA3 /* Utils.m */,
+				CEB505E315062BB600B31F27 /* Statics.h */,
+				CEB505E415062BB600B31F27 /* Statics.m */,
 			);
 			name = importClasses;
 			sourceTree = "<group>";
@@ -1066,6 +1069,7 @@
 				CEEE4B6F14FE3897002621BC /* MobElement.m in Sources */,
 				CEEE4B84150502E2002621BC /* LevelLoader.m in Sources */,
 				CEEE4B87150503E9002621BC /* LevelElementData.m in Sources */,
+				CEB505E515062BB600B31F27 /* Statics.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
