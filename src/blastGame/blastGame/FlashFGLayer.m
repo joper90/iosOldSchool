@@ -14,6 +14,8 @@
 {
 	if( (self=[super init])) {
 		
+        
+        
 		// create and initialize a Label
 		CCLabelTTF *companyLabel = [CCLabelTTF labelWithString:@"funkVoodoo" fontName:@"efmi" fontSize:48];
         CCLabelTTF *companySubtext = [CCLabelTTF labelWithString:@"productions" fontName:@"efmi" fontSize:25];

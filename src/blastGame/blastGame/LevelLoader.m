@@ -10,4 +10,17 @@
 
 @implementation LevelLoader
 
+
+//Singleton
+static LevelLoader* levelloader = nil;
+
++(LevelLoader*) instance
+{
+    if (levelloader == nil)
+    {
+        levelloader = [[LevelLoader alloc]init];
+    }
+    return levelloader;
+}
+
 @end

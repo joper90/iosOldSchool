@@ -29,8 +29,5 @@
     
 }
 
--(void)dealloc
-{
-    [super dealloc];
-}
+c
 @end

@@ -25,7 +25,7 @@ typedef enum
 {
     SIMPLE,
     BOSS
-}MOBTYPE;
+}LEVEL_TYPE;
 
 typedef enum
 {
@@ -38,6 +38,12 @@ typedef enum
 
 //Game constants used for tweaking.
 #define DRAG_CLICK_LENIENCY  20 //10 pixels for click/drag issues.
+
+
+//Flash (splash) screen
+#define COMPANY_NAME "funkVoodoo";
+#define COMPANY_SUBTEXT "productions";
+#define COPYRIGHT_MESSAGE "(c) 2012 funkVoodoo";
 
 
 @protocol Statics <NSObject>

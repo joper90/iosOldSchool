@@ -73,9 +73,10 @@
     touchMoved = NO;    
     
     //May need to check to see if touched here, as it may be too late later, as it will have moved.
+    initialTouch = [[Utils instance]locationFromTouchSinglePoint:touch];
     mobTouched = [[BlastedEngine instance]whichMobTouched:initialTouch];
     
-    initialTouch = [[Utils instance]locationFromTouchSinglePoint:touch];
+    
 
     return YES;
 }

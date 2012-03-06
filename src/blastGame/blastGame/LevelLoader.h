@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface LevelLoader : NSObject
-
+{
+    
+}
++(LevelLoader*) instance;
 @end
