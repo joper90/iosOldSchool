@@ -50,11 +50,14 @@ static LevelLoader* levelloader = nil;
 
 -(void)processMap:(NSDictionary *)dict
 {
+    // This needs to be error checked.. 
+    // and a validate process needs to be written before publish
+    
     NSArray* levels = [dict objectForKey:@"levels"];
     for (id level in levels)
     {
         int levelId = [[level objectForKey:@"levelId"]intValue];
-        CCLOG(@"Level ID : %@", levelId);
+        CCLOG(@"Level ID : %d", levelId);
         
         NSString* levelInfo = [level objectForKey:@"levelInfo"];
         CCLOG(@"Levelinfo : %@", levelInfo);
@@ -62,8 +65,23 @@ static LevelLoader* levelloader = nil;
         NSArray* rowData = [level objectForKey:@"rowData"];
         CCLOG(@"Row Count : %d", [rowData count]);
         
+        CCArray* row = [[CCArray alloc]init];
+        CCArray* pattern = [[CCArray alloc]init];
         
+        for (id singleRow in rowData)
+        {
+            NSString* rowLine =  [singleRow objectForKey:@"row"];
+            NSString* patternLine = [singleRow objectForKey:@"pattern"];
+            
+           [row addObject:rowLine];
+           [pattern addObject:patternLine];
+            
+           CCLOG(@"row: %@   -   pattern:%@", rowLine, patternLine); 
+        }
         
+        LevelElementData* elementData = [[LevelElementData alloc]initWithRowPatternCCArrays:row andAllPattern:pattern ];
+        
+        [[BlastedEngine instance]addLevelToLevelList:elementData];
         
     }
 }

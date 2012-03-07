@@ -10,6 +10,7 @@
 #import "CoreImports.h"
 #import "CJSONDeserializer.h"
 #import "LevelElementData.h"
+#import "BlastedEngine.h"
 
 @interface LevelLoader : NSObject
 {

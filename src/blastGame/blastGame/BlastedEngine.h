@@ -31,6 +31,7 @@
     
 }
 
+@property (assign, readwrite) BOOL valid;
 @property (assign, readwrite) int currentScore;
 @property (assign, readwrite) int level;
 @property (retain, readwrite) NSMutableArray* mobsArray;
@@ -46,6 +47,7 @@
 -(MobElement*)getMobBySpriteTag:(int) tag;
 -(void)addLevelToLevelList:(LevelElementData*) levelDataElement;
 
+-(BOOL)loadAndParseLevels;
 
 //Intersection testing
 -(MobElement*)whichMobTouched:(CGPoint) touchPoint;

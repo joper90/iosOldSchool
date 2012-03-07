@@ -113,6 +113,10 @@
     //Init the BlastedEngine
     [BlastedEngine instance];
     
+    //Any quick Checks TO BE REMOVED..
+    BOOL levels = [[BlastedEngine instance] isValid];
+    //CCLOG(@"REMOVE ME = BLASTED ENGINE COUNT : %d",  levels);
+    
 	// Run the intro Scene
 	[[CCDirector sharedDirector] runWithScene: [FlashScene scene]];
 }

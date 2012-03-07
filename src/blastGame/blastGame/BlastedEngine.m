@@ -11,12 +11,13 @@
 
 @implementation BlastedEngine
 
-@synthesize currentScore, mobsArray, level, levelList;
+@synthesize currentScore, mobsArray, level, levelList, valid;
 
 static BlastedEngine* blastedEngine = nil;
 
 +(BlastedEngine*) instance
 {
+    CCLOG(@"Engine instance started....");
     if (blastedEngine == nil)
     {
         //Alive for the duration of the game
@@ -33,13 +34,8 @@ static BlastedEngine* blastedEngine = nil;
     self = [super self];
     if (self != nil)
     {
-        valid = YES;
-        mobsArray = [[NSMutableArray alloc]init];
-        level = 1;
         
-        //Load the level information.
-        [[LevelLoader instance]loadAndParseLevelFile];
-        [self loadLevel:1];
+        self.mobsArray = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -49,8 +45,20 @@ static BlastedEngine* blastedEngine = nil;
     return valid;
 }
 
+//
+// Level utils.
+//
 
-//Loading a level:
+//Call to parse and load the levels, return BOOL 
+-(BOOL)loadAndParseLevels
+{
+    [[LevelLoader instance]loadAndParseLevelFile];
+    [self loadLevel:1];
+    return YES;
+}
+
+
+//Load a level from the LevelsLoader populated array
 -(BOOL)loadLevel:(int)levelToLoad
 {
     BOOL allValid = YES;
@@ -75,6 +83,7 @@ static BlastedEngine* blastedEngine = nil;
     
     return allValid;
 }
+
 
 //Sprite functionality
 -(MobElement*)getMobBySpriteTag:(int)tag
