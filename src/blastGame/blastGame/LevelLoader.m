@@ -81,6 +81,10 @@ static LevelLoader* levelloader = nil;
         
         LevelElementData* elementData = [[LevelElementData alloc]initWithRowPatternCCArrays:row andAllPattern:pattern ];
         
+        elementData.levelId = levelId;
+        elementData.levelType = levelInfo;
+        
+        
         [[BlastedEngine instance]addLevelToLevelList:elementData];
         
     }

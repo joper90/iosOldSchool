@@ -17,9 +17,9 @@ static BlastedEngine* blastedEngine = nil;
 
 +(BlastedEngine*) instance
 {
-    CCLOG(@"Engine instance started....");
     if (blastedEngine == nil)
     {
+        CCLOG(@"Engine instance started....");
         //Alive for the duration of the game
         blastedEngine = [[BlastedEngine alloc]init];
         CCLOG(@"Engine instance complete....");

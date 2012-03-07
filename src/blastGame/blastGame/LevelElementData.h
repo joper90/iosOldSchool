@@ -11,25 +11,23 @@
 
 @interface LevelElementData : NSObject
 {
-    int level;
-    NSString* levelType;
-    LEVEL_TYPE levelTypeEnum;
+    int levelId;                //Level id, i.e the number
+    NSString* levelType;        //LevelType - normal, or boss (the name of) to look up in a table.. THis should be an enum really.
     
     int rowCount;
     CCArray* rowData;
     CCArray* patternData;
 }
 
-@property int level;
+@property int levelId;
 @property (readwrite, retain) NSString* levelType;
-@property LEVEL_TYPE levelTypeEnum;
 @property int rowCount;
 @property (readwrite, retain) CCArray* rowData;
 @property (readwrite, retain) CCArray* patternData;
 
 -(id)initWithRowPatternCCArrays:(CCArray*) allRows andAllPattern:(CCArray*) allPatterns;
 -(void)addAllRowsPatterns:(CCArray*) allRows andAllPatterns:(CCArray*) allPatterns;
-
+-(void)dumpLevelData;
 
 
 @end

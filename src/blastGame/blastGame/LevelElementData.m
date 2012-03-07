@@ -9,7 +9,7 @@
 #import "LevelElementData.h"
 
 @implementation LevelElementData
-@synthesize level,levelType,levelTypeEnum,rowData,rowCount,patternData;
+@synthesize levelId,levelType,rowData,rowCount,patternData;
 
 
 //Should callinitWithCCArraySize.
@@ -43,6 +43,23 @@
     [rowData retain];
     [patternData addObjectsFromArray:allPatterns];
     [patternData retain];
+}
+
+-(void)dumpLevelData
+{
+    CCLOG(@"Level id       :%d",levelId);
+    CCLOG(@"Level Info     :%@",levelType);
+    CCLOG(@"Row Count      :%d",[rowData count]);
+    CCLOG(@"Patten Count   :%d",[patternData count]);
+    for (NSString* row in rowData)
+    {
+        CCLOG(@"row        :%@",row);
+    }
+    for (NSString* pat in patternData)
+    {
+        CCLOG(@"pattern    :%@",pat);
+    }
+    
 }
 
 -(void)dealloc
