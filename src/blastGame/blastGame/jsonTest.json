@@ -3,6 +3,8 @@
     {
       "levelId": "1",
       "levelInfo": "normal",
+      "baseSpeed": "10",
+      "lineTime": "10",
       "rowData": [
         {
           "row": "111",
@@ -21,6 +23,8 @@
     {
       "levelId": "2",
       "levelInfo": "normal",
+      "baseSpeed": "10",
+      "lineTime": "10",
       "rowData": [
         {
           "row": "1111",
@@ -39,6 +43,8 @@
     {
       "levelId": "3",
       "levelInfo": "normal",
+      "baseSpeed": "10",
+      "lineTime": "10",
       "rowData": [
         {
           "row": "11111",
@@ -54,6 +60,5 @@
         }
       ]
     }
-
   ]
 }

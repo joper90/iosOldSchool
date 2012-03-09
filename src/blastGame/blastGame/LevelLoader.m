@@ -62,9 +62,15 @@ static LevelLoader* levelloader = nil;
         NSString* levelInfo = [level objectForKey:@"levelInfo"];
         CCLOG(@"Levelinfo : %@", levelInfo);
         
+        NSString* baseSpeed = [level objectForKey:@"baseSpeed"];
+        CCLOG(@"baseSpeed : %@", baseSpeed);
+        
+        NSString* lineTime = [level objectForKey:@"lineTime"];
+        CCLOG(@"Line Time : %@", lineTime);
+        
         NSArray* rowData = [level objectForKey:@"rowData"];
         CCLOG(@"Row Count : %d", [rowData count]);
-        
+                
         CCArray* row = [[CCArray alloc]init];
         CCArray* pattern = [[CCArray alloc]init];
         
@@ -83,6 +89,8 @@ static LevelLoader* levelloader = nil;
         
         elementData.levelId = levelId;
         elementData.levelType = levelInfo;
+        elementData.baseSpeed = [baseSpeed floatValue];
+        elementData.lineTime = [lineTime floatValue];
         
         
         [[BlastedEngine instance]addLevelToLevelList:elementData];

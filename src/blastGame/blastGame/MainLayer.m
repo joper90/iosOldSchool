@@ -18,43 +18,43 @@
         //enable touches
         self.isTouchEnabled = YES;
         
-        
-		//Display the sprites/mobs
-        //Get teh array
-        NSMutableArray* mobs = [BlastedEngine instance].mobsArray;
-        
-        tagCount = 0; 
-        for (id m in mobs)
-        {
-            CCLOG(@"Adding sprite...");
-            MobElement* mElement = (MobElement*)m;
-            CCSprite* s = [mElement getSprite];
-             
-            [self addChild:s];
-            
-            //Start moving 
-            [self mobFinished:s];
-        }
-	}
+        [self renderInitalMobs];
+    }
 	return self;
 }
 
--(void)mobFinished:(id)sender
+-(void)renderInitalMobs
 {
+    //Display the sprites/mobs
+    //Get teh array
+    NSMutableArray* mobs = [BlastedEngine instance].mobsArray;
     
-    CCSprite* finishedSprite = (CCSprite*)sender;
-    CGPoint point = [[BlastedEngine instance]getInitPosBySpriteTag:finishedSprite.tag]; 
-    finishedSprite.position = point;
-    
+    tagCount = 0; 
+    for (id m in mobs)
+    {
+        CCLOG(@"Adding sprite...");
+        MobElement* mElement = (MobElement*)m;
+        CCSprite* s = [mElement getSprite];
         
-    CCMoveTo* move = [CCMoveTo actionWithDuration:5 position:ccp(20, point.y)];
-    //Setup the call for when this action has finished
-    
-    CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:self selector:@selector(mobFinished:) object:(id)finishedSprite];
-    CCSequence* seq = [CCSequence actions: move, mobFinished, nil];
-    
-    [finishedSprite runAction:seq];
+        [self addChild:s];
+        
+        id seq = [[FlightPaths instance]getSequence: BEZIER_ONE movementModifer:0.0f withTag:s.tag currentPos:s.position];
+        
+        //Start moving 
+        [s runAction:seq];
+    }
+
 }
+
+ -(void)mobFinished:(id)sender
+{
+    NSNumber* ttt = sender;
+    int x = [ttt integerValue];
+    CCLOG(@"mobMoveCompleted (in mainLayer): called with tag : %d", x);
+}
+
+//MobHit (the planet) - game over? or life lost..
+
 
 -(void)update:(ccTime) delta
 {

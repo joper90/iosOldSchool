@@ -52,7 +52,8 @@
 		CGSize size = [[CCDirector sharedDirector] winSize];
 	
 		// position the label on the center of the screen
-		sprite.position =  ccp( size.width /2 + 100 , size.height/2 );
+        CCLOG(@"width %f",size.width);
+		sprite.position =  ccp( size.width+100 , size.height/2 );
 		// add the label as a child to this Layer
 		[self addChild: sprite];
         

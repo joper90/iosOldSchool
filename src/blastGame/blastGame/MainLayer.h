@@ -9,6 +9,7 @@
 #import "cocos2d.h"
 #import "BlastedEngine.h"
 #import "MobElement.h"
+#import "FlightPaths.h"
 
 @interface MainLayer : CCLayer
 {
@@ -20,6 +21,7 @@
     MobElement* mobTouched;
 }
 
+-(void)renderInitalMobs;
 -(void)mobFinished:(id) object;
 -(void)checkSpriteTouchedAction;
 -(void)laserAction;

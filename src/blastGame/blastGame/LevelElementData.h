@@ -13,7 +13,8 @@
 {
     int levelId;                //Level id, i.e the number
     NSString* levelType;        //LevelType - normal, or boss (the name of) to look up in a table.. THis should be an enum really.
-    
+    float  baseSpeed;
+    float  lineTime;
     int rowCount;
     CCArray* rowData;
     CCArray* patternData;
@@ -21,6 +22,8 @@
 
 @property int levelId;
 @property (readwrite, retain) NSString* levelType;
+@property (readwrite, assign) float baseSpeed;
+@property (readwrite, assign) float lineTime;
 @property int rowCount;
 @property (readwrite, retain) CCArray* rowData;
 @property (readwrite, retain) CCArray* patternData;

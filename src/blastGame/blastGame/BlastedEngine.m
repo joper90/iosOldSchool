@@ -70,7 +70,7 @@ static BlastedEngine* blastedEngine = nil;
         MobElement* mob = [[MobElement alloc]init];
         CCSprite* sprite = [CCSprite spriteWithFile:@"Icon-Small.png"];
         sprite.anchorPoint = ccp(0.5f, 0.5f);
-        sprite.position = ccp(400,posUp);
+        sprite.position = ccp(600,posUp);
         sprite.tag = x;
         
         [mob addSprite:sprite];

@@ -3,11 +3,10 @@
 //  FlightPath
 //
 //  Created by AppleUser on 08/03/2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 funkvoodoo.com. All rights reserved.
 //
 
 #import "cocos2d.h"
-#import "CallBackComplete.h"
 
 
 typedef enum{
@@ -26,14 +25,16 @@ ZOOM
 
 +(FlightPaths*) instance;
 
--(CCSequence*) getSequence:(CallBackComplete*) callbackFunction selectedPattern:(FlightPattern)flightPattern movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
+-(id) getSequence:(FlightPattern)flightPattern movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
 
 //List of sequeneces.
 
--(id) straightSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
--(id) fastinoutSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
--(id) slowinoutSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
--(id) bezierOneSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;  
--(id) zoomSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
+-(id) straightSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
+-(id) fastinoutSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
+-(id) slowinoutSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
+-(id) bezierOneSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;  
+-(id) zoomSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
+
+-(void) mobMoveCompleted:(id)sender;
 
 @end
