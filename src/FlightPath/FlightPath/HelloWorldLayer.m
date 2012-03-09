@@ -56,7 +56,7 @@
 		// add the label as a child to this Layer
 		[self addChild: sprite];
         
-        [sprite runAction:[[FlightPaths instance]getSequence:callbackComplete selectedPattern:STRAIGHT movementModifer:0.0f withTag:sprite.tag currentPos:sprite.position ]];
+        [sprite runAction:[[FlightPaths instance]getSequence:callbackComplete selectedPattern:SLOW_IN_OUT movementModifer:0.0f withTag:sprite.tag currentPos:sprite.position ]];
 	}
 	return self;
 }
