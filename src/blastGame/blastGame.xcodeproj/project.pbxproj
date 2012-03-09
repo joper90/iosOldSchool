@@ -820,9 +820,9 @@
 		CE270E6714FCECC500C2DBA3 /* importClasses */ = {
 			isa = PBXGroup;
 			children = (
-				CE270E6914FCEE2500C2DBA3 /* Utils.h */,
 				CE270E5F14FCEB0700C2DBA3 /* GameConfig.h */,
 				CE270E6814FCEDD500C2DBA3 /* CoreImports.h */,
+				CE270E6914FCEE2500C2DBA3 /* Utils.h */,
 				CE270E6A14FCEE2500C2DBA3 /* Utils.m */,
 				CEB505E315062BB600B31F27 /* Statics.h */,
 				CEB505E415062BB600B31F27 /* Statics.m */,

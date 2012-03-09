@@ -37,15 +37,15 @@ typedef enum
 }MOB_COLOUR;
 
 //Game constants used for tweaking.
-#define DRAG_CLICK_LENIENCY  20 //10 pixels for click/drag issues.
+#define DRAG_CLICK_LENIENCY         20 //10 pixels for click/drag issues.
+#define MOB_ROW_COUNT               5  //5 rows of mobs at once
+#define START_OFFSCREEN_OFFSET      20 //Screen offset for mob placement.
 
 
 //Flash (splash) screen
-#define COMPANY_NAME "funkVoodoo";
-#define COMPANY_SUBTEXT "productions";
-#define COPYRIGHT_MESSAGE "(c) 2012 funkVoodoo";
-
-
+extern NSString *const COMPANY_NAME;
+extern NSString *const COMPANY_SUBTEXT;
+extern NSString *const COPYRIGHT_MESSAGE;
 
 
 //JSON FILE

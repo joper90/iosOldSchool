@@ -11,7 +11,7 @@
 
 @implementation BlastedEngine
 
-@synthesize currentScore, mobsArray, level, levelList, valid;
+@synthesize currentScore, mobsArray, level, levelList, valid, startPositionMap;
 
 static BlastedEngine* blastedEngine = nil;
 
@@ -36,6 +36,7 @@ static BlastedEngine* blastedEngine = nil;
     {
         
         self.mobsArray = [[NSMutableArray alloc]init];
+        self.startPositionMap = [[NSMutableDictionary alloc]init];
     }
     return self;
 }
@@ -55,6 +56,33 @@ static BlastedEngine* blastedEngine = nil;
     [[LevelLoader instance]loadAndParseLevelFile];
     [self loadLevel:1];
     return YES;
+}
+
+//Create the start positions
+-(void)setStartPositions
+{
+    //Get the screen sizes.
+    CGSize screenSize = [Utils instance].screenSize;
+    CCLOG(@"screen size X: %f  -  Y: %f",screenSize.width, screenSize.height);
+    
+    float offscreenStart = screenSize.width + START_OFFSCREEN_OFFSET;
+    
+    float stepCount = screenSize.height / (MOB_ROW_COUNT + 1); // +1 to get the correct spacing so all on screen.
+    
+    float screenYpostion = stepCount; // First position
+    
+    for (int x = 0; x < MOB_ROW_COUNT ; x++)
+    {
+        NSNumber* number = [NSNumber numberWithInt:x];
+        CGPoint point = ccp(offscreenStart, screenYpostion);
+        NSValue* pointValue = [NSValue valueWithCGPoint:point];
+        
+        [startPositionMap setObject:pointValue forKey:number];
+        screenYpostion = screenYpostion + stepCount;
+    }
+    
+    CCLOG(@"setStartScreen complete..");
+    
 }
 
 
@@ -138,6 +166,8 @@ static BlastedEngine* blastedEngine = nil;
 
 -(void)dealloc
 {
+    [mobsArray release];
+    [startPositionMap release];
     [super dealloc];
 }
 

@@ -26,11 +26,15 @@
     //Array the mobs
     NSMutableArray* mobsArray;
     
+    //Map of init start positions, based on screen sizes. // start with 5 rows.
+    NSMutableDictionary* startPositionMap;
+    
     //Array of the levels
     CCArray* levelList; 
     
 }
 
+@property (retain, readwrite) NSMutableDictionary* startPositionMap;
 @property (assign, readwrite) BOOL valid;
 @property (assign, readwrite) int currentScore;
 @property (assign, readwrite) int level;
@@ -48,6 +52,7 @@
 -(void)addLevelToLevelList:(LevelElementData*) levelDataElement;
 
 -(BOOL)loadAndParseLevels;
+-(void)setStartPositions;
 
 //Intersection testing
 -(MobElement*)whichMobTouched:(CGPoint) touchPoint;

@@ -17,6 +17,7 @@
 
 @property float screenWidth;
 @property float screenHeight;
+@property (readonly) CGSize screenSize;
 
 +(Utils*) instance;
 -(CGPoint) locationFromTouchSinglePoint:(UITouch *)touch;

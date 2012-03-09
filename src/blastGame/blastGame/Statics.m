@@ -10,6 +10,11 @@
 
 @implementation Statics
 
+NSString *const COMPANY_NAME = @"funkVoodoo";
+NSString *const COMPANY_SUBTEXT = @"productions";
+NSString *const COPYRIGHT_MESSAGE = @"(c) 2012 funkVoodoo";
+
+
 NSString *const JSON_FILE = @"jsonTest.json";
 
 @end

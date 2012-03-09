@@ -9,7 +9,7 @@
 #import "Utils.h"
 
 @implementation Utils
-@synthesize screenWidth,screenHeight;
+@synthesize screenWidth,screenHeight,screenSize;
 
 //Singleton
 static Utils* utils = nil;

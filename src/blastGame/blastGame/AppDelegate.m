@@ -116,8 +116,9 @@
     //
     /********************************************/
     //Init the BlastedEngine
-    [BlastedEngine instance];
+    [[BlastedEngine instance]setStartPositions];
     [[BlastedEngine instance]loadAndParseLevels];
+
     //Any quick Checks TO BE REMOVED..
         
 	// Run the intro Scene
