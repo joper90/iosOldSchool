@@ -13,7 +13,9 @@
 typedef enum{
 STRAIGHT = 0,
 FAST_IN_OUT,
-SLOW_IN_OUT
+SLOW_IN_OUT,
+BEZIER_ONE,
+ZOOM
     
 } FlightPattern;
 
@@ -28,9 +30,10 @@ SLOW_IN_OUT
 
 //List of sequeneces.
 
--(CCSequence*) straightSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
--(CCSequence*) fastinoutSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
--(CCSequence*) slowinoutSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
-  
+-(id) straightSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
+-(id) fastinoutSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
+-(id) slowinoutSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
+-(id) bezierOneSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;  
+-(id) zoomSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
 
 @end
