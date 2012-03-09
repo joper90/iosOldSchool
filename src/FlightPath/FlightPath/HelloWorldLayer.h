@@ -9,11 +9,16 @@
 
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
+#import "FlightPaths.h"
+#import "CallBackComplete.h"
 
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer
 {
+    CallBackComplete* callbackComplete;
 }
+
+@property (readwrite,assign) CallBackComplete* callbackComplete;
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
