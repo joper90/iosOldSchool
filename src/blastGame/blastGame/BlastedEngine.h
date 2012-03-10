@@ -23,23 +23,26 @@
     
     int level;
     
-    //Array the mobs
+    LevelElementData* currentPlayingLevel;
+    
+    //Array the mobs, the actual mobs
     NSMutableArray* mobsArray;
     
     //Map of init start positions, based on screen sizes. // start with 5 rows.
     NSMutableDictionary* startPositionMap;
     
-    //Array of the levels
-    CCArray* levelList; 
+    //Array of the levels, from the lever loader.. the actual level data.
+     NSMutableDictionary*  levelList; 
     
 }
 
+@property (assign, readwrite) LevelElementData* currentPlayingLevel;
 @property (retain, readwrite) NSMutableDictionary* startPositionMap;
 @property (assign, readwrite) BOOL valid;
 @property (assign, readwrite) int currentScore;
 @property (assign, readwrite) int level;
 @property (retain, readwrite) NSMutableArray* mobsArray;
-@property (retain, readwrite) CCArray* levelList;
+@property (retain, readwrite) NSMutableDictionary*  levelList;
 
 
 

@@ -11,7 +11,7 @@
 
 @implementation BlastedEngine
 
-@synthesize currentScore, mobsArray, level, levelList, valid, startPositionMap;
+@synthesize currentScore, mobsArray, level, levelList, valid, startPositionMap, currentPlayingLevel;
 
 static BlastedEngine* blastedEngine = nil;
 
@@ -91,9 +91,17 @@ static BlastedEngine* blastedEngine = nil;
 {
     BOOL allValid = YES;
     
+    //Hopefully arrays keep the order, and need some more rubust defensive codign in here.
+    currentPlayingLevel = [levelList objectForKey:[NSNumber numberWithInt:levelToLoad]];
+    
+    
+    
+    
     //Fake Data at the moment.
+    /*
     int posUp = 50;
-    for (int x = 0; x < 5 ; x ++)
+    
+     for (int x = 0; x < 5 ; x ++)
     {
         MobElement* mob = [[MobElement alloc]init];
         CCSprite* sprite = [CCSprite spriteWithFile:@"Icon-Small.png"];
@@ -107,11 +115,11 @@ static BlastedEngine* blastedEngine = nil;
         
         posUp += 50;
     }
+     */
     
     
     return allValid;
 }
-
 
 //Sprite functionality
 -(MobElement*)getMobBySpriteTag:(int)tag
@@ -161,7 +169,9 @@ static BlastedEngine* blastedEngine = nil;
 -(void)addLevelToLevelList:(LevelElementData *)levelDataElement
 {
     //need to retain?
-    [levelList addObject:levelDataElement];
+    //switched to a dict now for quick level lookup when loadign a new level.
+    NSNumber* levelId = [NSNumber numberWithInt:levelDataElement.levelId]; 
+    [levelList setObject:levelDataElement forKey:levelId];
 }
 
 -(void)dealloc

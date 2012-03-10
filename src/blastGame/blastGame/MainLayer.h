@@ -16,12 +16,15 @@
     int tagCount;
     BOOL touchMoved;
     
+    BOOL gameLive; // Is the game Live, or jsut on countdown etc.
+    
     CGPoint initialTouch;
     CGPoint endTouch;
     MobElement* mobTouched;
 }
 
--(void)renderInitalMobs;
+//-(void)renderInitalMobs;
+-(void)startAndMoveMobLine:(int) mobLinetoStart;
 -(void)mobFinished:(id) object;
 -(void)checkSpriteTouchedAction;
 -(void)laserAction;

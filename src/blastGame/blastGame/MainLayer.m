@@ -17,18 +17,24 @@
     {
         //enable touches
         self.isTouchEnabled = YES;
+        gameLive = NO;
         
         [self renderInitalMobs];
+        
     }
 	return self;
 }
 
+/*
 -(void)renderInitalMobs
 {
     //Display the sprites/mobs
     //Get teh array
     NSMutableArray* mobs = [BlastedEngine instance].mobsArray;
+    NSMutableDictionary* startRowLocations =[BlastedEngine instance].startPositionMap;
     
+    
+        
     tagCount = 0; 
     for (id m in mobs)
     {
@@ -45,6 +51,7 @@
     }
 
 }
+ */
 
  -(void)mobFinished:(id)sender
 {
