@@ -54,7 +54,7 @@ static BlastedEngine* blastedEngine = nil;
 -(BOOL)loadAndParseLevels
 {
     [[LevelLoader instance]loadAndParseLevelFile];
-    [self loadLevel:1];
+    //[self loadLevel:1];
     return YES;
 }
 
@@ -94,7 +94,12 @@ static BlastedEngine* blastedEngine = nil;
     //Hopefully arrays keep the order, and need some more rubust defensive codign in here.
     currentPlayingLevel = [levelList objectForKey:[NSNumber numberWithInt:levelToLoad]];
     
-    
+    //Add the inital row to the mob list
+    for (int x = 0; x < MOB_ROW_COUNT; x++)
+    {
+        MobElement* mob = [[MobElement alloc]init];
+        
+    }
     
     
     //Fake Data at the moment.

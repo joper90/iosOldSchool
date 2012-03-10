@@ -36,6 +36,12 @@ typedef enum
     PINK
 }MOB_COLOUR;
 
+extern NSString *const RED_SPRITE_FILE;
+extern NSString *const YELLOW_SPRITE_FILE;
+extern NSString *const BLUE_SPRITE_FILE;
+extern NSString *const GREEN_SPRITE_FILE;
+extern NSString *const PINK_SPRITE_FILE;
+
 //Game constants used for tweaking.
 #define DRAG_CLICK_LENIENCY         20 //10 pixels for click/drag issues.
 #define MOB_ROW_COUNT               5  //5 rows of mobs at once
