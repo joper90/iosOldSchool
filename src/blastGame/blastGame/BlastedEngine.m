@@ -11,7 +11,7 @@
 
 @implementation BlastedEngine
 
-@synthesize currentScore, mobsArray, level, levelList, valid, startPositionMap, currentPlayingLevel;
+@synthesize currentScore, mobsArray, level, levelList, valid, startPositionMap, currentPlayingLevel,actualMobSprites;
 
 static BlastedEngine* blastedEngine = nil;
 
@@ -37,6 +37,7 @@ static BlastedEngine* blastedEngine = nil;
         
         self.mobsArray = [[NSMutableArray alloc]init];
         self.startPositionMap = [[NSMutableDictionary alloc]init];
+        self.actualMobSprites = [[NSMutableDictionary alloc]init];
     }
     return self;
 }
@@ -54,7 +55,6 @@ static BlastedEngine* blastedEngine = nil;
 -(BOOL)loadAndParseLevels
 {
     [[LevelLoader instance]loadAndParseLevelFile];
-    //[self loadLevel:1];
     return YES;
 }
 
@@ -93,13 +93,54 @@ static BlastedEngine* blastedEngine = nil;
     
     //Hopefully arrays keep the order, and need some more rubust defensive codign in here.
     currentPlayingLevel = [levelList objectForKey:[NSNumber numberWithInt:levelToLoad]];
+ 
+    //Now create all the mobs in an array.
+ 
+    CCLOG(@"Processing rows into Sprite elements...");
     
-    //Add the inital row to the mob list
-    for (int x = 0; x < MOB_ROW_COUNT; x++)
+    CCArray* rowData = currentPlayingLevel.rowData;
+    CCArray* patternData = currentPlayingLevel.patternData;
+    int rowCount = currentPlayingLevel.rowCount;
+    
+    for (int x = 0; x < rowCount; x++)
     {
-        MobElement* mob = [[MobElement alloc]init];
+        NSString* singleRow = [rowData objectAtIndex:x];
+        NSString* singlePattern = [patternData objectAtIndex:x];
         
+        CCLOG(@"Working on ROW : %i/%i -- %@", x, rowCount, singleRow);
+        
+        int currentSpriteTag = 0;
+        
+        for (int y = 0; y < MOB_ROW_COUNT; y++)
+        {
+            int singleRowNum = [[NSNumber numberWithUnsignedChar:[singleRow characterAtIndex:y]]intValue];
+            int singleCharPattern = [[NSNumber numberWithUnsignedChar:[singlePattern characterAtIndex:y]]intValue];
+            
+            MobElement* mobCreated = [[MobElement alloc]init];
+            
+            if (singleRowNum == 0)
+            {
+                mobCreated.isEmptySpace = YES;
+            }
+            else
+            {
+                mobCreated.isEmptySpace = NO; // a real object
+                NSString* mobType = [self convertNumberToSpriteType:singleRowNum];
+                CCSprite* sprite = [actualMobSprites objectForKey:mobType];
+                sprite.anchorPoint = ccp(0.5f, 0.5f);
+                sprite.tag = currentSpriteTag++;
+                [mobCreated addSprite:sprite];
+                mobCreated.mobType = [self getMobEnumFromSpriteNumber:singleRowNum];
+                
+                
+            }
+            
+            //Now shove into the actual array
+            //if (
+            
+        }
     }
+    
     
     
     //Fake Data at the moment.
@@ -127,6 +168,54 @@ static BlastedEngine* blastedEngine = nil;
 }
 
 //Sprite functionality
+
+-(NSString*) convertNumberToSpriteType:(int) spriteNumber
+{
+    //This is just horrid, but will work for the time..
+    switch (spriteNumber) {
+        case 1:return @"RED";
+        case 2:return @"YELLOW";
+        case 3:return @"BLUE";
+        case 4:return @"GREEN";
+        case 5:return @"PINK";
+        default:
+            return @"EMPTY";
+    }
+}
+
+-(MOB_COLOUR) insertMobEnumFromSpriteNumber:(int) spriteNumber
+{    
+   
+    //This is just horrid, but will work for the time..
+    switch (spriteNumber) {
+        case 1:return RED;
+        case 2:return YELLOW;
+        case 3:return BLUE;
+        case 4:return GREEN;
+        case 5:return PINK;
+        default:
+            return nil;
+    }
+}
+
+-(void)loadSprites
+{
+    //hardcoded for the moment.. need to change to a more dynamic solution
+    CCSprite* redMob = [CCSprite spriteWithFile:RED_SPRITE_FILE];
+    CCSprite* yellowMob = [CCSprite spriteWithFile:YELLOW_SPRITE_FILE];
+    CCSprite* blueMob = [CCSprite spriteWithFile:BLUE_SPRITE_FILE];
+    CCSprite* greenMob = [CCSprite spriteWithFile:GREEN_SPRITE_FILE];
+    CCSprite* pinkMob = [CCSprite spriteWithFile:PINK_SPRITE_FILE];
+    
+    [actualMobSprites setObject:redMob forKey:@"RED"];
+    [actualMobSprites setObject:yellowMob forKey:@"YELLOW"];
+    [actualMobSprites setObject:blueMob forKey:@"BLUE"];
+    [actualMobSprites setObject:greenMob forKey:@"GREEN"];
+    [actualMobSprites setObject:pinkMob forKey:@"PINK"];
+    
+    
+}
+
 -(MobElement*)getMobBySpriteTag:(int)tag
 {
     MobElement* mob = nil;

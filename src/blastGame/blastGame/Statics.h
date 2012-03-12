@@ -6,6 +6,27 @@
 //  Copyright (c) 2012 funkvoodoo.com. All rights reserved.
 //
 
+/*
+ 
+ Elements on the row data
+ 0 = empty
+ 1 = RED
+ 2 = YELLOW 
+ 3 = BLUE
+ 4 = GREEN
+ 5 = PINK
+ 
+ Elements on the pattern data
+ 
+ 0 = NULL, for empty row data
+ 1 = STRAIGHT
+ 2 = FAST_IN_OUT
+ 3 = SLOW_IN_OUT
+ 4 = BEZIER_ONE
+ 5 = ZOOM
+ 
+*/
+
 #import <Foundation/Foundation.h>
 
 //Elements Tags from 1 up.

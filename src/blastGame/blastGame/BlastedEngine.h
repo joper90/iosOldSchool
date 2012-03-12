@@ -25,7 +25,12 @@
     
     LevelElementData* currentPlayingLevel;
     
-    //Array the mobs, the actual mobs
+    //Dict of the sprites themselves to load up.
+    //The actual sprites we copy into the mobsArray.
+    NSMutableDictionary* actualMobSprites;
+    
+    //Array the mobs, the actual mobs on the screen, that move !.
+    //This will get completely populated on levelLoad.. 
     NSMutableArray* mobsArray;
     
     //Map of init start positions, based on screen sizes. // start with 5 rows.
@@ -36,6 +41,7 @@
     
 }
 
+@property (retain, readwrite) NSMutableDictionary* actualMobSprites;
 @property (assign, readwrite) LevelElementData* currentPlayingLevel;
 @property (retain, readwrite) NSMutableDictionary* startPositionMap;
 @property (assign, readwrite) BOOL valid;
@@ -56,6 +62,9 @@
 
 -(BOOL)loadAndParseLevels;
 -(void)setStartPositions;
+-(void)loadSprites;
+-(NSString*) convertNumberToSpriteType:(int) spriteNumber;
+-(MOB_COLOUR) getMobEnumFromSpriteNumber:(int) spriteNumber;
 
 //Intersection testing
 -(MobElement*)whichMobTouched:(CGPoint) touchPoint;

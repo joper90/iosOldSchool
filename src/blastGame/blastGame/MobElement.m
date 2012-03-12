@@ -9,7 +9,7 @@
 #import "MobElement.h"
 
 @implementation MobElement
-@synthesize mobType, spriteTag, initPos;
+@synthesize mobType, spriteTag, initPos, isEmptySpace, actionSequenceToRun;
 
 -(CCSprite*) getSprite
 {

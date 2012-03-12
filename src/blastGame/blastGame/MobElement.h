@@ -11,6 +11,9 @@
 
 @interface MobElement : NSObject
 {
+    //need to change this really.
+    BOOL isEmptySpace;
+    
     //The Sprite
     CCSprite* sprite;
     int spriteTag;
@@ -18,11 +21,16 @@
     //Type of mob
     MOB_COLOUR mobType;
     
+    //action to run when invoked
+    id actionSequenceToRun;
     
-    //TESTING TO BE REMOVED
+    
+    //initialStart point.
     CGPoint initPos;
 }
 
+@property (readwrite, assign) id actionSequenceToRun;
+@property (readwrite, assign) BOOL isEmptySpace;
 //@property (readwrite, assign) CCSprite* sprite;
 @property (readwrite, assign) MOB_COLOUR mobType;
 @property (readwrite, assign) int spriteTag;

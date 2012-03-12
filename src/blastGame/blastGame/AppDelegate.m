@@ -118,6 +118,7 @@
     //Init the BlastedEngine
     [[BlastedEngine instance]setStartPositions];
     [[BlastedEngine instance]loadAndParseLevels];
+    [[BlastedEngine instance]loadSprites];
 
     //Any quick Checks TO BE REMOVED..
         

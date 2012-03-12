@@ -19,7 +19,7 @@
         self.isTouchEnabled = YES;
         gameLive = NO;
         
-        [self renderInitalMobs];
+        //[self renderInitalMobs];
         
     }
 	return self;
