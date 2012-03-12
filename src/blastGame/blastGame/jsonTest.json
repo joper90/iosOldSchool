@@ -7,16 +7,16 @@
       "lineTime": "10",
       "rowData": [
         {
-          "row": "111",
-          "pattern": "222"
+          "row": "01023",
+          "pattern": "12345"
         },
         {
-          "row": "333",
-          "pattern": "444"
+          "row": "01144",
+          "pattern": "44444"
         },
         {
-          "row": "555",
-          "pattern": "666"
+          "row": "04433",
+          "pattern": "22331"
         }
       ]
     },

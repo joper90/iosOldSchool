@@ -9,7 +9,7 @@
 #import "LevelElementData.h"
 
 @implementation LevelElementData
-@synthesize levelId,levelType,baseSpeed,lineTime,rowData,rowCount,patternData;
+@synthesize levelId,levelType,baseSpeed,lineTime,rowData,waveCount,patternData;
 
 
 //Should callinitWithCCArraySize.
@@ -50,7 +50,7 @@
     CCLOG(@"Level id       :%d",levelId);
     CCLOG(@"Level Info     :%@",levelType);
     CCLOG(@"Base Speed     :%f",baseSpeed);
-    CCLOG(@"Row Count      :%d",[rowData count]);
+    CCLOG(@"Wave Count      :%d",[rowData count]);
     CCLOG(@"Patten Count   :%d",[patternData count]);
     for (NSString* row in rowData)
     {

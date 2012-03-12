@@ -23,7 +23,6 @@
     MobElement* mobTouched;
 }
 
-//-(void)renderInitalMobs;
 -(void)startAndMoveMobLine:(int) mobLinetoStart;
 -(void)mobFinished:(id) object;
 -(void)checkSpriteTouchedAction;

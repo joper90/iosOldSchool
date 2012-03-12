@@ -19,48 +19,27 @@
         self.isTouchEnabled = YES;
         gameLive = NO;
         
-        //[self renderInitalMobs];
+        //Lets load level One up
+        
+        [[BlastedEngine instance]loadLevel:1];
         
     }
 	return self;
 }
 
-/*
--(void)renderInitalMobs
+-(void)startAndMoveMobLine:(int) mobLinetoStart
 {
-    //Display the sprites/mobs
-    //Get teh array
-    NSMutableArray* mobs = [BlastedEngine instance].mobsArray;
-    NSMutableDictionary* startRowLocations =[BlastedEngine instance].startPositionMap;
     
-    
-        
-    tagCount = 0; 
-    for (id m in mobs)
-    {
-        CCLOG(@"Adding sprite...");
-        MobElement* mElement = (MobElement*)m;
-        CCSprite* s = [mElement getSprite];
-        
-        [self addChild:s];
-        
-        id seq = [[FlightPaths instance]getSequence: BEZIER_ONE movementModifer:0.0f withTag:s.tag currentPos:s.position];
-        
-        //Start moving 
-        [s runAction:seq];
-    }
-
 }
- */
 
- -(void)mobFinished:(id)sender
+
+//MobHit (the planet) - game over? or life lost..
+-(void)mobFinished:(id)sender
 {
     NSNumber* ttt = sender;
     int x = [ttt integerValue];
     CCLOG(@"mobMoveCompleted (in mainLayer): called with tag : %d", x);
 }
-
-//MobHit (the planet) - game over? or life lost..
 
 
 -(void)update:(ccTime) delta

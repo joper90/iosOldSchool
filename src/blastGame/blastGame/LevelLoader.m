@@ -69,7 +69,7 @@ static LevelLoader* levelloader = nil;
         CCLOG(@"Line Time : %@", lineTime);
         
         NSArray* rowData = [level objectForKey:@"rowData"];
-        CCLOG(@"Row Count : %d", [rowData count]);
+        CCLOG(@"Wave Count : %d", [rowData count]);
                 
         CCArray* row = [[CCArray alloc]init];
         CCArray* pattern = [[CCArray alloc]init];

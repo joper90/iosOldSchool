@@ -17,7 +17,10 @@
 	
 	MainLayer* mainLayer = [MainLayer node];
     [scene addChild:mainLayer z:0 tag:T_MAIN_LAYER];
-	return scene;
+    
+    //Any start game stuff here
+    
+    return scene;
 }        
 
 @end

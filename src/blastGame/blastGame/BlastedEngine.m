@@ -85,6 +85,13 @@ static BlastedEngine* blastedEngine = nil;
     
 }
 
+-(CGPoint) getStartPositionByRowCount:(int) rowCount
+{
+    NSNumber* number = [NSNumber numberWithInt:rowCount];
+    CGPoint ret = [[startPositionMap objectForKey:number]CGPointValue];
+    return ret;
+}
+
 
 //Load a level from the LevelsLoader populated array
 -(BOOL)loadLevel:(int)levelToLoad
@@ -100,14 +107,14 @@ static BlastedEngine* blastedEngine = nil;
     
     CCArray* rowData = currentPlayingLevel.rowData;
     CCArray* patternData = currentPlayingLevel.patternData;
-    int rowCount = currentPlayingLevel.rowCount;
+    int waveCount = currentPlayingLevel.waveCount;
     
-    for (int x = 0; x < rowCount; x++)
+    for (int x = 0; x < waveCount; x++)
     {
         NSString* singleRow = [rowData objectAtIndex:x];
         NSString* singlePattern = [patternData objectAtIndex:x];
         
-        CCLOG(@"Working on ROW : %i/%i -- %@", x, rowCount, singleRow);
+        CCLOG(@"Working on ROW : %i/%i -- %@", x, waveCount, singleRow);
         
         int currentSpriteTag = 0;
         
@@ -128,46 +135,53 @@ static BlastedEngine* blastedEngine = nil;
                 NSString* mobType = [self convertNumberToSpriteType:singleRowNum];
                 CCSprite* sprite = [actualMobSprites objectForKey:mobType];
                 sprite.anchorPoint = ccp(0.5f, 0.5f);
-                sprite.tag = currentSpriteTag++;
-                [mobCreated addSprite:sprite];
+                sprite.tag = currentSpriteTag;
+                
+                //Insert the start posistion 
+                CGPoint mobStartLocation = [self getStartPositionByRowCount:currentSpriteTag];
+                sprite.position = mobStartLocation;
+                mobCreated.initPos = mobStartLocation;
+                
+                [mobCreated addSprite:sprite]; //Add the sprite here...
                 mobCreated.mobType = [self getMobEnumFromSpriteNumber:singleRowNum];
                 
-                
+                //Get the required pattern
+                mobCreated.actionSequenceToRun = [self getPatternFromInt:singleCharPattern movementModifer:0.0f withTag:currentSpriteTag currentPos:mobStartLocation];
+             
+                                                  
+                currentSpriteTag++;
             }
             
-            //Now shove into the actual array
-            //if (
+           
+            //Put into the main array.
+            
+            [mobsArray addObject:mobCreated];
             
         }
+        
+        CCLOG(@"All elements added to the mobsArray, in order?..");
     }
-    
-    
-    
-    //Fake Data at the moment.
-    /*
-    int posUp = 50;
-    
-     for (int x = 0; x < 5 ; x ++)
-    {
-        MobElement* mob = [[MobElement alloc]init];
-        CCSprite* sprite = [CCSprite spriteWithFile:@"Icon-Small.png"];
-        sprite.anchorPoint = ccp(0.5f, 0.5f);
-        sprite.position = ccp(600,posUp);
-        sprite.tag = x;
-        
-        [mob addSprite:sprite];
-        
-        [mobsArray addObject:mob];
-        
-        posUp += 50;
-    }
-     */
-    
     
     return allValid;
 }
 
 //Sprite functionality
+
+//
+-(id) getPatternFromInt:(int) patternNumber movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos 
+{
+    switch (patternNumber){
+        case 0: return nil;
+        case 1: return [[FlightPaths instance]getSequence:STRAIGHT movementModifer:movementModifier withTag:tag currentPos:currentPos];
+        case 2: return [[FlightPaths instance]getSequence:FAST_IN_OUT movementModifer:movementModifier withTag:tag currentPos:currentPos];
+        case 3: return [[FlightPaths instance]getSequence:SLOW_IN_OUT movementModifer:movementModifier withTag:tag currentPos:currentPos];
+        case 4: return [[FlightPaths instance]getSequence:BEZIER_ONE movementModifer:movementModifier withTag:tag currentPos:currentPos];
+        case 5: return [[FlightPaths instance]getSequence:ZOOM movementModifer:movementModifier withTag:tag currentPos:currentPos];
+        default:
+            return nil;
+    }
+}
+
 
 -(NSString*) convertNumberToSpriteType:(int) spriteNumber
 {
@@ -194,7 +208,7 @@ static BlastedEngine* blastedEngine = nil;
         case 4:return GREEN;
         case 5:return PINK;
         default:
-            return nil;
+            return RED; //crap to clean
     }
 }
 
