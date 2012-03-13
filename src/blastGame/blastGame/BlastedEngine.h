@@ -67,7 +67,9 @@
 -(void)setStartPositions;
 -(void)loadSprites;
 -(NSString*) convertNumberToSpriteType:(int) spriteNumber;
--(MOB_COLOUR) getMobEnumFromSpriteNumber:(int) spriteNumber;
+-(MOB_COLOUR) insertMobEnumFromSpriteNumber:(int) spriteNumber;
+
+-(NSArray*)getMobsForRenderRangeFrom:(int) startRange to:(int)endRange;
 
 //Intersection testing
 -(MobElement*)whichMobTouched:(CGPoint) touchPoint;

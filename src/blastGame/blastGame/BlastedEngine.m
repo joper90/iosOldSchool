@@ -38,6 +38,7 @@ static BlastedEngine* blastedEngine = nil;
         self.mobsArray = [[NSMutableArray alloc]init];
         self.startPositionMap = [[NSMutableDictionary alloc]init];
         self.actualMobSprites = [[NSMutableDictionary alloc]init];
+        self.levelList = [[NSMutableDictionary alloc]init];
     }
     return self;
 }
@@ -105,8 +106,8 @@ static BlastedEngine* blastedEngine = nil;
  
     CCLOG(@"Processing rows into Sprite elements...");
     
-    CCArray* rowData = currentPlayingLevel.rowData;
-    CCArray* patternData = currentPlayingLevel.patternData;
+    NSMutableArray* rowData = currentPlayingLevel.rowData;
+    NSMutableArray* patternData = currentPlayingLevel.patternData;
     int waveCount = currentPlayingLevel.waveCount;
     
     for (int x = 0; x < waveCount; x++)
@@ -114,14 +115,14 @@ static BlastedEngine* blastedEngine = nil;
         NSString* singleRow = [rowData objectAtIndex:x];
         NSString* singlePattern = [patternData objectAtIndex:x];
         
-        CCLOG(@"Working on ROW : %i/%i -- %@", x, waveCount, singleRow);
+        CCLOG(@"Working on ROW : %i/%i -- %@ | %@", x+1, waveCount, singleRow, singlePattern);
         
         int currentSpriteTag = 0;
         
         for (int y = 0; y < MOB_ROW_COUNT; y++)
         {
-            int singleRowNum = [[NSNumber numberWithUnsignedChar:[singleRow characterAtIndex:y]]intValue];
-            int singleCharPattern = [[NSNumber numberWithUnsignedChar:[singlePattern characterAtIndex:y]]intValue];
+            int singleRowNum = [[NSNumber numberWithUnsignedChar:[singleRow characterAtIndex:y]]intValue] - 48;// as its a char need to revert to a real num 
+            int singleCharPattern = [[NSNumber numberWithUnsignedChar:[singlePattern characterAtIndex:y]]intValue] -48;// down the ascII table.. 
             
             MobElement* mobCreated = [[MobElement alloc]init];
             
@@ -143,12 +144,12 @@ static BlastedEngine* blastedEngine = nil;
                 mobCreated.initPos = mobStartLocation;
                 
                 [mobCreated addSprite:sprite]; //Add the sprite here...
-                mobCreated.mobType = [self getMobEnumFromSpriteNumber:singleRowNum];
+                mobCreated.mobType = [self insertMobEnumFromSpriteNumber:singleRowNum];
                 
                 //Get the required pattern
                 mobCreated.actionSequenceToRun = [self getPatternFromInt:singleCharPattern movementModifer:0.0f withTag:currentSpriteTag currentPos:mobStartLocation];
              
-                                                  
+                                            
                 currentSpriteTag++;
             }
             
@@ -161,7 +162,7 @@ static BlastedEngine* blastedEngine = nil;
         
         CCLOG(@"All elements added to the mobsArray, in order?..");
     }
-    
+    CCLOG(@"TOTAL MobARRAY : %d",[mobsArray count]);
     return allValid;
 }
 
@@ -273,6 +274,21 @@ static BlastedEngine* blastedEngine = nil;
     return mob;
 }
 
+-(NSArray*)getMobsForRenderRangeFrom:(int) startRange to:(int)endRange;
+{
+    NSMutableArray* mArray = [[NSMutableArray alloc]init];
+    int maxSize = [mobsArray count];
+    
+    if (endRange > maxSize) return nil;
+    
+    for (int cPos = startRange; cPos < endRange; cPos ++)
+    {
+        [mArray addObject:[mobsArray objectAtIndex:cPos]];
+    }
+    NSArray* retArray = [[NSArray alloc]initWithArray:mArray];
+    return retArray;
+}
+
 //Level Loading and setting
 -(void)addLevelToLevelList:(LevelElementData *)levelDataElement
 {
@@ -280,12 +296,15 @@ static BlastedEngine* blastedEngine = nil;
     //switched to a dict now for quick level lookup when loadign a new level.
     NSNumber* levelId = [NSNumber numberWithInt:levelDataElement.levelId]; 
     [levelList setObject:levelDataElement forKey:levelId];
+    CCLOG(@"LevelList Count : %d", [levelList count]);
 }
 
 -(void)dealloc
 {
     [mobsArray release];
     [startPositionMap release];
+    [actualMobSprites release];
+    [levelList release];
     [super dealloc];
 }
 

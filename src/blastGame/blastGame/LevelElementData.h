@@ -16,8 +16,8 @@
     float  baseSpeed;
     float  lineTime;
     int waveCount;
-    CCArray* rowData;
-    CCArray* patternData;
+    NSMutableArray* rowData;
+    NSMutableArray* patternData;
 }
 
 @property int levelId;
@@ -25,11 +25,11 @@
 @property (readwrite, assign) float baseSpeed;
 @property (readwrite, assign) float lineTime;
 @property int waveCount;
-@property (readwrite, retain) CCArray* rowData;
-@property (readwrite, retain) CCArray* patternData;
+@property (readwrite, retain) NSMutableArray* rowData;
+@property (readwrite, retain) NSMutableArray* patternData;
 
--(id)initWithRowPatternCCArrays:(CCArray*) allRows andAllPattern:(CCArray*) allPatterns;
--(void)addAllRowsPatterns:(CCArray*) allRows andAllPatterns:(CCArray*) allPatterns;
+-(id)initWithRowPatternCCArrays:(NSMutableArray*) allRows andAllPattern:(NSMutableArray*) allPatterns;
+-(void)addAllRowsPatterns:(NSMutableArray*) allRows andAllPatterns:(NSMutableArray*) allPatterns;
 -(void)dumpLevelData;
 
 

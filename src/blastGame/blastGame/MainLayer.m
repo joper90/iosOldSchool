@@ -23,12 +23,20 @@
         
         [[BlastedEngine instance]loadLevel:1];
         
+        [self startAndMoveMobLine:0];
     }
 	return self;
 }
 
 -(void)startAndMoveMobLine:(int) mobLinetoStart
 {
+    
+    NSArray* lineMobs = [[BlastedEngine instance]getMobsForRenderRangeFrom:mobLinetoStart to:mobLinetoStart +4]; //5 lines 0 - 4
+    CCLOG(@"StartAndMove recived : %d", [lineMobs count]);   
+    
+    //MobElements
+    
+    
     
 }
 

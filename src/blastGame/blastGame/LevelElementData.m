@@ -17,31 +17,36 @@
 {
 	if (self=[super init])
     {
-        rowData = [[CCArray alloc]init];
-        patternData = [[CCArray alloc]init];
-        
+        rowData = [[NSMutableArray alloc]init];
+        patternData = [[NSMutableArray alloc]init];
 	}
 	return self;
 }
 
--(id)initWithRowPatternCCArrays:(CCArray *)allRows andAllPattern:(CCArray *)allPatterns
+-(id)initWithRowPatternCCArrays:(NSMutableArray *)allRows andAllPattern:(NSMutableArray*)allPatterns
 {
+
+    
     if (self=[super init])
     {
-        [rowData addObjectsFromArray:allRows];
-        [rowData retain];
-        [patternData addObjectsFromArray:allPatterns];
-        [patternData retain];
+        rowData = [allRows copy];
+        patternData = [allPatterns copy]; 
     }
+    
+    
+    //REMOVE
+    NSString* test = [rowData objectAtIndex:0];
+    CCLOG(@"%@",test);
+    
     return self;
     
 }
 
--(void)addAllRowsPatterns:(CCArray *)allRows andAllPatterns:(CCArray *)allPatterns
+-(void)addAllRowsPatterns:(NSMutableArray *)allRows andAllPatterns:(NSMutableArray *)allPatterns
 {
-    [rowData addObjectsFromArray:allRows];
+    rowData = [allRows copy];
     [rowData retain];
-    [patternData addObjectsFromArray:allPatterns];
+    patternData = [allPatterns copy]; 
     [patternData retain];
 }
 

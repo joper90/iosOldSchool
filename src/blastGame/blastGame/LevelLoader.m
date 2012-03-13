@@ -71,26 +71,27 @@ static LevelLoader* levelloader = nil;
         NSArray* rowData = [level objectForKey:@"rowData"];
         CCLOG(@"Wave Count : %d", [rowData count]);
                 
-        CCArray* row = [[CCArray alloc]init];
-        CCArray* pattern = [[CCArray alloc]init];
+        NSMutableArray* row = [[NSMutableArray alloc]init];
+        NSMutableArray* pattern = [[NSMutableArray alloc]init];
         
         for (id singleRow in rowData)
         {
             NSString* rowLine =  [singleRow objectForKey:@"row"];
             NSString* patternLine = [singleRow objectForKey:@"pattern"];
-            
+           
            [row addObject:rowLine];
            [pattern addObject:patternLine];
-            
-           CCLOG(@"row: %@   -   pattern:%@", rowLine, patternLine); 
+                    
+           CCLOG(@"ADDED to elementData : row: %@   -   pattern:%@", rowLine, patternLine); 
         }
-        
+                
         LevelElementData* elementData = [[LevelElementData alloc]initWithRowPatternCCArrays:row andAllPattern:pattern ];
         
         elementData.levelId = levelId;
         elementData.levelType = levelInfo;
         elementData.baseSpeed = [baseSpeed floatValue];
         elementData.lineTime = [lineTime floatValue];
+        elementData.waveCount = [rowData count];
         
         
         [[BlastedEngine instance]addLevelToLevelList:elementData];
