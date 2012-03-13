@@ -29,6 +29,7 @@
     CGPoint initPos;
 }
 
+@property (readonly) CCSprite* sprite;
 @property (readwrite, assign) id actionSequenceToRun;
 @property (readwrite, assign) BOOL isEmptySpace;
 //@property (readwrite, assign) CCSprite* sprite;

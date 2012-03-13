@@ -31,11 +31,23 @@
 -(void)startAndMoveMobLine:(int) mobLinetoStart
 {
     
-    NSArray* lineMobs = [[BlastedEngine instance]getMobsForRenderRangeFrom:mobLinetoStart to:mobLinetoStart +4]; //5 lines 0 - 4
+    NSArray* lineMobs = [[BlastedEngine instance]getMobsForRenderRangeFrom:mobLinetoStart to:mobLinetoStart +5]; //5 lines 0 - 4
     CCLOG(@"StartAndMove recived : %d", [lineMobs count]);   
     
     //MobElements
-    
+    for (MobElement* m in lineMobs)
+    {
+        if (m.isEmptySpace == NO) // Not a request placement.
+        {
+            //Ok we have a mob.. so place and run?
+            CCSprite* mob = m.sprite;
+            CCAction* action = m.actionSequenceToRun;
+            
+            [self addChild:mob];
+            [mob runAction:action];
+        }
+            
+    }
     
     
 }
