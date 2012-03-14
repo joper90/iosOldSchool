@@ -13,8 +13,8 @@
 {
     int levelId;                //Level id, i.e the number
     NSString* levelType;        //LevelType - normal, or boss (the name of) to look up in a table.. THis should be an enum really.
-    float  baseSpeed;
-    float  lineTime;
+    float  baseSpeed;           //Speed at which the mobs move across the screen
+    float  lineTime;            //Speed between each line (wave) appearing.
     int waveCount;
     NSMutableArray* rowData;
     NSMutableArray* patternData;

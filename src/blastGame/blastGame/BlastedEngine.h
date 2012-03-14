@@ -57,7 +57,11 @@
 +(BlastedEngine*) instance;
 
 -(BOOL)isValid;
+
 -(BOOL)loadLevel:(int) levelToLoad;
+-(int)getWaveCountByCurrentLevel;
+-(float)getCurrentTimeBetweenWaves;
+
 -(MobElement*)getMobBySpriteTag:(int) tag;
 -(void)addLevelToLevelList:(LevelElementData*) levelDataElement;
 -(id) getPatternFromInt:(int) patternNumber movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
@@ -73,6 +77,6 @@
 
 //Intersection testing
 -(MobElement*)whichMobTouched:(CGPoint) touchPoint;
-//TO REMOVE
+//REMOVE ?>?
 -(CGPoint)getInitPosBySpriteTag:(int) tag;
 @end

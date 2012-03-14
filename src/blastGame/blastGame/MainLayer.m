@@ -21,19 +21,27 @@
         
         //Lets load level One up
         
-        [[BlastedEngine instance]loadLevel:1];
+        [[BlastedEngine instance]loadLevel:1];  //load the level
+        maxWave = [[BlastedEngine instance]getWaveCountByCurrentLevel]; //set the waves on this level.
         
-        [self startAndMoveMobLine:0];
+        [self startAndMoveMobWave:0];
+        
+        //Now register the schedure for when the time (betweenRowTime has elapsed);
+        [self schedule:@selector(scheduleNewWave:) interval:[[BlastedEngine instance]getCurrentTimeBetweenWaves]];
     }
 	return self;
 }
 
--(void)startAndMoveMobLine:(int) mobLinetoStart
+-(void)startAndMoveMobWave:(int) mobWavetoStart
 {
     
-    NSArray* lineMobs = [[BlastedEngine instance]getMobsForRenderRangeFrom:mobLinetoStart to:mobLinetoStart +5]; //5 lines 0 - 4
+    int mobElementCount = mobWavetoStart * 5;
+    
+    CCLOG(@"StartAndMove grabbing %d to %d", mobElementCount, mobElementCount + 5);
+    NSArray* lineMobs = [[BlastedEngine instance]getMobsForRenderRangeFrom:mobElementCount to:mobElementCount +5]; //5 lines 0 - 4
     CCLOG(@"StartAndMove recived : %d", [lineMobs count]);   
     
+    currentWave++; //0 wave has now run.
     //MobElements
     for (MobElement* m in lineMobs)
     {
@@ -46,10 +54,8 @@
             [self addChild:mob];
             [mob runAction:action];
         }
-            
+        
     }
-    
-    
 }
 
 
@@ -61,8 +67,22 @@
     CCLOG(@"mobMoveCompleted (in mainLayer): called with tag : %d", x);
 }
 
+-(void)scheduleNewWave:(ccTime)delta
+{
+    CCLOG(@"NEW WAVE CALLED... %d/%d", currentWave,maxWave);
 
--(void)update:(ccTime) delta
+    if (currentWave > maxWave)
+    {
+        CCLOG(@"All waves complete ---> canceling selector");
+        [self unschedule:_cmd];
+    }
+    else
+    {
+        [self startAndMoveMobWave:currentWave];
+    }
+}
+
+-(void)levelFinished
 {
     
 }
@@ -122,8 +142,9 @@
     
     if (mobTouched != nil)
     {
-        CCLOG(@"Sprite located");
+
         CCSprite* mobSprite = [mobTouched getSprite];
+        CCLOG(@"Sprite located : %d", mobSprite.tag);
         [mobSprite stopAllActions];   
     }
     else

@@ -4,19 +4,19 @@
       "levelId": "1",
       "levelInfo": "normal",
       "baseSpeed": "10",
-      "lineTime": "10",
+      "lineTime": "3",
       "rowData": [
         {
-          "row": "01023",
-          "pattern": "12345"
+          "row": "11111",
+          "pattern": "11111"
         },
         {
-          "row": "01144",
-          "pattern": "44444"
+          "row": "11111",
+          "pattern": "11111"
         },
         {
-          "row": "04433",
-          "pattern": "22331"
+          "row": "11111",
+          "pattern": "11111"
         }
       ]
     },

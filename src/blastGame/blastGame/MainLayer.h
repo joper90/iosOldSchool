@@ -18,14 +18,21 @@
     
     BOOL gameLive; // Is the game Live, or jsut on countdown etc.
     
+    int currentWave;
+    int maxWave;
+    float timeBetweenWaves;
+    
     CGPoint initialTouch;
     CGPoint endTouch;
     MobElement* mobTouched;
 }
 
--(void)startAndMoveMobLine:(int) mobLinetoStart;
+-(void)startAndMoveMobWave:(int) mobWavetoStart;
 -(void)mobFinished:(id) object;
 -(void)checkSpriteTouchedAction;
 -(void)laserAction;
+
+-(void)scheduleNewWave:(ccTime)delta;
+-(void)levelFinished;
 
 @end

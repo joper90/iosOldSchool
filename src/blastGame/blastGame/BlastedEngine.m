@@ -52,6 +52,16 @@ static BlastedEngine* blastedEngine = nil;
 // Level utils.
 //
 
+-(int)getWaveCountByCurrentLevel
+{
+    return currentPlayingLevel.waveCount;
+}
+
+-(float)getCurrentTimeBetweenWaves
+{
+    return currentPlayingLevel.lineTime;
+}
+
 //Call to parse and load the levels, return BOOL 
 -(BOOL)loadAndParseLevels
 {
@@ -109,15 +119,14 @@ static BlastedEngine* blastedEngine = nil;
     NSMutableArray* rowData = currentPlayingLevel.rowData;
     NSMutableArray* patternData = currentPlayingLevel.patternData;
     int waveCount = currentPlayingLevel.waveCount;
+    int currentSpriteTag = 0;
     
     for (int x = 0; x < waveCount; x++)
     {
         NSString* singleRow = [rowData objectAtIndex:x];
         NSString* singlePattern = [patternData objectAtIndex:x];
         
-        CCLOG(@"Working on ROW : %i/%i -- %@ | %@", x+1, waveCount, singleRow, singlePattern);
-        
-        int currentSpriteTag = 0;
+        CCLOG(@"Working on ROW : %i/%i -- %@ | %@ -- TAG: %d", x+1, waveCount, singleRow, singlePattern, currentSpriteTag);
         
         for (int y = 0; y < MOB_ROW_COUNT; y++)
         {
@@ -134,12 +143,14 @@ static BlastedEngine* blastedEngine = nil;
             {
                 mobCreated.isEmptySpace = NO; // a real object
                 NSString* mobType = [self convertNumberToSpriteType:singleRowNum];
-                CCSprite* sprite = [actualMobSprites objectForKey:mobType];
+                CCSprite* copyOfSprite = [actualMobSprites objectForKey:mobType];
+                CCSprite* sprite = [[CCSprite alloc]initWithTexture:copyOfSprite.texture];
+                
                 sprite.anchorPoint = ccp(0.5f, 0.5f);
                 sprite.tag = currentSpriteTag;
                 
                 //Insert the start posistion 
-                CGPoint mobStartLocation = [self getStartPositionByRowCount:currentSpriteTag];
+                CGPoint mobStartLocation = [self getStartPositionByRowCount:y];
                 sprite.position = mobStartLocation;
                 mobCreated.initPos = mobStartLocation;
                 
@@ -147,20 +158,19 @@ static BlastedEngine* blastedEngine = nil;
                 mobCreated.mobType = [self insertMobEnumFromSpriteNumber:singleRowNum];
                 
                 //Get the required pattern
-                mobCreated.actionSequenceToRun = [self getPatternFromInt:singleCharPattern movementModifer:0.0f withTag:currentSpriteTag currentPos:mobStartLocation];
-             
-                                            
+                CCSequence* aSeq = [self getPatternFromInt:singleCharPattern movementModifer:0.0f withTag:currentSpriteTag currentPos:mobStartLocation];
+                
+                mobCreated.actionSequenceToRun = [aSeq copy];                                                            
                 currentSpriteTag++;
             }
             
            
             //Put into the main array.
-            
             [mobsArray addObject:mobCreated];
             
         }
         
-        CCLOG(@"All elements added to the mobsArray, in order?..");
+        CCLOG(@"All elements added to the mobsArray, in order..");
     }
     CCLOG(@"TOTAL MobARRAY : %d",[mobsArray count]);
     return allValid;
