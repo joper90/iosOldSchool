@@ -21,7 +21,7 @@
         
         //Lets load level One up
         
-        [[BlastedEngine instance]loadLevel:1];  //load the level
+        [[BlastedEngine instance]loadLevel:1 withLayer:self];  //load the level
         maxWave = [[BlastedEngine instance]getWaveCountByCurrentLevel]; //set the waves on this level.
         
         [self startAndMoveMobWave:0];
@@ -65,6 +65,7 @@
     NSNumber* ttt = sender;
     int x = [ttt integerValue];
     CCLOG(@"mobMoveCompleted (in mainLayer): called with tag : %d", x);
+    [self removeChildByTag:x cleanup:YES];
 }
 
 -(void)scheduleNewWave:(ccTime)delta
@@ -145,7 +146,8 @@
 
         CCSprite* mobSprite = [mobTouched getSprite];
         CCLOG(@"Sprite located : %d", mobSprite.tag);
-        [mobSprite stopAllActions];   
+        [mobSprite stopAllActions];
+
     }
     else
     {
@@ -153,6 +155,15 @@
     }
     
     
+}
+
+-(void) mobMoveCompleted:(id)sender
+{
+    NSNumber* ttt = sender;
+    int x = [ttt integerValue];
+    CCLOG(@"mobMoveCompleted (MainLayer): called with tag : %d", x);
+    [self removeChildByTag:x cleanup:YES];
+
 }
 
 -(void)laserAction

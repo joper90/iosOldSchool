@@ -35,4 +35,6 @@
 -(void)scheduleNewWave:(ccTime)delta;
 -(void)levelFinished;
 
+-(void) mobMoveCompleted:(id)sender;
+
 @end

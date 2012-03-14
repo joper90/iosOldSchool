@@ -1,5 +1,5 @@
 //
-//  LevelLoader.h
+//  LevelJsonParser.h
 //  blastGame
 //
 //  Created by AppleUser on 05/03/2012.
@@ -12,11 +12,11 @@
 #import "LevelElementData.h"
 #import "BlastedEngine.h"
 
-@interface LevelLoader : NSObject
+@interface LevelJsonParser : NSObject
 {
     NSString* jsonFile;
 }
-+(LevelLoader*) instance;
++(LevelJsonParser*) instance;
 -(BOOL)loadAndParseLevelFile;
 -(void)processMap:(NSDictionary*) dict;
 @end

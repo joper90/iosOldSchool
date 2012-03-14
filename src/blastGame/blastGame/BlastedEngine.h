@@ -10,7 +10,7 @@
 #import "CoreImports.h"
 #import "MobElement.h"
 #import "LevelElementData.h"
-#import "LevelLoader.h"
+#import "LevelJsonParser.h"
 #import "FlightPaths.h"
 
 @interface BlastedEngine : NSObject
@@ -58,13 +58,13 @@
 
 -(BOOL)isValid;
 
--(BOOL)loadLevel:(int) levelToLoad;
+-(BOOL)loadLevel:(int) levelToLoad withLayer:(CCLayer*) layer;
 -(int)getWaveCountByCurrentLevel;
 -(float)getCurrentTimeBetweenWaves;
 
 -(MobElement*)getMobBySpriteTag:(int) tag;
 -(void)addLevelToLevelList:(LevelElementData*) levelDataElement;
--(id) getPatternFromInt:(int) patternNumber movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
+-(id) getPatternFromInt:(int) patternNumber movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer*) layer;
 -(CGPoint) getStartPositionByRowCount:(int) rowCount;
 
 -(BOOL)loadAndParseLevels;

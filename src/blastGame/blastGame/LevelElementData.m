@@ -32,12 +32,6 @@
         rowData = [allRows copy];
         patternData = [allPatterns copy]; 
     }
-    
-    
-    //REMOVE
-    NSString* test = [rowData objectAtIndex:0];
-    CCLOG(@"%@",test);
-    
     return self;
     
 }

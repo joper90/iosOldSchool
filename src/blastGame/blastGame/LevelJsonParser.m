@@ -1,26 +1,26 @@
 //
-//  LevelLoader.m
+//  LevelJsonParser.m
 //  blastGame
 //
 //  Created by AppleUser on 05/03/2012.
 //  Copyright (c) 2012 funkvoodoo.com. All rights reserved.
 //
 
-#import "LevelLoader.h"
+#import "LevelJsonParser.h"
 
-@implementation LevelLoader
+@implementation LevelJsonParser
 
 
 //Singleton
-static LevelLoader* levelloader = nil;
+static LevelJsonParser* levelJsonParser = nil;
 
-+(LevelLoader*) instance
++(LevelJsonParser*) instance
 {
-    if (levelloader == nil)
+    if (levelJsonParser == nil)
     {
-        levelloader = [[LevelLoader alloc]init];
+        levelJsonParser = [[LevelJsonParser alloc]init];
     }
-    return levelloader;
+    return levelJsonParser;
 }
 
 -(id)init
@@ -93,9 +93,7 @@ static LevelLoader* levelloader = nil;
         elementData.lineTime = [lineTime floatValue];
         elementData.waveCount = [rowData count];
         
-        
         [[BlastedEngine instance]addLevelToLevelList:elementData];
-        
     }
 }
 

@@ -24,7 +24,7 @@
 	HelloWorldLayer *layer = [HelloWorldLayer node];
 	
 	// add layer as a child to scene
-	[scene addChild: layer];
+	[scene addChild: layer z:1 tag:1];
 	
 	// return the scene
 	return scene;
@@ -57,12 +57,20 @@
 		// add the label as a child to this Layer
 		[self addChild: sprite];
         
-        [sprite runAction:[[FlightPaths instance]getSequence:callbackComplete selectedPattern:ZOOM movementModifer:0.0f withTag:sprite.tag currentPos:sprite.position ]];
+        [sprite runAction:[[FlightPaths instance]getSequence:self selectedPattern:ZOOM movementModifer:0.0f withTag:sprite.tag currentPos:sprite.position ]];
+        
+       
 	}
 	return self;
 }
 
-
+-(void) callme:(id) sender;
+{
+    CCLOG(@"CALLBACK WORKED...");
+    //CCSprite* sp = (CCSprite*)[layer getChildByTag:3];
+    [self removeChildByTag:3 cleanup:YES];
+        
+}
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc

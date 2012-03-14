@@ -25,7 +25,7 @@ static FlightPaths* flightPaths = nil;
     return flightPaths;
 }
 
--(CCSequence*)getSequence:(CallBackComplete *)callbackFunction selectedPattern:(FlightPattern)flightPattern movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos
+-(CCSequence*)getSequence:(CCLayer *)callbackFunction selectedPattern:(FlightPattern)flightPattern movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos
 {
     CCLOG(@"Calling with tag %d",tag);
     CCSequence* seq = nil;
@@ -61,7 +61,7 @@ static FlightPaths* flightPaths = nil;
 //
 //
 //
--(id)straightSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos
+-(id)straightSeq:(CCLayer*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos
 {
     CCMoveTo* move1 = [CCMoveTo actionWithDuration:2 position:ccp(10,currentPos.y)];
     CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:callbackFunction selector:@selector(callme:) object:(id)[NSNumber numberWithInt:tag]];
@@ -71,7 +71,7 @@ static FlightPaths* flightPaths = nil;
 
 }
 
--(id)fastinoutSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos
+-(id)fastinoutSeq:(CCLayer*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos
 {
     CCMoveTo* move1 = [CCMoveTo actionWithDuration:2 position:ccp(10,currentPos.y)];
     CCEaseIn* easeIn = [CCEaseIn actionWithAction:move1 rate:2.0f];
@@ -80,7 +80,7 @@ static FlightPaths* flightPaths = nil;
     return seq;    
 }
 
--(id)slowinoutSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos
+-(id)slowinoutSeq:(CCLayer*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos
 {
     CCMoveTo* move1 = [CCMoveTo actionWithDuration:2 position:ccp(10,currentPos.y)];
     CCEaseOut* easeOut = [CCEaseOut actionWithAction:move1 rate:2.0f];
@@ -89,7 +89,7 @@ static FlightPaths* flightPaths = nil;
     return seq;    
 }
 
--(id)bezierOneSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos; 
+-(id)bezierOneSeq:(CCLayer*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos; 
 {
     ccBezierConfig bezier;
 	bezier.controlPoint_1 = ccp(currentPos.x-50, currentPos.y+150);
@@ -102,7 +102,7 @@ static FlightPaths* flightPaths = nil;
     return seq;  
 }
 
--(id)zoomSeq:(CallBackComplete*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
+-(id)zoomSeq:(CCLayer*) callbackFunction movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
 {
     CCMoveTo* move1 = [CCMoveTo actionWithDuration:2 position:ccp(10,currentPos.y)];
     CCScaleTo* scale = [CCScaleTo actionWithDuration:1 scale:2.5f];

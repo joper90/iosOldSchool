@@ -7,7 +7,7 @@
 //
 
 #import "cocos2d.h"
-
+#import "MainScene.h"
 
 typedef enum{
 STRAIGHT = 0,
@@ -25,16 +25,14 @@ ZOOM
 
 +(FlightPaths*) instance;
 
--(id) getSequence:(FlightPattern)flightPattern movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
+-(id) getSequence:(FlightPattern)flightPattern movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer*) layer;
 
 //List of sequeneces.
 
--(id) straightSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
--(id) fastinoutSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
--(id) slowinoutSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
--(id) bezierOneSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;  
--(id) zoomSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
-
--(void) mobMoveCompleted:(id)sender;
+-(id) straightSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer*) layer;
+-(id) fastinoutSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer*) layer;
+-(id) slowinoutSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer*) layer;
+-(id) bezierOneSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer*) layer;  
+-(id) zoomSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer*) layer;
 
 @end
