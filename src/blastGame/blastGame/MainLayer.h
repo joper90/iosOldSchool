@@ -22,6 +22,8 @@
     int maxWave;
     float timeBetweenWaves;
     
+    NSMutableArray* currentTouchesTags;
+    
     CGPoint initialTouch;
     CGPoint endTouch;
     MobElement* mobTouched;
@@ -31,6 +33,7 @@
 -(void)mobFinished:(id) object;
 -(void)checkSpriteTouchedAction;
 -(void)laserAction;
+-(void)clearAction;
 
 -(void)scheduleNewWave:(ccTime)delta;
 -(void)levelFinished;

@@ -67,6 +67,7 @@ extern NSString *const PINK_SPRITE_FILE;
 #define DRAG_CLICK_LENIENCY         20 //10 pixels for click/drag issues.
 #define MOB_ROW_COUNT               5  //5 rows of mobs at once
 #define START_OFFSCREEN_OFFSET      20 //Screen offset for mob placement.
+#define MAX_TOUCH_SELECTED          4 // Max number of touches before a swipe is required.
 
 
 //Flash (splash) screen

@@ -19,6 +19,8 @@
         self.isTouchEnabled = YES;
         gameLive = NO;
         
+        currentTouchesTags = [[NSMutableArray alloc]init];
+        
         //Lets load level One up
         
         [[BlastedEngine instance]loadLevel:1 withLayer:self];  //load the level
@@ -125,9 +127,18 @@
     {
         [self checkSpriteTouchedAction];
     }
-    else //Swipe command? Laser fired.
+    else //Swipe command? Clear or Lazer fired.
     {
-        [self laserAction];
+        if (initialTouch.x < endTouch.x) // swipe to the right
+        {
+            CCLOG(@"Swipe to the right.. (lazer)");
+            [self laserAction];
+        }else
+        {
+            CCLOG(@"Swipe to the left.. (Clear)");
+            //clear selection
+            [self clearAction];
+        }
     }
     
 }
@@ -144,9 +155,16 @@
     if (mobTouched != nil)
     {
 
-        CCSprite* mobSprite = [mobTouched getSprite];
-        CCLOG(@"Sprite located : %d", mobSprite.tag);
-        [mobSprite stopAllActions];
+        if (currentTouchesTags.count < MAX_TOUCH_SELECTED)
+        {
+            CCSprite* mobSprite = [mobTouched getSprite];
+            [currentTouchesTags addObject:[NSNumber numberWithInt:mobSprite.tag]];
+            CCLOG(@"-SPRITE TOUCHED: %d - Touch count : %d", mobSprite.tag, currentTouchesTags.count);
+            [mobSprite pauseSchedulerAndActions];
+        }else
+        {
+            CCLOG(@"Max Touch already hit..");
+        }
 
     }
     else
@@ -166,9 +184,31 @@
 
 }
 
+-(void)clearAction
+{
+    CCLOG(@"Clear Actions called - Clearing Objects : %d", [currentTouchesTags count]);
+    for (int x =0; x < currentTouchesTags.count; x++)
+    {
+        int tag = [[currentTouchesTags objectAtIndex:x]integerValue];
+        CCSprite* mobSprite = (CCSprite*) [self getChildByTag:tag];
+        [mobSprite resumeSchedulerAndActions];
+    }
+    
+    //Now remove all elements
+    [currentTouchesTags removeAllObjects];
+}
+
 -(void)laserAction
 {
+    //currentTouchCount = 0;
     CCLOG(@"Laser called");
+}
+
+-(void) dealloc
+{
+    [currentTouchesTags release];
+    currentTouchesTags = nil;
+    [super dealloc];
 }
 
 @end
