@@ -20,6 +20,7 @@ NSString *const BLUE_SPRITE_FILE = @"Icon-Small.png";
 NSString *const GREEN_SPRITE_FILE = @"Icon-Small.png";
 NSString *const PINK_SPRITE_FILE = @"Icon-Small.png";
 
+NSString *const GUN_SPRITE_FILE = @"gun.png";
 
 NSString *const JSON_FILE = @"jsonTest.json";
 

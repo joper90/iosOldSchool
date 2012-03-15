@@ -133,6 +133,8 @@
 		CEB0430014FD1B5F0005EF2B /* FlashScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042FF14FD1B5F0005EF2B /* FlashScene.m */; };
 		CEB0430314FD32FB0005EF2B /* FlashFGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */; };
 		CEB505E515062BB600B31F27 /* Statics.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB505E415062BB600B31F27 /* Statics.m */; };
+		CEBAB8D815121B3B004F11E7 /* gun.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBAB8D715121B3A004F11E7 /* gun.png */; };
+		CEBAB8DA15123907004F11E7 /* lockon.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBAB8D915123907004F11E7 /* lockon.png */; };
 		CEEE4B6F14FE3897002621BC /* MobElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE4B6E14FE3897002621BC /* MobElement.m */; };
 		CEEE4B7E1504DD6E002621BC /* efmi.TTF in Resources */ = {isa = PBXBuildFile; fileRef = CEEE4B7D1504DD6E002621BC /* efmi.TTF */; };
 		CEEE4B81150502B9002621BC /* jsonTest.json in Resources */ = {isa = PBXBuildFile; fileRef = CEEE4B80150502B9002621BC /* jsonTest.json */; };
@@ -398,6 +400,8 @@
 		CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashFGLayer.m; sourceTree = "<group>"; };
 		CEB505E315062BB600B31F27 /* Statics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statics.h; sourceTree = "<group>"; };
 		CEB505E415062BB600B31F27 /* Statics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statics.m; sourceTree = "<group>"; };
+		CEBAB8D715121B3A004F11E7 /* gun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gun.png; path = Resources/gun.png; sourceTree = "<group>"; };
+		CEBAB8D915123907004F11E7 /* lockon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lockon.png; path = Resources/lockon.png; sourceTree = "<group>"; };
 		CEEE4B6414FE2D8A002621BC /* MainLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainLayer.h; sourceTree = "<group>"; };
 		CEEE4B6D14FE3897002621BC /* MobElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobElement.h; sourceTree = "<group>"; };
 		CEEE4B6E14FE3897002621BC /* MobElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobElement.m; sourceTree = "<group>"; };
@@ -482,6 +486,7 @@
 				CEEE4B80150502B9002621BC /* jsonTest.json */,
 				CEEE4B7F1504E326002621BC /* Fonts */,
 				CE270D0614FCEB0000C2DBA3 /* Default.png */,
+				CEBAB8D915123907004F11E7 /* lockon.png */,
 				CE270D0814FCEB0000C2DBA3 /* fps_images.png */,
 				CE270D0A14FCEB0000C2DBA3 /* Icon-72.png */,
 				CE270D0C14FCEB0000C2DBA3 /* Icon-Small-50.png */,
@@ -887,6 +892,7 @@
 		CEEE4B7F1504E326002621BC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				CEBAB8D715121B3A004F11E7 /* gun.png */,
 				CEEE4B7D1504DD6E002621BC /* efmi.TTF */,
 			);
 			name = Fonts;
@@ -954,6 +960,8 @@
 				CE270D1814FCEB0100C2DBA3 /* iTunesArtwork in Resources */,
 				CEEE4B7E1504DD6E002621BC /* efmi.TTF in Resources */,
 				CEEE4B81150502B9002621BC /* jsonTest.json in Resources */,
+				CEBAB8D815121B3B004F11E7 /* gun.png in Resources */,
+				CEBAB8DA15123907004F11E7 /* lockon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

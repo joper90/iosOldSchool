@@ -23,6 +23,8 @@
     float timeBetweenWaves;
     
     NSMutableArray* currentTouchesTags;
+    CCSprite* gunSprite;
+    CCSprite* lockOnSprite;
     
     CGPoint initialTouch;
     CGPoint endTouch;
@@ -39,5 +41,7 @@
 -(void)levelFinished;
 
 -(void) mobMoveCompleted:(id)sender;
+
+-(void) initGun;
 
 @end

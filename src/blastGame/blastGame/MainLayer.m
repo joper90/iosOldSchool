@@ -26,12 +26,30 @@
         [[BlastedEngine instance]loadLevel:1 withLayer:self];  //load the level
         maxWave = [[BlastedEngine instance]getWaveCountByCurrentLevel]; //set the waves on this level.
         
+        
+        //Init the display now
+        //Load gun
+        
+        [self initGun];
+        
         [self startAndMoveMobWave:0];
         
         //Now register the schedure for when the time (betweenRowTime has elapsed);
         [self schedule:@selector(scheduleNewWave:) interval:[[BlastedEngine instance]getCurrentTimeBetweenWaves]];
     }
 	return self;
+}
+
+-(void)initGun
+{
+    lockOnSprite = [CCSprite spriteWithFile:@"lockon.png"];
+    [lockOnSprite retain];
+    
+    gunSprite = [CCSprite spriteWithFile:@"gun.png"];
+    gunSprite.position = ccp(GUN_X_POSITION, [Utils instance].center.y);
+    gunSprite.tag = GUN_TAG;
+    
+    [self addChild:gunSprite z:10];
 }
 
 -(void)startAndMoveMobWave:(int) mobWavetoStart
@@ -158,9 +176,25 @@
         if (currentTouchesTags.count < MAX_TOUCH_SELECTED)
         {
             CCSprite* mobSprite = [mobTouched getSprite];
+            mobSprite.color = ccc3(200,0,0);
+            
+            CCSprite* newLockOn = [CCSprite spriteWithTexture:[lockOnSprite texture]];
+            CGSize mobPoint = mobSprite.contentSize;
+            CGPoint newLockPosition = ccp(mobPoint.width / 2.0f , mobPoint.height /2.0f );
+            newLockOn.position = newLockPosition;
+            
+            
+            //Should be moved out really.
+            CCRotateBy* rotAction = [CCRotateBy actionWithDuration:1.0f angle:360.0f];
+            CCRepeatForever* repeatAction = [CCRepeatForever actionWithAction:rotAction];
+            
+            [newLockOn runAction:repeatAction];
+    
+            [mobSprite addChild:newLockOn z:200];
+            
             [currentTouchesTags addObject:[NSNumber numberWithInt:mobSprite.tag]];
             CCLOG(@"-SPRITE TOUCHED: %d - Touch count : %d", mobSprite.tag, currentTouchesTags.count);
-            [mobSprite pauseSchedulerAndActions];
+
         }else
         {
             CCLOG(@"Max Touch already hit..");
@@ -191,7 +225,8 @@
     {
         int tag = [[currentTouchesTags objectAtIndex:x]integerValue];
         CCSprite* mobSprite = (CCSprite*) [self getChildByTag:tag];
-        [mobSprite resumeSchedulerAndActions];
+        mobSprite.color = ccc3(255,255,255);
+        [mobSprite removeAllChildrenWithCleanup:YES];
     }
     
     //Now remove all elements
@@ -200,12 +235,12 @@
 
 -(void)laserAction
 {
-    //currentTouchCount = 0;
     CCLOG(@"Laser called");
 }
 
 -(void) dealloc
 {
+    [lockOnSprite release];
     [currentTouchesTags release];
     currentTouchesTags = nil;
     [super dealloc];

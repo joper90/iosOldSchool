@@ -29,7 +29,8 @@
 
 #import <Foundation/Foundation.h>
 
-//Elements Tags from 1 up.
+//Elements Tags from 500 up.
+#define GUN_TAG                 500;
 
 
 // Layer tags from 1000 up
@@ -63,11 +64,15 @@ extern NSString *const BLUE_SPRITE_FILE;
 extern NSString *const GREEN_SPRITE_FILE;
 extern NSString *const PINK_SPRITE_FILE;
 
+extern NSString *const  GUN_SPRITE_FILE;
+
 //Game constants used for tweaking.
 #define DRAG_CLICK_LENIENCY         20 //10 pixels for click/drag issues.
 #define MOB_ROW_COUNT               5  //5 rows of mobs at once
 #define START_OFFSCREEN_OFFSET      20 //Screen offset for mob placement.
 #define MAX_TOUCH_SELECTED          4 // Max number of touches before a swipe is required.
+
+#define GUN_X_POSITION              10 //X poistion of the gun.
 
 
 //Flash (splash) screen

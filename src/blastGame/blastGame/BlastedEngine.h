@@ -34,6 +34,8 @@
     //This will get completely populated on levelLoad.. 
     NSMutableArray* mobsArray;
     
+    CCSprite* planetAndGun;
+    
     //Map of init start positions, based on screen sizes. // start with 5 rows.
     NSMutableDictionary* startPositionMap;
     
