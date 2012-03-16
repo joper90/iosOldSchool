@@ -63,6 +63,9 @@
 -(BOOL)loadLevel:(int) levelToLoad withLayer:(CCLayer*) layer;
 -(int)getWaveCountByCurrentLevel;
 -(float)getCurrentTimeBetweenWaves;
+-(float)getCurrentSpeed;
+-(void)setDeadMob:(int)mobTag;
+-(BOOL)isLevelCompleted;
 
 -(MobElement*)getMobBySpriteTag:(int) tag;
 -(void)addLevelToLevelList:(LevelElementData*) levelDataElement;

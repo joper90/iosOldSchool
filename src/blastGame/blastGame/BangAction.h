@@ -9,5 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface BangAction : NSObject
+{
+    int tag;
+    int bulletElement;
+    CGPoint position;
+}
 
+@property (readwrite,assign) int bulletElement;
+@property (readwrite,assign) int tag;
+@property (readwrite,assign) CGPoint position;
 @end

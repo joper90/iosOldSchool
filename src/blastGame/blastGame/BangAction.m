@@ -9,5 +9,8 @@
 #import "BangAction.h"
 
 @implementation BangAction
+{
 
+}
+@synthesize tag,position,bulletElement;
 @end

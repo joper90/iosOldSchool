@@ -62,6 +62,21 @@ static BlastedEngine* blastedEngine = nil;
     return currentPlayingLevel.lineTime;
 }
 
+-(float) getCurrentSpeed
+{
+    return currentPlayingLevel.baseSpeed;
+}
+
+-(void)setDeadMob:(int)mobTag
+{
+    [currentPlayingLevel setDeadMob:mobTag];
+}
+
+-(BOOL)isLevelCompleted
+{
+    return [currentPlayingLevel isAllMobsDead];
+}
+
 //Call to parse and load the levels, return BOOL 
 -(BOOL)loadAndParseLevels
 {
@@ -102,6 +117,7 @@ static BlastedEngine* blastedEngine = nil;
     CGPoint ret = [[startPositionMap objectForKey:number]CGPointValue];
     return ret;
 }
+
 
 
 //Load a level from the LevelsLoader populated array
@@ -173,6 +189,7 @@ static BlastedEngine* blastedEngine = nil;
         CCLOG(@"All elements added to the mobsArray, in order..");
     }
     CCLOG(@"TOTAL MobARRAY : %d",[mobsArray count]);
+    [currentPlayingLevel resetMobAliveStatus:[mobsArray count]]; // reset the mobs with the correct count.
     return allValid;
 }
 

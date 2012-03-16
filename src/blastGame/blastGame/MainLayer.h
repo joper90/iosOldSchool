@@ -10,6 +10,7 @@
 #import "BlastedEngine.h"
 #import "MobElement.h"
 #import "FlightPaths.h"
+#import "BangAction.h"
 
 @interface MainLayer : CCLayer
 {
@@ -25,6 +26,8 @@
     NSMutableArray* currentTouchesTags;
     CCSprite* gunSprite;
     CCSprite* lockOnSprite;
+    NSMutableArray* bullets; //0-3 bullets
+    NSMutableArray* bangArray; //0-3 bangs
     
     CGPoint initialTouch;
     CGPoint endTouch;
@@ -35,10 +38,11 @@
 -(void)mobFinished:(id) object;
 -(void)checkSpriteTouchedAction;
 -(void)laserAction;
+-(void)bangAction:(id) object;
 -(void)clearAction;
 
 -(void)scheduleNewWave:(ccTime)delta;
--(void)levelFinished;
+-(void)levelFinished:(ccTime)delta; //Check id level is completed.
 
 -(void) mobMoveCompleted:(id)sender;
 

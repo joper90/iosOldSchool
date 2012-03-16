@@ -74,6 +74,8 @@ extern NSString *const  GUN_SPRITE_FILE;
 
 #define GUN_X_POSITION              10 //X poistion of the gun.
 
+#define LEVEL_COMPLETE_POLLTIME     5 // 2 seconds..
+
 
 //Flash (splash) screen
 extern NSString *const COMPANY_NAME;
