@@ -65,7 +65,7 @@
 -(void)setDeadMob:(int)mobPos
 {
     [mobAliveStatus replaceObjectAtIndex:mobPos withObject:[NSNumber numberWithBool:YES]];
-    CCLOG(@"Set mob to dead : %d", mobPos);
+    CCLOG(@"Set mob to dead : %d / %d", mobPos, [mobAliveStatus count]);
 }
 
 -(void)resetMobAliveStatus:(int)mobCount

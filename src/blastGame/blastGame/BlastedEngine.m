@@ -189,7 +189,7 @@ static BlastedEngine* blastedEngine = nil;
         CCLOG(@"All elements added to the mobsArray, in order..");
     }
     CCLOG(@"TOTAL MobARRAY : %d",[mobsArray count]);
-    [currentPlayingLevel resetMobAliveStatus:[mobsArray count]]; // reset the mobs with the correct count.
+    [currentPlayingLevel resetMobAliveStatus:(currentSpriteTag)]; // reset the mobs with the correct count.
     return allValid;
 }
 
