@@ -46,6 +46,10 @@
 
 -(void) mobMoveCompleted:(id)sender;
 
+-(void) updateScore:(int)amount;
+-(void) updateModiferIncrease;
+-(void) updateModiferDecrease;
+
 -(void) initGun;
 
 @end

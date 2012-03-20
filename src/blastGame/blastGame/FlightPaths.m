@@ -117,5 +117,10 @@ static FlightPaths* flightPaths = nil;
     return seq2;    
 }
 
+-(void)dealloc
+{
+    [flightPaths release];
+    [super dealloc];
+}
 
 @end

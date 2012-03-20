@@ -6,8 +6,22 @@
 //  Copyright (c) 2012 funkvoodoo.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "cocos2d.h"
+#import "BlastedEngine.h"
+#import "CoreImports.h"
 
-@interface MainFGLayer : NSObject
+@interface MainFGLayer : CCLayer
+{
+    CCLabelTTF* scoreLabel;
+    NSString* scoreString;
+    
+    CCLabelTTF* percentCompleteLabel;
+    NSString* percentCompleteString;
+
+    CCLabelTTF* multiplierLabel;
+    NSString* multiplierString;
+}
+
+-(void)callBackPokeUpdate;
 
 @end

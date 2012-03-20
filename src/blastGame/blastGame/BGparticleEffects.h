@@ -6,8 +6,18 @@
 //  Copyright (c) 2012 funkvoodoo.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "cocos2d.h"
+
+typedef enum{
+    SPORE = 0,
+    GALAXY_ONE
+    
+} backroundPattern;
 
 @interface BGparticleEffects : NSObject
+{
+    
+}
 
++(CCParticleSystem*) getParticle:(backroundPattern) pattern;
 @end

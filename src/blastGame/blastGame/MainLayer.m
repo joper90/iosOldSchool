@@ -22,7 +22,8 @@
         
         //Lets load level One up
         
-        [[BlastedEngine instance]loadLevel:1 withLayer:self];  //load the level
+        
+        [[BlastedEngine instance]loadLevel:[BlastedEngine instance].level withLayer:self];  //load the level
         maxWave = [[BlastedEngine instance]getWaveCountByCurrentLevel]; //set the waves on this level.
         
         //Init the display now
@@ -268,7 +269,7 @@
 
 -(void)laserAction
 {
-    CCLOG(@"Laser called");
+    CCLOG(@"Laser called : with touched count %d", currentTouchesTags.count);
     for (int x =0; x < currentTouchesTags.count; x++)
     {
         int tag = [[currentTouchesTags objectAtIndex:x]integerValue];
@@ -325,6 +326,31 @@
     
     [bang release];
 }
+
+//Scores
+
+-(void) updateScore:(int)amount
+{
+    [[BlastedEngine instance]addToScore:amount];
+    MainFGLayer* fg = (MainFGLayer*)[[self parent]getChildByTag:T_MAIN_FG_SCORE_LAYER];
+    [fg callBackPokeUpdate];
+    
+}
+
+-(void) updateModiferIncrease
+{
+    [[BlastedEngine instance]incMultiplier];
+    MainFGLayer* fg = (MainFGLayer*)[[self parent]getChildByTag:T_MAIN_FG_SCORE_LAYER];
+    [fg callBackPokeUpdate];
+}
+
+-(void) updateModiferDecrease
+{
+    [[BlastedEngine instance]decMultiplier];
+    MainFGLayer* fg = (MainFGLayer*)[[self parent]getChildByTag:T_MAIN_FG_SCORE_LAYER];
+    [fg callBackPokeUpdate];
+}
+
 
 -(void) dealloc
 {

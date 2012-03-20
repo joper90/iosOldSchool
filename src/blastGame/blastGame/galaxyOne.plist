@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>angle</key>
-	<real>81.370002746582031</real>
+	<real>37.765213012695312</real>
 	<key>angleVariance</key>
 	<real>360</real>
 	<key>blendFuncDestination</key>
@@ -23,7 +23,7 @@
 	<key>finishColorRed</key>
 	<real>0.54768878221511841</real>
 	<key>finishColorVarianceAlpha</key>
-	<real>0.5835336446762085</real>
+	<real>0.353515625</real>
 	<key>finishColorVarianceBlue</key>
 	<real>0.0</real>
 	<key>finishColorVarianceGreen</key>
@@ -39,9 +39,9 @@
 	<key>gravityy</key>
 	<real>0.0</real>
 	<key>maxParticles</key>
-	<real>1000</real>
+	<real>300</real>
 	<key>maxRadius</key>
-	<real>293.67999267578125</real>
+	<real>182.8125</real>
 	<key>maxRadiusVariance</key>
 	<real>0.0</real>
 	<key>minRadius</key>
@@ -55,7 +55,7 @@
 	<key>radialAcceleration</key>
 	<real>0.0</real>
 	<key>rotatePerSecond</key>
-	<real>87.629997253417969</real>
+	<real>50.630001068115234</real>
 	<key>rotatePerSecondVariance</key>
 	<real>30.790000915527344</real>
 	<key>rotationEnd</key>

@@ -36,6 +36,8 @@
 // Layer tags from 1000 up
 #define T_FLASH_FG_LAYER        1000
 #define T_MAIN_LAYER            1001
+#define T_MAIN_FG_SCORE_LAYER   1002
+#define T_MAIN_BG_LAYER         1003
 
 
 //Scene from 5000 up
@@ -66,6 +68,11 @@ extern NSString *const PINK_SPRITE_FILE;
 
 extern NSString *const  GUN_SPRITE_FILE;
 
+//Barrier Locations:
+#define LINE_ONE       150
+#define LINE_TWO       200
+#define LINE_THREE     300
+
 //Game constants used for tweaking.
 #define DRAG_CLICK_LENIENCY         20 //10 pixels for click/drag issues.
 #define MOB_ROW_COUNT               5  //5 rows of mobs at once
@@ -75,6 +82,8 @@ extern NSString *const  GUN_SPRITE_FILE;
 #define GUN_X_POSITION              10 //X poistion of the gun.
 
 #define LEVEL_COMPLETE_POLLTIME     5 // 2 seconds..
+
+#define FONT_SIZE                   20 //base fontsize
 
 
 //Flash (splash) screen

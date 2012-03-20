@@ -10,4 +10,22 @@
 
 @implementation BGparticleEffects
 
+
++(CCParticleSystem*) getParticle:(backroundPattern) pattern
+{
+    CCParticleSystem* retPart = nil;
+    
+    if (pattern == SPORE)
+    {
+        retPart = [CCParticleSystemQuad particleWithFile:@"spore.plist"];
+    } 
+    else if (pattern == GALAXY_ONE)
+    {
+        retPart = [CCParticleSystemQuad particleWithFile:@"galaxyOne.plist"];
+    }
+    
+    return retPart;
+}
+
+
 @end
