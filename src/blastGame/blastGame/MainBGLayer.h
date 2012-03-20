@@ -7,7 +7,18 @@
 //
 
 #import "cocos2d.h"
+#import "BGparticleEffects.h"
+#import "BlastedEngine.h"
 
 @interface MainBGLayer : CCLayer
+{
+    CCParticleSystem* partSystem;
+    
+    CGPoint lineOneStart;
+    CGPoint lineTwoStart;
+    CGPoint lineThreeStart;
+}
+
+@property (readwrite, assign) CCParticleSystem* partSystem;
 
 @end

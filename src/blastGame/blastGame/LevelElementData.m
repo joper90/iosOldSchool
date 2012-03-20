@@ -9,7 +9,7 @@
 #import "LevelElementData.h"
 
 @implementation LevelElementData
-@synthesize levelId,levelType,baseSpeed,lineTime,rowData,waveCount,patternData;
+@synthesize levelId,levelType,baseSpeed,lineTime,rowData,waveCount,patternData, mobAliveStatus,bgParticle;
 
 
 //Should callinitWithCCArraySize.
@@ -60,6 +60,36 @@
         CCLOG(@"pattern    :%@",pat);
     }
     
+}
+
+-(void)setDeadMob:(int)mobPos
+{
+    [mobAliveStatus replaceObjectAtIndex:mobPos withObject:[NSNumber numberWithBool:YES]];
+    CCLOG(@"Set mob to dead : %d / %d", mobPos, [mobAliveStatus count]);
+}
+
+-(void)resetMobAliveStatus:(int)mobCount
+{
+    mobAliveStatus = [[NSMutableArray alloc]initWithCapacity:mobCount ];
+    for (int x = 0; x < mobCount; x++)
+    {
+        [mobAliveStatus addObject:[NSNumber numberWithBool:NO]];
+    }
+    CCLOG(@"Cleaned MobAliveStatus :%d", mobCount);
+}
+
+-(BOOL)isAllMobsDead
+{
+    int count = [mobAliveStatus count];
+    for (int x = 0; x < count; x++) 
+    {
+        BOOL b = [[mobAliveStatus objectAtIndex:x] boolValue];
+        if (b == NO)
+        {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 -(void)dealloc

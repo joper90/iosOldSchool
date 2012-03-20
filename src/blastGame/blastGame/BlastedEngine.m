@@ -11,7 +11,8 @@
 
 @implementation BlastedEngine
 
-@synthesize currentScore, mobsArray, level, levelList, valid, startPositionMap, currentPlayingLevel,actualMobSprites;
+@synthesize currentScore, mobsArray, level, levelList, valid, startPositionMap, 
+            currentPlayingLevel,actualMobSprites, currentMultiplier, levelPercentComplete;
 
 static BlastedEngine* blastedEngine = nil;
 
@@ -39,6 +40,11 @@ static BlastedEngine* blastedEngine = nil;
         self.startPositionMap = [[NSMutableDictionary alloc]init];
         self.actualMobSprites = [[NSMutableDictionary alloc]init];
         self.levelList = [[NSMutableDictionary alloc]init];
+        
+        currentScore  = 0;
+        currentMultiplier = 1;
+        levelPercentComplete = 0;
+        level = 1;
     }
     return self;
 }
@@ -60,6 +66,26 @@ static BlastedEngine* blastedEngine = nil;
 -(float)getCurrentTimeBetweenWaves
 {
     return currentPlayingLevel.lineTime;
+}
+
+-(float) getCurrentSpeed
+{
+    return currentPlayingLevel.baseSpeed;
+}
+
+-(void)setDeadMob:(int)mobTag
+{
+    [currentPlayingLevel setDeadMob:mobTag];
+}
+
+-(BOOL)isLevelCompleted
+{
+    return [currentPlayingLevel isAllMobsDead];
+}
+
+-(int)getBackGroundParticle
+{
+    return currentPlayingLevel.bgParticle;
 }
 
 //Call to parse and load the levels, return BOOL 
@@ -102,6 +128,7 @@ static BlastedEngine* blastedEngine = nil;
     CGPoint ret = [[startPositionMap objectForKey:number]CGPointValue];
     return ret;
 }
+
 
 
 //Load a level from the LevelsLoader populated array
@@ -173,6 +200,7 @@ static BlastedEngine* blastedEngine = nil;
         CCLOG(@"All elements added to the mobsArray, in order..");
     }
     CCLOG(@"TOTAL MobARRAY : %d",[mobsArray count]);
+    [currentPlayingLevel resetMobAliveStatus:(currentSpriteTag)]; // reset the mobs with the correct count.
     return allValid;
 }
 
@@ -307,6 +335,33 @@ static BlastedEngine* blastedEngine = nil;
     NSNumber* levelId = [NSNumber numberWithInt:levelDataElement.levelId]; 
     [levelList setObject:levelDataElement forKey:levelId];
     CCLOG(@"LevelList Count : %d", [levelList count]);
+}
+
+
+//Score stuff
+-(void)incMultiplier
+{
+    currentMultiplier = currentMultiplier * 2;
+}
+
+-(void)decMultiplier
+{
+    currentMultiplier = currentMultiplier / 2;
+}
+
+-(void)resetMultiplier
+{
+    currentMultiplier = 1;
+}
+
+-(void)addToScore:(int) addAmount
+{
+    currentScore = currentScore + (addAmount * currentMultiplier);
+}
+
+-(int)getCurrentScore
+{
+    return currentScore;
 }
 
 -(void)dealloc

@@ -21,7 +21,8 @@
     
     //All Engine data here
     int currentScore;
-    
+    int currentMultiplier;
+    float levelPercentComplete;
     int level;
     
     LevelElementData* currentPlayingLevel;
@@ -48,7 +49,9 @@
 @property (assign, readwrite) LevelElementData* currentPlayingLevel;
 @property (retain, readwrite) NSMutableDictionary* startPositionMap;
 @property (assign, readwrite) BOOL valid;
+@property (assign, readwrite) float levelPercentComplete; 
 @property (assign, readwrite) int currentScore;
+@property (assign, readwrite) int currentMultiplier;
 @property (assign, readwrite) int level;
 @property (retain, readwrite) NSMutableArray* mobsArray;
 @property (retain, readwrite) NSMutableDictionary*  levelList;
@@ -63,6 +66,17 @@
 -(BOOL)loadLevel:(int) levelToLoad withLayer:(CCLayer*) layer;
 -(int)getWaveCountByCurrentLevel;
 -(float)getCurrentTimeBetweenWaves;
+-(float)getCurrentSpeed;
+-(int)getBackGroundParticle;
+-(void)setDeadMob:(int)mobTag;
+-(BOOL)isLevelCompleted;
+
+//Score Stuff
+-(void)incMultiplier;
+-(void)decMultiplier;
+-(void)resetMultiplier;
+-(void)addToScore:(int) addAmount;
+-(int)getCurrentScore;
 
 -(MobElement*)getMobBySpriteTag:(int) tag;
 -(void)addLevelToLevelList:(LevelElementData*) levelDataElement;

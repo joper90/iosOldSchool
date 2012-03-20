@@ -5,17 +5,18 @@
       "levelInfo": "normal",
       "baseSpeed": "10",
       "lineTime": "3",
+	  "bg": "1",
       "rowData": [
         {
-          "row": "11111",
+          "row": "11001",
           "pattern": "11111"
         },
         {
-          "row": "11111",
+          "row": "10001",
           "pattern": "11111"
         },
         {
-          "row": "11111",
+          "row": "01110",
           "pattern": "11111"
         }
       ]
@@ -25,6 +26,7 @@
       "levelInfo": "normal",
       "baseSpeed": "10",
       "lineTime": "10",
+"bg": "1",
       "rowData": [
         {
           "row": "1111",
@@ -45,6 +47,7 @@
       "levelInfo": "normal",
       "baseSpeed": "10",
       "lineTime": "10",
+"bg": "1",
       "rowData": [
         {
           "row": "11111",
