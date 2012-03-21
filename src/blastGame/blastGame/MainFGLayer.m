@@ -35,9 +35,7 @@
         [self addChild:scoreLabel];
         [self addChild:percentCompleteLabel];
         [self addChild:multiplierLabel];
-        
-        
-        
+
     }
 	return self;
 }

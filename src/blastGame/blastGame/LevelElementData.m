@@ -62,6 +62,11 @@
     
 }
 
+-(NSMutableArray*) getCurrentMobAliveStatus
+{
+    return mobAliveStatus;
+}
+
 -(void)setDeadMob:(int)mobPos
 {
     [mobAliveStatus replaceObjectAtIndex:mobPos withObject:[NSNumber numberWithBool:YES]];

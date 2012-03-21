@@ -11,6 +11,7 @@
 #import "MobElement.h"
 #import "FlightPaths.h"
 #import "BangAction.h"
+#import "GameOverScene.h"
 
 @interface MainLayer : CCLayer
 {
@@ -47,6 +48,7 @@
 -(void)levelFinished:(ccTime)delta; //Check id level is completed.
 
 -(void) mobMoveCompleted:(id)sender;
+-(void) mobMoveCompletedRemoveAllMobs:(ccTime) delta;
 
 -(void) updateScore:(int)amount;
 -(void) updateModiferIncrease;

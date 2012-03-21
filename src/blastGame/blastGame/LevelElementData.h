@@ -36,6 +36,8 @@
 -(id)initWithRowPatternCCArrays:(NSMutableArray*) allRows andAllPattern:(NSMutableArray*) allPatterns;
 -(void)addAllRowsPatterns:(NSMutableArray*) allRows andAllPatterns:(NSMutableArray*) allPatterns;
 -(void)dumpLevelData;
+
+-(NSMutableArray*) getCurrentMobAliveStatus;
 -(void)resetMobAliveStatus:(int)mobCount;
 -(void)setDeadMob:(int)mobPos;
 -(BOOL)isAllMobsDead;

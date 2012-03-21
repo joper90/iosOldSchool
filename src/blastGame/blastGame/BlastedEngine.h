@@ -12,11 +12,15 @@
 #import "LevelElementData.h"
 #import "LevelJsonParser.h"
 #import "FlightPaths.h"
+@class MainLayer;
 
 @interface BlastedEngine : NSObject
 {
     //is Everything all ok
     BOOL valid;
+    
+    //CCLayer CallBack information
+    MainLayer *injectedGamePlayLayer;
     
     
     //All Engine data here
@@ -63,11 +67,17 @@
 
 -(BOOL)isValid;
 
+//GamePlayLayer Stuff
+-(void)injectGamePlayLayer:(CCLayer*)gamePlayLayer;
+-(void)callBackMobMoveComplete:(id)sender;
+
 -(BOOL)loadLevel:(int) levelToLoad withLayer:(CCLayer*) layer;
 -(int)getWaveCountByCurrentLevel;
 -(float)getCurrentTimeBetweenWaves;
 -(float)getCurrentSpeed;
 -(int)getBackGroundParticle;
+
+-(NSMutableArray*) getMobListArray;
 -(void)setDeadMob:(int)mobTag;
 -(BOOL)isLevelCompleted;
 

@@ -12,19 +12,27 @@
 
 -(id) init
 {
-    CCLOG(@"MainLayer...");
+    CCLOG(@"MainLayer...with RC: %d",[self retainCount]);
 	if( (self=[super init])) 
     {
+        
+        //Testing injections
+        [[BlastedEngine instance]injectGamePlayLayer:self];
+        CCLOG(@"-->injected...with RC: %d",[self retainCount]);
+        //CCLOG(@"-->removed...with RC: %d",[self retainCount]);
+        
+        
         //enable touches
         self.isTouchEnabled = YES;
         
         currentTouchesTags = [[NSMutableArray alloc]init];
               
-        
+        CCLOG(@"----->currenTouchedAllocted...with RC: %d",[self retainCount]);
         //Lets load level One up
         [[BlastedEngine instance]loadLevel:[BlastedEngine instance].level withLayer:self];  //load the level
+        CCLOG(@"----->loadLevelCompleted...with RC: %d",[self retainCount]);
         maxWave = [[BlastedEngine instance]getWaveCountByCurrentLevel]; //set the waves on this level.
-        
+        CCLOG(@"----->GotWaveCount...with RC: %d",[self retainCount]);
         //Call the levelCoutDown
         [self levelCountDown];
         
@@ -34,6 +42,7 @@
 
 -(void)levelCountDown
 {
+    CCLOG(@"levelCountDown...with RC: %d",[self retainCount]);
     countDownLabel = [CCLabelTTF labelWithString:@"3" fontName:@"zxspectr.ttf" fontSize:FONT_SIZE_COUNTDOWN];
     [self addChild:countDownLabel z:Z_COUNTDOWN_TEXT_TAG tag:COUNTDOWN_TEXT_TAG];
     
@@ -61,6 +70,7 @@
 
 -(void)levelCountDownTimeout:(id)sender
 {
+    CCLOG(@"levelCountDownTimeout...with RC: %d",[self retainCount]);
     NSNumber* ttt = sender;
     int x = [ttt integerValue];
     
@@ -89,6 +99,7 @@
 
 -(void)initGun
 {
+    CCLOG(@"InitGun...with RC: %d",[self retainCount]);
     lockOnSprite = [CCSprite spriteWithFile:@"lockon.png"];
     [lockOnSprite retain];
     
@@ -114,7 +125,7 @@
 
 -(void)startAndMoveMobWave:(int) mobWavetoStart
 {
-    
+    CCLOG(@"StartAndMoveWave...with RC: %d",[self retainCount]);
     int mobElementCount = mobWavetoStart * 5;
     
     CCLOG(@"StartAndMove grabbing %d to %d", mobElementCount, mobElementCount + 5);
@@ -141,6 +152,7 @@
 
 -(void)scheduleNewWave:(ccTime)delta
 {
+    CCLOG(@"scheduleNewWave...with RC: %d",[self retainCount]);
     CCLOG(@"NEW WAVE CALLED... %d/%d", currentWave,maxWave);
 
     if (currentWave > maxWave)
@@ -159,11 +171,13 @@
 
 -(void)levelFinished:(ccTime)delta
 {
+    CCLOG(@"levelFinished...with RC: %d",[self retainCount]);
     BOOL completed = [[BlastedEngine instance]isLevelCompleted];
     if (completed)
     {
         CCLOG(@"--->LEVEL COMPLETED<---");
         //unschedule this test.
+        [self unschedule:@selector(scheduleNewWave:)];
         [self unschedule:_cmd];
         
     }
@@ -176,11 +190,13 @@
 //TOUCH Handlers
 -(void) registerWithTouchDispatcher
 {
+    CCLOG(@"RegisterWithTouchDispacther...with RC: %d",[self retainCount]);
     [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 }
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    CCLOG(@"ccTouchBegan...with RC: %d",[self retainCount]);
     //Reset the touch.
     touchMoved = NO;    
     
@@ -195,7 +211,7 @@
 
 -(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    
+    CCLOG(@"ccTouchEnded...with RC: %d",[self retainCount]);
     //May need to check of drag lenght, incase of use input error.
     endTouch = [[Utils instance]locationFromTouchSinglePoint:touch];
     
@@ -241,6 +257,7 @@
 
 -(void)checkSpriteTouchedAction
 {
+    CCLOG(@"CheckSpriteTouchedAction...with RC: %d",[self retainCount]);
     
     if (mobTouched != nil)
     {
@@ -283,6 +300,7 @@
 
 -(void) mobMoveCompleted:(id)sender //Called from flightPath when its reached the planet /base
 {
+    CCLOG(@"MoveCompleted...with RC: %d",[self retainCount]);
     NSNumber* ttt = sender;
     int x = [ttt integerValue];
     CCLOG(@"mobMoveCompleted (MainLayer): called with tag : %d", x);
@@ -294,12 +312,40 @@
     [self addChild:mobBang z:Z_PLANT_HIT_TAG tag:PLANET_HIT_TAG];
     [self removeChildByTag:x cleanup:YES];
     
+    //Stop new waves comming in
+    [self unschedule:@selector(scheduleNewWave:)];
+    //Disable touches
+    self.isTouchEnabled = NO;
+    //Remove touches
+    [currentTouchesTags removeAllObjects];
     
+    //Now wait (schedule) to remove the mobs.
+    [self schedule:@selector(mobMoveCompletedRemoveAllMobs:) interval:0.5f];
+}
+
+-(void)mobMoveCompletedRemoveAllMobs:(ccTime) delta
+{
+    CCLOG(@"MoveCompletedRemvoeAllMobs...with RC: %d",[self retainCount]);
+    [self unschedule:_cmd];
+    //Remove all sprites
+    NSMutableArray* spritesList = [[BlastedEngine instance]getMobListArray];
+    for (int x = 0; x < [spritesList count]; x++)
+    {
+        BOOL b = [[spritesList objectAtIndex:x] boolValue];
+        if (b == NO)
+        {
+            [self removeChildByTag:x cleanup:YES];
+        }
+    }
+    
+    //Switch scenes
+    [[CCDirector sharedDirector]replaceScene:[GameOverScene scene]];
 
 }
 
 -(void)clearAction
 {
+    CCLOG(@"ClearAction...with RC: %d",[self retainCount]);
     CCLOG(@"Clear Actions called - Clearing Objects : %d", [currentTouchesTags count]);
     for (int x =0; x < currentTouchesTags.count; x++)
     {
@@ -317,6 +363,7 @@
 
 -(void)laserAction
 {
+    CCLOG(@"LaserAction...with RC: %d",[self retainCount]);
     CCLOG(@"Laser called : with touched count %d", currentTouchesTags.count);
     for (int x =0; x < currentTouchesTags.count; x++)
     {
@@ -358,7 +405,7 @@
                            
 -(void)bangAction:(id)object
 {
-    
+    CCLOG(@"bangAction...with RC: %d",[self retainCount]);
     BangAction* bang = (BangAction*) object;
     CCLOG(@"BangAction called : for tag %d", bang.tag);
     
@@ -399,14 +446,21 @@
     [fg callBackPokeUpdate];
 }
 
-
--(void) dealloc
+-(void)onExit
 {
     [lockOnSprite release];
     [currentTouchesTags release];
     [bullets release];
     [bangArray release];
     currentTouchesTags = nil;
+    CCLOG(@"Main Layer --->OnExit() Called with RC: %d",[self retainCount]);
+    [[CCTouchDispatcher sharedDispatcher]removeDelegate:self];
+    [super onExit];
+}
+
+-(void) dealloc
+{
+
     [super dealloc];
 }
 

@@ -25,7 +25,7 @@ static FlightPaths* flightPaths = nil;
     return flightPaths;
 }
 
--(id)getSequence:(FlightPattern)flightPattern movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer *)layer
+-(id)getSequence:(FlightPattern)flightPattern movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos 
 {
     CCLOG(@"Calling with tag %d",tag);
     CCSequence* seq = nil;
@@ -33,20 +33,20 @@ static FlightPaths* flightPaths = nil;
     switch (flightPattern) 
     {
         case STRAIGHT:
-            return [self straightSeq:movementModifier withTag:tag currentPos:currentPos withLayer:layer];
+            return [self straightSeq:movementModifier withTag:tag currentPos:currentPos];
             break;
             
         case FAST_IN_OUT:
-            return [self fastinoutSeq:movementModifier withTag:tag currentPos:currentPos withLayer:layer];
+            return [self fastinoutSeq:movementModifier withTag:tag currentPos:currentPos];
             
         case SLOW_IN_OUT:
-            return [self slowinoutSeq:movementModifier withTag:tag currentPos:currentPos withLayer:layer];
+            return [self slowinoutSeq:movementModifier withTag:tag currentPos:currentPos];
             
         case BEZIER_ONE:
-            return [self bezierOneSeq:movementModifier withTag:tag currentPos:currentPos withLayer:layer];
+            return [self bezierOneSeq:movementModifier withTag:tag currentPos:currentPos];
             
         case ZOOM:
-            return [self zoomSeq:movementModifier withTag:tag currentPos:currentPos withLayer:layer];
+            return [self zoomSeq:movementModifier withTag:tag currentPos:currentPos];
             
         default:
             return seq;
@@ -61,35 +61,35 @@ static FlightPaths* flightPaths = nil;
 //
 //
 //
--(id)straightSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer *)layer
+-(id)straightSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos
 {
     CCMoveTo* move1 = [CCMoveTo actionWithDuration:[[BlastedEngine instance] getCurrentSpeed] position:ccp(10,currentPos.y)];
-    CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:layer selector:@selector(mobMoveCompleted:) object:(id)[NSNumber numberWithInt:tag]];
+    CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:self selector:@selector(callBackMobMoveComplete:) object:(id)[NSNumber numberWithInt:tag]];
     CCSequence* seq = [CCSequence actions:move1, mobFinished, nil];
     
     return seq;
 
 }
 
--(id)fastinoutSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer *)layer
+-(id)fastinoutSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos
 {
     CCMoveTo* move1 = [CCMoveTo actionWithDuration:[[BlastedEngine instance] getCurrentSpeed] position:ccp(10,currentPos.y)];
     CCEaseIn* easeIn = [CCEaseIn actionWithAction:move1 rate:2.0f];
-    CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:layer selector:@selector(mobMoveCompleted:) object:(id)[NSNumber numberWithInt:tag]];
+    CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:self selector:@selector(callBackMobMoveComplete:) object:(id)[NSNumber numberWithInt:tag]];
     CCSequence* seq = [CCSequence actions:easeIn, mobFinished, nil];
     return seq;    
 }
 
--(id)slowinoutSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer *)layer
+-(id)slowinoutSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos
 {
     CCMoveTo* move1 = [CCMoveTo actionWithDuration:[[BlastedEngine instance] getCurrentSpeed] position:ccp(10,currentPos.y)];
     CCEaseOut* easeOut = [CCEaseOut actionWithAction:move1 rate:2.0f];
-    CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:layer selector:@selector(mobMoveCompleted:) object:(id)[NSNumber numberWithInt:tag]];
+    CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:self selector:@selector(callBackMobMoveComplete:) object:(id)[NSNumber numberWithInt:tag]];
     CCSequence* seq = [CCSequence actions:easeOut, mobFinished, nil];
     return seq;    
 }
 
--(id)bezierOneSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer *)layer 
+-(id)bezierOneSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos 
 {
     ccBezierConfig bezier;
 	bezier.controlPoint_1 = ccp(currentPos.x-50, currentPos.y+150);
@@ -97,12 +97,12 @@ static FlightPaths* flightPaths = nil;
 	bezier.endPosition = ccp(10,currentPos.y);
 	
 	CCBezierTo* bezierForward = [CCBezierTo actionWithDuration:[[BlastedEngine instance] getCurrentSpeed] bezier:bezier];
-    CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:layer selector:@selector(mobMoveCompleted:) object:(id)[NSNumber numberWithInt:tag]];
+    CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:self selector:@selector(callBackMobMoveComplete:) object:(id)[NSNumber numberWithInt:tag]];
     CCSequence* seq = [CCSequence actions:bezierForward, mobFinished, nil];
     return seq;  
 }
 
--(id)zoomSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer *)layer
+-(id)zoomSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos
 {
     CCMoveTo* move1 = [CCMoveTo actionWithDuration:[[BlastedEngine instance] getCurrentSpeed] position:ccp(10,currentPos.y)];
     CCScaleTo* scale = [CCScaleTo actionWithDuration:1 scale:2.5f];
@@ -111,10 +111,15 @@ static FlightPaths* flightPaths = nil;
     CCSequence* seq = [CCSequence actions:scale, scale2, nil];
     CCSpawn* spawn = [CCSpawn actions:seq, move1, nil];
     
-    CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:layer selector:@selector(mobMoveCompleted:) object:(id)[NSNumber numberWithInt:tag]];
+    CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:self selector:@selector(callBackMobMoveComplete:) object:(id)[NSNumber numberWithInt:tag]];
     
     CCSequence* seq2 = [CCSequence actions:spawn, mobFinished, nil];
     return seq2;    
+}
+
+-(void)callBackMobMoveComplete:(id)sender
+{
+    [[BlastedEngine instance] callBackMobMoveComplete:sender];
 }
 
 -(void)dealloc

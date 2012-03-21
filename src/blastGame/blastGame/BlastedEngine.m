@@ -54,6 +54,19 @@ static BlastedEngine* blastedEngine = nil;
     return valid;
 }
 
+//GamePlayLayer Injection
+-(void)injectGamePlayLayer:(MainLayer *)gamePlayLayer
+{
+    CCLOG(@"---> INJECTING GamePlay Layer  ..with RC: %d",[gamePlayLayer retainCount]);
+    injectedGamePlayLayer = gamePlayLayer;
+    CCLOG(@"---> INJECTED                  ..with RC: %d",[gamePlayLayer retainCount]);
+}
+
+-(void)callBackMobMoveComplete:(id)sender
+{
+    [injectedGamePlayLayer mobMoveCompleted:sender];
+}
+
 //
 // Level utils.
 //
@@ -81,6 +94,11 @@ static BlastedEngine* blastedEngine = nil;
 -(BOOL)isLevelCompleted
 {
     return [currentPlayingLevel isAllMobsDead];
+}
+
+-(NSMutableArray*) getMobListArray
+{
+    return [currentPlayingLevel getCurrentMobAliveStatus];
 }
 
 -(int)getBackGroundParticle
@@ -185,7 +203,9 @@ static BlastedEngine* blastedEngine = nil;
                 mobCreated.mobType = [self insertMobEnumFromSpriteNumber:singleRowNum];
                 
                 //Get the required pattern
+                CCLOG(@"----->XXXX BEFORE XXX...with RC: %d",[layer retainCount]);
                 CCSequence* aSeq = [self getPatternFromInt:singleCharPattern movementModifer:0.0f withTag:currentSpriteTag currentPos:mobStartLocation withLayer:layer];
+                CCLOG(@"----->XXXX AFTER XXX...with RC: %d",[layer retainCount]);
                 
                 mobCreated.actionSequenceToRun = [aSeq copy];                                                            
                 currentSpriteTag++;
@@ -211,11 +231,11 @@ static BlastedEngine* blastedEngine = nil;
 {
     switch (patternNumber){
         case 0: return nil;
-        case 1: return [[FlightPaths instance]getSequence:STRAIGHT movementModifer:movementModifier withTag:tag currentPos:currentPos withLayer:layer];
-        case 2: return [[FlightPaths instance]getSequence:FAST_IN_OUT movementModifer:movementModifier withTag:tag currentPos:currentPos withLayer:layer];
-        case 3: return [[FlightPaths instance]getSequence:SLOW_IN_OUT movementModifer:movementModifier withTag:tag currentPos:currentPos withLayer:layer];
-        case 4: return [[FlightPaths instance]getSequence:BEZIER_ONE movementModifer:movementModifier withTag:tag currentPos:currentPos withLayer:layer];
-        case 5: return [[FlightPaths instance]getSequence:ZOOM movementModifer:movementModifier withTag:tag currentPos:currentPos withLayer:layer];
+        case 1: return [[FlightPaths instance]getSequence:STRAIGHT movementModifer:movementModifier withTag:tag currentPos:currentPos];
+        case 2: return [[FlightPaths instance]getSequence:FAST_IN_OUT movementModifer:movementModifier withTag:tag currentPos:currentPos];
+        case 3: return [[FlightPaths instance]getSequence:SLOW_IN_OUT movementModifer:movementModifier withTag:tag currentPos:currentPos];
+        case 4: return [[FlightPaths instance]getSequence:BEZIER_ONE movementModifer:movementModifier withTag:tag currentPos:currentPos];
+        case 5: return [[FlightPaths instance]getSequence:ZOOM movementModifer:movementModifier withTag:tag currentPos:currentPos];
         default:
             return nil;
     }
