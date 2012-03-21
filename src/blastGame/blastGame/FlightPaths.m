@@ -63,7 +63,7 @@ static FlightPaths* flightPaths = nil;
 //
 -(id)straightSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer *)layer
 {
-    CCMoveTo* move1 = [CCMoveTo actionWithDuration:10 position:ccp(10,currentPos.y)];
+    CCMoveTo* move1 = [CCMoveTo actionWithDuration:[[BlastedEngine instance] getCurrentSpeed] position:ccp(10,currentPos.y)];
     CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:layer selector:@selector(mobMoveCompleted:) object:(id)[NSNumber numberWithInt:tag]];
     CCSequence* seq = [CCSequence actions:move1, mobFinished, nil];
     
@@ -73,7 +73,7 @@ static FlightPaths* flightPaths = nil;
 
 -(id)fastinoutSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer *)layer
 {
-    CCMoveTo* move1 = [CCMoveTo actionWithDuration:10 position:ccp(10,currentPos.y)];
+    CCMoveTo* move1 = [CCMoveTo actionWithDuration:[[BlastedEngine instance] getCurrentSpeed] position:ccp(10,currentPos.y)];
     CCEaseIn* easeIn = [CCEaseIn actionWithAction:move1 rate:2.0f];
     CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:layer selector:@selector(mobMoveCompleted:) object:(id)[NSNumber numberWithInt:tag]];
     CCSequence* seq = [CCSequence actions:easeIn, mobFinished, nil];
@@ -82,7 +82,7 @@ static FlightPaths* flightPaths = nil;
 
 -(id)slowinoutSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer *)layer
 {
-    CCMoveTo* move1 = [CCMoveTo actionWithDuration:10 position:ccp(10,currentPos.y)];
+    CCMoveTo* move1 = [CCMoveTo actionWithDuration:[[BlastedEngine instance] getCurrentSpeed] position:ccp(10,currentPos.y)];
     CCEaseOut* easeOut = [CCEaseOut actionWithAction:move1 rate:2.0f];
     CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:layer selector:@selector(mobMoveCompleted:) object:(id)[NSNumber numberWithInt:tag]];
     CCSequence* seq = [CCSequence actions:easeOut, mobFinished, nil];
@@ -96,7 +96,7 @@ static FlightPaths* flightPaths = nil;
 	bezier.controlPoint_2 = ccp(120, currentPos.y-150);
 	bezier.endPosition = ccp(10,currentPos.y);
 	
-	CCBezierTo* bezierForward = [CCBezierTo actionWithDuration:10 bezier:bezier];
+	CCBezierTo* bezierForward = [CCBezierTo actionWithDuration:[[BlastedEngine instance] getCurrentSpeed] bezier:bezier];
     CCCallFuncO* mobFinished = [CCCallFuncO actionWithTarget:layer selector:@selector(mobMoveCompleted:) object:(id)[NSNumber numberWithInt:tag]];
     CCSequence* seq = [CCSequence actions:bezierForward, mobFinished, nil];
     return seq;  
@@ -104,7 +104,7 @@ static FlightPaths* flightPaths = nil;
 
 -(id)zoomSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer *)layer
 {
-    CCMoveTo* move1 = [CCMoveTo actionWithDuration:10 position:ccp(10,currentPos.y)];
+    CCMoveTo* move1 = [CCMoveTo actionWithDuration:[[BlastedEngine instance] getCurrentSpeed] position:ccp(10,currentPos.y)];
     CCScaleTo* scale = [CCScaleTo actionWithDuration:1 scale:2.5f];
     CCScaleTo* scale2 = [CCScaleTo actionWithDuration:1 scale:1.0f];
     

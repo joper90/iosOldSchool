@@ -23,7 +23,15 @@
         int part = [[BlastedEngine instance]getBackGroundParticle];
         partSystem = [BGparticleEffects getParticle:part];
     
-        [self addChild:partSystem];        
+        [self addChild:partSystem];     
+        
+        //Setup the lines
+        lineOneStart = ccp(LINE_ONE,0);
+        lineOneEnd = ccp(LINE_ONE, [Utils instance].screenHeight);
+        lineTwoStart = ccp(LINE_TWO,0);
+        lineTwoEnd = ccp(LINE_TWO, [Utils instance].screenHeight);
+        lineThreeStart = ccp(LINE_THREE,0);
+        lineThreeEnd = ccp(LINE_THREE, [Utils instance].screenHeight);
     }
 	return self;
 }
@@ -32,19 +40,22 @@
 -(void)draw
 {
     //Overide draw.
-    glLineWidth(2);
-    glEnable(GL_LINE_SMOOTH);
+    //glEnable(GL_LINE_SMOOTH);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
     //Line One
     glLineWidth(10);
-    glColor4ub(150, 0, 0, 100);
-	
-    ccDrawLine(dLine.start, dLine.end);
+    glColor4ub(150, 0, 0, 40);
+	    
+    ccDrawLine(lineOneStart, lineOneEnd);
+    ccDrawLine(lineTwoStart, lineTwoEnd);
+    ccDrawLine(lineThreeStart, lineThreeEnd);
     
-    glColor4ub(255, 0, 0, 255);
+    glColor4ub(200, 0, 0, 100);
     glLineWidth(2);
-    ccDrawLine(dLine.start, dLine.end);
+    ccDrawLine(lineOneStart, lineOneEnd);
+    ccDrawLine(lineTwoStart, lineTwoEnd);
+    ccDrawLine(lineThreeStart, lineThreeEnd);
 }
 @end

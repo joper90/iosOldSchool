@@ -29,8 +29,18 @@
 
 #import <Foundation/Foundation.h>
 
+//Elements Z level Tag from 100 up
+#define Z_PLANET_TAG            100
+#define Z_GUN_TAG               101
+#define Z_PLANT_HIT_TAG         102
+#define Z_COUNTDOWN_TEXT_TAG    103
+
+
 //Elements Tags from 500 up.
-#define GUN_TAG                 500;
+#define PLANET_TAG              500
+#define GUN_TAG                 501
+#define PLANET_HIT_TAG          502
+#define COUNTDOWN_TEXT_TAG      503
 
 
 // Layer tags from 1000 up
@@ -70,21 +80,22 @@ extern NSString *const  GUN_SPRITE_FILE;
 
 //Barrier Locations:
 #define LINE_ONE       150
-#define LINE_TWO       200
-#define LINE_THREE     300
+#define LINE_TWO       250
+#define LINE_THREE     350
 
 //Game constants used for tweaking.
 #define DRAG_CLICK_LENIENCY         20 //10 pixels for click/drag issues.
 #define MOB_ROW_COUNT               5  //5 rows of mobs at once
 #define START_OFFSCREEN_OFFSET      20 //Screen offset for mob placement.
 #define MAX_TOUCH_SELECTED          4 // Max number of touches before a swipe is required.
+#define PLANET_X_POSITION           20// position the mob moved to (planet hit)
 
-#define GUN_X_POSITION              10 //X poistion of the gun.
+#define GUN_X_POSITION              40 //X poistion of the gun.
 
 #define LEVEL_COMPLETE_POLLTIME     5 // 2 seconds..
 
 #define FONT_SIZE                   20 //base fontsize
-
+#define FONT_SIZE_COUNTDOWN         70 //countdown fontsize.
 
 //Flash (splash) screen
 extern NSString *const COMPANY_NAME;

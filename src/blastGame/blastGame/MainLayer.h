@@ -23,9 +23,12 @@
     int maxWave;
     float timeBetweenWaves;
     
-    NSMutableArray* currentTouchesTags;
+    CCLabelTTF* countDownLabel;
     CCSprite* gunSprite;
     CCSprite* lockOnSprite;
+    CCSprite* globeSprite;
+    
+    NSMutableArray* currentTouchesTags;
     NSMutableArray* bullets; //0-3 bullets
     NSMutableArray* bangArray; //0-3 bangs
     
@@ -35,7 +38,6 @@
 }
 
 -(void)startAndMoveMobWave:(int) mobWavetoStart;
--(void)mobFinished:(id) object;
 -(void)checkSpriteTouchedAction;
 -(void)laserAction;
 -(void)bangAction:(id) object;
@@ -51,5 +53,7 @@
 -(void) updateModiferDecrease;
 
 -(void) initGun;
+-(void) levelCountDown;
+-(void) levelCountDownTimeout:(id)sender;
 
 @end

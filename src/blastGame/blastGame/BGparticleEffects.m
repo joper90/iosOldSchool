@@ -27,5 +27,14 @@
     return retPart;
 }
 
++(CCParticleSystem*) getHitPlanet
+{
+    CCParticleSystem* retPart = nil;
+    
+    retPart = [CCParticleSystemQuad particleWithFile:@"hitplanet.plist"];
+    
+    return retPart;
+}
+
 
 @end

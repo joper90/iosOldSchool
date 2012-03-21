@@ -14,11 +14,11 @@ NSString *const COMPANY_NAME = @"funkVoodoo";
 NSString *const COMPANY_SUBTEXT = @"productions";
 NSString *const COPYRIGHT_MESSAGE = @"(c) 2012 funkVoodoo";
 
-NSString *const RED_SPRITE_FILE = @"Icon-Small.png";
-NSString *const YELLOW_SPRITE_FILE = @"Icon-Small.png";
-NSString *const BLUE_SPRITE_FILE = @"Icon-Small.png";
-NSString *const GREEN_SPRITE_FILE = @"Icon-Small.png";
-NSString *const PINK_SPRITE_FILE = @"Icon-Small.png";
+NSString *const RED_SPRITE_FILE = @"red.png";
+NSString *const YELLOW_SPRITE_FILE = @"yellow.png";
+NSString *const BLUE_SPRITE_FILE = @"blue.png";
+NSString *const GREEN_SPRITE_FILE = @"green.png";
+NSString *const PINK_SPRITE_FILE = @"pink.png";
 
 NSString *const GUN_SPRITE_FILE = @"gun.png";
 

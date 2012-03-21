@@ -19,23 +19,72 @@
         self.isTouchEnabled = YES;
         
         currentTouchesTags = [[NSMutableArray alloc]init];
+              
         
         //Lets load level One up
-        
-        
         [[BlastedEngine instance]loadLevel:[BlastedEngine instance].level withLayer:self];  //load the level
         maxWave = [[BlastedEngine instance]getWaveCountByCurrentLevel]; //set the waves on this level.
+        
+        //Call the levelCoutDown
+        [self levelCountDown];
+        
+    }
+	return self;
+}
+
+-(void)levelCountDown
+{
+    countDownLabel = [CCLabelTTF labelWithString:@"3" fontName:@"zxspectr.ttf" fontSize:FONT_SIZE_COUNTDOWN];
+    [self addChild:countDownLabel z:Z_COUNTDOWN_TEXT_TAG tag:COUNTDOWN_TEXT_TAG];
+    
+    //Load in the globe and spin in.
+    globeSprite = [CCSprite spriteWithFile:@"planet.png"];
+    globeSprite.scale = 4.0f;
+    globeSprite.position = ccp(-120, [Utils instance].screenHeight/2);
+    
+    [self addChild:globeSprite z:Z_PLANET_TAG tag:PLANET_TAG];
+    
+    //Globe actions
+    CCScaleTo* zoom = [CCScaleTo actionWithDuration:3 scale:0.9f];
+    CCAction* rot  = [CCRotateBy actionWithDuration:3 angle:360.0f];
+    CCSpawn* actions = [CCSpawn actions:zoom, rot, nil];
+    CCScaleTo* zoomOut = [CCScaleTo actionWithDuration:0.5f scale:1.0f];
+    CCSequence* seq = [CCSequence actions:actions, zoomOut, nil];
+    
+    [globeSprite runAction:seq];
+    
+    
+    //Start it off the screen to the left.
+    [self levelCountDownTimeout:[NSNumber numberWithInt:3]];
+
+}
+
+-(void)levelCountDownTimeout:(id)sender
+{
+    NSNumber* ttt = sender;
+    int x = [ttt integerValue];
+    
+    
+    if (x > 0)
+    {
+        [countDownLabel setString:[NSString stringWithFormat:@"%d",x]];
+        countDownLabel.position = ccp(-10, [Utils instance].screenHeight/4);
+        CGPoint endPos = ccp([Utils instance].screenWidth + 40, [Utils instance].screenHeight/4);
+        CCMoveTo* move = [CCMoveTo actionWithDuration:1.5f position:endPos];
+        CCCallFuncO* moveDone = [CCCallFuncO actionWithTarget:self selector:@selector(levelCountDownTimeout:) object:[NSNumber numberWithInt:--x]];
+        CCSequence* seq = [CCSequence actions:move, moveDone, nil];
+        [countDownLabel runAction:seq];
+     
+    }else
+    {
         
         //Init the display now
         [self initGun];
         [self startAndMoveMobWave:0];
-        
+    
         //Now register the schedure for when the time (betweenRowTime has elapsed);
         [self schedule:@selector(scheduleNewWave:) interval:[[BlastedEngine instance]getCurrentTimeBetweenWaves]];
-        
-        
     }
-	return self;
 }
 
 -(void)initGun
@@ -58,9 +107,9 @@
     
     gunSprite = [CCSprite spriteWithFile:@"gun.png"];
     gunSprite.position = ccp(GUN_X_POSITION, [Utils instance].center.y);
-    gunSprite.tag = GUN_TAG;
     
-    [self addChild:gunSprite z:10];
+    
+    [self addChild:gunSprite z:Z_GUN_TAG tag:GUN_TAG];
 }
 
 -(void)startAndMoveMobWave:(int) mobWavetoStart
@@ -89,15 +138,6 @@
     }
 }
 
-
-//MobHit (the planet) - game over? or life lost..
--(void)mobFinished:(id)sender
-{
-    NSNumber* ttt = sender;
-    int x = [ttt integerValue];
-    CCLOG(@"mobMoveCompleted (in mainLayer): called with tag : %d", x);
-    [self removeChildByTag:x cleanup:YES];
-}
 
 -(void)scheduleNewWave:(ccTime)delta
 {
@@ -246,7 +286,15 @@
     NSNumber* ttt = sender;
     int x = [ttt integerValue];
     CCLOG(@"mobMoveCompleted (MainLayer): called with tag : %d", x);
+    // Now go Bang...
+    CCParticleSystem* mobBang = [CCParticleSystemQuad particleWithFile:@"exp2.plist"];
+    CGPoint location = [self getChildByTag:x].position;
+    mobBang.position = location;
+    
+    [self addChild:mobBang z:Z_PLANT_HIT_TAG tag:PLANET_HIT_TAG];
     [self removeChildByTag:x cleanup:YES];
+    
+    
 
 }
 

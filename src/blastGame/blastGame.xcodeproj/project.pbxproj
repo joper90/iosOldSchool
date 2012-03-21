@@ -123,6 +123,15 @@
 		CE270E5B14FCEB0700C2DBA3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E5A14FCEB0700C2DBA3 /* RootViewController.m */; };
 		CE270E6B14FCEE2500C2DBA3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E6A14FCEE2500C2DBA3 /* Utils.m */; };
 		CE270E6F14FCF48F00C2DBA3 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E6E14FCF48F00C2DBA3 /* MainScene.m */; };
+		CE39BA5C15189864006285C7 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA5715189863006285C7 /* blue.png */; };
+		CE39BA5D15189864006285C7 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA5815189863006285C7 /* green.png */; };
+		CE39BA5E15189864006285C7 /* pink.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA5915189863006285C7 /* pink.png */; };
+		CE39BA5F15189864006285C7 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA5A15189863006285C7 /* red.png */; };
+		CE39BA6015189864006285C7 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA5B15189863006285C7 /* yellow.png */; };
+		CE39BA6315189D9D006285C7 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA6215189D9D006285C7 /* TODO */; };
+		CE39BA681518B931006285C7 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA671518B930006285C7 /* planet.png */; };
+		CE39BA6A1518C46B006285C7 /* hitplanet.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA691518C46B006285C7 /* hitplanet.plist */; };
+		CE39BA6C151914EB006285C7 /* exp2.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA6B151914EB006285C7 /* exp2.plist */; };
 		CE909B2B150A548F00E66CA4 /* FlightPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = CE909B2A150A548F00E66CA4 /* FlightPaths.m */; };
 		CE909B2E150A5A1300E66CA4 /* MainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE909B2D150A5A1300E66CA4 /* MainLayer.m */; };
 		CEB042EE14FD16840005EF2B /* MainBGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042ED14FD16840005EF2B /* MainBGLayer.m */; };
@@ -389,6 +398,15 @@
 		CE270E6A14FCEE2500C2DBA3 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		CE270E6D14FCF48F00C2DBA3 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		CE270E6E14FCF48F00C2DBA3 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
+		CE39BA5715189863006285C7 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue.png; path = Resources/blue.png; sourceTree = "<group>"; };
+		CE39BA5815189863006285C7 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green.png; path = Resources/green.png; sourceTree = "<group>"; };
+		CE39BA5915189863006285C7 /* pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pink.png; path = Resources/pink.png; sourceTree = "<group>"; };
+		CE39BA5A15189863006285C7 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red.png; path = Resources/red.png; sourceTree = "<group>"; };
+		CE39BA5B15189863006285C7 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yellow.png; path = Resources/yellow.png; sourceTree = "<group>"; };
+		CE39BA6215189D9D006285C7 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
+		CE39BA671518B930006285C7 /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet.png; path = Resources/planet.png; sourceTree = "<group>"; };
+		CE39BA691518C46B006285C7 /* hitplanet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hitplanet.plist; sourceTree = "<group>"; };
+		CE39BA6B151914EB006285C7 /* exp2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = exp2.plist; sourceTree = "<group>"; };
 		CE909B29150A548F00E66CA4 /* FlightPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightPaths.h; sourceTree = "<group>"; };
 		CE909B2A150A548F00E66CA4 /* FlightPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightPaths.m; sourceTree = "<group>"; };
 		CE909B2D150A5A1300E66CA4 /* MainLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainLayer.m; sourceTree = "<group>"; };
@@ -495,6 +513,7 @@
 				CE270E6714FCECC500C2DBA3 /* importClasses */,
 				CEB042F014FD16A80005EF2B /* layers */,
 				CEB042F714FD17690005EF2B /* engine */,
+				CE39BA6215189D9D006285C7 /* TODO */,
 			);
 			path = blastGame;
 			sourceTree = "<group>";
@@ -506,7 +525,13 @@
 				CEBABA8E15177718004F11E7 /* particles */,
 				CEBAB8D915123907004F11E7 /* lockon.png */,
 				CEEE4B80150502B9002621BC /* jsonTest.json */,
+				CE39BA671518B930006285C7 /* planet.png */,
 				CEBAB8D715121B3A004F11E7 /* gun.png */,
+				CE39BA5715189863006285C7 /* blue.png */,
+				CE39BA5815189863006285C7 /* green.png */,
+				CE39BA5915189863006285C7 /* pink.png */,
+				CE39BA5A15189863006285C7 /* red.png */,
+				CE39BA5B15189863006285C7 /* yellow.png */,
 				CE270D0814FCEB0000C2DBA3 /* fps_images.png */,
 				CE270D0A14FCEB0000C2DBA3 /* Icon-72.png */,
 				CE270D0C14FCEB0000C2DBA3 /* Icon-Small-50.png */,
@@ -902,6 +927,8 @@
 		CEBABA8E15177718004F11E7 /* particles */ = {
 			isa = PBXGroup;
 			children = (
+				CE39BA691518C46B006285C7 /* hitplanet.plist */,
+				CE39BA6B151914EB006285C7 /* exp2.plist */,
 				CEBABA6E15133C83004F11E7 /* exp1.plist */,
 				CEBABA6B15133C7C004F11E7 /* bullet_with_death.plist */,
 				CEBABA8F15177B0A004F11E7 /* galaxyOne.plist */,
@@ -1005,6 +1032,15 @@
 				CEBABA86151735C0004F11E7 /* zxspectr.ttf in Resources */,
 				CEBABA9115177B0A004F11E7 /* galaxyOne.plist in Resources */,
 				CEBABA9215177B0A004F11E7 /* spore.plist in Resources */,
+				CE39BA5C15189864006285C7 /* blue.png in Resources */,
+				CE39BA5D15189864006285C7 /* green.png in Resources */,
+				CE39BA5E15189864006285C7 /* pink.png in Resources */,
+				CE39BA5F15189864006285C7 /* red.png in Resources */,
+				CE39BA6015189864006285C7 /* yellow.png in Resources */,
+				CE39BA6315189D9D006285C7 /* TODO in Resources */,
+				CE39BA681518B931006285C7 /* planet.png in Resources */,
+				CE39BA6A1518C46B006285C7 /* hitplanet.plist in Resources */,
+				CE39BA6C151914EB006285C7 /* exp2.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

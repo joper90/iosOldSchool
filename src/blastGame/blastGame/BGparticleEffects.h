@@ -20,4 +20,5 @@ typedef enum{
 }
 
 +(CCParticleSystem*) getParticle:(backroundPattern) pattern;
++(CCParticleSystem*) getHitPlanet;
 @end
