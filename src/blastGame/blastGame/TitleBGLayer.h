@@ -6,7 +6,8 @@
 //  Copyright (c) 2012 funkvoodoo.com. All rights reserved.
 //
 
-#import "CCLayer.h"
+#import "CoreImports.h"
+#import "cocos2d.h"
 
 @interface TitleBGLayer : CCLayer
 

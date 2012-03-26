@@ -34,6 +34,8 @@
 #define Z_GUN_TAG               101
 #define Z_PLANT_HIT_TAG         102
 #define Z_COUNTDOWN_TEXT_TAG    103
+#define Z_BG_MENU_TAG           104
+#define Z_BG_MENU_GAMENAME      105
 
 
 //Elements Tags from 500 up.
