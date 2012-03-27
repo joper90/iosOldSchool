@@ -10,5 +10,8 @@
 #import "cocos2d.h"
 
 @interface TitleBGLayer : CCLayer
-
+{
+    CGRect startGameRect;
+    CGRect hiScoreRect;
+}
 @end

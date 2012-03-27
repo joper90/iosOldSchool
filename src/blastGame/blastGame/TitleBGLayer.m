@@ -15,18 +15,46 @@
     CCLOG(@"TitleMenu BG Layer...with RC: %d",[self retainCount]);
 	if( (self=[super init])) 
     {
+        self.isTouchEnabled = YES;
+        
         CCSprite* bgImage = [CCSprite spriteWithFile:@"blastedMenu.png"];
-        CCLabelTTF *gameName = [CCLabelTTF labelWithString:@"Blasted Game" fontName:@"efmi" fontSize:48];
+        CCLabelTTF *gameName = [CCLabelTTF labelWithString:@"Blasted Game" fontName:@"zxspectr" fontSize:32];
+        CCLabelTTF *startButton = [CCLabelTTF labelWithString:@"Start new game" fontName:@"zxspectr" fontSize:20];
+        CCLabelTTF *hiScore = [CCLabelTTF labelWithString:@"hiscore / help" fontName:@"zxspectr" fontSize:15];
         
         // position the label on the center of the screen
         CGPoint centerPos= [[Utils instance]center];
-        bgImage.position = centerPos;
-		gameName.position =  centerPos;   
         
-        [self addChild:bgImage z:Z_BG_MENU_TAG];
-        [self addChild:bgImage z:Z_BG_MENU_GAMENAME];
+        bgImage.position = centerPos;
+		gameName.position =  ccp(centerPos.x, centerPos.y + 120);
+        startButton.position = ccp(centerPos.x - 40, centerPos.y + 20);
+        hiScore.position = ccp(centerPos.x - 100, centerPos.y - 70);
+        
+        startGameRect = CGRectMake(20,140,390,80);
+        hiScoreRect = CGRectMake(20, 50, 230, 70);
+                
+        
+        [self addChild:hiScore z:Z_BG_MENU_HISCORE_HELP];
+        [self addChild:startButton z:Z_BG_MENU_STARTBUTTON];
+        [self addChild:bgImage z:-1];
+        [self addChild:gameName z:Z_BG_MENU_GAMENAME];
     }
 	return self;
+}
+
+-(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    CGPoint touchLocation = [[Utils instance]locationFromTouchMultiPoint:touches];
+    if (CGRectContainsPoint(startGameRect, touchLocation))
+    {
+        CCLOG(@"StartGameRect");
+    }
+    else if (CGRectContainsPoint(hiScoreRect, touchLocation))
+    {
+        CCLOG(@"Hiscore Rect");
+    }
+    
+    
 }
 
 @end
