@@ -8,6 +8,7 @@
 
 #import "CoreImports.h"
 #import "cocos2d.h"
+#import "MainScene.h"
 
 @interface TitleBGLayer : CCLayer
 {

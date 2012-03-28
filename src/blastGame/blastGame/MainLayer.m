@@ -22,8 +22,7 @@
         //CCLOG(@"-->removed...with RC: %d",[self retainCount]);
         
         
-        //enable touches
-        self.isTouchEnabled = YES;
+
         
         currentTouchesTags = [[NSMutableArray alloc]init];
               
@@ -121,6 +120,9 @@
     
     
     [self addChild:gunSprite z:Z_GUN_TAG tag:GUN_TAG];
+    
+    //enable touches
+    self.isTouchEnabled = YES;
 }
 
 -(void)startAndMoveMobWave:(int) mobWavetoStart
@@ -179,6 +181,8 @@
         //unschedule this test.
         [self unschedule:@selector(scheduleNewWave:)];
         [self unschedule:_cmd];
+        CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:0.5f scene:[LevelCompleteScene scene]];
+        [[CCDirector sharedDirector]pushScene:ccFade];
         
     }
     else
@@ -326,6 +330,7 @@
 -(void)mobMoveCompletedRemoveAllMobs:(ccTime) delta
 {
     CCLOG(@"MoveCompletedRemvoeAllMobs...with RC: %d",[self retainCount]);
+    self.isTouchEnabled = NO;
     [self unschedule:_cmd];
     //Remove all sprites
     NSMutableArray* spritesList = [[BlastedEngine instance]getMobListArray];

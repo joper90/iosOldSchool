@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE11B9D515232C67000EF2A0 /* LevelCompleteScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11B9D415232C67000EF2A0 /* LevelCompleteScene.m */; };
+		CE11B9D915232C75000EF2A0 /* LevelCompleteLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11B9D815232C75000EF2A0 /* LevelCompleteLayer.m */; };
 		CE270CF514FCEB0000C2DBA3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE270CF414FCEB0000C2DBA3 /* QuartzCore.framework */; };
 		CE270CF714FCEB0000C2DBA3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE270CF614FCEB0000C2DBA3 /* OpenGLES.framework */; };
 		CE270CF914FCEB0000C2DBA3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE270CF814FCEB0000C2DBA3 /* OpenAL.framework */; };
@@ -163,6 +165,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE11B9D315232C67000EF2A0 /* LevelCompleteScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCompleteScene.h; sourceTree = "<group>"; };
+		CE11B9D415232C67000EF2A0 /* LevelCompleteScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCompleteScene.m; sourceTree = "<group>"; };
+		CE11B9D715232C75000EF2A0 /* LevelCompleteLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCompleteLayer.h; sourceTree = "<group>"; };
+		CE11B9D815232C75000EF2A0 /* LevelCompleteLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCompleteLayer.m; sourceTree = "<group>"; };
 		CE270CF014FCEB0000C2DBA3 /* blastGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blastGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE270CF414FCEB0000C2DBA3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE270CF614FCEB0000C2DBA3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -901,6 +907,8 @@
 				CEB042FF14FD1B5F0005EF2B /* FlashScene.m */,
 				CEBA46B91519FED400AE5E31 /* GameOverScene.h */,
 				CEBA46BA1519FED400AE5E31 /* GameOverScene.m */,
+				CE11B9D315232C67000EF2A0 /* LevelCompleteScene.h */,
+				CE11B9D415232C67000EF2A0 /* LevelCompleteScene.m */,
 			);
 			name = scene;
 			sourceTree = "<group>";
@@ -922,6 +930,8 @@
 				CEBABA8915173618004F11E7 /* MainFGLayer.m */,
 				CEBA46BD151A00AC00AE5E31 /* GameOverLayer.h */,
 				CEBA46BE151A00AC00AE5E31 /* GameOverLayer.m */,
+				CE11B9D715232C75000EF2A0 /* LevelCompleteLayer.h */,
+				CE11B9D815232C75000EF2A0 /* LevelCompleteLayer.m */,
 			);
 			name = layers;
 			sourceTree = "<group>";
@@ -1182,6 +1192,8 @@
 				CEBABA8D1517757B004F11E7 /* BGparticleEffects.m in Sources */,
 				CEBA46BB1519FED400AE5E31 /* GameOverScene.m in Sources */,
 				CEBA46BF151A00AD00AE5E31 /* GameOverLayer.m in Sources */,
+				CE11B9D515232C67000EF2A0 /* LevelCompleteScene.m in Sources */,
+				CE11B9D915232C75000EF2A0 /* LevelCompleteLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

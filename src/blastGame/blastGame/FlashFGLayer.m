@@ -50,7 +50,7 @@
     CCLOG(@"Timed OUT....");
     
     //Insert transistion here to mailScene
-    CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:2 scene:[MainScene scene]];
+    CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:2 scene:[TitleScene scene]];
     
     [[CCDirector sharedDirector]pushScene:ccFade];
 }

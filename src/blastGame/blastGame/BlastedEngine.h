@@ -70,6 +70,7 @@
 //GamePlayLayer Stuff
 -(void)injectGamePlayLayer:(CCLayer*)gamePlayLayer;
 -(void)callBackMobMoveComplete:(id)sender;
+-(void)increaseLevelCount;
 
 -(BOOL)loadLevel:(int) levelToLoad withLayer:(CCLayer*) layer;
 -(int)getWaveCountByCurrentLevel;

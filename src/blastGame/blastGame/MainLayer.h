@@ -12,6 +12,7 @@
 #import "FlightPaths.h"
 #import "BangAction.h"
 #import "GameOverScene.h"
+#import "LevelCompleteScene.h"
 
 @interface MainLayer : CCLayer
 {

@@ -71,6 +71,11 @@ static BlastedEngine* blastedEngine = nil;
 // Level utils.
 //
 
+-(void)increaseLevelCount
+{
+    level++;
+}
+
 -(int)getWaveCountByCurrentLevel
 {
     return currentPlayingLevel.waveCount;
@@ -153,11 +158,12 @@ static BlastedEngine* blastedEngine = nil;
 -(BOOL)loadLevel:(int)levelToLoad withLayer:(CCLayer *)layer
 {
     BOOL allValid = YES;
-    
+        
     //Hopefully arrays keep the order, and need some more rubust defensive codign in here.
     currentPlayingLevel = [levelList objectForKey:[NSNumber numberWithInt:levelToLoad]];
  
     //Now create all the mobs in an array.
+    [mobsArray removeAllObjects];
  
     CCLOG(@"Processing rows into Sprite elements...");
     
@@ -203,9 +209,7 @@ static BlastedEngine* blastedEngine = nil;
                 mobCreated.mobType = [self insertMobEnumFromSpriteNumber:singleRowNum];
                 
                 //Get the required pattern
-                CCLOG(@"----->XXXX BEFORE XXX...with RC: %d",[layer retainCount]);
                 CCSequence* aSeq = [self getPatternFromInt:singleCharPattern movementModifer:0.0f withTag:currentSpriteTag currentPos:mobStartLocation withLayer:layer];
-                CCLOG(@"----->XXXX AFTER XXX...with RC: %d",[layer retainCount]);
                 
                 mobCreated.actionSequenceToRun = [aSeq copy];                                                            
                 currentSpriteTag++;

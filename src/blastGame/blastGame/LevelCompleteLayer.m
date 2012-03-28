@@ -1,15 +1,15 @@
 //
-//  GameOverLayer.m
+//  LevelCompleteLayer.m
 //  blastGame
 //
-//  Created by AppleUser on 21/03/2012.
+//  Created by AppleUser on 28/03/2012.
 //  Copyright 2012 funkvoodoo.com. All rights reserved.
 //
 
-#import "GameOverLayer.h"
+#import "LevelCompleteLayer.h"
 
 
-@implementation GameOverLayer
+@implementation LevelCompleteLayer
 
 -(id) init
 {
@@ -18,21 +18,21 @@
     {
         self.isTouchEnabled = YES;
         
-        CCLabelTTF *gameOver = [CCLabelTTF labelWithString:@"GameOver" fontName:@"efmi" fontSize:48];
+        CCLabelTTF *levelComplete = [CCLabelTTF labelWithString:@"Level Complete..." fontName:@"efmi" fontSize:48];
         
         // position the label on the center of the screen
         CGPoint centerPos= [[Utils instance]center];
-		gameOver.position =  centerPos;   
+		levelComplete.position =  centerPos;   
         
-        [self addChild:gameOver];
+        [self addChild:levelComplete];
     }
 	return self;
 }
 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:0.5f scene:[TitleScene scene]];
+    [[BlastedEngine instance]increaseLevelCount];
+    CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:2 scene:[MainScene scene]];
     [[CCDirector sharedDirector]pushScene:ccFade];
 }
-
 @end

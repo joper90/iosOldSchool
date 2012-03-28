@@ -48,6 +48,9 @@
     if (CGRectContainsPoint(startGameRect, touchLocation))
     {
         CCLOG(@"StartGameRect");
+        CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:2 scene:[MainScene scene]];
+        [[CCDirector sharedDirector]pushScene:ccFade];
+        
     }
     else if (CGRectContainsPoint(hiScoreRect, touchLocation))
     {

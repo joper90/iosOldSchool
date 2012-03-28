@@ -25,20 +25,20 @@
       "levelId": "2",
       "levelInfo": "normal",
       "baseSpeed": "10",
-      "lineTime": "10",
+      "lineTime": "3",
 "bg": "1",
       "rowData": [
         {
-          "row": "1111",
-          "pattern": "2222"
+          "row": "10011",
+          "pattern": "11111"
         },
         {
-          "row": "3333",
-          "pattern": "4444"
+          "row": "11000",
+          "pattern": "11111"
         },
         {
-          "row": "5555",
-          "pattern": "6666"
+          "row": "00111",
+          "pattern": "11111"
         }
       ]
     },
