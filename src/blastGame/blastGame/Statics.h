@@ -36,6 +36,9 @@
 #define Z_COUNTDOWN_TEXT_TAG    103
 #define Z_BG_MENU_TAG           104
 #define Z_BG_MENU_GAMENAME      105
+#define Z_BG_MENU_STARTBUTTON   106
+#define Z_BG_MENU_HISCORE_HELP  107
+
 
 
 //Elements Tags from 500 up.

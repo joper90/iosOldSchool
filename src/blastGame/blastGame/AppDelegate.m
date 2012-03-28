@@ -13,6 +13,7 @@
 #import "RootViewController.h"
 #import "BlastedEngine.h"
 #import "FlashScene.h"
+#import "TitleScene.h"
 
 @implementation AppDelegate
 
@@ -123,7 +124,8 @@
     //Any quick Checks TO BE REMOVED..
         
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [FlashScene scene]];
+	//[[CCDirector sharedDirector] runWithScene: [FlashScene scene]];
+    [[CCDirector sharedDirector] runWithScene: [TitleScene scene]];
 }
 
 
