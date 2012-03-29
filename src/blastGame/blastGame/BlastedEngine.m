@@ -388,6 +388,11 @@ static BlastedEngine* blastedEngine = nil;
     return currentScore;
 }
 
+-(void)resetScore
+{
+    currentScore = 0;
+}
+
 -(void)dealloc
 {
     [mobsArray release];

@@ -14,5 +14,15 @@
 {
     CGRect startGameRect;
     CGRect hiScoreRect;
+    float  barPercentTime;
 }
+
+@property (readwrite,assign) float barPercentTime;
+
+-(void)setBarTimeToZero;
+-(void)setBatTimeToMax;
+-(BOOL)isBarTimeZero;
+-(BOOL)decreaseBarTimeByFactor:(float) factor;
+
+
 @end

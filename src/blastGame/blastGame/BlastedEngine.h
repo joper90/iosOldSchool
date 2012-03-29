@@ -83,6 +83,7 @@
 -(BOOL)isLevelCompleted;
 
 //Score Stuff
+-(void)resetScore;
 -(void)incMultiplier;
 -(void)decMultiplier;
 -(void)resetMultiplier;

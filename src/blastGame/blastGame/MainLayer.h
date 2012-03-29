@@ -51,6 +51,7 @@
 -(void) mobMoveCompleted:(id)sender;
 -(void) mobMoveCompletedRemoveAllMobs:(ccTime) delta;
 
+-(void) calculateScore;
 -(void) updateScore:(int)amount;
 -(void) updateModiferIncrease;
 -(void) updateModiferDecrease;

@@ -20,10 +20,7 @@
         [[BlastedEngine instance]injectGamePlayLayer:self];
         CCLOG(@"-->injected...with RC: %d",[self retainCount]);
         //CCLOG(@"-->removed...with RC: %d",[self retainCount]);
-        
-        
-
-        
+     
         currentTouchesTags = [[NSMutableArray alloc]init];
               
         CCLOG(@"----->currenTouchedAllocted...with RC: %d",[self retainCount]);
@@ -370,6 +367,7 @@
 {
     CCLOG(@"LaserAction...with RC: %d",[self retainCount]);
     CCLOG(@"Laser called : with touched count %d", currentTouchesTags.count);
+        
     for (int x =0; x < currentTouchesTags.count; x++)
     {
         int tag = [[currentTouchesTags objectAtIndex:x]integerValue];
@@ -404,6 +402,10 @@
         
     }
     
+    
+    //Now calcute the score
+    [self calculateScore];
+    
     //Now remove all elements - can start selecting after firing.. 
     [currentTouchesTags removeAllObjects];
 }
@@ -428,6 +430,51 @@
 }
 
 //Scores
+
+-(void) calculateScore
+{
+    CCLOG(@"Calculate score...");
+    // Work out the score per 1, 2 ,3 or 4 hit.
+    // Each mob gets a score based on it posistion too. which barrier it was in.
+    //4 need to be the same to multply
+    
+    int sameCount =0;
+    MOB_COLOUR previous;
+    
+    for (int x =0; x < currentTouchesTags.count; x++)
+    {
+        int tag = [[currentTouchesTags objectAtIndex:x]integerValue];
+        MobElement* mob = [[BlastedEngine instance]getMobBySpriteTag:tag];
+        
+        MOB_COLOUR mobType = mob.mobType;
+        if (sameCount == 0)
+        {
+            sameCount++;
+            previous = mobType;
+        }
+        else
+        {
+            if (mobType == previous)
+            {
+                sameCount++;
+            }
+        }
+    }
+    
+    if (sameCount == 4) 
+    {
+        [[BlastedEngine instance]incMultiplier];
+    }
+    
+    CCLOG(@"Same colour mobs %d", sameCount);
+    
+    
+    
+    
+    //Now times this by the current bonus modifier.
+    
+    //if 4 the same, then increase modifer
+}
 
 -(void) updateScore:(int)amount
 {

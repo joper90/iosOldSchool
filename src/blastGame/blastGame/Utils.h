@@ -26,4 +26,6 @@
 -(float) distanceBetweenPoints:(CGPoint) startPoint endPoint:(CGPoint) endPoint;
 -(NSString*)getActualPath:(NSString*) path;
 
+-(float)workOutBarFactorFromLenght:(float) lenght byTime:(float)time usingPollTime:(float)pollTime;
+
 @end

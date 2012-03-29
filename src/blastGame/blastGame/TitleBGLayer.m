@@ -10,6 +10,8 @@
 
 @implementation TitleBGLayer
 
+@synthesize barPercentTime;
+
 -(id) init
 {
     CCLOG(@"TitleMenu BG Layer...with RC: %d",[self retainCount]);
@@ -48,6 +50,10 @@
     if (CGRectContainsPoint(startGameRect, touchLocation))
     {
         CCLOG(@"StartGameRect");
+        //Reset the score and the multuplier
+        
+        [[BlastedEngine instance]resetScore];
+        [[BlastedEngine instance]resetMultiplier];
         CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:2 scene:[MainScene scene]];
         [[CCDirector sharedDirector]pushScene:ccFade];
         
@@ -57,7 +63,42 @@
         CCLOG(@"Hiscore Rect");
     }
     
-    
+}
+
+
+// Bar utils
+
+-(void)setBatTimeToMax
+{
+    self.barPercentTime = 100.0f;
+}
+
+-(void)setBarTimeToZero
+{
+    self.barPercentTime = 0.0f;
+}
+
+-(BOOL)isBarTimeZero
+{
+    if (self.barPercentTime == 0.0f)
+    {
+        return YES;
+    }
+    return NO;
+}
+
+-(BOOL)decreaseBarTimeByFactor:(float)factor
+{
+    CCLOG(@"==*** Current Bar time : %f", self.barPercentTime);
+    self.barPercentTime -= factor; //take away the factored amount
+    CCLOG(@"==*** Updated Bar time : %f", self.barPercentTime);
+    if (self.barPercentTime <= 0.0f)
+    {
+        CCLOG(@"==** BAR TRIPPED ZERO");
+        self.barPercentTime = 0.0f;
+        return YES;
+    }
+    return NO;
 }
 
 @end

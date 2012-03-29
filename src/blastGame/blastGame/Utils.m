@@ -34,6 +34,15 @@ static Utils* utils = nil;
     return self;
 }
 
+-(float)workOutBarFactorFromLenght:(float) lenght byTime:(float)time usingPollTime:(float)pollTime
+{
+    
+    float numberOfPolls = time / pollTime; //This gives the number of polls to do the complete time based on the polltime
+    float ret = lenght / numberOfPolls; // number of pixels to remove each poll time to get to zero in the time needed
+    
+    return ret;
+}
+
 -(CGPoint) locationFromTouchSinglePoint:(UITouch *)touch
 {
     CGPoint touchLocation = [touch locationInView:[touch view]];
