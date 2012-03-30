@@ -23,5 +23,6 @@
 }
 
 -(void)callBackPokeUpdate;
+-(void)callBackMultiplierUpdated;
 
 @end

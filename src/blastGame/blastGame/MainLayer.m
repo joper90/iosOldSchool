@@ -438,9 +438,12 @@
     // Each mob gets a score based on it posistion too. which barrier it was in.
     //4 need to be the same to multply
     
+    int thisScore = 0;
     int sameCount =0;
     MOB_COLOUR previous;
     
+    
+    //Get colour and current band of each mob
     for (int x =0; x < currentTouchesTags.count; x++)
     {
         int tag = [[currentTouchesTags objectAtIndex:x]integerValue];
@@ -459,21 +462,46 @@
                 sameCount++;
             }
         }
+        
+        //Now workout where the mob lies
+        float xPostion = [mob getSprite].position.x;
+        
+        if (xPostion <= LINE_ONE) //Closest to the planet
+        {
+            thisScore += LINE_ONE_SCORE;
+        }
+        else if (xPostion <= LINE_TWO)
+        {
+            thisScore += LINE_TWO_SCORE;
+        }
+        else if (xPostion <= LINE_THREE)
+        {
+            thisScore += LINE_THREE_SCORE;
+        }else 
+        {
+            thisScore += LINE_ENDZONE_SCORE;
+        }
+        
+        CCLOG(@"==> Total Score for mobs %d sum %d",tag, thisScore);
+        
     }
     
+    //All scores for all mobs Added up.
+    int currentMultiplier = [[BlastedEngine instance]getMultipiler];
+    CCLOG(@"==> Adding score %d with mutli = %d :: total %d", thisScore, currentMultiplier, thisScore * currentMultiplier);
+    
+    //Add the new score to the main total
+    [[BlastedEngine instance]addToScore:thisScore * currentMultiplier];
+    
+    //If 4 the same increase modifier
     if (sameCount == 4) 
     {
         [[BlastedEngine instance]incMultiplier];
+        CCLOG(@"Score multiplier increased");
     }
     
     CCLOG(@"Same colour mobs %d", sameCount);
-    
-    
-    
-    
-    //Now times this by the current bonus modifier.
-    
-    //if 4 the same, then increase modifer
+
 }
 
 -(void) updateScore:(int)amount

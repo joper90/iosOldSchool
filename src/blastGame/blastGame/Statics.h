@@ -88,6 +88,12 @@ extern NSString *const  GUN_SPRITE_FILE;
 #define LINE_TWO       250
 #define LINE_THREE     350
 
+#define LINE_ONE_SCORE      10
+#define LINE_TWO_SCORE      20
+#define LINE_THREE_SCORE    30
+#define LINE_ENDZONE_SCORE  40
+
+
 //Game constants used for tweaking.
 #define DRAG_CLICK_LENIENCY         20 //10 pixels for click/drag issues.
 #define MOB_ROW_COUNT               5  //5 rows of mobs at once

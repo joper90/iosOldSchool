@@ -13,6 +13,7 @@
 #import "LevelJsonParser.h"
 #import "FlightPaths.h"
 @class MainLayer;
+@class MainFGLayer;
 
 @interface BlastedEngine : NSObject
 {
@@ -73,7 +74,7 @@
 -(void)releaseGamePlayLayer;
 -(void)injectScoreLayer:(MainFGLayer*)scorePlayLayer;
 -(void)releaseScoreLayer;
--(void)pokeGamePlayLayer;
+-(void)pokeScoreLayer;
 -(void)callBackMobMoveComplete:(id)sender;
 -(void)increaseLevelCount;
 
@@ -92,6 +93,7 @@
 -(void)incMultiplier;
 -(void)decMultiplier;
 -(void)resetMultiplier;
+-(int)getMultipiler;
 -(void)addToScore:(int) addAmount;
 -(int)getCurrentScore;
 
@@ -110,6 +112,5 @@
 
 //Intersection testing
 -(MobElement*)whichMobTouched:(CGPoint) touchPoint;
-//REMOVE ?>?
 -(CGPoint)getInitPosBySpriteTag:(int) tag;
 @end
