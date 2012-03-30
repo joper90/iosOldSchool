@@ -385,19 +385,19 @@ static BlastedEngine* blastedEngine = nil;
 -(void)incMultiplier
 {
     currentMultiplier = currentMultiplier * 2;
-    [self pokeScoreLayer];
+    [self pokeMultiplier];
 }
 
 -(void)decMultiplier
 {
     currentMultiplier = currentMultiplier / 2;
-    [self pokeScoreLayer];
+    [self pokeMultiplier];
 }
 
 -(void)resetMultiplier
 {
     currentMultiplier = 1;
-    [self pokeScoreLayer];
+    [self pokeMultiplier];
 }
 
 -(int)getMultipiler
@@ -426,6 +426,14 @@ static BlastedEngine* blastedEngine = nil;
     if (injectedScoreLayer != nil)
     {
         [injectedScoreLayer callBackPokeUpdate];
+    }
+}
+
+-(void)pokeMultiplier
+{
+    if (injectedScoreLayer != nil)
+    {
+        [injectedScoreLayer callBackMultiplierUpdated];
     }
 }
 

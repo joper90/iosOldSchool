@@ -74,7 +74,6 @@
 -(void)releaseGamePlayLayer;
 -(void)injectScoreLayer:(MainFGLayer*)scorePlayLayer;
 -(void)releaseScoreLayer;
--(void)pokeScoreLayer;
 -(void)callBackMobMoveComplete:(id)sender;
 -(void)increaseLevelCount;
 
@@ -96,6 +95,8 @@
 -(int)getMultipiler;
 -(void)addToScore:(int) addAmount;
 -(int)getCurrentScore;
+-(void)pokeScoreLayer;
+-(void)pokeMultiplier;
 
 -(MobElement*)getMobBySpriteTag:(int) tag;
 -(void)addLevelToLevelList:(LevelElementData*) levelDataElement;

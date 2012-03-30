@@ -47,6 +47,11 @@
     multiplierString = [NSString stringWithFormat:@"x%d",[BlastedEngine instance].currentMultiplier];
 }
 
+-(void)callBackMultiplierUpdated
+{
+    
+}
+
 -(void)onExit
 {
     [[BlastedEngine instance]releaseScoreLayer];
