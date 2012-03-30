@@ -62,6 +62,25 @@ static BlastedEngine* blastedEngine = nil;
     CCLOG(@"---> INJECTED                  ..with RC: %d",[gamePlayLayer retainCount]);
 }
 
+-(void)releaseGamePlayLayer
+{
+    injectedScoreLayer = nil;
+}
+
+//SCore layer injection
+-(void)injectScoreLayer:(MainFGLayer *)scorePlayLayer
+{
+    CCLOG(@"---> INJECTING Score Layer  ..with RC: %d",[scorePlayLayer retainCount]);
+    injectedScoreLayer = scorePlayLayer;
+    CCLOG(@"---> INJECTED                  ..with RC: %d",[scorePlayLayer retainCount]);
+
+}
+
+-(void)releaseScoreLayer
+{
+    injectedScoreLayer = nil;
+}
+
 -(void)callBackMobMoveComplete:(id)sender
 {
     [injectedGamePlayLayer mobMoveCompleted:sender];
@@ -391,6 +410,14 @@ static BlastedEngine* blastedEngine = nil;
 -(void)resetScore
 {
     currentScore = 0;
+}
+
+-(void)pokeGamePlayLayer
+{
+    if (injectedGamePlayLayer != nil)
+    {
+        
+    }
 }
 
 -(void)dealloc

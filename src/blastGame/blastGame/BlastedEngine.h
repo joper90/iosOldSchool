@@ -20,8 +20,9 @@
     BOOL valid;
     
     //CCLayer CallBack information
-    MainLayer *injectedGamePlayLayer;
-    
+    MainLayer* injectedGamePlayLayer;
+    //SCore layer
+    MainFGLayer* injectedScoreLayer;
     
     //All Engine data here
     int currentScore;
@@ -68,7 +69,11 @@
 -(BOOL)isValid;
 
 //GamePlayLayer Stuff
--(void)injectGamePlayLayer:(CCLayer*)gamePlayLayer;
+-(void)injectGamePlayLayer:(MainLayer*)gamePlayLayer;
+-(void)releaseGamePlayLayer;
+-(void)injectScoreLayer:(MainFGLayer*)scorePlayLayer;
+-(void)releaseScoreLayer;
+-(void)pokeGamePlayLayer;
 -(void)callBackMobMoveComplete:(id)sender;
 -(void)increaseLevelCount;
 

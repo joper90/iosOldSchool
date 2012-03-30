@@ -504,6 +504,7 @@
     [currentTouchesTags release];
     [bullets release];
     [bangArray release];
+    [[BlastedEngine instance]releaseGamePlayLayer];
     currentTouchesTags = nil;
     CCLOG(@"Main Layer --->OnExit() Called with RC: %d",[self retainCount]);
     [[CCTouchDispatcher sharedDispatcher]removeDelegate:self];
@@ -512,7 +513,7 @@
 
 -(void) dealloc
 {
-
+	CCLOG(@"Main Layer --->dealloc() Called with RC: %d",[self retainCount]);
     [super dealloc];
 }
 
