@@ -15,6 +15,11 @@
     CCLOG(@"MainLayer FG Layer...");
 	if( (self=[super init])) 
     {
+        
+        //Inject into Blasted Engine
+        
+        [[BlastedEngine instance]injectScoreLayer:self];
+        
         //enable touches
         self.isTouchEnabled = NO;
         
@@ -30,7 +35,7 @@
         
         multiplierString = [NSString stringWithFormat:@"x%d",[BlastedEngine instance].currentMultiplier];
         multiplierLabel = [CCLabelTTF labelWithString:multiplierString fontName:@"zxspectr.ttf" fontSize:(FONT_SIZE * 1.2f)];
-        multiplierLabel.position = ccp([Utils instance].screenWidth - 50, 30);
+        multiplierLabel.position = ccp(MULTIPLIER_END_X, 30);
         
         [self addChild:scoreLabel];
         [self addChild:percentCompleteLabel];
@@ -43,17 +48,48 @@
 -(void)callBackPokeUpdate
 {
     scoreString = [NSString stringWithFormat:@"Score: %d",[BlastedEngine instance].currentScore];
+    scoreLabel.string = scoreString;
     percentCompleteString = [NSString stringWithFormat:@"done: %d",[BlastedEngine instance].levelPercentComplete];
-    multiplierString = [NSString stringWithFormat:@"x%d",[BlastedEngine instance].currentMultiplier];
+    percentCompleteLabel.string = percentCompleteString;
 }
 
 -(void)callBackMultiplierUpdated
 {
+    CCLOG(@"CallbackMultiplerUpdated call.. reset the moving multi if > 1");
+    //get the new multiplier
+    
+    multiplierString = [NSString stringWithFormat:@"x%d",[BlastedEngine instance].currentMultiplier];
+    [multiplierLabel setString:multiplierString];
+    
+    if ([BlastedEngine instance].currentMultiplier > 1)
+    {
+        [multiplierLabel stopAllActions];
+    
+        multiplierLabel.position = ccp([Utils instance].screenWidth,30);
+    
+        CCMoveTo* moveAcross = [CCMoveTo actionWithDuration:[BlastedEngine instance].currentMultiplierCountDownSpeed position:ccp(MULTIPLIER_END_X,30)];
+        CCCallFuncN* finshedMove = [CCCallFuncN actionWithTarget:self selector:@selector(multiplierTimesOut:)];
+        CCSequence* seq = [CCSequence actions:moveAcross, finshedMove, nil];
+        
+        [multiplierLabel runAction:seq];
+
+    }
+}
+-(void)multiplierTimesOut:(id)sender
+{
+    //Hit the end.. So increment the speed (of the timeout) and then dec the multiplierTimeout.
+    [[BlastedEngine instance]decMultiplier];    
+}
+
+-(void)callBackPercentageUpdate:(float)newPercentage
+{
     
 }
 
+
 -(void)onExit
 {
+    CCLOG(@"Releasing score layer..");
     [[BlastedEngine instance]releaseScoreLayer];
 }
 

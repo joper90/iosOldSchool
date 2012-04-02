@@ -12,7 +12,8 @@
 @implementation BlastedEngine
 
 @synthesize currentScore, mobsArray, level, levelList, valid, startPositionMap, 
-            currentPlayingLevel,actualMobSprites, currentMultiplier, levelPercentComplete;
+            currentPlayingLevel,actualMobSprites, currentMultiplier, 
+            currentMultiplierCountDownSpeed ,levelPercentComplete;
 
 static BlastedEngine* blastedEngine = nil;
 
@@ -385,18 +386,24 @@ static BlastedEngine* blastedEngine = nil;
 -(void)incMultiplier
 {
     currentMultiplier = currentMultiplier * 2;
+    currentMultiplierCountDownSpeed = currentMultiplierCountDownSpeed + MULTIPLIER_INC_SPEED;
     [self pokeMultiplier];
 }
 
 -(void)decMultiplier
 {
-    currentMultiplier = currentMultiplier / 2;
-    [self pokeMultiplier];
+    if (currentMultiplier !=1)
+    {
+        currentMultiplier = currentMultiplier / 2;
+        currentMultiplierCountDownSpeed = currentMultiplierCountDownSpeed - MULTIPLIER_INC_SPEED;
+        [self pokeMultiplier];
+    }
 }
 
 -(void)resetMultiplier
 {
     currentMultiplier = 1;
+    currentMultiplierCountDownSpeed = MULTIPLIER_BASE_SPEED;
     [self pokeMultiplier];
 }
 
@@ -404,6 +411,7 @@ static BlastedEngine* blastedEngine = nil;
 {
     return currentMultiplier;
 }
+
 
 -(void)addToScore:(int) addAmount
 {
@@ -434,6 +442,14 @@ static BlastedEngine* blastedEngine = nil;
     if (injectedScoreLayer != nil)
     {
         [injectedScoreLayer callBackMultiplierUpdated];
+    }
+}
+
+-(void)pokePercentageComplete:(float)newPercentage;
+{
+    if (injectedScoreLayer != nil)
+    {
+        [injectedScoreLayer callBackPercentageUpdate:newPercentage];
     }
 }
 

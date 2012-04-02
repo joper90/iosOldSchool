@@ -24,5 +24,7 @@
 
 -(void)callBackPokeUpdate;
 -(void)callBackMultiplierUpdated;
+-(void)multiplierTimesOut:(id)sender;
+-(void)callBackPercentageUpdate:(float) newPercentage;
 
 @end

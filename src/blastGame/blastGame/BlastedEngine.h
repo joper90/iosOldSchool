@@ -28,6 +28,7 @@
     //All Engine data here
     int currentScore;
     int currentMultiplier;
+    float currentMultiplierCountDownSpeed;
     float levelPercentComplete;
     int level;
     
@@ -61,6 +62,7 @@
 @property (assign, readwrite) int level;
 @property (retain, readwrite) NSMutableArray* mobsArray;
 @property (retain, readwrite) NSMutableDictionary*  levelList;
+@property (assign, readwrite) float currentMultiplierCountDownSpeed;
 
 
 
@@ -97,6 +99,8 @@
 -(int)getCurrentScore;
 -(void)pokeScoreLayer;
 -(void)pokeMultiplier;
+-(void)pokePercentageComplete:(float)newPercentage;
+-(void)setMuliplierSpeed:(float)speed;
 
 -(MobElement*)getMobBySpriteTag:(int) tag;
 -(void)addLevelToLevelList:(LevelElementData*) levelDataElement;

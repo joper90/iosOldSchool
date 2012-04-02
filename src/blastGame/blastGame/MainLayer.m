@@ -381,18 +381,18 @@
         
         //Maybe add some predictiveness here
         float baseSpeed = [[BlastedEngine instance]getCurrentSpeed];
-        spriteLocation = ccp(spriteLocation.x - (baseSpeed * 5), spriteLocation.y);
+        spriteLocation = ccp(spriteLocation.x - (baseSpeed * MOB_PREDICTIVENESS), spriteLocation.y);
         
         CCParticleSystem* part = [bullets objectAtIndex:x];
         [part resetSystem];
-        part.position = ccp(GUN_X_POSITION +5, [Utils instance].center.y);
+        part.position = ccp(GUN_X_POSITION + GUN_FIRE_OFFSET, [Utils instance].center.y);
         
         BangAction* bangData = [[BangAction alloc]init];
         bangData.tag = spFound.tag;
         bangData.position = spriteLocation;
         bangData.bulletElement = x;
         
-        CCMoveTo* moveAction = [CCMoveTo actionWithDuration:1.0f position:spriteLocation];        
+        CCMoveTo* moveAction = [CCMoveTo actionWithDuration:GUN_FIRE_TIME position:spriteLocation];        
         CCCallFuncO* bulletHit = [CCCallFuncO actionWithTarget:self selector:@selector(bangAction:) object:bangData];
         CCSequence* seq = [CCSequence actions:moveAction, bulletHit, nil];
         
@@ -401,8 +401,7 @@
         [part runAction:seq];
         
     }
-    
-    
+
     //Now calcute the score
     [self calculateScore];
     
@@ -427,6 +426,8 @@
     [[BlastedEngine instance]setDeadMob:bang.tag];
     
     [bang release];
+    
+
 }
 
 //Scores
@@ -482,7 +483,7 @@
             thisScore += LINE_ENDZONE_SCORE;
         }
         
-        CCLOG(@"==> Total Score for mobs %d sum %d",tag, thisScore);
+        CCLOG(@"==> Total Score for mob tag %d sum %d",tag, thisScore);
         
     }
     

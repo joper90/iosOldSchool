@@ -102,11 +102,18 @@ extern NSString *const  GUN_SPRITE_FILE;
 #define PLANET_X_POSITION           20// position the mob moved to (planet hit)
 
 #define GUN_X_POSITION              40 //X poistion of the gun.
+#define GUN_FIRE_OFFSET             5 // postion to fire from for the gun.
+#define GUN_FIRE_TIME               0.5f // time for the bullets to fly
+#define MOB_PREDICTIVENESS          5
 
 #define LEVEL_COMPLETE_POLLTIME     5 // 2 seconds..
 
 #define FONT_SIZE                   20 //base fontsize
 #define FONT_SIZE_COUNTDOWN         70 //countdown fontsize.
+
+#define MULTIPLIER_END_X            40 //end position for the multiplier
+#define MULTIPLIER_BASE_SPEED      8 //seconds to move across the screen.
+#define MULTIPLIER_INC_SPEED        0.5 // time to modify the base speed by each increase
 
 //Flash (splash) screen
 extern NSString *const COMPANY_NAME;
