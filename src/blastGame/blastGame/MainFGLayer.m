@@ -81,11 +81,6 @@
     [[BlastedEngine instance]decMultiplier];    
 }
 
--(void)callBackPercentageUpdate:(float)newPercentage
-{
-    
-}
-
 
 -(void)onExit
 {

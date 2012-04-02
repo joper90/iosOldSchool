@@ -153,6 +153,8 @@
 {
     CCLOG(@"scheduleNewWave...with RC: %d",[self retainCount]);
     CCLOG(@"NEW WAVE CALLED... %d/%d", currentWave,maxWave);
+    float percentComplete = maxWave / currentWave;
+    [[BlastedEngine instance]pokePercentageComplete:percentComplete];
 
     if (currentWave > maxWave)
     {

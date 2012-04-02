@@ -412,7 +412,6 @@ static BlastedEngine* blastedEngine = nil;
     return currentMultiplier;
 }
 
-
 -(void)addToScore:(int) addAmount
 {
     currentScore = currentScore + (addAmount * currentMultiplier);
@@ -447,10 +446,8 @@ static BlastedEngine* blastedEngine = nil;
 
 -(void)pokePercentageComplete:(float)newPercentage;
 {
-    if (injectedScoreLayer != nil)
-    {
-        [injectedScoreLayer callBackPercentageUpdate:newPercentage];
-    }
+    self.levelPercentComplete = newPercentage;
+    [self pokeScoreLayer];
 }
 
 -(void)dealloc

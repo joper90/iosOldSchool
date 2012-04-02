@@ -100,7 +100,6 @@
 -(void)pokeScoreLayer;
 -(void)pokeMultiplier;
 -(void)pokePercentageComplete:(float)newPercentage;
--(void)setMuliplierSpeed:(float)speed;
 
 -(MobElement*)getMobBySpriteTag:(int) tag;
 -(void)addLevelToLevelList:(LevelElementData*) levelDataElement;
