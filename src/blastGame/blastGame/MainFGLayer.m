@@ -29,16 +29,16 @@
         scoreLabel.position = ccp(100, [Utils instance].screenHeight - 20);
         
          
-        percentCompleteString = [NSString stringWithFormat:@"done: %d",[BlastedEngine instance].levelPercentComplete];
-        percentCompleteLabel = [CCLabelTTF labelWithString:percentCompleteString fontName:@"zxspectr.ttf" fontSize:FONT_SIZE];
-        percentCompleteLabel.position = ccp(400, [Utils instance].screenHeight - 20);
+        //percentCompleteString = [NSString stringWithFormat:@"done: %d",[BlastedEngine instance].levelPercentComplete];
+        //percentCompleteLabel = [CCLabelTTF labelWithString:percentCompleteString fontName:@"zxspectr.ttf" fontSize:FONT_SIZE];
+        //percentCompleteLabel.position = ccp(400, [Utils instance].screenHeight - 20);
         
         multiplierString = [NSString stringWithFormat:@"x%d",[BlastedEngine instance].currentMultiplier];
         multiplierLabel = [CCLabelTTF labelWithString:multiplierString fontName:@"zxspectr.ttf" fontSize:(FONT_SIZE * 1.2f)];
         multiplierLabel.position = ccp(MULTIPLIER_END_X, 30);
         
         [self addChild:scoreLabel];
-        [self addChild:percentCompleteLabel];
+        //[self addChild:percentCompleteLabel];
         [self addChild:multiplierLabel];
 
     }
@@ -49,8 +49,9 @@
 {
     scoreString = [NSString stringWithFormat:@"Score: %d",[BlastedEngine instance].currentScore];
     scoreLabel.string = scoreString;
-    percentCompleteString = [NSString stringWithFormat:@"done: %d",[BlastedEngine instance].levelPercentComplete];
-    percentCompleteLabel.string = percentCompleteString;
+    //float per = [BlastedEngine instance].levelPercentComplete; 
+    //percentCompleteString = [NSString stringWithFormat:@"done: %f",per];
+    //[percentCompleteLabel setString:percentCompleteString];
 }
 
 -(void)callBackMultiplierUpdated

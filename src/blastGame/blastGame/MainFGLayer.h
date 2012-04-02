@@ -15,8 +15,8 @@
     CCLabelTTF* scoreLabel;
     NSString* scoreString;
     
-    CCLabelTTF* percentCompleteLabel;
-    NSString* percentCompleteString;
+    //CCLabelTTF* percentCompleteLabel;
+    //NSString* percentCompleteString;
 
     CCLabelTTF* multiplierLabel;
     NSString* multiplierString;

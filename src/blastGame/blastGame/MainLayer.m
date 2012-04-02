@@ -132,6 +132,10 @@
     CCLOG(@"StartAndMove recived : %d", [lineMobs count]);   
     
     currentWave++; //0 wave has now run.
+    
+    //float percentComplete = maxWave / currentWave;
+    //[[BlastedEngine instance]pokePercentageComplete:percentComplete];
+    
     //MobElements
     for (MobElement* m in lineMobs)
     {
@@ -153,8 +157,7 @@
 {
     CCLOG(@"scheduleNewWave...with RC: %d",[self retainCount]);
     CCLOG(@"NEW WAVE CALLED... %d/%d", currentWave,maxWave);
-    float percentComplete = maxWave / currentWave;
-    [[BlastedEngine instance]pokePercentageComplete:percentComplete];
+
 
     if (currentWave > maxWave)
     {
