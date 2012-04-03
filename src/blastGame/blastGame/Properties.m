@@ -10,8 +10,9 @@
 
 @implementation Properties
 @synthesize RED_SPRITE_FILE, YELLOW_SPRITE_FILE, BLUE_SPRITE_FILE, GREEN_SPRITE_FILE, PINK_SPRITE_FILE,
+            BLASTED_MENU_FILE, BASE_SPRITE_FILE,
             GUN_X_POSISTION,
-            GUN_SPRITE_FILE, PLANET_SPRITE_FILE,
+            GUN_SPRITE_FILE,
             LINE_ONE, LINE_TWO, LINE_THREE,
             FONT_SIZE, FONT_SIZE_COUNTDOWN,
             isValid;

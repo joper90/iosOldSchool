@@ -76,4 +76,26 @@ static Utils* utils = nil;
     return actualPath;
 }
 
+-(CGPoint) convertToiPadPoint:(float)iPhonePoint_X:(float)iPhonePoint_Y
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        return ccp(iPhonePoint_X/480*1024,iPhonePoint_Y/320*768);
+    else
+        return ccp(iPhonePoint_X,iPhonePoint_Y);
+}
+
+-(CGRect) convertToIPadMakeRect:(float)x y1:(float)y width:(float)width height:(float)height
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        return CGRectMake(x/480*1024,y/320*768, width/480*1024, height/320*768);
+    }
+    else
+    {
+        return CGRectMake(x, y, width, height);
+    }
+}
+
+
+
 @end

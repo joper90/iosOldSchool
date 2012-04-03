@@ -19,7 +19,8 @@
     {
         self.isTouchEnabled = YES;
         
-        CCSprite* bgImage = [CCSprite spriteWithFile:@"blastedMenu.png"];
+        NSString* menuImage = [Properties instance].BLASTED_MENU_FILE;
+        CCSprite* bgImage = [CCSprite spriteWithFile:menuImage];
         CCLabelTTF *gameName = [CCLabelTTF labelWithString:@"Blasted Game" fontName:@"zxspectr" fontSize:32];
         CCLabelTTF *startButton = [CCLabelTTF labelWithString:@"Start new game" fontName:@"zxspectr" fontSize:20];
         CCLabelTTF *hiScore = [CCLabelTTF labelWithString:@"hiscore / help" fontName:@"zxspectr" fontSize:15];
@@ -32,9 +33,10 @@
         startButton.position = ccp(centerPos.x - 40, centerPos.y + 20);
         hiScore.position = ccp(centerPos.x - 100, centerPos.y - 70);
         
-        startGameRect = CGRectMake(20,140,390,80);
-        hiScoreRect = CGRectMake(20, 50, 230, 70);
-                
+        //startGameRect = CGRectMake(20,140,390,80);
+        startGameRect = [[Utils instance]convertToIPadMakeRect:20 y1:140 width:390 height:80];
+        //hiScoreRect = CGRectMake(20, 50, 230, 70);
+        hiScoreRect = [[Utils instance]convertToIPadMakeRect:20 y1:50 width:230 height:70];
         
         [self addChild:hiScore z:Z_BG_MENU_HISCORE_HELP];
         [self addChild:startButton z:Z_BG_MENU_STARTBUTTON];

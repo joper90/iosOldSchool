@@ -51,7 +51,9 @@
         [Properties instance].GREEN_SPRITE_FILE = [p objectForKey:@"green"];
         [Properties instance].PINK_SPRITE_FILE = [p objectForKey:@"pink"];
         [Properties instance].GUN_SPRITE_FILE = [p objectForKey:@"gun"];
-        [Properties instance].PLANET_SPRITE_FILE = [p objectForKey:@"planet"];
+        [Properties instance].BASE_SPRITE_FILE = [p objectForKey:@"base"];
+        
+        [Properties instance].BLASTED_MENU_FILE = [p objectForKey:@"menubackground"];
         
         [Properties instance].FONT_SIZE = [[p objectForKey:@"fontsize"]floatValue];
         [Properties instance].FONT_SIZE_COUNTDOWN = [[p objectForKey:@"fontsizecountdown"]floatValue];
@@ -62,7 +64,7 @@
     }
        
     CCLOG(@" Processed : %@",i);
-    CCLOG(@"Data : %@", [Properties instance].PLANET_SPRITE_FILE);
+    CCLOG(@"Data : %@", [Properties instance].BASE_SPRITE_FILE);
     
     [jsonString release];
 }

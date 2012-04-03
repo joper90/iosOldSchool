@@ -2,13 +2,14 @@
   "information": "iphonedata",
   "properties": [
     {
+      "base": "planet.png",           
       "red": "red.png",
       "yellow": "yellow.png",
       "blue": "blue.png",
       "green": "green.png",
       "pink": "pink.png",
       "gun": "gun.png",
-      "planet": "planet.png",
+      "menubackground": "blastedMenu.png",
       "gunx": "40",
       "fontsize": "20",
       "fontsizecountdown": "70",

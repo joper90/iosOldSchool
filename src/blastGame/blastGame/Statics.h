@@ -96,9 +96,6 @@ typedef enum
 
 #define LEVEL_COMPLETE_POLLTIME     5 // 2 seconds..
 
-//#define FONT_SIZE                   20 //base fontsize
-//#define FONT_SIZE_COUNTDOWN         70 //countdown fontsize.
-
 #define MULTIPLIER_END_X            40 //end position for the multiplier
 #define MULTIPLIER_BASE_SPEED      8 //seconds to move across the screen.
 #define MULTIPLIER_INC_SPEED        0.5 // time to modify the base speed by each increase

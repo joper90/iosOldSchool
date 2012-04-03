@@ -18,7 +18,9 @@
     NSString* PINK_SPRITE_FILE;
     
     NSString* GUN_SPRITE_FILE;
-    NSString* PLANET_SPRITE_FILE;
+    NSString* BASE_SPRITE_FILE;
+    
+    NSString* BLASTED_MENU_FILE; 
     
     float     GUN_X_POSISTION;
     
@@ -32,14 +34,16 @@
     bool      isValid;
 }
 
-@property (assign, readwrite) NSString* RED_SPRITE_FILE ;
-@property (assign, readwrite) NSString* YELLOW_SPRITE_FILE ;
-@property (assign, readwrite) NSString* BLUE_SPRITE_FILE ;
-@property (assign, readwrite) NSString* GREEN_SPRITE_FILE ;
-@property (assign, readwrite) NSString* PINK_SPRITE_FILE ;
+@property (retain, readwrite) NSString* RED_SPRITE_FILE ;
+@property (retain, readwrite) NSString* YELLOW_SPRITE_FILE ;
+@property (retain, readwrite) NSString* BLUE_SPRITE_FILE ;
+@property (retain, readwrite) NSString* GREEN_SPRITE_FILE ;
+@property (retain, readwrite) NSString* PINK_SPRITE_FILE ;
 
-@property (assign, readwrite) NSString*  GUN_SPRITE_FILE;
-@property (assign, readwrite) NSString*  PLANET_SPRITE_FILE;
+@property (retain, readwrite) NSString* GUN_SPRITE_FILE;
+@property (retain, readwrite) NSString* BASE_SPRITE_FILE;
+
+@property (retain, readwrite) NSString* BLASTED_MENU_FILE;  
 
 @property (assign, readwrite) float GUN_X_POSISTION;
 

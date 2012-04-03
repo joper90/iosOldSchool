@@ -1,0 +1,21 @@
+{
+  "information": "ipaddata",
+  "properties": [
+    {
+      "red": "red2.png",
+      "yellow": "yellow2.png",
+      "blue": "blue2.png",
+      "green": "green2.png",
+      "pink": "pink2.png",
+      "gun": "gun2.png",
+      "base": "planet.png",
+      "menubackground": "blastedMenu2.png",
+      "gunx": "40",
+      "fontsize": "20",
+      "fontsizecountdown": "70",
+      "lineone": "317",
+      "linetwo": "532",
+      "linethree": "747"
+    }
+  ]
+}

@@ -43,7 +43,8 @@
     [self addChild:countDownLabel z:Z_COUNTDOWN_TEXT_TAG tag:COUNTDOWN_TEXT_TAG];
     
     //Load in the globe and spin in.
-    NSString* planetSprite = [Properties instance].PLANET_SPRITE_FILE;
+    NSString* planetSprite = [Properties instance].BASE_SPRITE_FILE ;
+    CCLOG(@"Planet Sprite : %@", planetSprite);
     globeSprite = [CCSprite spriteWithFile:planetSprite];
     globeSprite.scale = 4.0f;
     globeSprite.position = ccp(-120, [Utils instance].screenHeight/2);
