@@ -11,7 +11,8 @@
 
 @implementation BlastedEngine
 
-@synthesize currentScore, mobsArray, level, levelList, valid, startPositionMap, 
+@synthesize iosDeviceProperties, isHdMode,
+            currentScore, mobsArray, level, levelList, startPositionMap, 
             currentPlayingLevel,actualMobSprites, currentMultiplier, 
             currentMultiplierCountDownSpeed ,levelPercentComplete;
 
@@ -31,11 +32,26 @@ static BlastedEngine* blastedEngine = nil;
 
 -(id)init
 {
-    //Called before the instance init...
     CCLOG(@"Engine init method");
     self = [super self];
     if (self != nil)
     {
+        
+        //What are we running on phone/ipad
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            CCLOG(@"RUNNING ON iPAD");
+            self.isHdMode = YES;
+        }else
+        {
+            CCLOG(@"RUNNING ON iPHONE");
+            self.isHdMode = NO;
+        }
+        //Load the properties files up now
+        [Properties instance];
+        
+        //Now allocate all teh arrays
+        self.iosDeviceProperties = [[NSMutableDictionary alloc]init];
         
         self.mobsArray = [[NSMutableArray alloc]init];
         self.startPositionMap = [[NSMutableDictionary alloc]init];
@@ -48,11 +64,6 @@ static BlastedEngine* blastedEngine = nil;
         level = 1;
     }
     return self;
-}
-
--(BOOL) isValid
-{
-    return valid;
 }
 
 //GamePlayLayer Injection
@@ -298,11 +309,11 @@ static BlastedEngine* blastedEngine = nil;
 -(void)loadSprites
 {
     //hardcoded for the moment.. need to change to a more dynamic solution
-    CCSprite* redMob = [CCSprite spriteWithFile:RED_SPRITE_FILE];
-    CCSprite* yellowMob = [CCSprite spriteWithFile:YELLOW_SPRITE_FILE];
-    CCSprite* blueMob = [CCSprite spriteWithFile:BLUE_SPRITE_FILE];
-    CCSprite* greenMob = [CCSprite spriteWithFile:GREEN_SPRITE_FILE];
-    CCSprite* pinkMob = [CCSprite spriteWithFile:PINK_SPRITE_FILE];
+    CCSprite* redMob = [CCSprite spriteWithFile:[Properties instance].RED_SPRITE_FILE];
+    CCSprite* yellowMob = [CCSprite spriteWithFile:[Properties instance].YELLOW_SPRITE_FILE];
+    CCSprite* blueMob = [CCSprite spriteWithFile:[Properties instance].BLUE_SPRITE_FILE];
+    CCSprite* greenMob = [CCSprite spriteWithFile:[Properties instance].GREEN_SPRITE_FILE];
+    CCSprite* pinkMob = [CCSprite spriteWithFile:[Properties instance].PINK_SPRITE_FILE];
     
     [actualMobSprites setObject:redMob forKey:@"RED"];
     [actualMobSprites setObject:yellowMob forKey:@"YELLOW"];
@@ -456,6 +467,7 @@ static BlastedEngine* blastedEngine = nil;
     [startPositionMap release];
     [actualMobSprites release];
     [levelList release];
+    [iosDeviceProperties release];
     [super dealloc];
 }
 

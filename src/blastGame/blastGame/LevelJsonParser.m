@@ -45,6 +45,7 @@ static LevelJsonParser* levelJsonParser = nil;
     
     [self processMap:dict];
     
+    [jsonString release];
     return YES;
 }
 

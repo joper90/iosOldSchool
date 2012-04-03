@@ -134,8 +134,11 @@
 		CE39BA681518B931006285C7 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA671518B930006285C7 /* planet.png */; };
 		CE39BA6A1518C46B006285C7 /* hitplanet.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA691518C46B006285C7 /* hitplanet.plist */; };
 		CE39BA6C151914EB006285C7 /* exp2.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA6B151914EB006285C7 /* exp2.plist */; };
+		CE3D597B152B05D60085CD40 /* PropertiesJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3D597A152B05D60085CD40 /* PropertiesJsonParser.m */; };
 		CE909B2B150A548F00E66CA4 /* FlightPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = CE909B2A150A548F00E66CA4 /* FlightPaths.m */; };
 		CE909B2E150A5A1300E66CA4 /* MainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE909B2D150A5A1300E66CA4 /* MainLayer.m */; };
+		CE9342F8152B231600EE5233 /* iphone.json in Resources */ = {isa = PBXBuildFile; fileRef = CE9342F7152B231600EE5233 /* iphone.json */; };
+		CE9342FB152B294800EE5233 /* Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9342FA152B294800EE5233 /* Properties.m */; };
 		CEB042EE14FD16840005EF2B /* MainBGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042ED14FD16840005EF2B /* MainBGLayer.m */; };
 		CEB042F314FD16DC0005EF2B /* cocos2d_template.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042F214FD16DC0005EF2B /* cocos2d_template.m */; };
 		CEB042F614FD17620005EF2B /* BlastedEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042F514FD17620005EF2B /* BlastedEngine.m */; };
@@ -416,9 +419,14 @@
 		CE39BA671518B930006285C7 /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet.png; path = Resources/planet.png; sourceTree = "<group>"; };
 		CE39BA691518C46B006285C7 /* hitplanet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hitplanet.plist; sourceTree = "<group>"; };
 		CE39BA6B151914EB006285C7 /* exp2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = exp2.plist; sourceTree = "<group>"; };
+		CE3D5979152B05D60085CD40 /* PropertiesJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertiesJsonParser.h; sourceTree = "<group>"; };
+		CE3D597A152B05D60085CD40 /* PropertiesJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertiesJsonParser.m; sourceTree = "<group>"; };
 		CE909B29150A548F00E66CA4 /* FlightPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightPaths.h; sourceTree = "<group>"; };
 		CE909B2A150A548F00E66CA4 /* FlightPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightPaths.m; sourceTree = "<group>"; };
 		CE909B2D150A5A1300E66CA4 /* MainLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainLayer.m; sourceTree = "<group>"; };
+		CE9342F7152B231600EE5233 /* iphone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iphone.json; sourceTree = "<group>"; };
+		CE9342F9152B294800EE5233 /* Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Properties.h; sourceTree = "<group>"; };
+		CE9342FA152B294800EE5233 /* Properties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Properties.m; sourceTree = "<group>"; };
 		CEB042EC14FD16840005EF2B /* MainBGLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBGLayer.h; sourceTree = "<group>"; };
 		CEB042ED14FD16840005EF2B /* MainBGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBGLayer.m; sourceTree = "<group>"; };
 		CEB042F114FD16DC0005EF2B /* cocos2d_template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cocos2d_template.h; sourceTree = "<group>"; };
@@ -538,7 +546,7 @@
 				CEEE4B7F1504E326002621BC /* fonts */,
 				CEBABA8E15177718004F11E7 /* particles */,
 				CEBAB8D915123907004F11E7 /* lockon.png */,
-				CEEE4B80150502B9002621BC /* jsonTest.json */,
+				CE9342F5152B22BA00EE5233 /* jsonFiles */,
 				CE39BA671518B930006285C7 /* planet.png */,
 				CEBA46C0151E237300AE5E31 /* blastedMenu.png */,
 				CEBAB8D715121B3A004F11E7 /* gun.png */,
@@ -892,6 +900,8 @@
 				CE270E6A14FCEE2500C2DBA3 /* Utils.m */,
 				CEB505E315062BB600B31F27 /* Statics.h */,
 				CEB505E415062BB600B31F27 /* Statics.m */,
+				CE9342F9152B294800EE5233 /* Properties.h */,
+				CE9342FA152B294800EE5233 /* Properties.m */,
 			);
 			name = importClasses;
 			sourceTree = "<group>";
@@ -911,6 +921,15 @@
 				CE11B9D415232C67000EF2A0 /* LevelCompleteScene.m */,
 			);
 			name = scene;
+			sourceTree = "<group>";
+		};
+		CE9342F5152B22BA00EE5233 /* jsonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CEEE4B80150502B9002621BC /* jsonTest.json */,
+				CE9342F7152B231600EE5233 /* iphone.json */,
+			);
+			name = jsonFiles;
 			sourceTree = "<group>";
 		};
 		CEB042F014FD16A80005EF2B /* layers */ = {
@@ -943,6 +962,8 @@
 				CEB042F514FD17620005EF2B /* BlastedEngine.m */,
 				CEEE4B82150502E1002621BC /* LevelJsonParser.h */,
 				CEEE4B83150502E2002621BC /* LevelJsonParser.m */,
+				CE3D5979152B05D60085CD40 /* PropertiesJsonParser.h */,
+				CE3D597A152B05D60085CD40 /* PropertiesJsonParser.m */,
 			);
 			name = engine;
 			sourceTree = "<group>";
@@ -1065,6 +1086,7 @@
 				CE39BA6A1518C46B006285C7 /* hitplanet.plist in Resources */,
 				CE39BA6C151914EB006285C7 /* exp2.plist in Resources */,
 				CEBA46C1151E237300AE5E31 /* blastedMenu.png in Resources */,
+				CE9342F8152B231600EE5233 /* iphone.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1194,6 +1216,8 @@
 				CEBA46BF151A00AD00AE5E31 /* GameOverLayer.m in Sources */,
 				CE11B9D515232C67000EF2A0 /* LevelCompleteScene.m in Sources */,
 				CE11B9D915232C75000EF2A0 /* LevelCompleteLayer.m in Sources */,
+				CE3D597B152B05D60085CD40 /* PropertiesJsonParser.m in Sources */,
+				CE9342FB152B294800EE5233 /* Properties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1249,7 +1273,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1266,7 +1290,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

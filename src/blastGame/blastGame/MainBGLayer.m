@@ -26,12 +26,12 @@
         [self addChild:partSystem];     
         
         //Setup the lines
-        lineOneStart = ccp(LINE_ONE,0);
-        lineOneEnd = ccp(LINE_ONE, [Utils instance].screenHeight);
-        lineTwoStart = ccp(LINE_TWO,0);
-        lineTwoEnd = ccp(LINE_TWO, [Utils instance].screenHeight);
-        lineThreeStart = ccp(LINE_THREE,0);
-        lineThreeEnd = ccp(LINE_THREE, [Utils instance].screenHeight);
+        lineOneStart = ccp([Properties instance].LINE_ONE,0);
+        lineOneEnd = ccp([Properties instance].LINE_ONE, [Utils instance].screenHeight);
+        lineTwoStart = ccp([Properties instance].LINE_TWO,0);
+        lineTwoEnd = ccp([Properties instance].LINE_TWO, [Utils instance].screenHeight);
+        lineThreeStart = ccp([Properties instance].LINE_THREE,0);
+        lineThreeEnd = ccp([Properties instance].LINE_THREE, [Utils instance].screenHeight);
     }
 	return self;
 }

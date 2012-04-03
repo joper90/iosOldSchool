@@ -1,0 +1,20 @@
+{
+  "information": "iphonedata",
+  "properties": [
+    {
+      "red": "red.png",
+      "yellow": "yellow.png",
+      "blue": "blue.png",
+      "green": "green.png",
+      "pink": "pink.png",
+      "gun": "gun.png",
+      "planet": "planet.png",
+      "gunx": "40",
+      "fontsize": "20",
+      "fontsizecountdown": "70",
+      "lineone": "150",
+      "linetwo": "250",
+      "linethree": "350"
+    }
+  ]
+}

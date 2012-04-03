@@ -75,18 +75,6 @@ typedef enum
     PINK
 }MOB_COLOUR;
 
-extern NSString *const RED_SPRITE_FILE;
-extern NSString *const YELLOW_SPRITE_FILE;
-extern NSString *const BLUE_SPRITE_FILE;
-extern NSString *const GREEN_SPRITE_FILE;
-extern NSString *const PINK_SPRITE_FILE;
-
-extern NSString *const  GUN_SPRITE_FILE;
-
-//Barrier Locations:
-#define LINE_ONE       150
-#define LINE_TWO       250
-#define LINE_THREE     350
 
 #define LINE_ONE_SCORE      10
 #define LINE_TWO_SCORE      20
@@ -108,8 +96,8 @@ extern NSString *const  GUN_SPRITE_FILE;
 
 #define LEVEL_COMPLETE_POLLTIME     5 // 2 seconds..
 
-#define FONT_SIZE                   20 //base fontsize
-#define FONT_SIZE_COUNTDOWN         70 //countdown fontsize.
+//#define FONT_SIZE                   20 //base fontsize
+//#define FONT_SIZE_COUNTDOWN         70 //countdown fontsize.
 
 #define MULTIPLIER_END_X            40 //end position for the multiplier
 #define MULTIPLIER_BASE_SPEED      8 //seconds to move across the screen.
@@ -123,6 +111,8 @@ extern NSString *const COPYRIGHT_MESSAGE;
 
 //JSON FILE
 extern NSString *const JSON_FILE;
+extern NSString *const IPAD_PROPERTIES;
+extern NSString *const IPHONE_PROPERTIES;
 
 @interface Statics : NSObject
 

@@ -39,11 +39,12 @@
 -(void)levelCountDown
 {
     CCLOG(@"levelCountDown...with RC: %d",[self retainCount]);
-    countDownLabel = [CCLabelTTF labelWithString:@"3" fontName:@"zxspectr.ttf" fontSize:FONT_SIZE_COUNTDOWN];
+    countDownLabel = [CCLabelTTF labelWithString:@"3" fontName:@"zxspectr.ttf" fontSize:[Properties instance].FONT_SIZE_COUNTDOWN];
     [self addChild:countDownLabel z:Z_COUNTDOWN_TEXT_TAG tag:COUNTDOWN_TEXT_TAG];
     
     //Load in the globe and spin in.
-    globeSprite = [CCSprite spriteWithFile:@"planet.png"];
+    NSString* planetSprite = [Properties instance].PLANET_SPRITE_FILE;
+    globeSprite = [CCSprite spriteWithFile:planetSprite];
     globeSprite.scale = 4.0f;
     globeSprite.position = ccp(-120, [Utils instance].screenHeight/2);
     
@@ -472,15 +473,15 @@
         //Now workout where the mob lies
         float xPostion = [mob getSprite].position.x;
         
-        if (xPostion <= LINE_ONE) //Closest to the planet
+        if (xPostion <= [Properties instance].LINE_ONE) //Closest to the planet
         {
             thisScore += LINE_ONE_SCORE;
         }
-        else if (xPostion <= LINE_TWO)
+        else if (xPostion <= [Properties instance].LINE_TWO)
         {
             thisScore += LINE_TWO_SCORE;
         }
-        else if (xPostion <= LINE_THREE)
+        else if (xPostion <= [Properties instance].LINE_THREE)
         {
             thisScore += LINE_THREE_SCORE;
         }else 

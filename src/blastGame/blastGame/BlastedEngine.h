@@ -12,13 +12,15 @@
 #import "LevelElementData.h"
 #import "LevelJsonParser.h"
 #import "FlightPaths.h"
+#import "Properties.h"
+#import "PropertiesJsonParser.h"
 @class MainLayer;
 @class MainFGLayer;
 
 @interface BlastedEngine : NSObject
-{
-    //is Everything all ok
-    BOOL valid;
+{    
+    
+    bool isHdMode;
     
     //CCLayer CallBack information
     MainLayer* injectedGamePlayLayer;
@@ -52,14 +54,15 @@
     
 }
 
+@property (retain, readwrite) NSMutableDictionary* iosDeviceProperties;
 @property (retain, readwrite) NSMutableDictionary* actualMobSprites;
 @property (assign, readwrite) LevelElementData* currentPlayingLevel;
 @property (retain, readwrite) NSMutableDictionary* startPositionMap;
-@property (assign, readwrite) BOOL valid;
 @property (assign, readwrite) float levelPercentComplete; 
 @property (assign, readwrite) int currentScore;
 @property (assign, readwrite) int currentMultiplier;
 @property (assign, readwrite) int level;
+@property (assign, readwrite) bool isHdMode;
 @property (retain, readwrite) NSMutableArray* mobsArray;
 @property (retain, readwrite) NSMutableDictionary*  levelList;
 @property (assign, readwrite) float currentMultiplierCountDownSpeed;
@@ -68,8 +71,6 @@
 
 //singleton of the engine
 +(BlastedEngine*) instance;
-
--(BOOL)isValid;
 
 //GamePlayLayer Stuff
 -(void)injectGamePlayLayer:(MainLayer*)gamePlayLayer;

@@ -25,7 +25,7 @@
         
         //Score:
         scoreString = [NSString stringWithFormat:@"Score: %d",[BlastedEngine instance].currentScore];
-        scoreLabel = [CCLabelTTF labelWithString:scoreString fontName:@"zxspectr.ttf" fontSize:FONT_SIZE];
+        scoreLabel = [CCLabelTTF labelWithString:scoreString fontName:@"zxspectr.ttf" fontSize:[Properties instance].FONT_SIZE];
         scoreLabel.position = ccp(100, [Utils instance].screenHeight - 20);
         
          
@@ -34,7 +34,7 @@
         //percentCompleteLabel.position = ccp(400, [Utils instance].screenHeight - 20);
         
         multiplierString = [NSString stringWithFormat:@"x%d",[BlastedEngine instance].currentMultiplier];
-        multiplierLabel = [CCLabelTTF labelWithString:multiplierString fontName:@"zxspectr.ttf" fontSize:(FONT_SIZE * 1.2f)];
+        multiplierLabel = [CCLabelTTF labelWithString:multiplierString fontName:@"zxspectr.ttf" fontSize:([Properties instance].FONT_SIZE * 1.2f)];
         multiplierLabel.position = ccp(MULTIPLIER_END_X, 30);
         
         [self addChild:scoreLabel];
