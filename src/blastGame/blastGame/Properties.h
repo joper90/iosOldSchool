@@ -19,6 +19,7 @@
     
     NSString* GUN_SPRITE_FILE;
     NSString* BASE_SPRITE_FILE;
+    NSString* LOCKON_SPRITE_FILE;
     
     NSString* BLASTED_MENU_FILE; 
     
@@ -42,6 +43,7 @@
 
 @property (retain, readwrite) NSString* GUN_SPRITE_FILE;
 @property (retain, readwrite) NSString* BASE_SPRITE_FILE;
+@property (retain, readwrite) NSString* LOCKON_SPRITE_FILE;
 
 @property (retain, readwrite) NSString* BLASTED_MENU_FILE;  
 

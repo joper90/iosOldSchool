@@ -15,15 +15,37 @@
 {
     CCParticleSystem* retPart = nil;
     
+    //Check if HD
+    
+    bool HD = NO;
+    NSString* partFile;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        HD = YES;
+    }
+    
+    
     if (pattern == SPORE)
     {
-        retPart = [CCParticleSystemQuad particleWithFile:@"spore.plist"];
+        HD = NO;
+        partFile = @"spore.plist";
     } 
     else if (pattern == GALAXY_ONE)
     {
-        retPart = [CCParticleSystemQuad particleWithFile:@"galaxyOne.plist"];
+        partFile = @"galaxyOne.plist";
     }
     
+    
+    
+    
+    if (HD)
+    {
+        partFile = [NSString stringWithFormat:@"2%@",partFile]; 
+    }
+    
+    retPart = [CCParticleSystemQuad particleWithFile:partFile];
+    CCLOG(@"Using particle file from %@", partFile);
     return retPart;
 }
 

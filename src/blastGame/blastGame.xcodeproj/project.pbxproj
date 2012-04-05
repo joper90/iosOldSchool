@@ -144,6 +144,7 @@
 		CE55E133152B760D00B3CD04 /* red2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE55E12C152B760D00B3CD04 /* red2.png */; };
 		CE55E134152B760D00B3CD04 /* yellow2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE55E12D152B760D00B3CD04 /* yellow2.png */; };
 		CE55E136152B7E6F00B3CD04 /* blastedMenu2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE55E135152B7E6F00B3CD04 /* blastedMenu2.png */; };
+		CE68D5E4152CA69B00680BF5 /* 2galaxyOne.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE68D5E3152CA69B00680BF5 /* 2galaxyOne.plist */; };
 		CE909B2B150A548F00E66CA4 /* FlightPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = CE909B2A150A548F00E66CA4 /* FlightPaths.m */; };
 		CE909B2E150A5A1300E66CA4 /* MainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE909B2D150A5A1300E66CA4 /* MainLayer.m */; };
 		CE9342F8152B231600EE5233 /* iphone.json in Resources */ = {isa = PBXBuildFile; fileRef = CE9342F7152B231600EE5233 /* iphone.json */; };
@@ -439,6 +440,7 @@
 		CE55E12C152B760D00B3CD04 /* red2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red2.png; sourceTree = "<group>"; };
 		CE55E12D152B760D00B3CD04 /* yellow2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow2.png; sourceTree = "<group>"; };
 		CE55E135152B7E6F00B3CD04 /* blastedMenu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blastedMenu2.png; sourceTree = "<group>"; };
+		CE68D5E3152CA69B00680BF5 /* 2galaxyOne.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 2galaxyOne.plist; sourceTree = "<group>"; };
 		CE909B29150A548F00E66CA4 /* FlightPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightPaths.h; sourceTree = "<group>"; };
 		CE909B2A150A548F00E66CA4 /* FlightPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightPaths.m; sourceTree = "<group>"; };
 		CE909B2D150A5A1300E66CA4 /* MainLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainLayer.m; sourceTree = "<group>"; };
@@ -563,9 +565,9 @@
 			children = (
 				CEEE4B7F1504E326002621BC /* fonts */,
 				CEBABA8E15177718004F11E7 /* particles */,
-				CE55E125152B62D500B3CD04 /* game play sprites */,
+				CE55E125152B62D500B3CD04 /* game sprites */,
 				CE9342F5152B22BA00EE5233 /* jsonFiles */,
-				CE55E126152B638300B3CD04 /* game icons and loading screens */,
+				CE55E126152B638300B3CD04 /* game icons */,
 				CE270D1614FCEB0000C2DBA3 /* Info.plist */,
 				CE270D1714FCEB0100C2DBA3 /* iTunesArtwork */,
 				CE55E135152B7E6F00B3CD04 /* blastedMenu2.png */,
@@ -928,7 +930,7 @@
 			name = scene;
 			sourceTree = "<group>";
 		};
-		CE55E125152B62D500B3CD04 /* game play sprites */ = {
+		CE55E125152B62D500B3CD04 /* game sprites */ = {
 			isa = PBXGroup;
 			children = (
 				CE55E127152B760D00B3CD04 /* blue2.png */,
@@ -947,10 +949,10 @@
 				CE39BA5A15189863006285C7 /* red.png */,
 				CE39BA5B15189863006285C7 /* yellow.png */,
 			);
-			name = "game play sprites";
+			name = "game sprites";
 			sourceTree = "<group>";
 		};
-		CE55E126152B638300B3CD04 /* game icons and loading screens */ = {
+		CE55E126152B638300B3CD04 /* game icons */ = {
 			isa = PBXGroup;
 			children = (
 				CE270D0814FCEB0000C2DBA3 /* fps_images.png */,
@@ -962,7 +964,7 @@
 				CE270D1414FCEB0000C2DBA3 /* Icon@2x.png */,
 				CE270D0614FCEB0000C2DBA3 /* Default.png */,
 			);
-			name = "game icons and loading screens";
+			name = "game icons";
 			sourceTree = "<group>";
 		};
 		CE9342F5152B22BA00EE5233 /* jsonFiles */ = {
@@ -1019,6 +1021,7 @@
 				CEBABA6E15133C83004F11E7 /* exp1.plist */,
 				CEBABA6B15133C7C004F11E7 /* bullet_with_death.plist */,
 				CEBABA8F15177B0A004F11E7 /* galaxyOne.plist */,
+				CE68D5E3152CA69B00680BF5 /* 2galaxyOne.plist */,
 				CEBABA9015177B0A004F11E7 /* spore.plist */,
 			);
 			name = particles;
@@ -1139,6 +1142,7 @@
 				CE55E133152B760D00B3CD04 /* red2.png in Resources */,
 				CE55E134152B760D00B3CD04 /* yellow2.png in Resources */,
 				CE55E136152B7E6F00B3CD04 /* blastedMenu2.png in Resources */,
+				CE68D5E4152CA69B00680BF5 /* 2galaxyOne.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

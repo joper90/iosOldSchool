@@ -98,7 +98,8 @@
 -(void)initGun
 {
     CCLOG(@"InitGun...with RC: %d",[self retainCount]);
-    lockOnSprite = [CCSprite spriteWithFile:@"lockon.png"];
+    NSString* sprite = [Properties instance].LOCKON_SPRITE_FILE;
+    lockOnSprite = [CCSprite spriteWithFile:sprite];
     [lockOnSprite retain];
     
     //Load up the particle systems into the bullet array.
@@ -114,7 +115,8 @@
         [bangArray addObject:[CCParticleSystemQuad particleWithFile:@"exp1.plist"]];
     }
     
-    gunSprite = [CCSprite spriteWithFile:@"gun.png"];
+    sprite = [Properties instance].GUN_SPRITE_FILE;
+    gunSprite = [CCSprite spriteWithFile:sprite];
     gunSprite.position = ccp(GUN_X_POSITION, [Utils instance].center.y);
     
     
@@ -211,8 +213,7 @@
     //May need to check to see if touched here, as it may be too late later, as it will have moved.
     initialTouch = [[Utils instance]locationFromTouchSinglePoint:touch];
     mobTouched = [[BlastedEngine instance]whichMobTouched:initialTouch];
-    
-    
+
 
     return YES;
 }

@@ -31,4 +31,5 @@
 -(CGPoint) convertToiPadPoint:(float)iPhonePoint_X:(float)iPhonePoint_Y;
 
 -(CGRect) convertToIPadMakeRect:(float)x y1:(float)y width:(float)width height:(float)height;
+
 @end

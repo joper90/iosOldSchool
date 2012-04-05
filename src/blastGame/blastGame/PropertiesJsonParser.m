@@ -52,6 +52,7 @@
         [Properties instance].PINK_SPRITE_FILE = [p objectForKey:@"pink"];
         [Properties instance].GUN_SPRITE_FILE = [p objectForKey:@"gun"];
         [Properties instance].BASE_SPRITE_FILE = [p objectForKey:@"base"];
+        [Properties instance].LOCKON_SPRITE_FILE = [p objectForKey:@"lockon"];
         
         [Properties instance].BLASTED_MENU_FILE = [p objectForKey:@"menubackground"];
         
