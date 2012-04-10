@@ -19,6 +19,7 @@ added waves
 gfx
 sound
 
+Check for leaks
 
 
 Rules:
@@ -28,3 +29,6 @@ Add syncode around the score updates (to stop deadlocks)
 
 
 TMW get it workinig on the IPAD
+
+Particles
+10 different types x2(for ipad/iphone)
