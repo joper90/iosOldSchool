@@ -52,6 +52,9 @@
     //Array of the levels, from the lever loader.. the actual level data.
      NSMutableDictionary*  levelList; 
     
+    //Array of the hiScores:
+    NSMutableArray* hiScores;
+    
 }
 
 @property (retain, readwrite) NSMutableDictionary* iosDeviceProperties;
@@ -66,6 +69,7 @@
 @property (retain, readwrite) NSMutableArray* mobsArray;
 @property (retain, readwrite) NSMutableDictionary*  levelList;
 @property (assign, readwrite) float currentMultiplierCountDownSpeed;
+@property (assign, readwrite) NSMutableArray* hiScores;
 
 
 
@@ -101,6 +105,9 @@
 -(void)pokeScoreLayer;
 -(void)pokeMultiplier;
 -(void)pokePercentageComplete:(float)newPercentage;
+
+//HiScore stuff
+-(BOOL)submitHiScore; //sumbit a hiScore, adds if needed, sorts and sync's (saves), returns true is a new hiscore.
 
 -(MobElement*)getMobBySpriteTag:(int) tag;
 -(void)addLevelToLevelList:(LevelElementData*) levelDataElement;

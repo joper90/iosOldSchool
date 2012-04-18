@@ -18,6 +18,7 @@
     int     waveCount;
     int     totalMobsOnLevel;   //The total Alive mobs (i.e mobs with tags);
     int     bgParticle;
+    NSString* music;            // THe music track to use.
     NSMutableArray* mobAliveStatus; //Current status of the mobs.
     NSMutableArray* rowData;
     NSMutableArray* patternData;
@@ -29,6 +30,7 @@
 @property (readwrite, assign) float lineTime;
 @property (readwrite, assign) int waveCount;
 @property (readwrite, assign) int bgParticle;
+@property (readwrite, assign) NSString* music;
 @property (readwrite, retain) NSMutableArray* rowData;
 @property (readwrite, retain) NSMutableArray* patternData;
 @property (readwrite, retain) NSMutableArray* mobAliveStatus;

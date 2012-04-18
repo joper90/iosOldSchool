@@ -72,9 +72,12 @@ static LevelJsonParser* levelJsonParser = nil;
         NSString* bgPattern = [level objectForKey:@"bg"];
         CCLOG(@"bg Type : %@", bgPattern);
         
+        NSString* music = [level objectForKey:@"music"];
+        CCLOG(@"music : %@", music);
+        
         NSArray* rowData = [level objectForKey:@"rowData"];
         CCLOG(@"Wave Count : %d", [rowData count]);
-                        
+                                
         NSMutableArray* row = [[NSMutableArray alloc]init];
         NSMutableArray* pattern = [[NSMutableArray alloc]init];
         
@@ -96,6 +99,7 @@ static LevelJsonParser* levelJsonParser = nil;
         elementData.baseSpeed = [baseSpeed floatValue];
         elementData.lineTime = [lineTime floatValue];
         elementData.bgParticle = [bgPattern intValue];
+        elementData.music = music;
         elementData.waveCount = [rowData count];
         
         [[BlastedEngine instance]addLevelToLevelList:elementData];

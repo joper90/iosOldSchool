@@ -1,34 +1,18 @@
 Major:
-CountDown then start level - done
-Change to a new level!!! - done
-Title screen, and movement thru screens. - done
 
-Add scoring - done
-Add multipier bar. (runs down unless topped up.) - done
-Add wave bar? or 1/5 or remove? -done? removed.. crap
-hi score
+-Add music / sfx
+-Add option scren (disable music) (sound effects)
+-Add hiscores.
 
-
-Conver to properties - done (for universial app)
 
 Minor:
 Tuning
     spped of rockets 
     multiplier after they blow up
 added waves
-gfx
-sound
 
 Check for leaks
 
-
-Rules:
-20 second timer? (or based on level)
-
-Add syncode around the score updates (to stop deadlocks)
-
-
-TMW get it workinig on the IPAD
 
 Particles
 10 different types x2(for ipad/iphone)

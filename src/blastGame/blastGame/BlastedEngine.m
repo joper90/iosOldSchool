@@ -14,7 +14,7 @@
 @synthesize iosDeviceProperties, isHdMode,
             currentScore, mobsArray, level, levelList, startPositionMap, 
             currentPlayingLevel,actualMobSprites, currentMultiplier, 
-            currentMultiplierCountDownSpeed ,levelPercentComplete;
+            currentMultiplierCountDownSpeed ,levelPercentComplete, hiScores;
 
 static BlastedEngine* blastedEngine = nil;
 
