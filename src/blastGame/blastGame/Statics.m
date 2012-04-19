@@ -18,4 +18,6 @@ NSString *const JSON_FILE = @"jsonTest.json";
 NSString *const IPAD_PROPERTIES = @"ipad.json";
 NSString *const IPHONE_PROPERTIES = @"iphone.json";
 
+NSString *const BLASTED_SCORES = @"blastedData";
+
 @end

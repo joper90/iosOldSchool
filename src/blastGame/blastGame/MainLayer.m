@@ -348,6 +348,8 @@
         }
     }
     
+    
+    //GAME OVER..
     //Switch scenes
     [[CCDirector sharedDirector]replaceScene:[GameOverScene scene]];
 

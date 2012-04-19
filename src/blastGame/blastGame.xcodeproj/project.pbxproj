@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BF25965153F434F00DFA3E7 /* PersistElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF25964153F434F00DFA3E7 /* PersistElements.m */; };
+		5BF2596915408E7F00DFA3E7 /* HiScoreScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2596815408E7F00DFA3E7 /* HiScoreScene.m */; };
+		5BF2596C15408F3100DFA3E7 /* HiScoreLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2596B15408F3100DFA3E7 /* HiScoreLayer.m */; };
 		CE11B9D515232C67000EF2A0 /* LevelCompleteScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11B9D415232C67000EF2A0 /* LevelCompleteScene.m */; };
 		CE11B9D915232C75000EF2A0 /* LevelCompleteLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11B9D815232C75000EF2A0 /* LevelCompleteLayer.m */; };
 		CE270CF514FCEB0000C2DBA3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE270CF414FCEB0000C2DBA3 /* QuartzCore.framework */; };
@@ -178,6 +181,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BF25963153F434F00DFA3E7 /* PersistElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistElements.h; sourceTree = "<group>"; };
+		5BF25964153F434F00DFA3E7 /* PersistElements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistElements.m; sourceTree = "<group>"; };
+		5BF2596715408E7F00DFA3E7 /* HiScoreScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiScoreScene.h; sourceTree = "<group>"; };
+		5BF2596815408E7F00DFA3E7 /* HiScoreScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiScoreScene.m; sourceTree = "<group>"; };
+		5BF2596A15408F3100DFA3E7 /* HiScoreLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiScoreLayer.h; sourceTree = "<group>"; };
+		5BF2596B15408F3100DFA3E7 /* HiScoreLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiScoreLayer.m; sourceTree = "<group>"; };
 		CE11B9D315232C67000EF2A0 /* LevelCompleteScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCompleteScene.h; sourceTree = "<group>"; };
 		CE11B9D415232C67000EF2A0 /* LevelCompleteScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCompleteScene.m; sourceTree = "<group>"; };
 		CE11B9D715232C75000EF2A0 /* LevelCompleteLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCompleteLayer.h; sourceTree = "<group>"; };
@@ -926,6 +935,8 @@
 				CEBA46BA1519FED400AE5E31 /* GameOverScene.m */,
 				CE11B9D315232C67000EF2A0 /* LevelCompleteScene.h */,
 				CE11B9D415232C67000EF2A0 /* LevelCompleteScene.m */,
+				5BF2596715408E7F00DFA3E7 /* HiScoreScene.h */,
+				5BF2596815408E7F00DFA3E7 /* HiScoreScene.m */,
 			);
 			name = scene;
 			sourceTree = "<group>";
@@ -996,6 +1007,8 @@
 				CEBA46BE151A00AC00AE5E31 /* GameOverLayer.m */,
 				CE11B9D715232C75000EF2A0 /* LevelCompleteLayer.h */,
 				CE11B9D815232C75000EF2A0 /* LevelCompleteLayer.m */,
+				5BF2596A15408F3100DFA3E7 /* HiScoreLayer.h */,
+				5BF2596B15408F3100DFA3E7 /* HiScoreLayer.m */,
 			);
 			name = layers;
 			sourceTree = "<group>";
@@ -1009,6 +1022,8 @@
 				CEEE4B83150502E2002621BC /* LevelJsonParser.m */,
 				CE3D5979152B05D60085CD40 /* PropertiesJsonParser.h */,
 				CE3D597A152B05D60085CD40 /* PropertiesJsonParser.m */,
+				5BF25963153F434F00DFA3E7 /* PersistElements.h */,
+				5BF25964153F434F00DFA3E7 /* PersistElements.m */,
 			);
 			name = engine;
 			sourceTree = "<group>";
@@ -1274,6 +1289,9 @@
 				CE11B9D915232C75000EF2A0 /* LevelCompleteLayer.m in Sources */,
 				CE3D597B152B05D60085CD40 /* PropertiesJsonParser.m in Sources */,
 				CE9342FB152B294800EE5233 /* Properties.m in Sources */,
+				5BF25965153F434F00DFA3E7 /* PersistElements.m in Sources */,
+				5BF2596915408E7F00DFA3E7 /* HiScoreScene.m in Sources */,
+				5BF2596C15408F3100DFA3E7 /* HiScoreLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

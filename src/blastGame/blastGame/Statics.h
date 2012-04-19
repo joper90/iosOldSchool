@@ -111,6 +111,9 @@ extern NSString *const JSON_FILE;
 extern NSString *const IPAD_PROPERTIES;
 extern NSString *const IPHONE_PROPERTIES;
 
+//SAVE DATA FILE
+extern NSString *const BLASTED_SCORES;
+
 @interface Statics : NSObject
 
 @end

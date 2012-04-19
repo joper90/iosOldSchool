@@ -24,14 +24,23 @@
         CGPoint centerPos= [[Utils instance]center];
 		gameOver.position =  centerPos;   
         
+
+        NSString* gameScoreString = [NSString stringWithFormat:@"Score : %d",[[BlastedEngine instance]currentScore]];
+        
+        CCLabelTTF *currentScoreLabel = [CCLabelTTF labelWithString:gameScoreString fontName:@"efmi" fontSize:30];
+        centerPos = ccp(centerPos.x,centerPos.y- 50);
+        
+        currentScoreLabel.position = centerPos;
+        
         [self addChild:gameOver];
+        [self addChild:currentScoreLabel];
     }
 	return self;
 }
 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:0.5f scene:[TitleScene scene]];
+    CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:0.5f scene:[HiScoreScene scene]];
     [[CCDirector sharedDirector]pushScene:ccFade];
 }
 

@@ -9,7 +9,8 @@
 
 #import "cocos2d.h"
 #import "CoreImports.h"
-#import "TitleScene.h"
+#import "BlastedEngine.h"
+#import "HiScoreScene.h"
 
 @interface GameOverLayer : CCLayer {
     
