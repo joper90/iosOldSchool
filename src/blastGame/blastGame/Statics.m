@@ -14,7 +14,7 @@ NSString *const COMPANY_NAME = @"funkVoodoo";
 NSString *const COMPANY_SUBTEXT = @"productions";
 NSString *const COPYRIGHT_MESSAGE = @"(c) 2012 funkVoodoo";
 
-NSString *const JSON_FILE = @"jsonTest.json";
+NSString *const JSON_FILE = @"levelData.json";
 NSString *const IPAD_PROPERTIES = @"ipad.json";
 NSString *const IPHONE_PROPERTIES = @"iphone.json";
 

@@ -15,6 +15,7 @@
     NSString* levelType;        //LevelType - normal, or boss (the name of) to look up in a table.. THis should be an enum really.
     float   baseSpeed;           //Speed at which the mobs move across the screen
     float   lineTime;            //Speed between each line (wave) appearing.
+    NSString *levelName;
     int     waveCount;
     int     totalMobsOnLevel;   //The total Alive mobs (i.e mobs with tags);
     int     bgParticle;
@@ -26,6 +27,7 @@
 
 @property int levelId;
 @property (readwrite, retain) NSString* levelType;
+@property (readwrite, retain) NSString* levelName;
 @property (readwrite, assign) float baseSpeed;
 @property (readwrite, assign) float lineTime;
 @property (readwrite, assign) int waveCount;

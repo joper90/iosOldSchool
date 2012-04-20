@@ -175,7 +175,7 @@
 		CEBABA9215177B0A004F11E7 /* spore.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBABA9015177B0A004F11E7 /* spore.plist */; };
 		CEEE4B6F14FE3897002621BC /* MobElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE4B6E14FE3897002621BC /* MobElement.m */; };
 		CEEE4B7E1504DD6E002621BC /* efmi.TTF in Resources */ = {isa = PBXBuildFile; fileRef = CEEE4B7D1504DD6E002621BC /* efmi.TTF */; };
-		CEEE4B81150502B9002621BC /* jsonTest.json in Resources */ = {isa = PBXBuildFile; fileRef = CEEE4B80150502B9002621BC /* jsonTest.json */; };
+		CEEE4B81150502B9002621BC /* levelData.json in Resources */ = {isa = PBXBuildFile; fileRef = CEEE4B80150502B9002621BC /* levelData.json */; };
 		CEEE4B84150502E2002621BC /* LevelJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE4B83150502E2002621BC /* LevelJsonParser.m */; };
 		CEEE4B87150503E9002621BC /* LevelElementData.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE4B86150503E9002621BC /* LevelElementData.m */; };
 /* End PBXBuildFile section */
@@ -494,7 +494,7 @@
 		CEEE4B6D14FE3897002621BC /* MobElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobElement.h; sourceTree = "<group>"; };
 		CEEE4B6E14FE3897002621BC /* MobElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobElement.m; sourceTree = "<group>"; };
 		CEEE4B7D1504DD6E002621BC /* efmi.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = efmi.TTF; sourceTree = "<group>"; };
-		CEEE4B80150502B9002621BC /* jsonTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonTest.json; sourceTree = "<group>"; };
+		CEEE4B80150502B9002621BC /* levelData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = levelData.json; sourceTree = "<group>"; };
 		CEEE4B82150502E1002621BC /* LevelJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelJsonParser.h; sourceTree = "<group>"; };
 		CEEE4B83150502E2002621BC /* LevelJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelJsonParser.m; sourceTree = "<group>"; };
 		CEEE4B85150503E9002621BC /* LevelElementData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelElementData.h; sourceTree = "<group>"; };
@@ -579,8 +579,7 @@
 				CE55E126152B638300B3CD04 /* game icons */,
 				CE270D1614FCEB0000C2DBA3 /* Info.plist */,
 				CE270D1714FCEB0100C2DBA3 /* iTunesArtwork */,
-				CE55E135152B7E6F00B3CD04 /* blastedMenu2.png */,
-				CEBA46C0151E237300AE5E31 /* blastedMenu.png */,
+				CE36C16E1541A5E9006B56E5 /* artAssets */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -941,6 +940,15 @@
 			name = scene;
 			sourceTree = "<group>";
 		};
+		CE36C16E1541A5E9006B56E5 /* artAssets */ = {
+			isa = PBXGroup;
+			children = (
+				CE55E135152B7E6F00B3CD04 /* blastedMenu2.png */,
+				CEBA46C0151E237300AE5E31 /* blastedMenu.png */,
+			);
+			name = artAssets;
+			sourceTree = "<group>";
+		};
 		CE55E125152B62D500B3CD04 /* game sprites */ = {
 			isa = PBXGroup;
 			children = (
@@ -981,7 +989,7 @@
 		CE9342F5152B22BA00EE5233 /* jsonFiles */ = {
 			isa = PBXGroup;
 			children = (
-				CEEE4B80150502B9002621BC /* jsonTest.json */,
+				CEEE4B80150502B9002621BC /* levelData.json */,
 				CE9342F7152B231600EE5233 /* iphone.json */,
 				CE55E122152B538300B3CD04 /* ipad.json */,
 			);
@@ -1129,7 +1137,7 @@
 				CE270D1514FCEB0000C2DBA3 /* Icon@2x.png in Resources */,
 				CE270D1814FCEB0100C2DBA3 /* iTunesArtwork in Resources */,
 				CEEE4B7E1504DD6E002621BC /* efmi.TTF in Resources */,
-				CEEE4B81150502B9002621BC /* jsonTest.json in Resources */,
+				CEEE4B81150502B9002621BC /* levelData.json in Resources */,
 				CEBAB8D815121B3B004F11E7 /* gun.png in Resources */,
 				CEBAB8DA15123907004F11E7 /* lockon.png in Resources */,
 				CEBABA6C15133C7C004F11E7 /* bullet_with_death.plist in Resources */,

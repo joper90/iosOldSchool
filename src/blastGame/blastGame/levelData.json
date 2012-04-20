@@ -2,10 +2,11 @@
   "levels": [
     {
       "levelId": "1",
+      "levelName": "simple one",
       "levelInfo": "normal",
       "baseSpeed": "10",
       "lineTime": "3",
-	  "bg": "0",
+      "bg": "0",
       "music": "test.mp3",
       "rowData": [
         {
@@ -24,12 +25,12 @@
     },
     {
       "levelId": "2",
+      "levelName": "simple two",
       "levelInfo": "normal",
       "baseSpeed": "10",
       "lineTime": "3",
-"bg": "1",
-             
-             "music": "test.mp3",
+      "bg": "1",
+      "music": "test.mp3",
       "rowData": [
         {
           "row": "10011",
@@ -47,11 +48,12 @@
     },
     {
       "levelId": "3",
+      "levelName": "simple three",
       "levelInfo": "normal",
       "baseSpeed": "10",
       "lineTime": "10",
-             "bg": "1",
-             "music": "test.mp3",
+      "bg": "1",
+      "music": "test.mp3",
       "rowData": [
         {
           "row": "11111",

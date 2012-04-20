@@ -60,6 +60,8 @@
     
     [globeSprite runAction:seq];
     
+    //Create levelName to display
+    
     
     //Start it off the screen to the left.
     [self levelCountDownTimeout:[NSNumber numberWithInt:3]];

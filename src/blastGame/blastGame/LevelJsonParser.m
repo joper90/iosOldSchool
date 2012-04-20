@@ -63,6 +63,9 @@ static LevelJsonParser* levelJsonParser = nil;
         NSString* levelInfo = [level objectForKey:@"levelInfo"];
         CCLOG(@"Levelinfo : %@", levelInfo);
         
+        NSString* levelName = [level objectForKey:@"levelName"];
+        CCLOG(@"Levelinfo : %@", levelName);
+        
         NSString* baseSpeed = [level objectForKey:@"baseSpeed"];
         CCLOG(@"baseSpeed : %@", baseSpeed);
         
@@ -95,6 +98,7 @@ static LevelJsonParser* levelJsonParser = nil;
         LevelElementData* elementData = [[LevelElementData alloc]initWithRowPatternCCArrays:row andAllPattern:pattern ];
         
         elementData.levelId = levelId;
+        elementData.levelName = levelName;
         elementData.levelType = levelInfo;
         elementData.baseSpeed = [baseSpeed floatValue];
         elementData.lineTime = [lineTime floatValue];
