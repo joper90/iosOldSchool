@@ -18,7 +18,7 @@
     {
         self.isTouchEnabled = YES;
         
-        CCLabelTTF *gameOver = [CCLabelTTF labelWithString:@"GameOver" fontName:@"efmi" fontSize:48];
+        CCLabelTTF *gameOver = [CCLabelTTF labelWithString:@"GameOver" fontName:@"efmi.ttf" fontSize:48];
         
         // position the label on the center of the screen
         CGPoint centerPos= [[Utils instance]center];
@@ -27,7 +27,7 @@
 
         NSString* gameScoreString = [NSString stringWithFormat:@"Score : %d",[[BlastedEngine instance]currentScore]];
         
-        CCLabelTTF *currentScoreLabel = [CCLabelTTF labelWithString:gameScoreString fontName:@"efmi" fontSize:30];
+        CCLabelTTF *currentScoreLabel = [CCLabelTTF labelWithString:gameScoreString fontName:@"efmi.ttf" fontSize:30];
         centerPos = ccp(centerPos.x,centerPos.y- 50);
         
         currentScoreLabel.position = centerPos;
