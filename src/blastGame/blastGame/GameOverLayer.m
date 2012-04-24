@@ -24,7 +24,6 @@
         CGPoint centerPos= [[Utils instance]center];
 		gameOver.position =  centerPos;   
         
-
         NSString* gameScoreString = [NSString stringWithFormat:@"Score : %d",[[BlastedEngine instance]currentScore]];
         
         CCLabelTTF *currentScoreLabel = [CCLabelTTF labelWithString:gameScoreString fontName:@"efmi.ttf" fontSize:30];

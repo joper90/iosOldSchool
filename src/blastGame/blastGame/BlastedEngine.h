@@ -113,7 +113,9 @@
 -(void)pokePercentageComplete:(float)newPercentage;
 
 //HiScore stuff
--(BOOL)submitHiScore; //sumbit a hiScore, adds if needed, sorts and sync's (saves), returns true is a new hiscore.
+-(BOOL)submitHiScore:(int)currentScore; //sumbit a hiScore, adds if needed, sorts and sync's (saves), returns true is a new hiscore.
+-(NSMutableArray*)getHiScoreArray;
+
 
 -(MobElement*)getMobBySpriteTag:(int) tag;
 -(void)addLevelToLevelList:(LevelElementData*) levelDataElement;

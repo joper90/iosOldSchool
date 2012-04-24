@@ -59,7 +59,7 @@ static BlastedEngine* blastedEngine = nil;
         self.levelList = [[NSMutableDictionary alloc]init];
         
         //Check hiScore persistence or save a new file
-        persistHiScoreElement = [[PersistElements alloc]init];
+        persistHiScoreElement = [[PersistElements alloc]initHiScores];
         
         currentScore  = 0;
         currentMultiplier = 1;
@@ -99,6 +99,20 @@ static BlastedEngine* blastedEngine = nil;
 -(void)callBackMobMoveComplete:(id)sender
 {
     [injectedGamePlayLayer mobMoveCompleted:sender];
+}
+
+
+//
+// Hi score Utils
+//
+-(BOOL)submitHiScore:(int)lastScore
+{
+    return [persistHiScoreElement pushScoreAndSave:lastScore];
+}
+
+-(NSMutableArray*)getHiScoreArray
+{
+    return [persistHiScoreElement getHiScores];
 }
 
 //

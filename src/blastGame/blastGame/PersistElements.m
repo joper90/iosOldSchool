@@ -17,26 +17,31 @@
     return hiScores;
 }
 
--(void) initHiScores
+-(id) initHiScores
 {
     CCLOG(@"initHiScores called");
     
-    NSMutableArray* hiScores = (NSMutableArray*) [[NSUserDefaults standardUserDefaults] objectForKey:BLASTED_SCORES];
-    
-    if (hiScores == nil)
+    self = [super self];
+    if (self != nil)
     {
-        CCLOG(@"Creating the init hiScores on device.");
-        hiScores = [[NSMutableArray alloc]initWithObjects:  [NSNumber numberWithInt: 100],
-                                                            [NSNumber numberWithInt: 200],
-                                                            [NSNumber numberWithInt: 300],
-                                                            [NSNumber numberWithInt: 400],
-                                                            [NSNumber numberWithInt: 500],
-                                                            nil];
+    
+        NSMutableArray* hiScores = (NSMutableArray*) [[NSUserDefaults standardUserDefaults] objectForKey:BLASTED_SCORES];
+    
+        if (hiScores == nil)
+        {
+            CCLOG(@"Creating the init hiScores on device.");
+            hiScores = [[NSMutableArray alloc]initWithObjects:  [NSNumber numberWithInt: 100],
+                                                                [NSNumber numberWithInt: 200],
+                                                                [NSNumber numberWithInt: 300],
+                                                                [NSNumber numberWithInt: 400],
+                                                                [NSNumber numberWithInt: 500],
+                                                                nil];
         
-        
-        [[NSUserDefaults standardUserDefaults] setObject:hiScores forKey:BLASTED_SCORES]; 
-        [[NSUserDefaults standardUserDefaults] synchronize];
+            [[NSUserDefaults standardUserDefaults] setObject:hiScores forKey:BLASTED_SCORES]; 
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
     }
+    return self;
 }
 
 -(bool) pushScoreAndSave:(int) newScore

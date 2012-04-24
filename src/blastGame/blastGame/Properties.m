@@ -16,6 +16,7 @@
             LINE_ONE, LINE_TWO, LINE_THREE,
             FONT_SIZE, FONT_SIZE_COUNTDOWN,
             FONT_LEVEL_NAME_SIZE,
+            FONT_HISCORE_SIZE, HI_SCORE_GAP_SIZE, HI_SCORE_START_POS,
             isValid;
 
 static Properties* properties = nil;

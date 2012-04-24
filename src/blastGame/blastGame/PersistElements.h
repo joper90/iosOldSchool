@@ -15,7 +15,7 @@
 }
  
 -(NSMutableArray*) getHiScores;
--(void) initHiScores;
+-(id) initHiScores;
 -(bool) pushScoreAndSave:(int) newScore;
 
 
