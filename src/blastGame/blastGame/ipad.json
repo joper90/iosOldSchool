@@ -14,6 +14,7 @@
       "gunx": "40",
       "fontsize": "20",
       "fontsizecountdown": "70",
+                 "fontlevelnamesize" : "35",
       "lineone": "317",
       "linetwo": "532",
       "linethree": "747"

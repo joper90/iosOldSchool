@@ -58,6 +58,7 @@
         
         [Properties instance].FONT_SIZE = [[p objectForKey:@"fontsize"]floatValue];
         [Properties instance].FONT_SIZE_COUNTDOWN = [[p objectForKey:@"fontsizecountdown"]floatValue];
+        [Properties instance].FONT_LEVEL_NAME_SIZE =[[p objectForKey:@"fontlevelnamesize"]floatValue];
                
         [Properties instance].LINE_ONE = [[p objectForKey:@"lineone"]floatValue];
         [Properties instance].LINE_TWO = [[p objectForKey:@"linetwo"]floatValue];

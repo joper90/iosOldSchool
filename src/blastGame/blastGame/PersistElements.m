@@ -12,6 +12,7 @@
 
 -(NSMutableArray*) getHiScores;
 {
+    CCLOG(@"getHiScore called");
     NSMutableArray* hiScores = (NSMutableArray*) [[NSUserDefaults standardUserDefaults] objectForKey:BLASTED_SCORES];
     return hiScores;
 }
@@ -40,6 +41,7 @@
 
 -(bool) pushScoreAndSave:(int) newScore
 {
+    CCLOG(@"pushScoreAndSave called with %d", newScore);
     [self initHiScores]; //check its not been removed. 
     NSMutableArray* hiScores = (NSMutableArray*) [[NSUserDefaults standardUserDefaults] objectForKey:BLASTED_SCORES];
     
@@ -53,8 +55,14 @@
     
     if (newScore > lowestInt) // a new hi score.. 
     {
+        CCLOG(@"===> new hiScore recored. called");
         [hiScores insertObject:[NSNumber numberWithInt: newScore] atIndex:4];
         [hiScores sortUsingDescriptors:[NSArray arrayWithObject:highestToLowest]];
+        
+        //Now save away
+        [[NSUserDefaults standardUserDefaults] setObject:hiScores forKey:BLASTED_SCORES]; 
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
         
         return YES;
     }

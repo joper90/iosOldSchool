@@ -26,6 +26,8 @@
     float timeBetweenWaves;
     
     CCLabelTTF* countDownLabel;
+    CCLabelTTF* levelNameLabel;
+    
     CCSprite* gunSprite;
     CCSprite* lockOnSprite;
     CCSprite* globeSprite;

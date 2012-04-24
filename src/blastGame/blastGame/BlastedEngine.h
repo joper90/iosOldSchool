@@ -14,6 +14,7 @@
 #import "FlightPaths.h"
 #import "Properties.h"
 #import "PropertiesJsonParser.h"
+#import "PersistElements.h"
 @class MainLayer;
 @class MainFGLayer;
 
@@ -35,6 +36,9 @@
     int level;
     
     LevelElementData* currentPlayingLevel;
+    
+    //HiScore Element;
+    PersistElements* persistHiScoreElement;
     
     //Dict of the sprites themselves to load up.
     //The actual sprites we copy into the mobsArray.
@@ -84,11 +88,13 @@
 -(void)callBackMobMoveComplete:(id)sender;
 -(void)increaseLevelCount;
 
+//level stuff and information
 -(BOOL)loadLevel:(int) levelToLoad withLayer:(CCLayer*) layer;
 -(int)getWaveCountByCurrentLevel;
 -(float)getCurrentTimeBetweenWaves;
 -(float)getCurrentSpeed;
 -(int)getBackGroundParticle;
+-(NSString*)getCurrentLevelName;
 
 -(NSMutableArray*) getMobListArray;
 -(void)setDeadMob:(int)mobTag;

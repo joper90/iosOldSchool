@@ -58,6 +58,9 @@ static BlastedEngine* blastedEngine = nil;
         self.actualMobSprites = [[NSMutableDictionary alloc]init];
         self.levelList = [[NSMutableDictionary alloc]init];
         
+        //Check hiScore persistence or save a new file
+        persistHiScoreElement = [[PersistElements alloc]init];
+        
         currentScore  = 0;
         currentMultiplier = 1;
         levelPercentComplete = 0;
@@ -121,6 +124,12 @@ static BlastedEngine* blastedEngine = nil;
 {
     return currentPlayingLevel.baseSpeed;
 }
+
+-(NSString *)getCurrentLevelName
+{
+    return currentPlayingLevel.levelName;
+}
+
 
 -(void)setDeadMob:(int)mobTag
 {
@@ -468,6 +477,7 @@ static BlastedEngine* blastedEngine = nil;
     [actualMobSprites release];
     [levelList release];
     [iosDeviceProperties release];
+    [persistHiScoreElement release];
     [super dealloc];
 }
 

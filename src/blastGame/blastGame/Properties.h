@@ -27,6 +27,7 @@
     
     float     FONT_SIZE;
     float     FONT_SIZE_COUNTDOWN;
+    float     FONT_LEVEL_NAME_SIZE;
     
     float     LINE_ONE;
     float     LINE_TWO;
@@ -51,6 +52,8 @@
 
 @property (assign, readwrite) float FONT_SIZE;
 @property (assign, readwrite) float FONT_SIZE_COUNTDOWN;
+@property (assign, readwrite) float FONT_LEVEL_NAME_SIZE;
+
 
 @property (assign, readwrite) float LINE_ONE;
 @property (assign, readwrite) float LINE_TWO;

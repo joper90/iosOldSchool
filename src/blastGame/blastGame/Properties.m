@@ -15,6 +15,7 @@
             GUN_SPRITE_FILE,
             LINE_ONE, LINE_TWO, LINE_THREE,
             FONT_SIZE, FONT_SIZE_COUNTDOWN,
+            FONT_LEVEL_NAME_SIZE,
             isValid;
 
 static Properties* properties = nil;

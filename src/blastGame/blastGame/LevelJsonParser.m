@@ -27,7 +27,7 @@ static LevelJsonParser* levelJsonParser = nil;
 {
     if (self = [super init])
     {
-        jsonFile = @"jsonTest.json";
+        jsonFile = JSON_FILE;
         CCLOG(@"Using JSON FILE %@", jsonFile);
     }
     return self;
@@ -64,7 +64,7 @@ static LevelJsonParser* levelJsonParser = nil;
         CCLOG(@"Levelinfo : %@", levelInfo);
         
         NSString* levelName = [level objectForKey:@"levelName"];
-        CCLOG(@"Levelinfo : %@", levelName);
+        CCLOG(@"LevelName : %@", levelName);
         
         NSString* baseSpeed = [level objectForKey:@"baseSpeed"];
         CCLOG(@"baseSpeed : %@", baseSpeed);
