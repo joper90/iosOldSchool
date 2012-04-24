@@ -24,30 +24,34 @@
     self = [super self];
     if (self != nil)
     {
-    
-        NSMutableArray* hiScores = (NSMutableArray*) [[NSUserDefaults standardUserDefaults] objectForKey:BLASTED_SCORES];
-    
-        if (hiScores == nil)
-        {
-            CCLOG(@"Creating the init hiScores on device.");
-            hiScores = [[NSMutableArray alloc]initWithObjects:  [NSNumber numberWithInt: 100],
-                                                                [NSNumber numberWithInt: 200],
-                                                                [NSNumber numberWithInt: 300],
-                                                                [NSNumber numberWithInt: 400],
-                                                                [NSNumber numberWithInt: 500],
-                                                                nil];
-        
-            [[NSUserDefaults standardUserDefaults] setObject:hiScores forKey:BLASTED_SCORES]; 
-            [[NSUserDefaults standardUserDefaults] synchronize];
-        }
+        [self createInitArrayElements];
     }
     return self;
+}
+
+-(void) createInitArrayElements
+{
+    NSMutableArray* hiScores = (NSMutableArray*) [[NSUserDefaults standardUserDefaults] objectForKey:BLASTED_SCORES];
+    
+    if (hiScores == nil)
+    {
+        CCLOG(@"Creating the init hiScores on device.");
+        hiScores = [[NSMutableArray alloc]initWithObjects:  [NSNumber numberWithInt: 500],
+                    [NSNumber numberWithInt: 400],
+                    [NSNumber numberWithInt: 300],
+                    [NSNumber numberWithInt: 200],
+                    [NSNumber numberWithInt: 100],
+                    nil];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:hiScores forKey:BLASTED_SCORES]; 
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 -(bool) pushScoreAndSave:(int) newScore
 {
     CCLOG(@"pushScoreAndSave called with %d", newScore);
-    [self initHiScores]; //check its not been removed. 
+    [self createInitArrayElements]; //check its not been removed. 
     NSMutableArray* hiScores = (NSMutableArray*) [[NSUserDefaults standardUserDefaults] objectForKey:BLASTED_SCORES];
     
     NSSortDescriptor *highestToLowest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:NO];

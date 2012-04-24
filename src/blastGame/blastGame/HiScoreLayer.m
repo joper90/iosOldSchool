@@ -17,6 +17,10 @@
     CCLOG(@"hiScore Layer...with RC: %d",[self retainCount]);
 	if( (self=[super init])) 
     {
+        
+        //Get and push the new hiscore:
+        BOOL newHiScore = [[BlastedEngine instance]submitHiScore:[[BlastedEngine instance]currentScore]];
+        
         CCLabelTTF *hiScore = [CCLabelTTF labelWithString:@"hi-scores" fontName:@"efmi" fontSize:[Properties instance].FONT_HISCORE_SIZE];
         
         //Get the current scores
