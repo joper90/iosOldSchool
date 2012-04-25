@@ -87,6 +87,7 @@
 -(void)releaseScoreLayer;
 -(void)callBackMobMoveComplete:(id)sender;
 -(void)increaseLevelCount;
+-(void)resetLevelCount;
 
 //level stuff and information
 -(BOOL)loadLevel:(int) levelToLoad withLayer:(CCLayer*) layer;

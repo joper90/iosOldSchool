@@ -52,7 +52,7 @@
     ccDrawLine(lineTwoStart, lineTwoEnd);
     ccDrawLine(lineThreeStart, lineThreeEnd);
     
-    glColor4ub(200, 0, 0, 100);
+    glColor4ub(200, 0, 0, 100); 
     glLineWidth(2);
     ccDrawLine(lineOneStart, lineOneEnd);
     ccDrawLine(lineTwoStart, lineTwoEnd);

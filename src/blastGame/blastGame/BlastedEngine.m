@@ -124,6 +124,11 @@ static BlastedEngine* blastedEngine = nil;
     level++;
 }
 
+-(void)resetLevelCount
+{
+    level = 1;
+}
+
 -(int)getWaveCountByCurrentLevel
 {
     return currentPlayingLevel.waveCount;

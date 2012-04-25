@@ -45,6 +45,8 @@
     NSArray* props = [dict valueForKey:@"properties"];
     for (id p in props)
     {
+        [Properties instance].DRAG_SELECT_FREEDOM = [[p objectForKey:@"dragselectfreedom"]floatValue];
+        
         [Properties instance].RED_SPRITE_FILE = [p objectForKey:@"red"];
         [Properties instance].YELLOW_SPRITE_FILE = [p objectForKey:@"yellow"];
         [Properties instance].BLUE_SPRITE_FILE = [p objectForKey:@"blue"];
@@ -67,6 +69,8 @@
         [Properties instance].LINE_ONE = [[p objectForKey:@"lineone"]floatValue];
         [Properties instance].LINE_TWO = [[p objectForKey:@"linetwo"]floatValue];
         [Properties instance].LINE_THREE = [[p objectForKey:@"linethree"]floatValue];
+        
+        
     }
        
     CCLOG(@" Processed : %@",i);

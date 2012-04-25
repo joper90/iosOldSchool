@@ -17,6 +17,7 @@
             FONT_SIZE, FONT_SIZE_COUNTDOWN,
             FONT_LEVEL_NAME_SIZE,
             FONT_HISCORE_SIZE, HI_SCORE_GAP_SIZE, HI_SCORE_START_POS,
+            DRAG_SELECT_FREEDOM,
             isValid;
 
 static Properties* properties = nil;

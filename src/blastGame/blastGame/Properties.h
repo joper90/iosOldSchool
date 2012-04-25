@@ -11,6 +11,8 @@
 
 @interface Properties : NSObject
 {
+    float     DRAG_SELECT_FREEDOM;
+    
     NSString* RED_SPRITE_FILE;
     NSString* YELLOW_SPRITE_FILE;
     NSString* BLUE_SPRITE_FILE;
@@ -39,6 +41,8 @@
     
     bool      isValid;
 }
+
+@property (assign, readwrite) float DRAG_SELECT_FREEDOM;
 
 @property (retain, readwrite) NSString* RED_SPRITE_FILE ;
 @property (retain, readwrite) NSString* YELLOW_SPRITE_FILE ;

@@ -2,6 +2,7 @@
   "information": "iphonedata",
   "properties": [
     {
+                 "dragselectfreedom":"20",
       "base": "planet.png",           
       "red": "red.png",
       "yellow": "yellow.png",

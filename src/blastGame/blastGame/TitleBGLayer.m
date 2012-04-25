@@ -52,8 +52,9 @@
     if (CGRectContainsPoint(startGameRect, touchLocation))
     {
         CCLOG(@"StartGameRect");
-        //Reset the score and the multuplier
+        //Reset the score and the multuplier and the level
         
+        [[BlastedEngine instance]resetLevelCount];
         [[BlastedEngine instance]resetScore];
         [[BlastedEngine instance]resetMultiplier];
         CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:2 scene:[MainScene scene]];

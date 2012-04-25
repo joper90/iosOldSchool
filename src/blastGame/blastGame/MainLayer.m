@@ -235,7 +235,7 @@
     CCLOG(@"Gap %f", distance);
     
     //No if distance between allowed amount then treat as a single touch.
-    if (distance <= DRAG_CLICK_LENIENCY ) touchMoved = NO;
+    if (distance <= [Properties instance].DRAG_SELECT_FREEDOM ) touchMoved = NO;
     
     
     if (touchMoved == NO) // check for sprite Touch
@@ -357,7 +357,6 @@
     
     
     //GAME OVER..
-    //Switch scenes
     [[CCDirector sharedDirector]replaceScene:[GameOverScene scene]];
 
 }
