@@ -237,6 +237,15 @@
     //No if distance between allowed amount then treat as a single touch.
     if (distance <= [Properties instance].DRAG_SELECT_FREEDOM ) touchMoved = NO;
     
+    //Check if quit?
+    if (endTouch.y < 50)
+    {
+        if (distance > [Properties instance].QUIT_DRAG_SIZE)
+        {
+            //Quit looks to have been selected... 
+            [[CCDirector sharedDirector]replaceScene:[GameOverScene scene]];
+        }
+    }
     
     if (touchMoved == NO) // check for sprite Touch
     {

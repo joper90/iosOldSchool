@@ -18,6 +18,7 @@
             FONT_LEVEL_NAME_SIZE,
             FONT_HISCORE_SIZE, HI_SCORE_GAP_SIZE, HI_SCORE_START_POS,
             DRAG_SELECT_FREEDOM,
+            QUIT_DRAG_SIZE,
             isValid;
 
 static Properties* properties = nil;

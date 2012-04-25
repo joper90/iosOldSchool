@@ -3,6 +3,7 @@
   "properties": [
     {
     "dragselectfreedom":"20",
+                 "dragquitsize":"800",
       "red": "red2.png",
       "yellow": "yellow2.png",
       "blue": "blue2.png",

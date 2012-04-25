@@ -12,6 +12,7 @@
 @interface Properties : NSObject
 {
     float     DRAG_SELECT_FREEDOM;
+    float     QUIT_DRAG_SIZE;
     
     NSString* RED_SPRITE_FILE;
     NSString* YELLOW_SPRITE_FILE;
@@ -43,6 +44,7 @@
 }
 
 @property (assign, readwrite) float DRAG_SELECT_FREEDOM;
+@property (assign, readwrite) float QUIT_DRAG_SIZE;
 
 @property (retain, readwrite) NSString* RED_SPRITE_FILE ;
 @property (retain, readwrite) NSString* YELLOW_SPRITE_FILE ;

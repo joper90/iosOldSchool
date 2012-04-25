@@ -3,6 +3,7 @@
   "properties": [
     {
                  "dragselectfreedom":"20",
+                 "dragquitsize":"400",
       "base": "planet.png",           
       "red": "red.png",
       "yellow": "yellow.png",
