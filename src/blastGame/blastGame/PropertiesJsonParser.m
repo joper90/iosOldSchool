@@ -48,6 +48,9 @@
         [Properties instance].DRAG_SELECT_FREEDOM = [[p objectForKey:@"dragselectfreedom"]floatValue];
         [Properties instance].QUIT_DRAG_SIZE = [[p objectForKey:@"quitdragsizes"]floatValue];
         
+        [Properties instance].ROCKET = [p objectForKey:@"rocket"];
+        [Properties instance].EXPLODE = [p objectForKey:@"explode"];
+        
         [Properties instance].RED_SPRITE_FILE = [p objectForKey:@"red"];
         [Properties instance].YELLOW_SPRITE_FILE = [p objectForKey:@"yellow"];
         [Properties instance].BLUE_SPRITE_FILE = [p objectForKey:@"blue"];

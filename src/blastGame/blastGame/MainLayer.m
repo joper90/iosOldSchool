@@ -113,13 +113,13 @@
     bullets = [[NSMutableArray alloc]initWithCapacity:4];
     for (int x = 0; x < 4; x++)
     {
-        [bullets addObject:[CCParticleSystemQuad particleWithFile:@"bullet_with_death.plist"]];
+        [bullets addObject:[CCParticleSystemQuad particleWithFile:[Properties instance].ROCKET]];
     }
     
     bangArray = [[NSMutableArray alloc]initWithCapacity:4];
     for (int x = 0; x < 4; x++)
     {
-        [bangArray addObject:[CCParticleSystemQuad particleWithFile:@"exp1.plist"]];
+        [bangArray addObject:[CCParticleSystemQuad particleWithFile:[Properties instance].EXPLODE]];
     }
     
     sprite = [Properties instance].GUN_SPRITE_FILE;
