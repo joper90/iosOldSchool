@@ -12,9 +12,9 @@
 @implementation BlastedEngine
 
 @synthesize iosDeviceProperties, isHdMode,
-            currentScore, mobsArray, level, levelList, startPositionMap, 
+            currentScore, mobsArray, level, levelList,  
             currentPlayingLevel,actualMobSprites, currentMultiplier, 
-            currentMultiplierCountDownSpeed ,levelPercentComplete, hiScores;
+            currentMultiplierCountDownSpeed ,levelPercentComplete, hiScores, rowPositionData;
 
 static BlastedEngine* blastedEngine = nil;
 
@@ -54,9 +54,9 @@ static BlastedEngine* blastedEngine = nil;
         self.iosDeviceProperties = [[NSMutableDictionary alloc]init];
         
         self.mobsArray = [[NSMutableArray alloc]init];
-        self.startPositionMap = [[NSMutableDictionary alloc]init];
         self.actualMobSprites = [[NSMutableDictionary alloc]init];
         self.levelList = [[NSMutableDictionary alloc]init];
+        rowPositionData = [[RowPositions alloc]init];
         
         //Check hiScore persistence or save a new file
         persistHiScoreElement = [[PersistElements alloc]initHiScores];
@@ -180,38 +180,19 @@ static BlastedEngine* blastedEngine = nil;
 //Create the start positions
 -(void)setStartPositions
 {
-    //Get the screen sizes.
-    CGSize screenSize = [Utils instance].screenSize;
-    CCLOG(@"screen size X: %f  -  Y: %f",screenSize.width, screenSize.height);
-    
-    float offscreenStart = screenSize.width + START_OFFSCREEN_OFFSET;
-    
-    float stepCount = screenSize.height / (MOB_ROW_COUNT + 1); // +1 to get the correct spacing so all on screen.
-    
-    float screenYpostion = stepCount; // First position
-    
-    for (int x = 0; x < MOB_ROW_COUNT ; x++)
-    {
-        NSNumber* number = [NSNumber numberWithInt:x];
-        CGPoint point = ccp(offscreenStart, screenYpostion);
-        NSValue* pointValue = [NSValue valueWithCGPoint:point];
-        
-        [startPositionMap setObject:pointValue forKey:number];
-        screenYpostion = screenYpostion + stepCount;
-    }
-    
-    CCLOG(@"setStartScreen complete..");
-    
+           
 }
 
--(CGPoint) getStartPositionByRowCount:(int) rowCount
+-(CGPoint) getStartPositionByRowCount:(int) rowCount andPosition:(int)position;
 {
-    NSNumber* number = [NSNumber numberWithInt:rowCount];
-    CGPoint ret = [[startPositionMap objectForKey:number]CGPointValue];
-    return ret;
+    return [rowPositionData getRowPositionByRowCount:rowCount andPositionRequired:position];
 }
 
-
+-(int) getRowCountSizeByRowNumber:(int)rowNumber
+{
+    NSMutableArray* rowData =  currentPlayingLevel.rowSizeCountArray;
+    return [[rowData objectAtIndex:rowNumber]intValue];
+}
 
 //Load a level from the LevelsLoader populated array
 -(BOOL)loadLevel:(int)levelToLoad withLayer:(CCLayer *)layer
@@ -228,6 +209,7 @@ static BlastedEngine* blastedEngine = nil;
     
     NSMutableArray* rowData = currentPlayingLevel.rowData;
     NSMutableArray* patternData = currentPlayingLevel.patternData;
+    NSMutableArray* rowCountData = currentPlayingLevel.rowSizeCountArray;
     int waveCount = currentPlayingLevel.waveCount;
     int currentSpriteTag = 0;
     
@@ -235,10 +217,11 @@ static BlastedEngine* blastedEngine = nil;
     {
         NSString* singleRow = [rowData objectAtIndex:x];
         NSString* singlePattern = [patternData objectAtIndex:x];
+        int currentRowCount = [[rowCountData objectAtIndex:x]intValue];
         
-        CCLOG(@"Working on ROW : %i/%i -- %@ | %@ -- TAG: %d", x+1, waveCount, singleRow, singlePattern, currentSpriteTag);
+        CCLOG(@"Working on ROW : %i/%i -- %@ | %@  | rows: %d, -- TAG: %d", x+1, waveCount, singleRow, singlePattern, currentRowCount, currentSpriteTag);
         
-        for (int y = 0; y < MOB_ROW_COUNT; y++)
+        for (int y = 0; y < currentRowCount; y++)
         {
             int singleRowNum = [[NSNumber numberWithUnsignedChar:[singleRow characterAtIndex:y]]intValue] - 48;// as its a char need to revert to a real num 
             int singleCharPattern = [[NSNumber numberWithUnsignedChar:[singlePattern characterAtIndex:y]]intValue] -48;// down the ascII table.. 
@@ -259,8 +242,10 @@ static BlastedEngine* blastedEngine = nil;
                 sprite.anchorPoint = ccp(0.5f, 0.5f);
                 sprite.tag = currentSpriteTag;
                 
+                //Need more protective coding here..
+                
                 //Insert the start posistion 
-                CGPoint mobStartLocation = [self getStartPositionByRowCount:y];
+                CGPoint mobStartLocation = [self getStartPositionByRowCount:currentRowCount andPosition:y];
                 sprite.position = mobStartLocation;
                 mobCreated.initPos = mobStartLocation;
                 
@@ -491,8 +476,8 @@ static BlastedEngine* blastedEngine = nil;
 
 -(void)dealloc
 {
+    [rowPositionData release];
     [mobsArray release];
-    [startPositionMap release];
     [actualMobSprites release];
     [levelList release];
     [iosDeviceProperties release];

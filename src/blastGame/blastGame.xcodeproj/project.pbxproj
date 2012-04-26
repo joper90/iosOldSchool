@@ -128,6 +128,7 @@
 		CE270E5B14FCEB0700C2DBA3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E5A14FCEB0700C2DBA3 /* RootViewController.m */; };
 		CE270E6B14FCEE2500C2DBA3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E6A14FCEE2500C2DBA3 /* Utils.m */; };
 		CE270E6F14FCF48F00C2DBA3 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E6E14FCF48F00C2DBA3 /* MainScene.m */; };
+		CE36C30015494BB2006B56E5 /* RowPositions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE36C2FF15494BB2006B56E5 /* RowPositions.m */; };
 		CE39BA5C15189864006285C7 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA5715189863006285C7 /* blue.png */; };
 		CE39BA5D15189864006285C7 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA5815189863006285C7 /* green.png */; };
 		CE39BA5E15189864006285C7 /* pink.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA5915189863006285C7 /* pink.png */; };
@@ -430,6 +431,8 @@
 		CE270E6A14FCEE2500C2DBA3 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		CE270E6D14FCF48F00C2DBA3 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		CE270E6E14FCF48F00C2DBA3 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
+		CE36C2FE15494BB2006B56E5 /* RowPositions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowPositions.h; sourceTree = "<group>"; };
+		CE36C2FF15494BB2006B56E5 /* RowPositions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowPositions.m; sourceTree = "<group>"; };
 		CE39BA5715189863006285C7 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue.png; path = Resources/blue.png; sourceTree = "<group>"; };
 		CE39BA5815189863006285C7 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green.png; path = Resources/green.png; sourceTree = "<group>"; };
 		CE39BA5915189863006285C7 /* pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pink.png; path = Resources/pink.png; sourceTree = "<group>"; };
@@ -1064,6 +1067,8 @@
 				CEBABA7915136569004F11E7 /* BangAction.m */,
 				CEBABA8B1517757B004F11E7 /* BGparticleEffects.h */,
 				CEBABA8C1517757B004F11E7 /* BGparticleEffects.m */,
+				CE36C2FE15494BB2006B56E5 /* RowPositions.h */,
+				CE36C2FF15494BB2006B56E5 /* RowPositions.m */,
 			);
 			name = elements;
 			sourceTree = "<group>";
@@ -1302,6 +1307,7 @@
 				5BF25965153F434F00DFA3E7 /* PersistElements.m in Sources */,
 				5BF2596915408E7F00DFA3E7 /* HiScoreScene.m in Sources */,
 				5BF2596C15408F3100DFA3E7 /* HiScoreLayer.m in Sources */,
+				CE36C30015494BB2006B56E5 /* RowPositions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

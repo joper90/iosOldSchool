@@ -9,7 +9,7 @@
 #import "LevelElementData.h"
 
 @implementation LevelElementData
-@synthesize levelId,levelType,baseSpeed,lineTime,rowData,waveCount,patternData, mobAliveStatus,bgParticle,music,levelName;
+@synthesize levelId,levelType,baseSpeed,lineTime,rowData,waveCount,patternData, mobAliveStatus,bgParticle,music,levelName, rowSizeCountArray;
 
 
 //Should callinitWithCCArraySize.
@@ -19,11 +19,12 @@
     {
         rowData = [[NSMutableArray alloc]init];
         patternData = [[NSMutableArray alloc]init];
+        rowSizeCountArray = [[NSMutableArray alloc]init];
 	}
 	return self;
 }
 
--(id)initWithRowPatternCCArrays:(NSMutableArray *)allRows andAllPattern:(NSMutableArray*)allPatterns
+-(id)initWithRowPatternCCArrays:(NSMutableArray *)allRows andAllPattern:(NSMutableArray*)allPatterns andRowSizeData:(NSMutableArray*)rowSizeData
 {
 
     
@@ -31,6 +32,7 @@
     {
         rowData = [allRows copy];
         patternData = [allPatterns copy]; 
+        rowSizeCountArray = [rowSizeData copy];
     }
     return self;
     
@@ -105,6 +107,9 @@
     
     [patternData release];
     [patternData dealloc];
+    
+    [rowSizeCountArray release];
+    [rowSizeCountArray dealloc];
     patternData = nil;
     [super dealloc];
 }

@@ -15,6 +15,7 @@
 #import "Properties.h"
 #import "PropertiesJsonParser.h"
 #import "PersistElements.h"
+#import "RowPositions.h"
 @class MainLayer;
 @class MainFGLayer;
 
@@ -44,15 +45,15 @@
     //The actual sprites we copy into the mobsArray.
     NSMutableDictionary* actualMobSprites;
     
+    //Object containing all the row positions.
+    RowPositions* rowPositionData;
+    
     //Array the mobs, the actual mobs on the screen, that move !.
     //This will get completely populated on levelLoad.. 
     NSMutableArray* mobsArray;
     
     CCSprite* planetAndGun;
-    
-    //Map of init start positions, based on screen sizes. // start with 5 rows.
-    NSMutableDictionary* startPositionMap;
-    
+       
     //Array of the levels, from the lever loader.. the actual level data.
      NSMutableDictionary*  levelList; 
     
@@ -64,7 +65,7 @@
 @property (retain, readwrite) NSMutableDictionary* iosDeviceProperties;
 @property (retain, readwrite) NSMutableDictionary* actualMobSprites;
 @property (assign, readwrite) LevelElementData* currentPlayingLevel;
-@property (retain, readwrite) NSMutableDictionary* startPositionMap;
+@property (assign, readwrite) RowPositions* rowPositionData;
 @property (assign, readwrite) float levelPercentComplete; 
 @property (assign, readwrite) int currentScore;
 @property (assign, readwrite) int currentMultiplier;
@@ -117,11 +118,12 @@
 -(BOOL)submitHiScore:(int)currentScore; //sumbit a hiScore, adds if needed, sorts and sync's (saves), returns true is a new hiscore.
 -(NSMutableArray*)getHiScoreArray;
 
-
+-(NSArray*)getMobsForRenderRangeFrom:(int) startRange to:(int)endRange;
+-(int)getRowCountSizeByRowNumber:(int)rowNumber;
 -(MobElement*)getMobBySpriteTag:(int) tag;
 -(void)addLevelToLevelList:(LevelElementData*) levelDataElement;
 -(id) getPatternFromInt:(int) patternNumber movementModifer:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos withLayer:(CCLayer*) layer;
--(CGPoint) getStartPositionByRowCount:(int) rowCount;
+-(CGPoint) getStartPositionByRowCount:(int) rowCount andPosition:(int)position;
 
 -(BOOL)loadAndParseLevels;
 -(void)setStartPositions;
@@ -129,7 +131,7 @@
 -(NSString*) convertNumberToSpriteType:(int) spriteNumber;
 -(MOB_COLOUR) insertMobEnumFromSpriteNumber:(int) spriteNumber;
 
--(NSArray*)getMobsForRenderRangeFrom:(int) startRange to:(int)endRange;
+
 
 //Intersection testing
 -(MobElement*)whichMobTouched:(CGPoint) touchPoint;

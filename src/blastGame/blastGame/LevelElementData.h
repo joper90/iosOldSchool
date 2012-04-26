@@ -23,6 +23,7 @@
     NSMutableArray* mobAliveStatus; //Current status of the mobs.
     NSMutableArray* rowData;
     NSMutableArray* patternData;
+    NSMutableArray* rowSizeCountArray;
 }
 
 @property int levelId;
@@ -35,9 +36,10 @@
 @property (readwrite, assign) NSString* music;
 @property (readwrite, retain) NSMutableArray* rowData;
 @property (readwrite, retain) NSMutableArray* patternData;
+@property (readwrite, retain) NSMutableArray* rowSizeCountArray;
 @property (readwrite, retain) NSMutableArray* mobAliveStatus;
 
--(id)initWithRowPatternCCArrays:(NSMutableArray*) allRows andAllPattern:(NSMutableArray*) allPatterns;
+-(id)initWithRowPatternCCArrays:(NSMutableArray*) allRows andAllPattern:(NSMutableArray*) allPatterns andRowSizeData:(NSMutableArray*)rowSizeData;
 -(void)addAllRowsPatterns:(NSMutableArray*) allRows andAllPatterns:(NSMutableArray*) allPatterns;
 -(void)dumpLevelData;
 

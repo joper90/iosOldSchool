@@ -83,6 +83,7 @@ static LevelJsonParser* levelJsonParser = nil;
                                 
         NSMutableArray* row = [[NSMutableArray alloc]init];
         NSMutableArray* pattern = [[NSMutableArray alloc]init];
+        NSMutableArray* rowSizeCount = [[NSMutableArray alloc]init];
         
         for (id singleRow in rowData)
         {
@@ -91,11 +92,12 @@ static LevelJsonParser* levelJsonParser = nil;
            
            [row addObject:rowLine];
            [pattern addObject:patternLine];
+           [rowSizeCount addObject:[NSNumber numberWithInt:[rowLine length]]];
                     
-           CCLOG(@"ADDED to elementData : row: %@   -   pattern:%@", rowLine, patternLine); 
+           CCLOG(@"ADDED to elementData : row: %@   -   pattern:%@   - rowSize : %d", rowLine, patternLine, [rowLine length]); 
         }
                 
-        LevelElementData* elementData = [[LevelElementData alloc]initWithRowPatternCCArrays:row andAllPattern:pattern ];
+        LevelElementData* elementData = [[LevelElementData alloc]initWithRowPatternCCArrays:row andAllPattern:pattern andRowSizeData:rowSizeCount];
         
         elementData.levelId = levelId;
         elementData.levelName = levelName;
@@ -107,7 +109,12 @@ static LevelJsonParser* levelJsonParser = nil;
         elementData.waveCount = [rowData count];
         
         [[BlastedEngine instance]addLevelToLevelList:elementData];
+        
+        [row release];
+        [pattern release];
+        [rowSizeCount release];
     }
 }
+
 
 @end

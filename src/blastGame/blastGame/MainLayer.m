@@ -136,17 +136,15 @@
 -(void)startAndMoveMobWave:(int) mobWavetoStart
 {
     CCLOG(@"StartAndMoveWave...with RC: %d",[self retainCount]);
-    int mobElementCount = mobWavetoStart * 5;
+    int currentRowSize = [[BlastedEngine instance]getRowCountSizeByRowNumber:currentWave];
+    int mobElementCount = mobWavetoStart * currentRowSize;
     
     CCLOG(@"StartAndMove grabbing %d to %d", mobElementCount, mobElementCount + 5);
-    NSArray* lineMobs = [[BlastedEngine instance]getMobsForRenderRangeFrom:mobElementCount to:mobElementCount +5]; //5 lines 0 - 4
+    NSArray* lineMobs = [[BlastedEngine instance]getMobsForRenderRangeFrom:mobElementCount to:mobElementCount + currentRowSize]; //5 lines 0 - 4
     CCLOG(@"StartAndMove recived : %d", [lineMobs count]);   
     
     currentWave++; //0 wave has now run.
-    
-    //float percentComplete = maxWave / currentWave;
-    //[[BlastedEngine instance]pokePercentageComplete:percentComplete];
-    
+
     //MobElements
     for (MobElement* m in lineMobs)
     {
@@ -170,7 +168,7 @@
     CCLOG(@"NEW WAVE CALLED... %d/%d", currentWave,maxWave);
 
 
-    if (currentWave > maxWave)
+    if (currentWave == maxWave)
     {
         CCLOG(@"All waves complete ---> canceling selector");
         [self unschedule:_cmd];
