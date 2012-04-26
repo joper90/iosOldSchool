@@ -4,7 +4,7 @@
     {
       "dragselectfreedom": "20",
       "dragquitsize": "800",
-      "rocket": "nullet_with_death.plist",
+      "rocket": "bullet_with_death.plist",
       "explode": "exp1.plist",
       "red": "red2.png",
       "yellow": "yellow2.png",
