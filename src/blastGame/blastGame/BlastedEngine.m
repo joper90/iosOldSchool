@@ -12,7 +12,7 @@
 @implementation BlastedEngine
 
 @synthesize iosDeviceProperties, isHdMode,
-            currentScore, mobsArray, level, levelList,  
+            currentScore, mobsArray, level, levelList, currentMobDisplayedCount, 
             currentPlayingLevel,actualMobSprites, currentMultiplier, 
             currentMultiplierCountDownSpeed ,levelPercentComplete, hiScores, rowPositionData;
 
@@ -201,6 +201,7 @@ static BlastedEngine* blastedEngine = nil;
         
     //Hopefully arrays keep the order, and need some more rubust defensive codign in here.
     currentPlayingLevel = [levelList objectForKey:[NSNumber numberWithInt:levelToLoad]];
+    currentMobDisplayedCount = 0; //reset the current displayed (so far) mobs
  
     //Now create all the mobs in an array.
     [mobsArray removeAllObjects];
@@ -472,6 +473,11 @@ static BlastedEngine* blastedEngine = nil;
 {
     self.levelPercentComplete = newPercentage;
     [self pokeScoreLayer];
+}
+
+-(void)increaseMobDisplayCount:(int)incAmount
+{
+    currentMobDisplayedCount = currentMobDisplayedCount + incAmount;
 }
 
 -(void)dealloc

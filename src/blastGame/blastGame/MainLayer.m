@@ -137,10 +137,13 @@
 {
     CCLOG(@"StartAndMoveWave...with RC: %d",[self retainCount]);
     int currentRowSize = [[BlastedEngine instance]getRowCountSizeByRowNumber:currentWave];
-    int mobElementCount = mobWavetoStart * currentRowSize;
+    //int mobElementCount = mobWavetoStart * currentRowSize;
+    [[BlastedEngine instance]increaseMobDisplayCount:currentRowSize];
     
-    CCLOG(@"StartAndMove grabbing %d to %d", mobElementCount, mobElementCount + 5);
-    NSArray* lineMobs = [[BlastedEngine instance]getMobsForRenderRangeFrom:mobElementCount to:mobElementCount + currentRowSize]; //5 lines 0 - 4
+    int currentMobDisplayCount = [BlastedEngine instance].currentMobDisplayedCount;
+    CCLOG(@"StartAndMove grabbing %d to %d", currentMobDisplayCount, currentMobDisplayCount + currentRowSize);
+    NSArray* lineMobs = [[BlastedEngine instance]getMobsForRenderRangeFrom:currentMobDisplayCount
+                                                                        to:currentMobDisplayCount + currentRowSize]; //5 lines 0 - 4
     CCLOG(@"StartAndMove recived : %d", [lineMobs count]);   
     
     currentWave++; //0 wave has now run.

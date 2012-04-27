@@ -17,6 +17,8 @@
     NSMutableDictionary* startPositionMap4;
     NSMutableDictionary* startPositionMap5;
     NSMutableDictionary* startPositionMap6;
+    NSMutableDictionary* startPositionMap7;
+    NSMutableDictionary* startPositionMap8;
     
     CGSize screenSize;
     float offscreenStart;
@@ -28,6 +30,8 @@
 @property (retain, readwrite) NSMutableDictionary* startPositionMap4;
 @property (retain, readwrite) NSMutableDictionary* startPositionMap5;
 @property (retain, readwrite) NSMutableDictionary* startPositionMap6;
+@property (retain, readwrite) NSMutableDictionary* startPositionMap7;
+@property (retain, readwrite) NSMutableDictionary* startPositionMap8;
 
 -(void)createAllData;
 -(void)injectElements:(NSMutableDictionary*) elementToInject withRows:(int)rowCount;

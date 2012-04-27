@@ -22,6 +22,7 @@
     BOOL gameLive; // Is the game Live, or jsut on countdown etc.
     
     int currentWave;
+    int currentMobDisplayedCount;
     int maxWave;
     float timeBetweenWaves;
     

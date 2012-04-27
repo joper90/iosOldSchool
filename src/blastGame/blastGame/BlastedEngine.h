@@ -35,6 +35,7 @@
     float currentMultiplierCountDownSpeed;
     float levelPercentComplete;
     int level;
+    int currentMobDisplayedCount;
     
     LevelElementData* currentPlayingLevel;
     
@@ -69,6 +70,7 @@
 @property (assign, readwrite) float levelPercentComplete; 
 @property (assign, readwrite) int currentScore;
 @property (assign, readwrite) int currentMultiplier;
+@property (assign, readwrite) int currentMobDisplayedCount;
 @property (assign, readwrite) int level;
 @property (assign, readwrite) bool isHdMode;
 @property (retain, readwrite) NSMutableArray* mobsArray;
@@ -97,6 +99,7 @@
 -(float)getCurrentSpeed;
 -(int)getBackGroundParticle;
 -(NSString*)getCurrentLevelName;
+-(void)increaseMobDisplayCount:(int)incAmount;
 
 -(NSMutableArray*) getMobListArray;
 -(void)setDeadMob:(int)mobTag;

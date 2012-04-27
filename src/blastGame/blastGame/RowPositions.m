@@ -41,6 +41,8 @@
     [self injectElements:startPositionMap4 withRows:4];
     [self injectElements:startPositionMap5 withRows:5];
     [self injectElements:startPositionMap6 withRows:6];
+    [self injectElements:startPositionMap6 withRows:7];
+    [self injectElements:startPositionMap6 withRows:8];
     CCLOG(@"setStartScreen complete.. all maps are done.");
 }
 
@@ -77,6 +79,11 @@
             return [[startPositionMap5 objectForKey:[NSNumber numberWithInt:position]]CGPointValue];
         case 6:
             return [[startPositionMap6 objectForKey:[NSNumber numberWithInt:position]]CGPointValue];
+        case 7:
+            return [[startPositionMap7 objectForKey:[NSNumber numberWithInt:position]]CGPointValue];
+        case 8:
+            return [[startPositionMap8 objectForKey:[NSNumber numberWithInt:position]]CGPointValue];
+
             
        
     }
