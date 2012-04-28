@@ -300,6 +300,8 @@ static BlastedEngine* blastedEngine = nil;
         case 3:return @"BLUE";
         case 4:return @"GREEN";
         case 5:return @"PINK";
+        case 6:return @"PURPLE";
+        case 7:return @"WHITE";
         default:
             return @"EMPTY";
     }
@@ -315,6 +317,8 @@ static BlastedEngine* blastedEngine = nil;
         case 3:return BLUE;
         case 4:return GREEN;
         case 5:return PINK;
+        case 6:return PURPLE;
+        case 7:return WHITE;
         default:
             return RED; //crap to clean
     }
@@ -328,12 +332,16 @@ static BlastedEngine* blastedEngine = nil;
     CCSprite* blueMob = [CCSprite spriteWithFile:[Properties instance].BLUE_SPRITE_FILE];
     CCSprite* greenMob = [CCSprite spriteWithFile:[Properties instance].GREEN_SPRITE_FILE];
     CCSprite* pinkMob = [CCSprite spriteWithFile:[Properties instance].PINK_SPRITE_FILE];
+    CCSprite* purpleMob = [CCSprite spriteWithFile:[Properties instance].PURPLE_SPRITE_FILE];
+    CCSprite* whiteMob = [CCSprite spriteWithFile:[Properties instance].WHITE_SPRITE_FILE];
     
     [actualMobSprites setObject:redMob forKey:@"RED"];
     [actualMobSprites setObject:yellowMob forKey:@"YELLOW"];
     [actualMobSprites setObject:blueMob forKey:@"BLUE"];
     [actualMobSprites setObject:greenMob forKey:@"GREEN"];
     [actualMobSprites setObject:pinkMob forKey:@"PINK"];
+    [actualMobSprites setObject:purpleMob forKey:@"PURPLE"];
+    [actualMobSprites setObject:whiteMob forKey:@"WHITE"];
     
     
 }

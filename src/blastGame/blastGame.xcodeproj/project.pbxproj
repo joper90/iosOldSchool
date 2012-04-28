@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B92BFA7154C66D8006F79A7 /* purple.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B92BFA5154C66D7006F79A7 /* purple.png */; };
+		5B92BFA8154C66D8006F79A7 /* purple2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B92BFA6154C66D7006F79A7 /* purple2.png */; };
+		5B92BFAC154C6700006F79A7 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B92BFAA154C66FF006F79A7 /* white.png */; };
+		5B92BFAD154C6700006F79A7 /* white2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B92BFAB154C66FF006F79A7 /* white2.png */; };
 		5BF25965153F434F00DFA3E7 /* PersistElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF25964153F434F00DFA3E7 /* PersistElements.m */; };
 		5BF2596915408E7F00DFA3E7 /* HiScoreScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2596815408E7F00DFA3E7 /* HiScoreScene.m */; };
 		5BF2596C15408F3100DFA3E7 /* HiScoreLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2596B15408F3100DFA3E7 /* HiScoreLayer.m */; };
@@ -182,6 +186,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B92BFA5154C66D7006F79A7 /* purple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = purple.png; path = Resources/purple.png; sourceTree = "<group>"; };
+		5B92BFA6154C66D7006F79A7 /* purple2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple2.png; sourceTree = "<group>"; };
+		5B92BFAA154C66FF006F79A7 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white.png; path = Resources/white.png; sourceTree = "<group>"; };
+		5B92BFAB154C66FF006F79A7 /* white2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white2.png; sourceTree = "<group>"; };
 		5BB021DD15470E7F00299F34 /* dod.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dod.ttf; sourceTree = "<group>"; };
 		5BF25963153F434F00DFA3E7 /* PersistElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistElements.h; sourceTree = "<group>"; };
 		5BF25964153F434F00DFA3E7 /* PersistElements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistElements.m; sourceTree = "<group>"; };
@@ -956,6 +964,10 @@
 		CE55E125152B62D500B3CD04 /* game sprites */ = {
 			isa = PBXGroup;
 			children = (
+				5B92BFAA154C66FF006F79A7 /* white.png */,
+				5B92BFAB154C66FF006F79A7 /* white2.png */,
+				5B92BFA5154C66D7006F79A7 /* purple.png */,
+				5B92BFA6154C66D7006F79A7 /* purple2.png */,
 				CE55E127152B760D00B3CD04 /* blue2.png */,
 				CE55E128152B760D00B3CD04 /* green2.png */,
 				CE55E129152B760D00B3CD04 /* gun2.png */,
@@ -1173,6 +1185,10 @@
 				CE55E134152B760D00B3CD04 /* yellow2.png in Resources */,
 				CE55E136152B7E6F00B3CD04 /* blastedMenu2.png in Resources */,
 				CE68D5E4152CA69B00680BF5 /* 2galaxyOne.plist in Resources */,
+				5B92BFA7154C66D8006F79A7 /* purple.png in Resources */,
+				5B92BFA8154C66D8006F79A7 /* purple2.png in Resources */,
+				5B92BFAC154C6700006F79A7 /* white.png in Resources */,
+				5B92BFAD154C6700006F79A7 /* white2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

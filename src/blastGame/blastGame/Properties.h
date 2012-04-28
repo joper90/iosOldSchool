@@ -22,6 +22,8 @@
     NSString* BLUE_SPRITE_FILE;
     NSString* GREEN_SPRITE_FILE;
     NSString* PINK_SPRITE_FILE;
+    NSString* PURPLE_SPRITE_FILE;
+    NSString* WHITE_SPRITE_FILE;
     
     NSString* GUN_SPRITE_FILE;
     NSString* BASE_SPRITE_FILE;
@@ -56,6 +58,8 @@
 @property (retain, readwrite) NSString* BLUE_SPRITE_FILE ;
 @property (retain, readwrite) NSString* GREEN_SPRITE_FILE ;
 @property (retain, readwrite) NSString* PINK_SPRITE_FILE ;
+@property (retain, readwrite) NSString* PURPLE_SPRITE_FILE ;
+@property (retain, readwrite) NSString* WHITE_SPRITE_FILE ;
 
 @property (retain, readwrite) NSString* GUN_SPRITE_FILE;
 @property (retain, readwrite) NSString* BASE_SPRITE_FILE;

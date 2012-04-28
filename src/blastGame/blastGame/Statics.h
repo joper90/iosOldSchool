@@ -72,7 +72,9 @@ typedef enum
     YELLOW,
     BLUE,
     GREEN,
-    PINK
+    PINK,
+    PURPLE,
+    WHITE
 }MOB_COLOUR;
 
 
