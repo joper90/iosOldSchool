@@ -10,7 +10,7 @@
 
 
 @implementation RowPositions
-@synthesize startPositionMap1, startPositionMap2, startPositionMap3, startPositionMap4, startPositionMap5, startPositionMap6;
+@synthesize startPositionMap1, startPositionMap2, startPositionMap3, startPositionMap4, startPositionMap5, startPositionMap6, startPositionMap7, startPositionMap8;
 
 -(id) init
 {
@@ -23,7 +23,8 @@
         startPositionMap4 = [[NSMutableDictionary alloc]init];
         startPositionMap5 = [[NSMutableDictionary alloc]init];
         startPositionMap6 = [[NSMutableDictionary alloc]init];
-        
+        startPositionMap7 = [[NSMutableDictionary alloc]init];
+        startPositionMap8 = [[NSMutableDictionary alloc]init];
         screenSize = [Utils instance].screenSize;
         CCLOG(@"screen size X: %f  -  Y: %f",screenSize.width, screenSize.height);
         offscreenStart = screenSize.width + START_OFFSCREEN_OFFSET;
@@ -41,8 +42,8 @@
     [self injectElements:startPositionMap4 withRows:4];
     [self injectElements:startPositionMap5 withRows:5];
     [self injectElements:startPositionMap6 withRows:6];
-    [self injectElements:startPositionMap6 withRows:7];
-    [self injectElements:startPositionMap6 withRows:8];
+    [self injectElements:startPositionMap7 withRows:7];
+    [self injectElements:startPositionMap8 withRows:8];
     CCLOG(@"setStartScreen complete.. all maps are done.");
 }
 

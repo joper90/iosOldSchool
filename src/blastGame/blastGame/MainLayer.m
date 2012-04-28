@@ -137,15 +137,14 @@
 {
     CCLOG(@"StartAndMoveWave...with RC: %d",[self retainCount]);
     int currentRowSize = [[BlastedEngine instance]getRowCountSizeByRowNumber:currentWave];
-    //int mobElementCount = mobWavetoStart * currentRowSize;
-    [[BlastedEngine instance]increaseMobDisplayCount:currentRowSize];
-    
     int currentMobDisplayCount = [BlastedEngine instance].currentMobDisplayedCount;
+    
     CCLOG(@"StartAndMove grabbing %d to %d", currentMobDisplayCount, currentMobDisplayCount + currentRowSize);
     NSArray* lineMobs = [[BlastedEngine instance]getMobsForRenderRangeFrom:currentMobDisplayCount
                                                                         to:currentMobDisplayCount + currentRowSize]; //5 lines 0 - 4
     CCLOG(@"StartAndMove recived : %d", [lineMobs count]);   
     
+    [[BlastedEngine instance]increaseMobDisplayCount:currentRowSize];
     currentWave++; //0 wave has now run.
 
     //MobElements
@@ -169,7 +168,6 @@
 {
     CCLOG(@"scheduleNewWave...with RC: %d",[self retainCount]);
     CCLOG(@"NEW WAVE CALLED... %d/%d", currentWave,maxWave);
-
 
     if (currentWave == maxWave)
     {
