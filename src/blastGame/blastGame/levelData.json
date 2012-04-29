@@ -1,17 +1,20 @@
 {
+    
+"__Colour":"RED, YELLOW, BLUE, GREEN, PINK, PURPLE, WHITE",
+"__flight":"STRAIGHT, FAST_IN_OUT, SLOW_IN_OUT, BEZIER_ONE, ZOOM",
   "levels": [
     {
       "levelId": "1",
       "levelName": "simple one",
       "levelInfo": "normal",
-      "baseSpeed": "5",
-      "lineTime": "0.5",
+      "baseSpeed": "20",
+      "lineTime": "1",
       "bg": "0",
       "music": "test.mp3",
       "rowData": [
         {
-          "row": "1",
-          "pattern": "1"
+          "row": "1234567",
+          "pattern": "1111111"
         },
         {
           "row": "11",
