@@ -7,42 +7,30 @@
       "levelId": "1",
       "levelName": "simple one",
       "levelInfo": "normal",
-      "baseSpeed": "20",
-      "lineTime": "1",
+      "baseSpeed": "10",
+      "lineTime": "3",
       "bg": "0",
       "music": "test.mp3",
       "rowData": [
         {
-          "row": "1234567",
-          "pattern": "1111111"
+          "row": "1111",
+          "pattern": "44444444"
         },
         {
-          "row": "11",
-          "pattern": "11"
+          "row": "12345677",
+          "pattern": "22222222"
         },
         {
-          "row": "111",
-          "pattern": "111"
+          "row": "00111100",
+          "pattern": "22222222"
         },
         {
-          "row": "1234",
-          "pattern": "1111"
+          "row": "4",
+          "pattern": "4"
         },
         {
-          "row": "12341",
-          "pattern": "11111"
-        },
-        {
-          "row": "123411",
-          "pattern": "111111"
-        },
-        {
-          "row": "1234111",
-          "pattern": "1111111"
-        },
-        {
-          "row": "12341111",
-          "pattern": "11111111"
+          "row": "5",
+          "pattern": "5"
         }
       ]
     },

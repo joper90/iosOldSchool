@@ -84,6 +84,7 @@
 
 //singleton of the engine
 +(Properties*) instance;
+-(void)setupAndParse;
 
 
 @end

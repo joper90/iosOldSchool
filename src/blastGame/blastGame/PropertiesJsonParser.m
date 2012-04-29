@@ -40,7 +40,7 @@
     NSDictionary* dict = [[CJSONDeserializer deserializer]deserializeAsDictionary:jsonData error:nil];
     CCLOG(@"JSON Properties file: %@", jsonString);	
 
-    NSString* i = [dict valueForKey:@"information"];
+    //NSString* i = [dict valueForKey:@"information"];
    
     NSArray* props = [dict valueForKey:@"properties"];
     for (id p in props)
@@ -81,7 +81,7 @@
         
     }
        
-    CCLOG(@" Processed : %@",i);
+    //CCLOG(@" Processed : %@",i);
     CCLOG(@"Data : %@", [Properties instance].BASE_SPRITE_FILE);
     
     [jsonString release];

@@ -285,28 +285,33 @@
     
     if (mobTouched != nil)
     {
-
         if (currentTouchesTags.count < MAX_TOUCH_SELECTED)
         {
             CCSprite* mobSprite = [mobTouched getSprite];
-            mobSprite.color = ccc3(200,0,0);
             
-            CCSprite* newLockOn = [CCSprite spriteWithTexture:[lockOnSprite texture]];
-            CGSize mobPoint = mobSprite.contentSize;
-            CGPoint newLockPosition = ccp(mobPoint.width / 2.0f , mobPoint.height /2.0f );
-            newLockOn.position = newLockPosition;
+            if ([mobSprite getChildByTag:12345] == nil)
+            {
+                mobSprite.color = ccc3(200,0,0);
+            
+                CCSprite* newLockOn = [CCSprite spriteWithTexture:[lockOnSprite texture]];
+                CGSize mobPoint = mobSprite.contentSize;
+                CGPoint newLockPosition = ccp(mobPoint.width / 2.0f , mobPoint.height /2.0f );
+                newLockOn.position = newLockPosition;
             
             
-            //Should be moved out really.
-            CCRotateBy* rotAction = [CCRotateBy actionWithDuration:1.0f angle:360.0f];
-            CCRepeatForever* repeatAction = [CCRepeatForever actionWithAction:rotAction];
+                //Should be moved out really.
+                CCRotateBy* rotAction = [CCRotateBy actionWithDuration:1.0f angle:360.0f];
+                CCRepeatForever* repeatAction = [CCRepeatForever actionWithAction:rotAction];
             
-            [newLockOn runAction:repeatAction];
+                [newLockOn runAction:repeatAction];
     
-            [mobSprite addChild:newLockOn z:200];
+                [mobSprite addChild:newLockOn z:200 tag:12345];
             
-            [currentTouchesTags addObject:[NSNumber numberWithInt:mobSprite.tag]];
-            CCLOG(@"-SPRITE TOUCHED: %d - Touch count : %d", mobSprite.tag, currentTouchesTags.count);
+                [currentTouchesTags addObject:[NSNumber numberWithInt:mobSprite.tag]];
+                CCLOG(@"-SPRITE TOUCHED: %d - Touch count : %d", mobSprite.tag, currentTouchesTags.count);
+            }else {
+                CCLOG(@"-SPRITE ALREADY TOUCHED: %d",mobSprite.tag);
+            }
 
         }else
         {

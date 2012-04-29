@@ -401,7 +401,8 @@ static BlastedEngine* blastedEngine = nil;
         [mArray addObject:[mobsArray objectAtIndex:cPos]];
     }
     NSArray* retArray = [[NSArray alloc]initWithArray:mArray];
-    return retArray;
+    [mArray release];
+    return [retArray autorelease];
 }
 
 //Level Loading and setting

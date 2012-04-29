@@ -14,6 +14,7 @@
 #import "BlastedEngine.h"
 #import "FlashScene.h"
 #import "TitleScene.h"
+#import "Properties.h"
 
 @implementation AppDelegate
 
@@ -118,6 +119,7 @@
     /********************************************/
     //Init the BlastedEngine
     [[BlastedEngine instance]setStartPositions];
+    [[Properties instance]setupAndParse];
     [[BlastedEngine instance]loadAndParseLevels];
     [[BlastedEngine instance]loadSprites];
 

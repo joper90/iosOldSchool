@@ -105,8 +105,8 @@ static FlightPaths* flightPaths = nil;
 -(id)zoomSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos
 {
     CCMoveTo* move1 = [CCMoveTo actionWithDuration:[[BlastedEngine instance] getCurrentSpeed] position:ccp(10,currentPos.y)];
-    CCScaleTo* scale = [CCScaleTo actionWithDuration:1 scale:2.5f];
-    CCScaleTo* scale2 = [CCScaleTo actionWithDuration:1 scale:1.0f];
+    CCScaleTo* scale = [CCScaleTo actionWithDuration:3 scale:2.5f];
+    CCScaleTo* scale2 = [CCScaleTo actionWithDuration:3 scale:1.0f];
     
     CCSequence* seq = [CCSequence actions:scale, scale2, nil];
     CCSpawn* spawn = [CCSpawn actions:seq, move1, nil];

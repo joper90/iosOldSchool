@@ -14,6 +14,8 @@ Tuning
 added waves
 
 Check for leaks
+Fix pusScoreAndSave bug (second attempt at a save fails)
+Fix multiselect on item? -done
 
 
 Particles

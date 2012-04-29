@@ -30,14 +30,17 @@ static Properties* properties = nil;
     {
         CCLOG(@"properties instance started....");
         //Alive for the duration of the game
-        properties = [[Properties alloc]init];
-        PropertiesJsonParser* jsonParse = [[PropertiesJsonParser alloc]init];
-        [jsonParse parseAndDigest];
-        [jsonParse release];
-        
+        properties = [[Properties alloc]init];        
         CCLOG(@"properties instance complete....");
     }
     return properties;
+}
+
+-(void)setupAndParse
+{
+    PropertiesJsonParser* jsonParse = [[PropertiesJsonParser alloc]init];
+    [jsonParse parseAndDigest];
+    [jsonParse release];
 }
 
 
