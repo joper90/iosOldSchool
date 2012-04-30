@@ -10,7 +10,8 @@
 
 typedef enum{
     SPORE = 0,
-    GALAXY_ONE
+    GALAXY_ONE,
+    STARFIELD1
     
 } backroundPattern;
 

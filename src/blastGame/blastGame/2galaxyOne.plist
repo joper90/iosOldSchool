@@ -17,7 +17,7 @@
 	<key>finishColorAlpha</key>
 	<real>0.0052083334885537624</real>
 	<key>finishColorBlue</key>
-	<real>0.96354168653488159</real>
+	<real>0.73079425096511841</real>
 	<key>finishColorGreen</key>
 	<real>0.4640299379825592</real>
 	<key>finishColorRed</key>
@@ -79,7 +79,7 @@
 	<key>speedVariance</key>
 	<real>30</real>
 	<key>startColorAlpha</key>
-	<real>0.74000000953674316</real>
+	<real>0.0</real>
 	<key>startColorBlue</key>
 	<real>1</real>
 	<key>startColorGreen</key>

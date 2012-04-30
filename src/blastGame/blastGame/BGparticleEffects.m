@@ -35,6 +35,10 @@
     {
         partFile = @"galaxyOne.plist";
     }
+    else if (pattern == STARFIELD1)
+    {
+        partFile = @"starfield1.plist";
+    }
     
     
     
