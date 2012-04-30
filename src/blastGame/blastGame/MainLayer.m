@@ -239,8 +239,10 @@
     //Check if quit?
     if (endTouch.y < 50)
     {
-        if (distance > [Properties instance].QUIT_DRAG_SIZE)
+        float swipeExit = [Properties instance].QUIT_DRAG_SIZE;
+        if (distance > swipeExit)
         {
+            CCLOG(@"===> QUIT SELECTED %f and %f", distance, swipeExit);
             //Quit looks to have been selected... 
             [[CCDirector sharedDirector]replaceScene:[GameOverScene scene]];
         }

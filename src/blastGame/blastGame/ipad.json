@@ -3,7 +3,7 @@
   "properties": [
     {
       "dragselectfreedom": "20",
-      "dragquitsize": "800",
+      "quitdragsize": "800",
       "rocket": "bullet_with_death.plist",
       "explode": "exp1.plist",
       "red": "red2.png",

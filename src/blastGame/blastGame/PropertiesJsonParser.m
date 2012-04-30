@@ -46,7 +46,7 @@
     for (id p in props)
     {
         [Properties instance].DRAG_SELECT_FREEDOM = [[p objectForKey:@"dragselectfreedom"]floatValue];
-        [Properties instance].QUIT_DRAG_SIZE = [[p objectForKey:@"quitdragsizes"]floatValue];
+        [Properties instance].QUIT_DRAG_SIZE = [[p objectForKey:@"quitdragsize"]floatValue];
         
         [Properties instance].ROCKET = [p objectForKey:@"rocket"];
         [Properties instance].EXPLODE = [p objectForKey:@"explode"];
