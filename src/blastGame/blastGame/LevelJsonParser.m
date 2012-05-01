@@ -96,6 +96,12 @@ static LevelJsonParser* levelJsonParser = nil;
                     
            CCLOG(@"ADDED to elementData : row: %@   -   pattern:%@   - rowSize : %d", rowLine, patternLine, [rowLine length]); 
         }
+        
+        
+        //Music Stuff
+        int musicTrack = [[level objectForKey:@"musictrack"]intValue];
+        float dropDelay = [[level objectForKey:@"dropdelay"]floatValue];
+        float 
                 
         LevelElementData* elementData = [[LevelElementData alloc]initWithRowPatternCCArrays:row andAllPattern:pattern andRowSizeData:rowSizeCount];
         

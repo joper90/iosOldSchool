@@ -24,6 +24,11 @@
     NSMutableArray* rowData;
     NSMutableArray* patternData;
     NSMutableArray* rowSizeCountArray;
+    
+    //Music and sfx section
+    int     musicTrack;
+    float   dropDelay;
+    float   pumpSpace;
 }
 
 @property int levelId;
@@ -38,6 +43,10 @@
 @property (readwrite, retain) NSMutableArray* patternData;
 @property (readwrite, retain) NSMutableArray* rowSizeCountArray;
 @property (readwrite, retain) NSMutableArray* mobAliveStatus;
+
+@property (readwrite, assign) int musicTrack;
+@property (readwrite, assign) float dropDelay;
+@property (readwrite, assign) float pumpSpace;
 
 -(id)initWithRowPatternCCArrays:(NSMutableArray*) allRows andAllPattern:(NSMutableArray*) allPatterns andRowSizeData:(NSMutableArray*)rowSizeData;
 -(void)addAllRowsPatterns:(NSMutableArray*) allRows andAllPatterns:(NSMutableArray*) allPatterns;

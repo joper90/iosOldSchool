@@ -931,8 +931,6 @@
 				CE270E6A14FCEE2500C2DBA3 /* Utils.m */,
 				CEB505E315062BB600B31F27 /* Statics.h */,
 				CEB505E415062BB600B31F27 /* Statics.m */,
-				CE9342F9152B294800EE5233 /* Properties.h */,
-				CE9342FA152B294800EE5233 /* Properties.m */,
 			);
 			name = importClasses;
 			sourceTree = "<group>";
@@ -1075,6 +1073,8 @@
 		CEEE4B6B14FE32CA002621BC /* elements */ = {
 			isa = PBXGroup;
 			children = (
+				CE9342F9152B294800EE5233 /* Properties.h */,
+				CE9342FA152B294800EE5233 /* Properties.m */,
 				CE909B29150A548F00E66CA4 /* FlightPaths.h */,
 				CE909B2A150A548F00E66CA4 /* FlightPaths.m */,
 				CEEE4B6D14FE3897002621BC /* MobElement.h */,
