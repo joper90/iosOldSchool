@@ -14,18 +14,20 @@ import javax.swing.UIManager;
 import oiFactory.IoEngine;
 import engine.JsonEngine;
 import engine.Statics;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 public class ControlWindow {
 
 	private JFrame frmLevelEditor;
 	private JTextField locationField;
 	private JTextField levelNumberField;
+	private JTextArea txtrBlastedEngineLevel;
 	
-	private JsonEngine jsonEngine = new JsonEngine();
-	private IoEngine ioEngine = new IoEngine();
+	IoEngine ioEngine;
+	JsonEngine jsonEngine;
 	
-
-
 	/**
 	 * Launch the application.
 	 */
@@ -52,6 +54,10 @@ public class ControlWindow {
 	 */
 	public ControlWindow() {
 		initialize();
+		
+		//Setup the modules
+		ioEngine = new IoEngine(this);
+		jsonEngine = new JsonEngine(this, ioEngine);
 	}
 
 	/**
@@ -60,7 +66,7 @@ public class ControlWindow {
 	private void initialize() {
 		frmLevelEditor = new JFrame();
 		frmLevelEditor.setTitle("Level Editor");
-		frmLevelEditor.setBounds(100, 100, 450, 182);
+		frmLevelEditor.setBounds(100, 100, 450, 335);
 		frmLevelEditor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmLevelEditor.getContentPane().setLayout(null);
 		
@@ -85,22 +91,41 @@ public class ControlWindow {
 		frmLevelEditor.getContentPane().add(lblLevelNumber);
 		
 		JButton buildAllButton = new JButton("Build All");
+		buildAllButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				createOutput();
+			}
+		});
 		buildAllButton.setBounds(39, 71, 370, 62);
 		frmLevelEditor.getContentPane().add(buildAllButton);
 		
 		JButton createTemplateButton = new JButton("Create Template");
 		createTemplateButton.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				
+			public void mouseClicked(MouseEvent arg0) {			
 				createNewFile();
 			}
 		});
 		createTemplateButton.setBounds(39, 37, 146, 23);
 		frmLevelEditor.getContentPane().add(createTemplateButton);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setBounds(39, 144, 370, 142);
+		frmLevelEditor.getContentPane().add(scrollPane);
+		
+		txtrBlastedEngineLevel = new JTextArea();
+		scrollPane.setViewportView(txtrBlastedEngineLevel);
+		txtrBlastedEngineLevel.setEditable(false);
+		txtrBlastedEngineLevel.setText("Blasted Engine level editor..\n");
 	}
 	
-	
+	public void updateAudit(String message)
+	{
+		txtrBlastedEngineLevel.append(message + "\n");
+	}
 	
 	private void createNewFile()
 	{
@@ -111,5 +136,11 @@ public class ControlWindow {
 			System.out.println("IO ERROR...");
 			e.printStackTrace();
 		}
+	}
+	
+	private void createOutput()
+	{
+		System.out.println("Creating output");
+		jsonEngine.parseAndOutput(locationField.getText());
 	}
 }
