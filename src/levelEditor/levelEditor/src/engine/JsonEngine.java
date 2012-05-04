@@ -3,7 +3,6 @@ package engine;
 import gui.ControlWindow;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import oiFactory.IoEngine;
 
@@ -12,7 +11,7 @@ public class JsonEngine {
 	IoEngine ioEngine;
 	ControlWindow controlWindow;
 	
-	HashMap<Integer, String> readInRowMap;
+	ArrayList<LevelData> levels = new ArrayList<LevelData>();
 	
 	public JsonEngine(ControlWindow controlWindow, IoEngine ioEngine)
 	{
@@ -29,6 +28,16 @@ public class JsonEngine {
 		{
 			System.out.println("Processing file : " + fileName);
 			controlWindow.updateAudit("Working :" + fileName);
+			LevelData level = new LevelData(location + "\\"+ fileName);
+			boolean worked = level.parseHeaderInfo();
+			if (worked)
+			{
+				levels.add(level);
+				controlWindow.updateAudit("OK :" + fileName);
+			}else
+			{
+				controlWindow.updateAudit("FAILED :" + fileName);
+			}
 		}
 	}
 	
