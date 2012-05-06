@@ -1,0 +1,84 @@
+{
+    
+"__Colour":"RED, YELLOW, BLUE, GREEN, PINK, PURPLE, WHITE",
+"__flight":"STRAIGHT, FAST_IN_OUT, SLOW_IN_OUT, BEZIER_ONE, ZOOM",
+  "levels": [
+    {
+      "levelId": "1",
+      "levelName": "simple one",
+      "levelInfo": "normal",
+      "baseSpeed": "10",
+      "lineTime": "3",
+      "bg": "0",
+      "music": "test.mp3",
+      "rowData": [
+        {
+          "row": "1111",
+          "pattern": "44444444"
+        },
+        {
+          "row": "12345677",
+          "pattern": "22222222"
+        },
+        {
+          "row": "00111100",
+          "pattern": "22222222"
+        },
+        {
+          "row": "4",
+          "pattern": "4"
+        },
+        {
+          "row": "5",
+          "pattern": "5"
+        }
+      ]
+    },
+    {
+      "levelId": "2",
+      "levelName": "simple two",
+      "levelInfo": "normal",
+      "baseSpeed": "10",
+      "lineTime": "3",
+      "bg": "1",
+      "music": "test.mp3",
+      "rowData": [
+        {
+          "row": "10011",
+          "pattern": "11111"
+        },
+        {
+          "row": "11000",
+          "pattern": "11111"
+        },
+        {
+          "row": "00111",
+          "pattern": "11111"
+        }
+      ]
+    },
+    {
+      "levelId": "3",
+      "levelName": "simple three",
+      "levelInfo": "normal",
+      "baseSpeed": "10",
+      "lineTime": "10",
+      "bg": "1",
+      "music": "test.mp3",
+      "rowData": [
+        {
+          "row": "11111",
+          "pattern": "22222"
+        },
+        {
+          "row": "33333",
+          "pattern": "33333"
+        },
+        {
+          "row": "44444",
+          "pattern": "55555"
+        }
+      ]
+    }
+  ]
+}
