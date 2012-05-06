@@ -39,6 +39,8 @@ public class JsonEngine {
 				controlWindow.updateAudit("FAILED :" + fileName);
 			}
 		}
+		
+		//Now have a list of all valid files.. so lets dump into the final file.
 	}
 	
 	

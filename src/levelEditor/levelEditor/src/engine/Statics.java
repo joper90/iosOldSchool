@@ -7,6 +7,7 @@ public class Statics {
 
 	public static String FILENAME = "level_X.lvl";
 	public static String FILENAME_PREFIX = "level_";
+	public static String OUTPUT_FILENAME = "levelData.json";
 	
 	
 	public static String DEFAULT_LOCATION = "c:\\levels";
@@ -19,7 +20,12 @@ public class Statics {
 								+ "======================================================\n\n"
 								+ "======================================================\n";
 	
-	public static String OUTPUT_HEADER= "";
+	public static String OUTPUT_HEADER= "{\r\n" + 
+			"\"__Colour\":\"RED, YELLOW, BLUE, GREEN, PINK, PURPLE, WHITE\",\r\n" + 
+			"\"__flight\":\"STRAIGHT, FAST_IN_OUT, SLOW_IN_OUT, BEZIER_ONE, ZOOM\",\r\n" + 
+			"  \"levels\": [\r\n";
+	
+	public static String OUTPUT_FOOTER="]\r\n}";
 }
 
 

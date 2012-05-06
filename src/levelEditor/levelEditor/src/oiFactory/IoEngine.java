@@ -1,13 +1,14 @@
 package oiFactory;
 
+import engine.LevelData;
+import engine.Statics;
+import gui.ControlWindow;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import engine.Statics;
-import gui.ControlWindow;
 
 public class IoEngine {
 
@@ -18,6 +19,11 @@ public class IoEngine {
 		System.out.println("IoEngine engine init complete");
 	}
 
+	public void createFinalFile(ArrayList<LevelData> levelDataArray)
+	{
+		
+	}
+	
 	public void createTemplate(String numberToCreate, String location) throws IOException {
 		System.out.println("Creating template number.. " + numberToCreate
 				+ " at location " + location);
