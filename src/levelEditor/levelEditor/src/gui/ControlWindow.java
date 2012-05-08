@@ -132,6 +132,7 @@ public class ControlWindow {
 		txtrBlastedEngineLevel.setText("Blasted Engine level editor..\n");
 		
 		overRideChkBox = new JCheckBox("Override output file");
+		overRideChkBox.setSelected(true);
 		overRideChkBox.setBounds(122, 134, 207, 23);
 		frmLevelEditor.getContentPane().add(overRideChkBox);
 		
