@@ -30,6 +30,19 @@ public class LevelData
 		endFlightMap = new ArrayList<String>();
 	}
 	
+	public HashMap<String, String> getHeaderInformation()
+	{
+		return this.headerInformation;
+	}
+	
+	public ArrayList<String> getEndColourMap() {
+		return endColourMap;
+	}
+
+	public ArrayList<String> getEndFlightMap() {
+		return endFlightMap;
+	}
+
 	public boolean parseHeaderInfo()
 	{
 		try
@@ -129,6 +142,7 @@ public class LevelData
 			endFlightMap.add(singleMoveRow);
 		}
 	}
+
 }
 /*
 levelId:0

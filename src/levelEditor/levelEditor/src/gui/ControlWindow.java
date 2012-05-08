@@ -1,4 +1,4 @@
-package gui;
+ package gui;
 
 import java.awt.EventQueue;
 import java.awt.event.MouseAdapter;
@@ -17,6 +17,7 @@ import engine.Statics;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.JCheckBox;
 
 public class ControlWindow {
 
@@ -24,6 +25,10 @@ public class ControlWindow {
 	private JTextField locationField;
 	private JTextField levelNumberField;
 	private JTextArea txtrBlastedEngineLevel;
+	private JCheckBox overRideChkBox;
+	
+	private enum OSTYPE {MAC,PC};
+	public OSTYPE osInfo;
 	
 	IoEngine ioEngine;
 	JsonEngine jsonEngine;
@@ -66,7 +71,7 @@ public class ControlWindow {
 	private void initialize() {
 		frmLevelEditor = new JFrame();
 		frmLevelEditor.setTitle("Level Editor");
-		frmLevelEditor.setBounds(100, 100, 450, 335);
+		frmLevelEditor.setBounds(100, 100, 450, 398);
 		frmLevelEditor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmLevelEditor.getContentPane().setLayout(null);
 		
@@ -74,20 +79,25 @@ public class ControlWindow {
 		locationField.setBounds(95, 6, 314, 20);
 		frmLevelEditor.getContentPane().add(locationField);
 		locationField.setColumns(10);
-		locationField.setText(Statics.DEFAULT_LOCATION);
-		
+		if (System.getProperty("os.name").contains("Mac"))
+		{
+			locationField.setText(Statics.DEFAULT_LOCATION_MAC);
+		}else
+		{
+			locationField.setText(Statics.DEFAULT_LOCATION_PC);
+		}
 		JLabel lblLocation = new JLabel("Location:");
-		lblLocation.setBounds(39, 9, 46, 14);
+		lblLocation.setBounds(17, 9, 77, 14);
 		frmLevelEditor.getContentPane().add(lblLocation);
 		
 		levelNumberField = new JTextField();
-		levelNumberField.setBounds(276, 38, 132, 20);
+		levelNumberField.setBounds(276, 38, 134, 20);
 		frmLevelEditor.getContentPane().add(levelNumberField);
 		levelNumberField.setColumns(10);
 		levelNumberField.setText(Statics.DEFAULT_LEVEL);
 		
 		JLabel lblLevelNumber = new JLabel("Level Number:");
-		lblLevelNumber.setBounds(195, 41, 71, 14);
+		lblLevelNumber.setBounds(164, 41, 100, 14);
 		frmLevelEditor.getContentPane().add(lblLevelNumber);
 		
 		JButton buildAllButton = new JButton("Build All");
@@ -107,24 +117,35 @@ public class ControlWindow {
 				createNewFile();
 			}
 		});
-		createTemplateButton.setBounds(39, 37, 146, 23);
+		createTemplateButton.setBounds(6, 38, 146, 23);
 		frmLevelEditor.getContentPane().add(createTemplateButton);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBounds(39, 144, 370, 142);
+		scrollPane.setBounds(16, 163, 417, 187);
 		frmLevelEditor.getContentPane().add(scrollPane);
 		
 		txtrBlastedEngineLevel = new JTextArea();
 		scrollPane.setViewportView(txtrBlastedEngineLevel);
 		txtrBlastedEngineLevel.setEditable(false);
 		txtrBlastedEngineLevel.setText("Blasted Engine level editor..\n");
+		
+		overRideChkBox = new JCheckBox("Override output file");
+		overRideChkBox.setBounds(122, 134, 207, 23);
+		frmLevelEditor.getContentPane().add(overRideChkBox);
+		
+		txtrBlastedEngineLevel.append(System.getProperty("os.name"));
 	}
 	
 	public void updateAudit(String message)
 	{
 		txtrBlastedEngineLevel.append(message + "\n");
+	}
+	
+	public boolean isOverRide()
+	{
+		return overRideChkBox.isSelected();
 	}
 	
 	private void createNewFile()

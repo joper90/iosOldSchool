@@ -10,7 +10,8 @@ public class Statics {
 	public static String OUTPUT_FILENAME = "levelData.json";
 	
 	
-	public static String DEFAULT_LOCATION = "c:\\levels";
+	public static String DEFAULT_LOCATION_PC  = "c:\\levels";
+	public static String DEFAULT_LOCATION_MAC = "/Users/joeh/levels";
 	public static String DEFAULT_LEVEL = "0";
 	
 	

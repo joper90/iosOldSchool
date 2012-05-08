@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class IoEngine {
 
@@ -19,9 +20,79 @@ public class IoEngine {
 		System.out.println("IoEngine engine init complete");
 	}
 
-	public void createFinalFile(ArrayList<LevelData> levelDataArray)
+	public void createFinalFile(ArrayList<LevelData> levelDataArray, String location) throws IOException
 	{
+		System.out.println("Creating final json File.. " + location);
 		
+		String finalName = Statics.OUTPUT_FILENAME;
+		finalName = location = "\\" + finalName;
+		
+		File file = new File(finalName);
+		boolean exist = file.createNewFile();
+		if (!exist)
+		{
+			if (controlWindow.isOverRide())
+			{
+				//remove and retry
+				exist = true;
+			}else  
+			{
+				System.out.println("Outputfile exists, no override set");
+			}
+		}
+		
+		if (exist) // inital or now set
+		{
+			FileWriter fstream = new FileWriter(finalName);
+			BufferedWriter out = new BufferedWriter(fstream);
+			
+			out.write(Statics.OUTPUT_HEADER);
+			boolean firstElement= true;                                                                                                                              
+			for (LevelData lData : levelDataArray)
+			{
+				HashMap<String,String> headerInformation = lData.getHeaderInformation();
+				if (firstElement)
+				{
+					firstElement = false;
+				}else
+				{
+					out.write(",");
+				}
+				out.write("{");
+				out.write("\"levelId\": \""+ headerInformation.get("levelId") + "\",");
+				out.write("\"levelName\": \""+ headerInformation.get("levelName") + "\",");
+				out.write("\"levelInfo\": \""+ headerInformation.get("levelInfo") + "\",");
+				out.write("\"basespeed\": \""+ headerInformation.get("basespeed") + "\",");
+				out.write("\"linetime\": \""+ headerInformation.get("linetime") + "\",");
+				out.write("\"bg\": \""+ headerInformation.get("bg") + "\",");
+				out.write("\"music\": \""+ headerInformation.get("music") + "\",");
+				
+				//Now do rows ofdata
+				
+				//Get teh array of both colours and move
+				ArrayList<String> colours = lData.getEndColourMap();
+				ArrayList<String> flight = lData.getEndFlightMap();
+				boolean arrayFirstElement = true;
+				
+				out.write("\"rowData\": [");
+				for (int a=0;a<colours.size();a++)
+				{
+					if (arrayFirstElement)
+					{
+						arrayFirstElement = false;
+					}else
+					{
+						out.write(",");
+					}
+					out.write("{ \"row\":\"" + colours.get(a) + "\",\"pattern\":\"" + flight.get(a) + "\"}");
+				}
+				
+				out.write("]}");
+				
+			}
+			out.write("]}");
+			out.close();
+		}
 	}
 	
 	public void createTemplate(String numberToCreate, String location) throws IOException {
