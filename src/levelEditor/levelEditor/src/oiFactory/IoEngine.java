@@ -25,7 +25,7 @@ public class IoEngine {
 		System.out.println("Creating final json File.. " + location);
 		
 		String finalName = Statics.OUTPUT_FILENAME;
-		finalName = location = "\\" + finalName;
+		finalName = location + "\\" + finalName;
 		
 		File file = new File(finalName);
 		boolean exist = file.createNewFile();

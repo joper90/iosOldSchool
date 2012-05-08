@@ -2,6 +2,7 @@ package engine;
 
 import gui.ControlWindow;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import oiFactory.IoEngine;
@@ -40,6 +41,13 @@ public class JsonEngine {
 			}
 		}
 		
+		//Now output
+		try {
+			ioEngine.createFinalFile(levels, location);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	

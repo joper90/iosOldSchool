@@ -76,25 +76,32 @@ public class LevelData
 			if (lineToParse.startsWith("levelId:"))
 			{
 				headerInformation.put("levelId", lineToParse.substring(8));
-			}else if (lineToParse.startsWith("levelName:"))
+			}
+			else if (lineToParse.startsWith("levelName:"))
 			{
-				headerInformation.put("levelName", lineToParse.substring(11));
-			}else if (lineToParse.startsWith("levelInfo:"))
+				headerInformation.put("levelName", lineToParse.substring(10));
+			}
+			else if (lineToParse.startsWith("levelInfo:"))
 			{
-				headerInformation.put("levelInfo", lineToParse.substring(11));
-			}else if (lineToParse.startsWith("basespeed:"))
+				headerInformation.put("levelInfo", lineToParse.substring(10));
+			}
+			else if (lineToParse.startsWith("basespeed:"))
 			{
-				headerInformation.put("basespeed", lineToParse.substring(11));
-			}else if (lineToParse.startsWith("linetime:"))
+				headerInformation.put("basespeed", lineToParse.substring(10));
+			}
+			else if (lineToParse.startsWith("linetime:"))
 			{
-				headerInformation.put("linetime", lineToParse.substring(10));
-			}else if (lineToParse.startsWith("bg:"))
+				headerInformation.put("linetime", lineToParse.substring(9));
+			}
+			else if (lineToParse.startsWith("bg:"))
 			{
-				headerInformation.put("bg", lineToParse.substring(2));
-			}else if (lineToParse.startsWith("music:"))
+				headerInformation.put("bg", lineToParse.substring(3));
+			}
+			else if (lineToParse.startsWith("music:"))
 			{
 				headerInformation.put("music", lineToParse.substring(6));
-			}else if (lineToParse.startsWith("=============="))
+			}
+			else if (lineToParse.startsWith("=============="))
 			{
 				currentState = STATE.GAMELAYER;
 			}
