@@ -15,7 +15,7 @@ public class Statics {
 	public static String DEFAULT_LEVEL = "0";
 	
 	
-	public static String HEADER = "levelId:X\nlevelName:\nlevelInfo:\nbasespeed:\nlinetime:\nbg:\nmusic:\n"
+	public static String HEADER = "levelId:X\nlevelName:\nlevelInfo:\nbasespeed:\nlinetime:\nbg:\nmusic:\ndropdelay:\npumpspace:\n"
 								+ "RED, YELLOW, BLUE, GREEN, PINK, PURPLE, WHITE\n"
 								+ "STRAIGHT, FAST_IN_OUT, SLOW_IN_OUT, BEZIER_ONE, ZOOM\n"
 								+ "======================================================\n\n"

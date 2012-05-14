@@ -101,6 +101,14 @@ public class LevelData
 			{
 				headerInformation.put("music", lineToParse.substring(6));
 			}
+			else if (lineToParse.startsWith("dropdelay:"))
+			{
+				headerInformation.put("dropdelay", lineToParse.substring(10));
+			}
+			else if (lineToParse.startsWith("pumpspace:"))
+			{
+				headerInformation.put("pumpspace", lineToParse.substring(10));
+			}
 			else if (lineToParse.startsWith("=============="))
 			{
 				currentState = STATE.GAMELAYER;

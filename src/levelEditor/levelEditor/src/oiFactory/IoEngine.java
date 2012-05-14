@@ -66,6 +66,8 @@ public class IoEngine {
 				out.write("\"linetime\": \""+ headerInformation.get("linetime") + "\",");
 				out.write("\"bg\": \""+ headerInformation.get("bg") + "\",");
 				out.write("\"music\": \""+ headerInformation.get("music") + "\",");
+				out.write("\"dropdelay\": \""+ headerInformation.get("dropdelay") + "\",");
+				out.write("\"pumpdelay\": \""+ headerInformation.get("pumpdelay") + "\",");
 				
 				//Now do rows ofdata
 				
