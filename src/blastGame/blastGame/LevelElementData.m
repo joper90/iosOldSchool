@@ -9,8 +9,7 @@
 #import "LevelElementData.h"
 
 @implementation LevelElementData
-@synthesize levelId,levelType,baseSpeed,lineTime,rowData,waveCount,patternData, mobAliveStatus,bgParticle,music,levelName, rowSizeCountArray
-            ,dropDelay,pumpSpace,musicTrack;
+@synthesize levelId,levelType,baseSpeed,lineTime,rowData,waveCount,patternData, mobAliveStatus,bgParticle,music,levelName, rowSizeCountArray,dropDelay,pumpSpace;
 
 
 //Should callinitWithCCArraySize.

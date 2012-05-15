@@ -170,6 +170,11 @@ static BlastedEngine* blastedEngine = nil;
     return currentPlayingLevel.bgParticle;
 }
 
+-(NSString*) getBackGroundMusic
+{
+    return currentPlayingLevel.music;
+}
+
 //Call to parse and load the levels, return BOOL 
 -(BOOL)loadAndParseLevels
 {

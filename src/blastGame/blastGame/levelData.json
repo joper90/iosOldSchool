@@ -1,16 +1,17 @@
 {
-    
-"__Colour":"RED, YELLOW, BLUE, GREEN, PINK, PURPLE, WHITE",
-"__flight":"STRAIGHT, FAST_IN_OUT, SLOW_IN_OUT, BEZIER_ONE, ZOOM",
+  "__Colour": "RED, YELLOW, BLUE, GREEN, PINK, PURPLE, WHITE",
+  "__flight": "STRAIGHT, FAST_IN_OUT, SLOW_IN_OUT, BEZIER_ONE, ZOOM",
   "levels": [
     {
       "levelId": "1",
       "levelName": "simple one",
       "levelInfo": "normal",
-      "baseSpeed": "10",
+      "baseSpeed": "2",
       "lineTime": "3",
       "bg": "0",
       "music": "test.mp3",
+      "dropdelay":"1",
+      "pumpspace":"2",
       "rowData": [
         {
           "row": "1111",
@@ -42,6 +43,8 @@
       "lineTime": "3",
       "bg": "1",
       "music": "test.mp3",
+             "dropdelay":"1",
+             "pumpspace":"2",
       "rowData": [
         {
           "row": "10011",
@@ -65,6 +68,8 @@
       "lineTime": "10",
       "bg": "1",
       "music": "test.mp3",
+             "dropdelay":"1",
+             "pumpspace":"2",
       "rowData": [
         {
           "row": "11111",

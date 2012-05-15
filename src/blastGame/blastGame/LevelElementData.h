@@ -26,9 +26,8 @@
     NSMutableArray* rowSizeCountArray;
     
     //Music and sfx section
-    int     musicTrack;
-    float   dropDelay;
-    float   pumpSpace;
+    float   dropDelay; //time before bounce
+    float   pumpSpace; //time between bounces	
 }
 
 @property int levelId;
@@ -38,13 +37,11 @@
 @property (readwrite, assign) float lineTime;
 @property (readwrite, assign) int waveCount;
 @property (readwrite, assign) int bgParticle;
-@property (readwrite, assign) NSString* music;
+@property (readwrite, retain) NSString* music;
 @property (readwrite, retain) NSMutableArray* rowData;
 @property (readwrite, retain) NSMutableArray* patternData;
 @property (readwrite, retain) NSMutableArray* rowSizeCountArray;
 @property (readwrite, retain) NSMutableArray* mobAliveStatus;
-
-@property (readwrite, assign) int musicTrack;
 @property (readwrite, assign) float dropDelay;
 @property (readwrite, assign) float pumpSpace;
 

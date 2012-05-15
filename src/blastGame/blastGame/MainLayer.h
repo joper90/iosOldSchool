@@ -13,6 +13,7 @@
 #import "BangAction.h"
 #import "GameOverScene.h"
 #import "LevelCompleteScene.h"
+#import "SimpleAudioEngine.h"
 
 @interface MainLayer : CCLayer
 {
@@ -40,6 +41,8 @@
     CGPoint initialTouch;
     CGPoint endTouch;
     MobElement* mobTouched;
+    
+    SimpleAudioEngine* sae;
 }
 
 -(void)startAndMoveMobWave:(int) mobWavetoStart;

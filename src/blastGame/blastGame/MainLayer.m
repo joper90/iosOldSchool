@@ -29,6 +29,9 @@
         CCLOG(@"----->loadLevelCompleted...with RC: %d",[self retainCount]);
         maxWave = [[BlastedEngine instance]getWaveCountByCurrentLevel]; //set the waves on this level.
         CCLOG(@"----->GotWaveCount...with RC: %d",[self retainCount]);
+        
+        CCLOG(@"----->Starting music");
+        [[SimpleAudioEngine sharedEngine]playBackgroundMusic:[[BlastedEngine instance]getBackGroundMusic]];
         //Call the levelCoutDown
         [self levelCountDown];
         

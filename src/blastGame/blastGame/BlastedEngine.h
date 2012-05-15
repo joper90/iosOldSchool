@@ -16,6 +16,7 @@
 #import "PropertiesJsonParser.h"
 #import "PersistElements.h"
 #import "RowPositions.h"
+#import "AudioElementData.h"
 @class MainLayer;
 @class MainFGLayer;
 
@@ -98,6 +99,7 @@
 -(float)getCurrentTimeBetweenWaves;
 -(float)getCurrentSpeed;
 -(int)getBackGroundParticle;
+-(NSString*)getBackGroundMusic;
 -(NSString*)getCurrentLevelName;
 -(void)increaseMobDisplayCount:(int)incAmount;
 

@@ -77,6 +77,12 @@ static LevelJsonParser* levelJsonParser = nil;
         
         NSString* music = [level objectForKey:@"music"];
         CCLOG(@"music : %@", music);
+
+        float dropDelay = [[level objectForKey:@"dropdelay"]floatValue];
+        CCLOG(@"dropDelay : %@", dropDelay);
+        
+        float pumpSpace = [[level objectForKey:@"pumpSpace"]floatValue];
+        CCLOG(@"pumpSpace : %@", pumpSpace);
         
         NSArray* rowData = [level objectForKey:@"rowData"];
         CCLOG(@"Wave Count : %d", [rowData count]);
@@ -98,10 +104,7 @@ static LevelJsonParser* levelJsonParser = nil;
         }
         
         
-        //Music Stuff
-        int musicTrack = [[level objectForKey:@"musictrack"]intValue];
-        float dropDelay = [[level objectForKey:@"dropdelay"]floatValue];
-        float 
+
                 
         LevelElementData* elementData = [[LevelElementData alloc]initWithRowPatternCCArrays:row andAllPattern:pattern andRowSizeData:rowSizeCount];
         
@@ -113,6 +116,8 @@ static LevelJsonParser* levelJsonParser = nil;
         elementData.bgParticle = [bgPattern intValue];
         elementData.music = music;
         elementData.waveCount = [rowData count];
+        elementData.dropDelay = dropDelay;
+        elementData.pumpSpace = pumpSpace;
         
         [[BlastedEngine instance]addLevelToLevelList:elementData];
         

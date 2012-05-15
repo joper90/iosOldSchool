@@ -134,6 +134,8 @@
 		CE270E5B14FCEB0700C2DBA3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E5A14FCEB0700C2DBA3 /* RootViewController.m */; };
 		CE270E6B14FCEE2500C2DBA3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E6A14FCEE2500C2DBA3 /* Utils.m */; };
 		CE270E6F14FCF48F00C2DBA3 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE270E6E14FCF48F00C2DBA3 /* MainScene.m */; };
+		CE287E7C15610CCA00F6DC33 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE287E7B15610CCA00F6DC33 /* test.mp3 */; };
+		CE287E8115610E9B00F6DC33 /* AudioElementData.m in Sources */ = {isa = PBXBuildFile; fileRef = CE287E8015610E9B00F6DC33 /* AudioElementData.m */; };
 		CE36C30015494BB2006B56E5 /* RowPositions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE36C2FF15494BB2006B56E5 /* RowPositions.m */; };
 		CE39BA5C15189864006285C7 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA5715189863006285C7 /* blue.png */; };
 		CE39BA5D15189864006285C7 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA5815189863006285C7 /* green.png */; };
@@ -443,6 +445,9 @@
 		CE270E6A14FCEE2500C2DBA3 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		CE270E6D14FCF48F00C2DBA3 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		CE270E6E14FCF48F00C2DBA3 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
+		CE287E7B15610CCA00F6DC33 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
+		CE287E7F15610E9B00F6DC33 /* AudioElementData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioElementData.h; sourceTree = "<group>"; };
+		CE287E8015610E9B00F6DC33 /* AudioElementData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioElementData.m; sourceTree = "<group>"; };
 		CE36C2FE15494BB2006B56E5 /* RowPositions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowPositions.h; sourceTree = "<group>"; };
 		CE36C2FF15494BB2006B56E5 /* RowPositions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowPositions.m; sourceTree = "<group>"; };
 		CE39BA5715189863006285C7 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue.png; path = Resources/blue.png; sourceTree = "<group>"; };
@@ -588,6 +593,7 @@
 		CE270D0514FCEB0000C2DBA3 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE287E7E15610CD100F6DC33 /* music */,
 				CEEE4B7F1504E326002621BC /* fonts */,
 				CEBABA8E15177718004F11E7 /* particles */,
 				CE55E125152B62D500B3CD04 /* game sprites */,
@@ -954,6 +960,14 @@
 			name = scene;
 			sourceTree = "<group>";
 		};
+		CE287E7E15610CD100F6DC33 /* music */ = {
+			isa = PBXGroup;
+			children = (
+				CE287E7B15610CCA00F6DC33 /* test.mp3 */,
+			);
+			name = music;
+			sourceTree = "<group>";
+		};
 		CE36C16E1541A5E9006B56E5 /* artAssets */ = {
 			isa = PBXGroup;
 			children = (
@@ -1087,6 +1101,8 @@
 				CEBABA8C1517757B004F11E7 /* BGparticleEffects.m */,
 				CE36C2FE15494BB2006B56E5 /* RowPositions.h */,
 				CE36C2FF15494BB2006B56E5 /* RowPositions.m */,
+				CE287E7F15610E9B00F6DC33 /* AudioElementData.h */,
+				CE287E8015610E9B00F6DC33 /* AudioElementData.m */,
 			);
 			name = elements;
 			sourceTree = "<group>";
@@ -1197,6 +1213,7 @@
 				5B92BFAD154C6700006F79A7 /* white2.png in Resources */,
 				5B92BFB0154DD365006F79A7 /* 2starfield1.plist in Resources */,
 				5B92BFB1154DD365006F79A7 /* starfield1.plist in Resources */,
+				CE287E7C15610CCA00F6DC33 /* test.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1332,6 +1349,7 @@
 				5BF2596915408E7F00DFA3E7 /* HiScoreScene.m in Sources */,
 				5BF2596C15408F3100DFA3E7 /* HiScoreLayer.m in Sources */,
 				CE36C30015494BB2006B56E5 /* RowPositions.m in Sources */,
+				CE287E8115610E9B00F6DC33 /* AudioElementData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
