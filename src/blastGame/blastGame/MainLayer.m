@@ -151,16 +151,27 @@
     currentWave++; //0 wave has now run.
 
     //MobElements
+    
     for (MobElement* m in lineMobs)
     {
         if (m.isEmptySpace == NO) // Not a request placement.
         {
+            
             //Ok we have a mob.. so place and run?
             CCSprite* mob = m.sprite;
             CCAction* action = m.actionSequenceToRun;
             
+            
+            CCScaleTo* scale1 = [CCScaleTo actionWithDuration:0.3f scale:1.3f];
+            CCScaleTo* scale2 = [CCScaleTo actionWithDuration:0.3f scale:1.0f];
+            CCDelayTime* delay = [CCDelayTime actionWithDuration:0.5f];
+            CCSequence* seq = [CCSequence actions:scale1,scale2, delay, nil];
+            CCRepeatForever* rep = [CCRepeatForever actionWithAction:seq];
+
+            
             [self addChild:mob];
             [mob runAction:action];
+            [mob runAction:rep];
         }
         
     }
@@ -221,9 +232,9 @@
     
     //May need to check to see if touched here, as it may be too late later, as it will have moved.
     initialTouch = [[Utils instance]locationFromTouchSinglePoint:touch];
+    
+    //Logic to check if a mob has been touched.
     mobTouched = [[BlastedEngine instance]whichMobTouched:initialTouch];
-
-
     return YES;
 }
 

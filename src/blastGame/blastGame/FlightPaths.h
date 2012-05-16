@@ -35,6 +35,5 @@ ZOOM
 -(id) bezierOneSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;  
 -(id) zoomSeq:(float)movementModifier withTag:(int)tag currentPos:(CGPoint)currentPos;
 
-
 -(void)callBackMobMoveComplete:(id)sender;
 @end

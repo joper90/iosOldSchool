@@ -175,6 +175,11 @@ static BlastedEngine* blastedEngine = nil;
     return currentPlayingLevel.music;
 }
 
+-(CGPoint) getPumpData
+{
+    return ccp(currentPlayingLevel.dropDelay, currentPlayingLevel.pumpSpace);
+}
+
 //Call to parse and load the levels, return BOOL 
 -(BOOL)loadAndParseLevels
 {
@@ -268,10 +273,10 @@ static BlastedEngine* blastedEngine = nil;
            
             //Put into the main array.
             [mobsArray addObject:mobCreated];
-            
         }
         
         CCLOG(@"All elements added to the mobsArray, in order.. total added %d", currentSpriteTag);
+
     }
     CCLOG(@"TOTAL MobARRAY : %d",[mobsArray count]);
     [currentPlayingLevel resetMobAliveStatus:(currentSpriteTag)]; // reset the mobs with the correct count.

@@ -6,7 +6,7 @@
       "levelId": "1",
       "levelName": "simple one",
       "levelInfo": "normal",
-      "baseSpeed": "2",
+      "baseSpeed": "10",
       "lineTime": "3",
       "bg": "0",
       "music": "test.mp3",
@@ -15,7 +15,7 @@
       "rowData": [
         {
           "row": "1111",
-          "pattern": "44444444"
+          "pattern": "1111"
         },
         {
           "row": "12345677",
