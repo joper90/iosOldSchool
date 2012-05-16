@@ -175,9 +175,14 @@ static BlastedEngine* blastedEngine = nil;
     return currentPlayingLevel.music;
 }
 
--(CGPoint) getPumpData
+-(float)getDropDelay
 {
-    return ccp(currentPlayingLevel.dropDelay, currentPlayingLevel.pumpSpace);
+    return currentPlayingLevel.dropDelay;
+}
+
+-(float)getPumpSpace
+{
+    return currentPlayingLevel.pumpSpace;
 }
 
 //Call to parse and load the levels, return BOOL 
@@ -397,6 +402,30 @@ static BlastedEngine* blastedEngine = nil;
     }
     
     return mob;
+}
+
+-(void)pumpVisableMobs
+{
+    for (MobElement* m in mobsArray)
+    {
+        if (m.isAlive)
+        {
+            if (!m.isPumping)
+            {
+                CCSprite* s = [m getSprite];
+                {
+                    CCScaleTo* scale1 = [CCScaleTo actionWithDuration:0.3f scale:1.3f];
+                    CCScaleTo* scale2 = [CCScaleTo actionWithDuration:0.1f scale:1.0f];
+                    CCDelayTime* delay = [CCDelayTime actionWithDuration:0.5f];
+                    CCSequence* seq = [CCSequence actions:scale1,scale2, delay, nil];
+                    CCRepeatForever* rep = [CCRepeatForever actionWithAction:seq];
+                
+                    [s runAction:rep];
+                }
+                m.isPumping = YES;
+            }
+        }
+    }
 }
 
 -(NSArray*)getMobsForRenderRangeFrom:(int) startRange to:(int)endRange;

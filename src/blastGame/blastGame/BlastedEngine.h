@@ -102,7 +102,9 @@
 -(NSString*)getBackGroundMusic;
 -(NSString*)getCurrentLevelName;
 -(void)increaseMobDisplayCount:(int)incAmount;
--(CGPoint)getPumpData;
+-(float)getDropDelay;
+-(float)getPumpSpace;
+-(void)pumpVisableMobs;
 
 -(NSMutableArray*) getMobListArray;
 -(void)setDeadMob:(int)mobTag;

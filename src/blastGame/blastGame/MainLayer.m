@@ -102,6 +102,9 @@
     
         //Now register the schedure for when the time (betweenRowTime has elapsed);
         [self schedule:@selector(scheduleNewWave:) interval:[[BlastedEngine instance]getCurrentTimeBetweenWaves]];
+        
+        //Now register the scheduler for the pump.
+        [self schedule:@selector(schedulePumpEffect:) interval:[[BlastedEngine instance]getPumpSpace]];
     }
 }
 
@@ -150,7 +153,7 @@
     [[BlastedEngine instance]increaseMobDisplayCount:currentRowSize];
     currentWave++; //0 wave has now run.
 
-    //MobElements
+    //MobElements 
     
     for (MobElement* m in lineMobs)
     {
@@ -160,20 +163,13 @@
             //Ok we have a mob.. so place and run?
             CCSprite* mob = m.sprite;
             CCAction* action = m.actionSequenceToRun;
-            
-            
-            CCScaleTo* scale1 = [CCScaleTo actionWithDuration:0.3f scale:1.3f];
-            CCScaleTo* scale2 = [CCScaleTo actionWithDuration:0.3f scale:1.0f];
-            CCDelayTime* delay = [CCDelayTime actionWithDuration:0.5f];
-            CCSequence* seq = [CCSequence actions:scale1,scale2, delay, nil];
-            CCRepeatForever* rep = [CCRepeatForever actionWithAction:seq];
 
-            
             [self addChild:mob];
+            
             [mob runAction:action];
-            [mob runAction:rep];
+            m.isAlive = YES;
+            //[mob runAction:rep];
         }
-        
     }
 }
 
@@ -195,6 +191,12 @@
     {
         [self startAndMoveMobWave:currentWave];
     }
+}
+
+-(void)schedulePumpEffect:(ccTime)delta
+{
+    CCLOG(@"====>PUMP<======");
+    [[BlastedEngine instance]pumpVisableMobs];
 }
 
 -(void)levelFinished:(ccTime)delta

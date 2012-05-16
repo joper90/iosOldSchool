@@ -52,6 +52,7 @@
 -(void)clearAction;
 
 -(void)scheduleNewWave:(ccTime)delta;
+-(void)schedulePumpEffect:(ccTime)delta;
 -(void)levelFinished:(ccTime)delta; //Check id level is completed.
 
 -(void) mobMoveCompleted:(id)sender;

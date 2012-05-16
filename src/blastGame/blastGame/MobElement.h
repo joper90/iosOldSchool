@@ -24,6 +24,11 @@
     //action to run when invoked
     id actionSequenceToRun;
     
+    //is on the screen and running.
+    BOOL isAlive;
+    
+    //is pumping (been stated)
+    BOOL isPumping;
     
     //initialStart point.
     CGPoint initPos;
@@ -32,6 +37,8 @@
 @property (readonly) CCSprite* sprite;
 @property (readwrite, assign) id actionSequenceToRun;
 @property (readwrite, assign) BOOL isEmptySpace;
+@property (readwrite, assign) BOOL isAlive;
+@property (readwrite, assign) BOOL isPumping;
 //@property (readwrite, assign) CCSprite* sprite;
 @property (readwrite, assign) MOB_COLOUR mobType;
 @property (readwrite, assign) int spriteTag;

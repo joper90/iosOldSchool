@@ -9,7 +9,7 @@
 #import "MobElement.h"
 
 @implementation MobElement
-@synthesize mobType, spriteTag, initPos, isEmptySpace, actionSequenceToRun, sprite;
+@synthesize mobType, spriteTag, initPos, isEmptySpace, actionSequenceToRun, sprite, isAlive, isPumping;
 
 -(CCSprite*) getSprite
 {
@@ -24,6 +24,8 @@
     //set the tag so we can get it later by tag without drilling down
     spriteTag = spriteToAdd.tag;
     sprite = spriteToAdd;
+    isAlive = NO;
+    isPumping = NO;
     [sprite retain];
 }
 
