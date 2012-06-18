@@ -43,14 +43,14 @@
     //HiScore Element;
     PersistElements* persistHiScoreElement;
     
-    //Dict of the sprites themselves to load up.
+    //Array of the sprites themselves to load up.
     //The actual sprites we copy into the mobsArray.
-    NSMutableDictionary* redMobSprites;
-    NSMutableDictionary* yellowMobSprites;
-    NSMutableDictionary* blueMobSprites;
-    NSMutableDictionary* greenMobSprites;
-    NSMutableDictionary* whiteMobSprites;
-    NSMutableDictionary* pinkMobSprites;
+    NSMutableArray* redMobSprites;
+    NSMutableArray* yellowMobSprites;
+    NSMutableArray* blueMobSprites;
+    NSMutableArray* greenMobSprites;
+    NSMutableArray* whiteMobSprites;
+    NSMutableArray* pinkMobSprites;
     
     //Object containing all the row positions.
     RowPositions* rowPositionData;
@@ -71,12 +71,12 @@
 
 @property (retain, readwrite) NSMutableDictionary* iosDeviceProperties;
 
-@property (retain, readwrite) NSMutableDictionary* redMobSprites;
-@property (retain, readwrite) NSMutableDictionary* yellowMobSprites;
-@property (retain, readwrite) NSMutableDictionary* blueMobSprites;
-@property (retain, readwrite) NSMutableDictionary* greenMobSprites;
-@property (retain, readwrite) NSMutableDictionary* pinkMobSprites;
-@property (retain, readwrite) NSMutableDictionary* whiteMobSprites;
+@property (retain, readwrite) NSMutableArray* redMobSprites;
+@property (retain, readwrite) NSMutableArray* yellowMobSprites;
+@property (retain, readwrite) NSMutableArray* blueMobSprites;
+@property (retain, readwrite) NSMutableArray* greenMobSprites;
+@property (retain, readwrite) NSMutableArray* pinkMobSprites;
+@property (retain, readwrite) NSMutableArray* whiteMobSprites;
 
 @property (assign, readwrite) LevelElementData* currentPlayingLevel;
 @property (assign, readwrite) RowPositions* rowPositionData;
@@ -148,7 +148,8 @@
 -(BOOL)loadAndParseLevels;
 -(void)setStartPositions;
 -(void)loadSprites;
--(NSString*) convertNumberToSpriteType:(int) spriteNumber;
+
+-(CCSprite*) getValidRandomSpriteFromSpriteNumber:(int) spriteNumber;
 -(MOB_COLOUR) insertMobEnumFromSpriteNumber:(int) spriteNumber;
 
 

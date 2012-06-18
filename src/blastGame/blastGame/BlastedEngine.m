@@ -55,12 +55,12 @@ static BlastedEngine* blastedEngine = nil;
         self.iosDeviceProperties = [[NSMutableDictionary alloc]init];
         
         self.mobsArray = [[NSMutableArray alloc]init];
-        self.redMobSprites = [[NSMutableDictionary alloc]init];
-        self.yellowMobSprites = [[NSMutableDictionary alloc]init];
-        self.greenMobSprites = [[NSMutableDictionary alloc]init];
-        self.blueMobSprites = [[NSMutableDictionary alloc]init];
-        self.whiteMobSprites = [[NSMutableDictionary alloc]init];
-        self.pinkMobSprites = [[NSMutableDictionary alloc]init];
+        self.redMobSprites = [[NSMutableArray alloc]init];
+        self.yellowMobSprites = [[NSMutableArray alloc]init];
+        self.greenMobSprites = [[NSMutableArray alloc]init];
+        self.blueMobSprites = [[NSMutableArray alloc]init];
+        self.whiteMobSprites = [[NSMutableArray alloc]init];
+        self.pinkMobSprites = [[NSMutableArray alloc]init];
         
         self.levelList = [[NSMutableDictionary alloc]init];
         self.rowPositionData = [[RowPositions alloc]init];
@@ -258,8 +258,11 @@ static BlastedEngine* blastedEngine = nil;
             else
             {
                 mobCreated.isEmptySpace = NO; // a real object
-                NSString* mobType = [self convertNumberToSpriteType:singleRowNum];
-                CCSprite* copyOfSprite = [actualMobSprites objectForKey:mobType];
+                //NSString* mobType = [self convertNumberToSpriteType:singleRowNum];
+                //CCSprite* copyOfSprite = [actualMobSprites objectForKey:mobType];
+                
+                //CCSprite* copyOfSprite = [
+                
                 CCSprite* sprite = [[CCSprite alloc]initWithTexture:copyOfSprite.texture];
                 
                 sprite.anchorPoint = ccp(0.5f, 0.5f);
@@ -313,21 +316,6 @@ static BlastedEngine* blastedEngine = nil;
 }
 
 
--(NSString*) convertNumberToSpriteType:(int) spriteNumber
-{
-    //This is just horrid, but will work for the time..
-    switch (spriteNumber) {
-        case 1:return @"RED";
-        case 2:return @"YELLOW";
-        case 3:return @"BLUE";
-        case 4:return @"GREEN";
-        case 5:return @"PINK";
-        case 6:return @"PURPLE";
-        case 7:return @"WHITE";
-        default:
-            return @"EMPTY";
-    }
-}
 
 -(MOB_COLOUR) insertMobEnumFromSpriteNumber:(int) spriteNumber
 {    
@@ -346,88 +334,20 @@ static BlastedEngine* blastedEngine = nil;
     }
 }
 
--(void)loadSprites
-{
-    //hardcoded for the moment.. need to change to a more dynamic solution
-    CCSprite* redMob = [CCSprite spriteWithFile:[Properties instance].RED_SPRITE_FILE];
-    CCSprite* yellowMob = [CCSprite spriteWithFile:[Properties instance].YELLOW_SPRITE_FILE];
-    CCSprite* blueMob = [CCSprite spriteWithFile:[Properties instance].BLUE_SPRITE_FILE];
-    CCSprite* greenMob = [CCSprite spriteWithFile:[Properties instance].GREEN_SPRITE_FILE];
-    CCSprite* pinkMob = [CCSprite spriteWithFile:[Properties instance].PINK_SPRITE_FILE];
-    CCSprite* purpleMob = [CCSprite spriteWithFile:[Properties instance].PURPLE_SPRITE_FILE];
-    CCSprite* whiteMob = [CCSprite spriteWithFile:[Properties instance].WHITE_SPRITE_FILE];
-    
-    [actualMobSprites setObject:redMob forKey:@"RED"];
-    [actualMobSprites setObject:yellowMob forKey:@"YELLOW"];
-    [actualMobSprites setObject:blueMob forKey:@"BLUE"];
-    [actualMobSprites setObject:greenMob forKey:@"GREEN"];
-    [actualMobSprites setObject:pinkMob forKey:@"PINK"];
-    [actualMobSprites setObject:purpleMob forKey:@"PURPLE"];
-    [actualMobSprites setObject:whiteMob forKey:@"WHITE"];
-    
-    //New code for loading all the new Spites in
-    NSString* appender;
-    NSString* header;
-    NSString* loadingString;
-    if (self.isHdMode == YES)
-    {
-        CCSprite* red_1 = [CCSprite spriteWithFile:@"1_redHD.png"];
-        CCSprite* red_2 = [CCSprite spriteWithFile:@"2_redHD.png"];
-        CCSprite* red_3 = [CCSprite spriteWithFile:@"3_redHD.png"];
-        CCSprite* red_4 = [CCSprite spriteWithFile:@"4_redHD.png"];
-        CCSprite* red_5 = [CCSprite spriteWithFile:@"5_redHD.png"];
-        CCSprite* red_6 = [CCSprite spriteWithFile:@"6_redHD.png"];
-        CCSprite* red_7 = [CCSprite spriteWithFile:@"7_redHD.png"];
-        CCSprite* red_8 = [CCSprite spriteWithFile:@"8_redHD.png"];
-        CCSprite* red_9 = [CCSprite spriteWithFile:@"9_redHD.png"];
-        CCSprite* red_10 = [CCSprite spriteWithFile:@"10_redHD.png"];
-        CCSprite* red_11 = [CCSprite spriteWithFile:@"11_redHD.png"];
-        CCSprite* red_12 = [CCSprite spriteWithFile:@"12_redHD.png"];
-        CCSprite* red_13 = [CCSprite spriteWithFile:@"13_redHD.png"];
-        CCSprite* red_14 = [CCSprite spriteWithFile:@"14_redHD.png"];
-        CCSprite* red_15 = [CCSprite spriteWithFile:@"15_redHD.png"];
-        CCSprite* red_16 = [CCSprite spriteWithFile:@"16_redHD.png"];
 
-        CCSprite* green_1 = [CCSprite spriteWithFile:@"1_greenHD.png"];
-        CCSprite* green_2 = [CCSprite spriteWithFile:@"2_greenHD.png"];
-        CCSprite* green_3 = [CCSprite spriteWithFile:@"3_greenHD.png"];
-        CCSprite* green_4 = [CCSprite spriteWithFile:@"4_greenHD.png"];
-        CCSprite* green_5 = [CCSprite spriteWithFile:@"5_greenHD.png"];
-        CCSprite* green_6 = [CCSprite spriteWithFile:@"6_greenHD.png"];
-        CCSprite* green_7 = [CCSprite spriteWithFile:@"7_greenHD.png"];
-        CCSprite* green_8 = [CCSprite spriteWithFile:@"8_greenHD.png"];
-        CCSprite* green_9 = [CCSprite spriteWithFile:@"9_greenHD.png"];
-        CCSprite* green_10 = [CCSprite spriteWithFile:@"10_greenHD.png"];
-        CCSprite* green_11 = [CCSprite spriteWithFile:@"11_greenHD.png"];
-        CCSprite* green_12 = [CCSprite spriteWithFile:@"12_greenHD.png"];
-        CCSprite* green_13 = [CCSprite spriteWithFile:@"13_greenHD.png"];
-        CCSprite* green_14 = [CCSprite spriteWithFile:@"14_greenHD.png"];
-        CCSprite* green_15 = [CCSprite spriteWithFile:@"15_greenHD.png"];
-        CCSprite* green_16 = [CCSprite spriteWithFile:@"16_greenHD.png"];
-        
-        CCSprite* green_1 = [CCSprite spriteWithFile:@"1_greenHD.png"];
-        CCSprite* green_2 = [CCSprite spriteWithFile:@"2_greenHD.png"];
-        CCSprite* green_3 = [CCSprite spriteWithFile:@"3_greenHD.png"];
-        CCSprite* green_4 = [CCSprite spriteWithFile:@"4_greenHD.png"];
-        CCSprite* green_5 = [CCSprite spriteWithFile:@"5_greenHD.png"];
-        CCSprite* green_6 = [CCSprite spriteWithFile:@"6_greenHD.png"];
-        CCSprite* green_7 = [CCSprite spriteWithFile:@"7_greenHD.png"];
-        CCSprite* green_8 = [CCSprite spriteWithFile:@"8_greenHD.png"];
-        CCSprite* green_9 = [CCSprite spriteWithFile:@"9_greenHD.png"];
-        CCSprite* green_10 = [CCSprite spriteWithFile:@"10_greenHD.png"];
-        CCSprite* green_11 = [CCSprite spriteWithFile:@"11_greenHD.png"];
-        CCSprite* green_12 = [CCSprite spriteWithFile:@"12_greenHD.png"];
-        CCSprite* green_13 = [CCSprite spriteWithFile:@"13_greenHD.png"];
-        CCSprite* green_14 = [CCSprite spriteWithFile:@"14_greenHD.png"];
-        CCSprite* green_15 = [CCSprite spriteWithFile:@"15_greenHD.png"];
-        CCSprite* green_16 = [CCSprite spriteWithFile:@"16_greenHD.png"];
-        
-        
-    }else {
-        appender = @".png";
-    }
+-(CCSprite*)getValidRandomSpriteFromSpriteNumber:(int)spriteNumber
+{
+    //First choose a random number from 1 - 16 
+    
+    
+    //Now based on the type, get the relevent sprite.
+    MOB_COLOUR mobColour = [self insertMobEnumFromSpriteNumber:spriteNumber];
+    
+    
     
 }
+
+
 
 -(MobElement*)getMobBySpriteTag:(int)tag
 {
@@ -610,6 +530,428 @@ static BlastedEngine* blastedEngine = nil;
     [iosDeviceProperties release];
     [persistHiScoreElement release];
     [super dealloc];
+}
+
+
+//Crap sprite loading..
+
+-(void)loadSprites
+{
+    
+    //New code for loading all the new Spites in
+    if (self.isHdMode == YES)
+    {
+        CCSprite* red_1 = [CCSprite spriteWithFile:@"1_redHD.png"];
+        CCSprite* red_2 = [CCSprite spriteWithFile:@"2_redHD.png"];
+        CCSprite* red_3 = [CCSprite spriteWithFile:@"3_redHD.png"];
+        CCSprite* red_4 = [CCSprite spriteWithFile:@"4_redHD.png"];
+        CCSprite* red_5 = [CCSprite spriteWithFile:@"5_redHD.png"];
+        CCSprite* red_6 = [CCSprite spriteWithFile:@"6_redHD.png"];
+        CCSprite* red_7 = [CCSprite spriteWithFile:@"7_redHD.png"];
+        CCSprite* red_8 = [CCSprite spriteWithFile:@"8_redHD.png"];
+        CCSprite* red_9 = [CCSprite spriteWithFile:@"9_redHD.png"];
+        CCSprite* red_10 = [CCSprite spriteWithFile:@"10_redHD.png"];
+        CCSprite* red_11 = [CCSprite spriteWithFile:@"11_redHD.png"];
+        CCSprite* red_12 = [CCSprite spriteWithFile:@"12_redHD.png"];
+        CCSprite* red_13 = [CCSprite spriteWithFile:@"13_redHD.png"];
+        CCSprite* red_14 = [CCSprite spriteWithFile:@"14_redHD.png"];
+        CCSprite* red_15 = [CCSprite spriteWithFile:@"15_redHD.png"];
+        CCSprite* red_16 = [CCSprite spriteWithFile:@"16_redHD.png"];
+        
+        CCSprite* green_1 = [CCSprite spriteWithFile:@"1_greenHD.png"];
+        CCSprite* green_2 = [CCSprite spriteWithFile:@"2_greenHD.png"];
+        CCSprite* green_3 = [CCSprite spriteWithFile:@"3_greenHD.png"];
+        CCSprite* green_4 = [CCSprite spriteWithFile:@"4_greenHD.png"];
+        CCSprite* green_5 = [CCSprite spriteWithFile:@"5_greenHD.png"];
+        CCSprite* green_6 = [CCSprite spriteWithFile:@"6_greenHD.png"];
+        CCSprite* green_7 = [CCSprite spriteWithFile:@"7_greenHD.png"];
+        CCSprite* green_8 = [CCSprite spriteWithFile:@"8_greenHD.png"];
+        CCSprite* green_9 = [CCSprite spriteWithFile:@"9_greenHD.png"];
+        CCSprite* green_10 = [CCSprite spriteWithFile:@"10_greenHD.png"];
+        CCSprite* green_11 = [CCSprite spriteWithFile:@"11_greenHD.png"];
+        CCSprite* green_12 = [CCSprite spriteWithFile:@"12_greenHD.png"];
+        CCSprite* green_13 = [CCSprite spriteWithFile:@"13_greenHD.png"];
+        CCSprite* green_14 = [CCSprite spriteWithFile:@"14_greenHD.png"];
+        CCSprite* green_15 = [CCSprite spriteWithFile:@"15_greenHD.png"];
+        CCSprite* green_16 = [CCSprite spriteWithFile:@"16_greenHD.png"];
+        
+        CCSprite* yellow_1 = [CCSprite spriteWithFile:@"1_yellowHD.png"];
+        CCSprite* yellow_2 = [CCSprite spriteWithFile:@"2_yellowHD.png"];
+        CCSprite* yellow_3 = [CCSprite spriteWithFile:@"3_yellowHD.png"];
+        CCSprite* yellow_4 = [CCSprite spriteWithFile:@"4_yellowHD.png"];
+        CCSprite* yellow_5 = [CCSprite spriteWithFile:@"5_yellowHD.png"];
+        CCSprite* yellow_6 = [CCSprite spriteWithFile:@"6_yellowHD.png"];
+        CCSprite* yellow_7 = [CCSprite spriteWithFile:@"7_yellowHD.png"];
+        CCSprite* yellow_8 = [CCSprite spriteWithFile:@"8_yellowHD.png"];
+        CCSprite* yellow_9 = [CCSprite spriteWithFile:@"9_yellowHD.png"];
+        CCSprite* yellow_10 = [CCSprite spriteWithFile:@"10_yellowHD.png"];
+        CCSprite* yellow_11 = [CCSprite spriteWithFile:@"11_yellowHD.png"];
+        CCSprite* yellow_12 = [CCSprite spriteWithFile:@"12_yellowHD.png"];
+        CCSprite* yellow_13 = [CCSprite spriteWithFile:@"13_yellowHD.png"];
+        CCSprite* yellow_14 = [CCSprite spriteWithFile:@"14_yellowHD.png"];
+        CCSprite* yellow_15 = [CCSprite spriteWithFile:@"15_yellowHD.png"];
+        CCSprite* yellow_16 = [CCSprite spriteWithFile:@"16_yellowHD.png"];
+        
+        CCSprite* blue_1 = [CCSprite spriteWithFile:@"1_blueHD.png"];
+        CCSprite* blue_2 = [CCSprite spriteWithFile:@"2_blueHD.png"];
+        CCSprite* blue_3 = [CCSprite spriteWithFile:@"3_blueHD.png"];
+        CCSprite* blue_4 = [CCSprite spriteWithFile:@"4_blueHD.png"];
+        CCSprite* blue_5 = [CCSprite spriteWithFile:@"5_blueHD.png"];
+        CCSprite* blue_6 = [CCSprite spriteWithFile:@"6_blueHD.png"];
+        CCSprite* blue_7 = [CCSprite spriteWithFile:@"7_blueHD.png"];
+        CCSprite* blue_8 = [CCSprite spriteWithFile:@"8_blueHD.png"];
+        CCSprite* blue_9 = [CCSprite spriteWithFile:@"9_blueHD.png"];
+        CCSprite* blue_10 = [CCSprite spriteWithFile:@"10_blueHD.png"];
+        CCSprite* blue_11 = [CCSprite spriteWithFile:@"11_blueHD.png"];
+        CCSprite* blue_12 = [CCSprite spriteWithFile:@"12_blueHD.png"];
+        CCSprite* blue_13 = [CCSprite spriteWithFile:@"13_blueHD.png"];
+        CCSprite* blue_14 = [CCSprite spriteWithFile:@"14_blueHD.png"];
+        CCSprite* blue_15 = [CCSprite spriteWithFile:@"15_blueHD.png"];
+        CCSprite* blue_16 = [CCSprite spriteWithFile:@"16_blueHD.png"];
+        
+        CCSprite* white_1 = [CCSprite spriteWithFile:@"1_whiteHD.png"];
+        CCSprite* white_2 = [CCSprite spriteWithFile:@"2_whiteHD.png"];
+        CCSprite* white_3 = [CCSprite spriteWithFile:@"3_whiteHD.png"];
+        CCSprite* white_4 = [CCSprite spriteWithFile:@"4_whiteHD.png"];
+        CCSprite* white_5 = [CCSprite spriteWithFile:@"5_whiteHD.png"];
+        CCSprite* white_6 = [CCSprite spriteWithFile:@"6_whiteHD.png"];
+        CCSprite* white_7 = [CCSprite spriteWithFile:@"7_whiteHD.png"];
+        CCSprite* white_8 = [CCSprite spriteWithFile:@"8_whiteHD.png"];
+        CCSprite* white_9 = [CCSprite spriteWithFile:@"9_whiteHD.png"];
+        CCSprite* white_10 = [CCSprite spriteWithFile:@"10_whiteHD.png"];
+        CCSprite* white_11 = [CCSprite spriteWithFile:@"11_whiteHD.png"];
+        CCSprite* white_12 = [CCSprite spriteWithFile:@"12_whiteHD.png"];
+        CCSprite* white_13 = [CCSprite spriteWithFile:@"13_whiteHD.png"];
+        CCSprite* white_14 = [CCSprite spriteWithFile:@"14_whiteHD.png"];
+        CCSprite* white_15 = [CCSprite spriteWithFile:@"15_whiteHD.png"];
+        CCSprite* white_16 = [CCSprite spriteWithFile:@"16_whiteHD.png"];
+        
+        CCSprite* pink_1 = [CCSprite spriteWithFile:@"1_pinkHD.png"];
+        CCSprite* pink_2 = [CCSprite spriteWithFile:@"2_pinkHD.png"];
+        CCSprite* pink_3 = [CCSprite spriteWithFile:@"3_pinkHD.png"];
+        CCSprite* pink_4 = [CCSprite spriteWithFile:@"4_pinkHD.png"];
+        CCSprite* pink_5 = [CCSprite spriteWithFile:@"5_pinkHD.png"];
+        CCSprite* pink_6 = [CCSprite spriteWithFile:@"6_pinkHD.png"];
+        CCSprite* pink_7 = [CCSprite spriteWithFile:@"7_pinkHD.png"];
+        CCSprite* pink_8 = [CCSprite spriteWithFile:@"8_pinkHD.png"];
+        CCSprite* pink_9 = [CCSprite spriteWithFile:@"9_pinkHD.png"];
+        CCSprite* pink_10 = [CCSprite spriteWithFile:@"10_pinkHD.png"];
+        CCSprite* pink_11 = [CCSprite spriteWithFile:@"11_pinkHD.png"];
+        CCSprite* pink_12 = [CCSprite spriteWithFile:@"12_pinkHD.png"];
+        CCSprite* pink_13 = [CCSprite spriteWithFile:@"13_pinkHD.png"];
+        CCSprite* pink_14 = [CCSprite spriteWithFile:@"14_pinkHD.png"];
+        CCSprite* pink_15 = [CCSprite spriteWithFile:@"15_pinkHD.png"];
+        CCSprite* pink_16 = [CCSprite spriteWithFile:@"16_pinkHD.png"];
+        
+        [redMobSprites addObject:red_1];
+        [redMobSprites addObject:red_2];
+        [redMobSprites addObject:red_3];
+        [redMobSprites addObject:red_4];
+        [redMobSprites addObject:red_5];
+        [redMobSprites addObject:red_6];
+        [redMobSprites addObject:red_7];
+        [redMobSprites addObject:red_8];
+        [redMobSprites addObject:red_9];
+        [redMobSprites addObject:red_10];
+        [redMobSprites addObject:red_11];
+        [redMobSprites addObject:red_12];
+        [redMobSprites addObject:red_13];
+        [redMobSprites addObject:red_14];
+        [redMobSprites addObject:red_15];
+        [redMobSprites addObject:red_16];
+        
+        [greenMobSprites addObject:green_1];
+        [greenMobSprites addObject:green_2];
+        [greenMobSprites addObject:green_3];
+        [greenMobSprites addObject:green_4];
+        [greenMobSprites addObject:green_5];
+        [greenMobSprites addObject:green_6];
+        [greenMobSprites addObject:green_7];
+        [greenMobSprites addObject:green_8];
+        [greenMobSprites addObject:green_9];
+        [greenMobSprites addObject:green_10];
+        [greenMobSprites addObject:green_11];
+        [greenMobSprites addObject:green_12];
+        [greenMobSprites addObject:green_13];
+        [greenMobSprites addObject:green_14];
+        [greenMobSprites addObject:green_15];
+        [greenMobSprites addObject:green_16];
+        
+        [yellowMobSprites addObject:yellow_1];
+        [yellowMobSprites addObject:yellow_2];
+        [yellowMobSprites addObject:yellow_3];
+        [yellowMobSprites addObject:yellow_4];
+        [yellowMobSprites addObject:yellow_5];
+        [yellowMobSprites addObject:yellow_6];
+        [yellowMobSprites addObject:yellow_7];
+        [yellowMobSprites addObject:yellow_8];
+        [yellowMobSprites addObject:yellow_9];
+        [yellowMobSprites addObject:yellow_10];
+        [yellowMobSprites addObject:yellow_11];
+        [yellowMobSprites addObject:yellow_12];
+        [yellowMobSprites addObject:yellow_13];
+        [yellowMobSprites addObject:yellow_14];
+        [yellowMobSprites addObject:yellow_15];
+        [yellowMobSprites addObject:yellow_16];
+        
+        [blueMobSprites addObject:blue_1];
+        [blueMobSprites addObject:blue_2];
+        [blueMobSprites addObject:blue_3];
+        [blueMobSprites addObject:blue_4];
+        [blueMobSprites addObject:blue_5];
+        [blueMobSprites addObject:blue_6];
+        [blueMobSprites addObject:blue_7];
+        [blueMobSprites addObject:blue_8];
+        [blueMobSprites addObject:blue_9];
+        [blueMobSprites addObject:blue_10];
+        [blueMobSprites addObject:blue_11];
+        [blueMobSprites addObject:blue_12];
+        [blueMobSprites addObject:blue_13];
+        [blueMobSprites addObject:blue_14];
+        [blueMobSprites addObject:blue_15];
+        [blueMobSprites addObject:blue_16];
+        
+        [whiteMobSprites addObject:white_1];
+        [whiteMobSprites addObject:white_2];
+        [whiteMobSprites addObject:white_3];
+        [whiteMobSprites addObject:white_4];
+        [whiteMobSprites addObject:white_5];
+        [whiteMobSprites addObject:white_6];
+        [whiteMobSprites addObject:white_7];
+        [whiteMobSprites addObject:white_8];
+        [whiteMobSprites addObject:white_9];
+        [whiteMobSprites addObject:white_10];
+        [whiteMobSprites addObject:white_11];
+        [whiteMobSprites addObject:white_12];
+        [whiteMobSprites addObject:white_13];
+        [whiteMobSprites addObject:white_14];
+        [whiteMobSprites addObject:white_15];
+        [whiteMobSprites addObject:white_16];
+        
+        [pinkMobSprites addObject:pink_1];
+        [pinkMobSprites addObject:pink_2];
+        [pinkMobSprites addObject:pink_3];
+        [pinkMobSprites addObject:pink_4];
+        [pinkMobSprites addObject:pink_5];
+        [pinkMobSprites addObject:pink_6];
+        [pinkMobSprites addObject:pink_7];
+        [pinkMobSprites addObject:pink_8];
+        [pinkMobSprites addObject:pink_9];
+        [pinkMobSprites addObject:pink_10];
+        [pinkMobSprites addObject:pink_11];
+        [pinkMobSprites addObject:pink_12];
+        [pinkMobSprites addObject:pink_13];
+        [pinkMobSprites addObject:pink_14];
+        [pinkMobSprites addObject:pink_15];
+        [pinkMobSprites addObject:pink_16];
+        
+    }else {
+        CCSprite* red_1 = [CCSprite spriteWithFile:@"1_red.png"];
+        CCSprite* red_2 = [CCSprite spriteWithFile:@"2_red.png"];
+        CCSprite* red_3 = [CCSprite spriteWithFile:@"3_red.png"];
+        CCSprite* red_4 = [CCSprite spriteWithFile:@"4_red.png"];
+        CCSprite* red_5 = [CCSprite spriteWithFile:@"5_red.png"];
+        CCSprite* red_6 = [CCSprite spriteWithFile:@"6_red.png"];
+        CCSprite* red_7 = [CCSprite spriteWithFile:@"7_red.png"];
+        CCSprite* red_8 = [CCSprite spriteWithFile:@"8_red.png"];
+        CCSprite* red_9 = [CCSprite spriteWithFile:@"9_red.png"];
+        CCSprite* red_10 = [CCSprite spriteWithFile:@"10_red.png"];
+        CCSprite* red_11 = [CCSprite spriteWithFile:@"11_red.png"];
+        CCSprite* red_12 = [CCSprite spriteWithFile:@"12_red.png"];
+        CCSprite* red_13 = [CCSprite spriteWithFile:@"13_red.png"];
+        CCSprite* red_14 = [CCSprite spriteWithFile:@"14_red.png"];
+        CCSprite* red_15 = [CCSprite spriteWithFile:@"15_red.png"];
+        CCSprite* red_16 = [CCSprite spriteWithFile:@"16_red.png"];
+        
+        CCSprite* green_1 = [CCSprite spriteWithFile:@"1_green.png"];
+        CCSprite* green_2 = [CCSprite spriteWithFile:@"2_green.png"];
+        CCSprite* green_3 = [CCSprite spriteWithFile:@"3_green.png"];
+        CCSprite* green_4 = [CCSprite spriteWithFile:@"4_green.png"];
+        CCSprite* green_5 = [CCSprite spriteWithFile:@"5_green.png"];
+        CCSprite* green_6 = [CCSprite spriteWithFile:@"6_green.png"];
+        CCSprite* green_7 = [CCSprite spriteWithFile:@"7_green.png"];
+        CCSprite* green_8 = [CCSprite spriteWithFile:@"8_green.png"];
+        CCSprite* green_9 = [CCSprite spriteWithFile:@"9_green.png"];
+        CCSprite* green_10 = [CCSprite spriteWithFile:@"10_green.png"];
+        CCSprite* green_11 = [CCSprite spriteWithFile:@"11_green.png"];
+        CCSprite* green_12 = [CCSprite spriteWithFile:@"12_green.png"];
+        CCSprite* green_13 = [CCSprite spriteWithFile:@"13_green.png"];
+        CCSprite* green_14 = [CCSprite spriteWithFile:@"14_green.png"];
+        CCSprite* green_15 = [CCSprite spriteWithFile:@"15_green.png"];
+        CCSprite* green_16 = [CCSprite spriteWithFile:@"16_green.png"];
+        
+        CCSprite* yellow_1 = [CCSprite spriteWithFile:@"1_yellow.png"];
+        CCSprite* yellow_2 = [CCSprite spriteWithFile:@"2_yellow.png"];
+        CCSprite* yellow_3 = [CCSprite spriteWithFile:@"3_yellow.png"];
+        CCSprite* yellow_4 = [CCSprite spriteWithFile:@"4_yellow.png"];
+        CCSprite* yellow_5 = [CCSprite spriteWithFile:@"5_yellow.png"];
+        CCSprite* yellow_6 = [CCSprite spriteWithFile:@"6_yellow.png"];
+        CCSprite* yellow_7 = [CCSprite spriteWithFile:@"7_yellow.png"];
+        CCSprite* yellow_8 = [CCSprite spriteWithFile:@"8_yellow.png"];
+        CCSprite* yellow_9 = [CCSprite spriteWithFile:@"9_yellow.png"];
+        CCSprite* yellow_10 = [CCSprite spriteWithFile:@"10_yellow.png"];
+        CCSprite* yellow_11 = [CCSprite spriteWithFile:@"11_yellow.png"];
+        CCSprite* yellow_12 = [CCSprite spriteWithFile:@"12_yellow.png"];
+        CCSprite* yellow_13 = [CCSprite spriteWithFile:@"13_yellow.png"];
+        CCSprite* yellow_14 = [CCSprite spriteWithFile:@"14_yellow.png"];
+        CCSprite* yellow_15 = [CCSprite spriteWithFile:@"15_yellow.png"];
+        CCSprite* yellow_16 = [CCSprite spriteWithFile:@"16_yellow.png"];
+        
+        CCSprite* blue_1 = [CCSprite spriteWithFile:@"1_blue.png"];
+        CCSprite* blue_2 = [CCSprite spriteWithFile:@"2_blue.png"];
+        CCSprite* blue_3 = [CCSprite spriteWithFile:@"3_blue.png"];
+        CCSprite* blue_4 = [CCSprite spriteWithFile:@"4_blue.png"];
+        CCSprite* blue_5 = [CCSprite spriteWithFile:@"5_blue.png"];
+        CCSprite* blue_6 = [CCSprite spriteWithFile:@"6_blue.png"];
+        CCSprite* blue_7 = [CCSprite spriteWithFile:@"7_blue.png"];
+        CCSprite* blue_8 = [CCSprite spriteWithFile:@"8_blue.png"];
+        CCSprite* blue_9 = [CCSprite spriteWithFile:@"9_blue.png"];
+        CCSprite* blue_10 = [CCSprite spriteWithFile:@"10_blue.png"];
+        CCSprite* blue_11 = [CCSprite spriteWithFile:@"11_blue.png"];
+        CCSprite* blue_12 = [CCSprite spriteWithFile:@"12_blue.png"];
+        CCSprite* blue_13 = [CCSprite spriteWithFile:@"13_blue.png"];
+        CCSprite* blue_14 = [CCSprite spriteWithFile:@"14_blue.png"];
+        CCSprite* blue_15 = [CCSprite spriteWithFile:@"15_blue.png"];
+        CCSprite* blue_16 = [CCSprite spriteWithFile:@"16_blue.png"];
+        
+        CCSprite* white_1 = [CCSprite spriteWithFile:@"1_white.png"];
+        CCSprite* white_2 = [CCSprite spriteWithFile:@"2_white.png"];
+        CCSprite* white_3 = [CCSprite spriteWithFile:@"3_white.png"];
+        CCSprite* white_4 = [CCSprite spriteWithFile:@"4_white.png"];
+        CCSprite* white_5 = [CCSprite spriteWithFile:@"5_white.png"];
+        CCSprite* white_6 = [CCSprite spriteWithFile:@"6_white.png"];
+        CCSprite* white_7 = [CCSprite spriteWithFile:@"7_white.png"];
+        CCSprite* white_8 = [CCSprite spriteWithFile:@"8_white.png"];
+        CCSprite* white_9 = [CCSprite spriteWithFile:@"9_white.png"];
+        CCSprite* white_10 = [CCSprite spriteWithFile:@"10_white.png"];
+        CCSprite* white_11 = [CCSprite spriteWithFile:@"11_white.png"];
+        CCSprite* white_12 = [CCSprite spriteWithFile:@"12_white.png"];
+        CCSprite* white_13 = [CCSprite spriteWithFile:@"13_white.png"];
+        CCSprite* white_14 = [CCSprite spriteWithFile:@"14_white.png"];
+        CCSprite* white_15 = [CCSprite spriteWithFile:@"15_white.png"];
+        CCSprite* white_16 = [CCSprite spriteWithFile:@"16_white.png"];
+        
+        CCSprite* pink_1 = [CCSprite spriteWithFile:@"1_pink.png"];
+        CCSprite* pink_2 = [CCSprite spriteWithFile:@"2_pink.png"];
+        CCSprite* pink_3 = [CCSprite spriteWithFile:@"3_pink.png"];
+        CCSprite* pink_4 = [CCSprite spriteWithFile:@"4_pink.png"];
+        CCSprite* pink_5 = [CCSprite spriteWithFile:@"5_pink.png"];
+        CCSprite* pink_6 = [CCSprite spriteWithFile:@"6_pink.png"];
+        CCSprite* pink_7 = [CCSprite spriteWithFile:@"7_pink.png"];
+        CCSprite* pink_8 = [CCSprite spriteWithFile:@"8_pink.png"];
+        CCSprite* pink_9 = [CCSprite spriteWithFile:@"9_pink.png"];
+        CCSprite* pink_10 = [CCSprite spriteWithFile:@"10_pink.png"];
+        CCSprite* pink_11 = [CCSprite spriteWithFile:@"11_pink.png"];
+        CCSprite* pink_12 = [CCSprite spriteWithFile:@"12_pink.png"];
+        CCSprite* pink_13 = [CCSprite spriteWithFile:@"13_pink.png"];
+        CCSprite* pink_14 = [CCSprite spriteWithFile:@"14_pink.png"];
+        CCSprite* pink_15 = [CCSprite spriteWithFile:@"15_pink.png"];
+        CCSprite* pink_16 = [CCSprite spriteWithFile:@"16_pink.png"];
+        
+        [redMobSprites addObject:red_1];
+        [redMobSprites addObject:red_2];
+        [redMobSprites addObject:red_3];
+        [redMobSprites addObject:red_4];
+        [redMobSprites addObject:red_5];
+        [redMobSprites addObject:red_6];
+        [redMobSprites addObject:red_7];
+        [redMobSprites addObject:red_8];
+        [redMobSprites addObject:red_9];
+        [redMobSprites addObject:red_10];
+        [redMobSprites addObject:red_11];
+        [redMobSprites addObject:red_12];
+        [redMobSprites addObject:red_13];
+        [redMobSprites addObject:red_14];
+        [redMobSprites addObject:red_15];
+        [redMobSprites addObject:red_16];
+        
+        [greenMobSprites addObject:green_1];
+        [greenMobSprites addObject:green_2];
+        [greenMobSprites addObject:green_3];
+        [greenMobSprites addObject:green_4];
+        [greenMobSprites addObject:green_5];
+        [greenMobSprites addObject:green_6];
+        [greenMobSprites addObject:green_7];
+        [greenMobSprites addObject:green_8];
+        [greenMobSprites addObject:green_9];
+        [greenMobSprites addObject:green_10];
+        [greenMobSprites addObject:green_11];
+        [greenMobSprites addObject:green_12];
+        [greenMobSprites addObject:green_13];
+        [greenMobSprites addObject:green_14];
+        [greenMobSprites addObject:green_15];
+        [greenMobSprites addObject:green_16];
+        
+        [yellowMobSprites addObject:yellow_1];
+        [yellowMobSprites addObject:yellow_2];
+        [yellowMobSprites addObject:yellow_3];
+        [yellowMobSprites addObject:yellow_4];
+        [yellowMobSprites addObject:yellow_5];
+        [yellowMobSprites addObject:yellow_6];
+        [yellowMobSprites addObject:yellow_7];
+        [yellowMobSprites addObject:yellow_8];
+        [yellowMobSprites addObject:yellow_9];
+        [yellowMobSprites addObject:yellow_10];
+        [yellowMobSprites addObject:yellow_11];
+        [yellowMobSprites addObject:yellow_12];
+        [yellowMobSprites addObject:yellow_13];
+        [yellowMobSprites addObject:yellow_14];
+        [yellowMobSprites addObject:yellow_15];
+        [yellowMobSprites addObject:yellow_16];
+        
+        [blueMobSprites addObject:blue_1];
+        [blueMobSprites addObject:blue_2];
+        [blueMobSprites addObject:blue_3];
+        [blueMobSprites addObject:blue_4];
+        [blueMobSprites addObject:blue_5];
+        [blueMobSprites addObject:blue_6];
+        [blueMobSprites addObject:blue_7];
+        [blueMobSprites addObject:blue_8];
+        [blueMobSprites addObject:blue_9];
+        [blueMobSprites addObject:blue_10];
+        [blueMobSprites addObject:blue_11];
+        [blueMobSprites addObject:blue_12];
+        [blueMobSprites addObject:blue_13];
+        [blueMobSprites addObject:blue_14];
+        [blueMobSprites addObject:blue_15];
+        [blueMobSprites addObject:blue_16];
+        
+        [whiteMobSprites addObject:white_1];
+        [whiteMobSprites addObject:white_2];
+        [whiteMobSprites addObject:white_3];
+        [whiteMobSprites addObject:white_4];
+        [whiteMobSprites addObject:white_5];
+        [whiteMobSprites addObject:white_6];
+        [whiteMobSprites addObject:white_7];
+        [whiteMobSprites addObject:white_8];
+        [whiteMobSprites addObject:white_9];
+        [whiteMobSprites addObject:white_10];
+        [whiteMobSprites addObject:white_11];
+        [whiteMobSprites addObject:white_12];
+        [whiteMobSprites addObject:white_13];
+        [whiteMobSprites addObject:white_14];
+        [whiteMobSprites addObject:white_15];
+        [whiteMobSprites addObject:white_16];
+        
+        [pinkMobSprites addObject:pink_1];
+        [pinkMobSprites addObject:pink_2];
+        [pinkMobSprites addObject:pink_3];
+        [pinkMobSprites addObject:pink_4];
+        [pinkMobSprites addObject:pink_5];
+        [pinkMobSprites addObject:pink_6];
+        [pinkMobSprites addObject:pink_7];
+        [pinkMobSprites addObject:pink_8];
+        [pinkMobSprites addObject:pink_9];
+        [pinkMobSprites addObject:pink_10];
+        [pinkMobSprites addObject:pink_11];
+        [pinkMobSprites addObject:pink_12];
+        [pinkMobSprites addObject:pink_13];
+        [pinkMobSprites addObject:pink_14];
+        [pinkMobSprites addObject:pink_15];
+        [pinkMobSprites addObject:pink_16];
+        
+    }
+    
 }
 
 @end
