@@ -45,7 +45,12 @@
     
     //Dict of the sprites themselves to load up.
     //The actual sprites we copy into the mobsArray.
-    NSMutableDictionary* actualMobSprites;
+    NSMutableDictionary* redMobSprites;
+    NSMutableDictionary* yellowMobSprites;
+    NSMutableDictionary* blueMobSprites;
+    NSMutableDictionary* greenMobSprites;
+    NSMutableDictionary* whiteMobSprites;
+    NSMutableDictionary* pinkMobSprites;
     
     //Object containing all the row positions.
     RowPositions* rowPositionData;
@@ -65,7 +70,14 @@
 }
 
 @property (retain, readwrite) NSMutableDictionary* iosDeviceProperties;
-@property (retain, readwrite) NSMutableDictionary* actualMobSprites;
+
+@property (retain, readwrite) NSMutableDictionary* redMobSprites;
+@property (retain, readwrite) NSMutableDictionary* yellowMobSprites;
+@property (retain, readwrite) NSMutableDictionary* blueMobSprites;
+@property (retain, readwrite) NSMutableDictionary* greenMobSprites;
+@property (retain, readwrite) NSMutableDictionary* pinkMobSprites;
+@property (retain, readwrite) NSMutableDictionary* whiteMobSprites;
+
 @property (assign, readwrite) LevelElementData* currentPlayingLevel;
 @property (assign, readwrite) RowPositions* rowPositionData;
 @property (assign, readwrite) float levelPercentComplete; 

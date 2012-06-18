@@ -13,8 +13,9 @@
 
 @synthesize iosDeviceProperties, isHdMode,
             currentScore, mobsArray, level, levelList, currentMobDisplayedCount, 
-            currentPlayingLevel,actualMobSprites, currentMultiplier, 
-            currentMultiplierCountDownSpeed ,levelPercentComplete, hiScores, rowPositionData;
+            currentPlayingLevel, currentMultiplier, 
+            currentMultiplierCountDownSpeed ,levelPercentComplete, hiScores, rowPositionData,
+            redMobSprites, yellowMobSprites, blueMobSprites, greenMobSprites, whiteMobSprites, pinkMobSprites;
 
 static BlastedEngine* blastedEngine = nil;
 
@@ -54,9 +55,15 @@ static BlastedEngine* blastedEngine = nil;
         self.iosDeviceProperties = [[NSMutableDictionary alloc]init];
         
         self.mobsArray = [[NSMutableArray alloc]init];
-        self.actualMobSprites = [[NSMutableDictionary alloc]init];
+        self.redMobSprites = [[NSMutableDictionary alloc]init];
+        self.yellowMobSprites = [[NSMutableDictionary alloc]init];
+        self.greenMobSprites = [[NSMutableDictionary alloc]init];
+        self.blueMobSprites = [[NSMutableDictionary alloc]init];
+        self.whiteMobSprites = [[NSMutableDictionary alloc]init];
+        self.pinkMobSprites = [[NSMutableDictionary alloc]init];
+        
         self.levelList = [[NSMutableDictionary alloc]init];
-        rowPositionData = [[RowPositions alloc]init];
+        self.rowPositionData = [[RowPositions alloc]init];
         
         //Check hiScore persistence or save a new file
         persistHiScoreElement = [[PersistElements alloc]initHiScores];
@@ -358,6 +365,67 @@ static BlastedEngine* blastedEngine = nil;
     [actualMobSprites setObject:purpleMob forKey:@"PURPLE"];
     [actualMobSprites setObject:whiteMob forKey:@"WHITE"];
     
+    //New code for loading all the new Spites in
+    NSString* appender;
+    NSString* header;
+    NSString* loadingString;
+    if (self.isHdMode == YES)
+    {
+        CCSprite* red_1 = [CCSprite spriteWithFile:@"1_redHD.png"];
+        CCSprite* red_2 = [CCSprite spriteWithFile:@"2_redHD.png"];
+        CCSprite* red_3 = [CCSprite spriteWithFile:@"3_redHD.png"];
+        CCSprite* red_4 = [CCSprite spriteWithFile:@"4_redHD.png"];
+        CCSprite* red_5 = [CCSprite spriteWithFile:@"5_redHD.png"];
+        CCSprite* red_6 = [CCSprite spriteWithFile:@"6_redHD.png"];
+        CCSprite* red_7 = [CCSprite spriteWithFile:@"7_redHD.png"];
+        CCSprite* red_8 = [CCSprite spriteWithFile:@"8_redHD.png"];
+        CCSprite* red_9 = [CCSprite spriteWithFile:@"9_redHD.png"];
+        CCSprite* red_10 = [CCSprite spriteWithFile:@"10_redHD.png"];
+        CCSprite* red_11 = [CCSprite spriteWithFile:@"11_redHD.png"];
+        CCSprite* red_12 = [CCSprite spriteWithFile:@"12_redHD.png"];
+        CCSprite* red_13 = [CCSprite spriteWithFile:@"13_redHD.png"];
+        CCSprite* red_14 = [CCSprite spriteWithFile:@"14_redHD.png"];
+        CCSprite* red_15 = [CCSprite spriteWithFile:@"15_redHD.png"];
+        CCSprite* red_16 = [CCSprite spriteWithFile:@"16_redHD.png"];
+
+        CCSprite* green_1 = [CCSprite spriteWithFile:@"1_greenHD.png"];
+        CCSprite* green_2 = [CCSprite spriteWithFile:@"2_greenHD.png"];
+        CCSprite* green_3 = [CCSprite spriteWithFile:@"3_greenHD.png"];
+        CCSprite* green_4 = [CCSprite spriteWithFile:@"4_greenHD.png"];
+        CCSprite* green_5 = [CCSprite spriteWithFile:@"5_greenHD.png"];
+        CCSprite* green_6 = [CCSprite spriteWithFile:@"6_greenHD.png"];
+        CCSprite* green_7 = [CCSprite spriteWithFile:@"7_greenHD.png"];
+        CCSprite* green_8 = [CCSprite spriteWithFile:@"8_greenHD.png"];
+        CCSprite* green_9 = [CCSprite spriteWithFile:@"9_greenHD.png"];
+        CCSprite* green_10 = [CCSprite spriteWithFile:@"10_greenHD.png"];
+        CCSprite* green_11 = [CCSprite spriteWithFile:@"11_greenHD.png"];
+        CCSprite* green_12 = [CCSprite spriteWithFile:@"12_greenHD.png"];
+        CCSprite* green_13 = [CCSprite spriteWithFile:@"13_greenHD.png"];
+        CCSprite* green_14 = [CCSprite spriteWithFile:@"14_greenHD.png"];
+        CCSprite* green_15 = [CCSprite spriteWithFile:@"15_greenHD.png"];
+        CCSprite* green_16 = [CCSprite spriteWithFile:@"16_greenHD.png"];
+        
+        CCSprite* green_1 = [CCSprite spriteWithFile:@"1_greenHD.png"];
+        CCSprite* green_2 = [CCSprite spriteWithFile:@"2_greenHD.png"];
+        CCSprite* green_3 = [CCSprite spriteWithFile:@"3_greenHD.png"];
+        CCSprite* green_4 = [CCSprite spriteWithFile:@"4_greenHD.png"];
+        CCSprite* green_5 = [CCSprite spriteWithFile:@"5_greenHD.png"];
+        CCSprite* green_6 = [CCSprite spriteWithFile:@"6_greenHD.png"];
+        CCSprite* green_7 = [CCSprite spriteWithFile:@"7_greenHD.png"];
+        CCSprite* green_8 = [CCSprite spriteWithFile:@"8_greenHD.png"];
+        CCSprite* green_9 = [CCSprite spriteWithFile:@"9_greenHD.png"];
+        CCSprite* green_10 = [CCSprite spriteWithFile:@"10_greenHD.png"];
+        CCSprite* green_11 = [CCSprite spriteWithFile:@"11_greenHD.png"];
+        CCSprite* green_12 = [CCSprite spriteWithFile:@"12_greenHD.png"];
+        CCSprite* green_13 = [CCSprite spriteWithFile:@"13_greenHD.png"];
+        CCSprite* green_14 = [CCSprite spriteWithFile:@"14_greenHD.png"];
+        CCSprite* green_15 = [CCSprite spriteWithFile:@"15_greenHD.png"];
+        CCSprite* green_16 = [CCSprite spriteWithFile:@"16_greenHD.png"];
+        
+        
+    }else {
+        appender = @".png";
+    }
     
 }
 
@@ -532,7 +600,12 @@ static BlastedEngine* blastedEngine = nil;
 {
     [rowPositionData release];
     [mobsArray release];
-    [actualMobSprites release];
+    [redMobSprites release];
+    [yellowMobSprites release];
+    [blueMobSprites release];
+    [greenMobSprites release];
+    [whiteMobSprites release];
+    [pinkMobSprites release];
     [levelList release];
     [iosDeviceProperties release];
     [persistHiScoreElement release];
