@@ -51,6 +51,7 @@
     NSMutableArray* greenMobSprites;
     NSMutableArray* whiteMobSprites;
     NSMutableArray* pinkMobSprites;
+    NSMutableArray* purpleMobSprites;
     
     //Object containing all the row positions.
     RowPositions* rowPositionData;
@@ -77,6 +78,7 @@
 @property (retain, readwrite) NSMutableArray* greenMobSprites;
 @property (retain, readwrite) NSMutableArray* pinkMobSprites;
 @property (retain, readwrite) NSMutableArray* whiteMobSprites;
+@property (retain, readwrite) NSMutableArray* purpleMobSprites;
 
 @property (assign, readwrite) LevelElementData* currentPlayingLevel;
 @property (assign, readwrite) RowPositions* rowPositionData;

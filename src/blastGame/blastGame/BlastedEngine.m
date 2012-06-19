@@ -15,7 +15,7 @@
             currentScore, mobsArray, level, levelList, currentMobDisplayedCount, 
             currentPlayingLevel, currentMultiplier, 
             currentMultiplierCountDownSpeed ,levelPercentComplete, hiScores, rowPositionData,
-            redMobSprites, yellowMobSprites, blueMobSprites, greenMobSprites, whiteMobSprites, pinkMobSprites;
+            redMobSprites, yellowMobSprites, blueMobSprites, greenMobSprites, whiteMobSprites, pinkMobSprites, purpleMobSprites;
 
 static BlastedEngine* blastedEngine = nil;
 
@@ -61,6 +61,7 @@ static BlastedEngine* blastedEngine = nil;
         self.blueMobSprites = [[NSMutableArray alloc]init];
         self.whiteMobSprites = [[NSMutableArray alloc]init];
         self.pinkMobSprites = [[NSMutableArray alloc]init];
+        self.purpleMobSprites = [[NSMutableArray alloc]init];
         
         self.levelList = [[NSMutableDictionary alloc]init];
         self.rowPositionData = [[RowPositions alloc]init];
@@ -261,7 +262,7 @@ static BlastedEngine* blastedEngine = nil;
                 //NSString* mobType = [self convertNumberToSpriteType:singleRowNum];
                 //CCSprite* copyOfSprite = [actualMobSprites objectForKey:mobType];
                 
-                //CCSprite* copyOfSprite = [
+                CCSprite* copyOfSprite = [self getValidRandomSpriteFromSpriteNumber:singleRowNum];
                 
                 CCSprite* sprite = [[CCSprite alloc]initWithTexture:copyOfSprite.texture];
                 
@@ -326,7 +327,7 @@ static BlastedEngine* blastedEngine = nil;
         case 2:return YELLOW;
         case 3:return BLUE;
         case 4:return GREEN;
-        case 5:return PINK;
+        case 5:return PINK; 
         case 6:return PURPLE;
         case 7:return WHITE;
         default:
@@ -338,13 +339,31 @@ static BlastedEngine* blastedEngine = nil;
 -(CCSprite*)getValidRandomSpriteFromSpriteNumber:(int)spriteNumber
 {
     //First choose a random number from 1 - 16 
-    
+    NSInteger delta = arc4random() %15 + 1;
+    CCLOG(@"Random Number is %d",delta);
     
     //Now based on the type, get the relevent sprite.
     MOB_COLOUR mobColour = [self insertMobEnumFromSpriteNumber:spriteNumber];
     
-    
-    
+    switch (mobColour) {
+        case RED:
+            return [redMobSprites objectAtIndex:delta];
+        case YELLOW:
+            return [redMobSprites objectAtIndex:delta];
+        case BLUE:
+            return [redMobSprites objectAtIndex:delta];
+        case GREEN:
+            return [redMobSprites objectAtIndex:delta];
+        case WHITE:
+            return [redMobSprites objectAtIndex:delta];
+        case PINK:
+            return [redMobSprites objectAtIndex:delta];
+        case PURPLE:
+            return [purpleMobSprites objectAtIndex:delta];
+        default:
+            break;
+    }
+    return NULL;
 }
 
 
@@ -526,6 +545,7 @@ static BlastedEngine* blastedEngine = nil;
     [greenMobSprites release];
     [whiteMobSprites release];
     [pinkMobSprites release];
+    [purpleMobSprites release];
     [levelList release];
     [iosDeviceProperties release];
     [persistHiScoreElement release];
@@ -643,6 +663,24 @@ static BlastedEngine* blastedEngine = nil;
         CCSprite* pink_15 = [CCSprite spriteWithFile:@"15_pinkHD.png"];
         CCSprite* pink_16 = [CCSprite spriteWithFile:@"16_pinkHD.png"];
         
+        CCSprite* purple_1 = [CCSprite spriteWithFile:@"1_purpleHD.png"];
+        CCSprite* purple_2 = [CCSprite spriteWithFile:@"2_purpleHD.png"];
+        CCSprite* purple_3 = [CCSprite spriteWithFile:@"3_purpleHD.png"];
+        CCSprite* purple_4 = [CCSprite spriteWithFile:@"4_purpleHD.png"];
+        CCSprite* purple_5 = [CCSprite spriteWithFile:@"5_purpleHD.png"];
+        CCSprite* purple_6 = [CCSprite spriteWithFile:@"6_purpleHD.png"];
+        CCSprite* purple_7 = [CCSprite spriteWithFile:@"7_purpleHD.png"];
+        CCSprite* purple_8 = [CCSprite spriteWithFile:@"8_purpleHD.png"];
+        CCSprite* purple_9 = [CCSprite spriteWithFile:@"9_purpleHD.png"];
+        CCSprite* purple_10 = [CCSprite spriteWithFile:@"10_purpleHD.png"];
+        CCSprite* purple_11 = [CCSprite spriteWithFile:@"11_purpleHD.png"];
+        CCSprite* purple_12 = [CCSprite spriteWithFile:@"12_purpleHD.png"];
+        CCSprite* purple_13 = [CCSprite spriteWithFile:@"13_purpleHD.png"];
+        CCSprite* purple_14 = [CCSprite spriteWithFile:@"14_purpleHD.png"];
+        CCSprite* purple_15 = [CCSprite spriteWithFile:@"15_purpleHD.png"];
+        CCSprite* purple_16 = [CCSprite spriteWithFile:@"16_purpleHD.png"];
+        
+        
         [redMobSprites addObject:red_1];
         [redMobSprites addObject:red_2];
         [redMobSprites addObject:red_3];
@@ -744,6 +782,23 @@ static BlastedEngine* blastedEngine = nil;
         [pinkMobSprites addObject:pink_14];
         [pinkMobSprites addObject:pink_15];
         [pinkMobSprites addObject:pink_16];
+        
+        [purpleMobSprites addObject:purple_1];
+        [purpleMobSprites addObject:purple_2];
+        [purpleMobSprites addObject:purple_3];
+        [purpleMobSprites addObject:purple_4];
+        [purpleMobSprites addObject:purple_5];
+        [purpleMobSprites addObject:purple_6];
+        [purpleMobSprites addObject:purple_7];
+        [purpleMobSprites addObject:purple_8];
+        [purpleMobSprites addObject:purple_9];
+        [purpleMobSprites addObject:purple_10];
+        [purpleMobSprites addObject:purple_11];
+        [purpleMobSprites addObject:purple_12];
+        [purpleMobSprites addObject:purple_13];
+        [purpleMobSprites addObject:purple_14];
+        [purpleMobSprites addObject:purple_15];
+        [purpleMobSprites addObject:purple_16];
         
     }else {
         CCSprite* red_1 = [CCSprite spriteWithFile:@"1_red.png"];
@@ -848,6 +903,23 @@ static BlastedEngine* blastedEngine = nil;
         CCSprite* pink_15 = [CCSprite spriteWithFile:@"15_pink.png"];
         CCSprite* pink_16 = [CCSprite spriteWithFile:@"16_pink.png"];
         
+        CCSprite* purple_1 = [CCSprite spriteWithFile:@"1_purple.png"];
+        CCSprite* purple_2 = [CCSprite spriteWithFile:@"2_purple.png"];
+        CCSprite* purple_3 = [CCSprite spriteWithFile:@"3_purple.png"];
+        CCSprite* purple_4 = [CCSprite spriteWithFile:@"4_purple.png"];
+        CCSprite* purple_5 = [CCSprite spriteWithFile:@"5_purple.png"];
+        CCSprite* purple_6 = [CCSprite spriteWithFile:@"6_purple.png"];
+        CCSprite* purple_7 = [CCSprite spriteWithFile:@"7_purple.png"];
+        CCSprite* purple_8 = [CCSprite spriteWithFile:@"8_purple.png"];
+        CCSprite* purple_9 = [CCSprite spriteWithFile:@"9_purple.png"];
+        CCSprite* purple_10 = [CCSprite spriteWithFile:@"10_purple.png"];
+        CCSprite* purple_11 = [CCSprite spriteWithFile:@"11_purple.png"];
+        CCSprite* purple_12 = [CCSprite spriteWithFile:@"12_purple.png"];
+        CCSprite* purple_13 = [CCSprite spriteWithFile:@"13_purple.png"];
+        CCSprite* purple_14 = [CCSprite spriteWithFile:@"14_purple.png"];
+        CCSprite* purple_15 = [CCSprite spriteWithFile:@"15_purple.png"];
+        CCSprite* purple_16 = [CCSprite spriteWithFile:@"16_purple.png"];
+        
         [redMobSprites addObject:red_1];
         [redMobSprites addObject:red_2];
         [redMobSprites addObject:red_3];
@@ -949,6 +1021,23 @@ static BlastedEngine* blastedEngine = nil;
         [pinkMobSprites addObject:pink_14];
         [pinkMobSprites addObject:pink_15];
         [pinkMobSprites addObject:pink_16];
+        
+        [purpleMobSprites addObject:purple_1];
+        [purpleMobSprites addObject:purple_2];
+        [purpleMobSprites addObject:purple_3];
+        [purpleMobSprites addObject:purple_4];
+        [purpleMobSprites addObject:purple_5];
+        [purpleMobSprites addObject:purple_6];
+        [purpleMobSprites addObject:purple_7];
+        [purpleMobSprites addObject:purple_8];
+        [purpleMobSprites addObject:purple_9];
+        [purpleMobSprites addObject:purple_10];
+        [purpleMobSprites addObject:purple_11];
+        [purpleMobSprites addObject:purple_12];
+        [purpleMobSprites addObject:purple_13];
+        [purpleMobSprites addObject:purple_14];
+        [purpleMobSprites addObject:purple_15];
+        [purpleMobSprites addObject:purple_16];
         
     }
     
