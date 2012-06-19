@@ -51,15 +51,6 @@
         [Properties instance].ROCKET = [p objectForKey:@"rocket"];
         [Properties instance].EXPLODE = [p objectForKey:@"explode"];
         
-        [Properties instance].RED_SPRITE_FILE = [p objectForKey:@"red"];
-        [Properties instance].YELLOW_SPRITE_FILE = [p objectForKey:@"yellow"];
-        [Properties instance].BLUE_SPRITE_FILE = [p objectForKey:@"blue"];
-        [Properties instance].GREEN_SPRITE_FILE = [p objectForKey:@"green"];
-        [Properties instance].PINK_SPRITE_FILE = [p objectForKey:@"pink"];
-        [Properties instance].PURPLE_SPRITE_FILE = [p objectForKey:@"purple"];
-        [Properties instance].WHITE_SPRITE_FILE = [p objectForKey:@"white"];
-        
-        
         [Properties instance].GUN_SPRITE_FILE = [p objectForKey:@"gun"];
         [Properties instance].BASE_SPRITE_FILE = [p objectForKey:@"base"];
         [Properties instance].LOCKON_SPRITE_FILE = [p objectForKey:@"lockon"];

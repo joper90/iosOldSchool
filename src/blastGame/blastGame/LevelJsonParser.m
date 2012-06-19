@@ -79,10 +79,10 @@ static LevelJsonParser* levelJsonParser = nil;
         CCLOG(@"music : %@", music);
 
         float dropDelay = [[level objectForKey:@"dropdelay"]floatValue];
-        CCLOG(@"dropDelay : %@", dropDelay);
+        CCLOG(@"dropDelay : %f", dropDelay);
         
-        float pumpSpace = [[level objectForKey:@"pumpSpace"]floatValue];
-        CCLOG(@"pumpSpace : %@", pumpSpace);
+        float pumpSpace = [[level objectForKey:@"pumpspace"]floatValue];
+        CCLOG(@"pumpSpace : %f", pumpSpace);
         
         NSArray* rowData = [level objectForKey:@"rowData"];
         CCLOG(@"Wave Count : %d", [rowData count]);

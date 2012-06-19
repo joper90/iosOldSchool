@@ -259,8 +259,6 @@ static BlastedEngine* blastedEngine = nil;
             else
             {
                 mobCreated.isEmptySpace = NO; // a real object
-                //NSString* mobType = [self convertNumberToSpriteType:singleRowNum];
-                //CCSprite* copyOfSprite = [actualMobSprites objectForKey:mobType];
                 
                 CCSprite* copyOfSprite = [self getValidRandomSpriteFromSpriteNumber:singleRowNum];
                 
@@ -268,8 +266,6 @@ static BlastedEngine* blastedEngine = nil;
                 
                 sprite.anchorPoint = ccp(0.5f, 0.5f);
                 sprite.tag = currentSpriteTag;
-                
-                //Need more protective coding here..
                 
                 //Insert the start posistion 
                 CGPoint mobStartLocation = [self getStartPositionByRowCount:currentRowCount andPosition:y];
@@ -292,7 +288,6 @@ static BlastedEngine* blastedEngine = nil;
         }
         
         CCLOG(@"All elements added to the mobsArray, in order.. total added %d", currentSpriteTag);
-
     }
     CCLOG(@"TOTAL MobARRAY : %d",[mobsArray count]);
     [currentPlayingLevel resetMobAliveStatus:(currentSpriteTag)]; // reset the mobs with the correct count.
@@ -413,24 +408,20 @@ static BlastedEngine* blastedEngine = nil;
 
 -(void)pumpVisableMobs
 {
+    
     for (MobElement* m in mobsArray)
     {
         if (m.isAlive)
         {
-            if (!m.isPumping)
-            {
                 CCSprite* s = [m getSprite];
                 {
                     CCScaleTo* scale1 = [CCScaleTo actionWithDuration:0.3f scale:1.3f];
                     CCScaleTo* scale2 = [CCScaleTo actionWithDuration:0.1f scale:1.0f];
-                    CCDelayTime* delay = [CCDelayTime actionWithDuration:0.5f];
-                    CCSequence* seq = [CCSequence actions:scale1,scale2, delay, nil];
-                    CCRepeatForever* rep = [CCRepeatForever actionWithAction:seq];
+                    CCSequence* seq = [CCSequence actions:scale1,scale2, nil];
                 
-                    [s runAction:rep];
+                    [s runAction:seq];
                 }
-                m.isPumping = YES;
-            }
+            
         }
     }
 }

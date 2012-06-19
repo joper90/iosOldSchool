@@ -168,7 +168,6 @@
             
             [mob runAction:action];
             m.isAlive = YES;
-            //[mob runAction:rep];
         }
     }
 }

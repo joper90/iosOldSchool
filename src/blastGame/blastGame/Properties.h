@@ -17,14 +17,6 @@
     NSString* ROCKET;
     NSString* EXPLODE;
     
-    NSString* RED_SPRITE_FILE;
-    NSString* YELLOW_SPRITE_FILE;
-    NSString* BLUE_SPRITE_FILE;
-    NSString* GREEN_SPRITE_FILE;
-    NSString* PINK_SPRITE_FILE;
-    NSString* PURPLE_SPRITE_FILE;
-    NSString* WHITE_SPRITE_FILE;
-    
     NSString* GUN_SPRITE_FILE;
     NSString* BASE_SPRITE_FILE;
     NSString* LOCKON_SPRITE_FILE;
@@ -53,13 +45,6 @@
 
 @property (retain, readwrite) NSString* ROCKET ;
 @property (retain, readwrite) NSString* EXPLODE ;
-@property (retain, readwrite) NSString* RED_SPRITE_FILE ;
-@property (retain, readwrite) NSString* YELLOW_SPRITE_FILE ;
-@property (retain, readwrite) NSString* BLUE_SPRITE_FILE ;
-@property (retain, readwrite) NSString* GREEN_SPRITE_FILE ;
-@property (retain, readwrite) NSString* PINK_SPRITE_FILE ;
-@property (retain, readwrite) NSString* PURPLE_SPRITE_FILE ;
-@property (retain, readwrite) NSString* WHITE_SPRITE_FILE ;
 
 @property (retain, readwrite) NSString* GUN_SPRITE_FILE;
 @property (retain, readwrite) NSString* BASE_SPRITE_FILE;

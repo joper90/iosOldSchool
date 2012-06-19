@@ -11,7 +11,7 @@
       "bg": "0",
       "music": "test.mp3",
       "dropdelay":"1",
-      "pumpspace":"2",
+      "pumpspace":"1.3f",
       "rowData": [
         {
           "row": "1111",
