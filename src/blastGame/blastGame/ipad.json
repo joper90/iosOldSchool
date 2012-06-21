@@ -9,7 +9,7 @@
       "gun": "gunHD.png",
       "base": "planet.png",
       "lockon": "targetHD.png",
-      "menubackground": "blastedMenu2.png",
+      "menubackground": "titleBackgroundHD.jpg",
       "gunx": "40",
       "fontsize": "20",
       "fontsizecountdown": "70",

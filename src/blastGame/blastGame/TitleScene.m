@@ -16,9 +16,10 @@
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
 
-    CCLayer* titleScreenLayer = [TitleBGLayer node];
+    CCLayer* titleScreenLayerBG = [TitleBGLayer node];
     
-    [scene addChild:titleScreenLayer];
+    
+    [scene addChild:titleScreenLayerBG];
 	
 	// return the scene
 	return scene;
