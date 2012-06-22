@@ -64,6 +64,23 @@
 
 +(CCParticleSystem*) getTitleGalaxy:(titlePatterns)titlePatterns
 {
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        
+        switch (titlePatterns) {
+            case GALAXYONE: return [CCParticleSystemQuad particleWithFile:@"titleGalaxyHD.plist"];
+            case GALAXYTWO: return [CCParticleSystemQuad particleWithFile:@"sideGalaxyHD.plist"];
+            case STARFIELD: return [CCParticleSystemQuad particleWithFile:@"titleStarsHD.plist"];
+                
+                
+            default:
+                break;
+        } 
+    }
+
+    
+    
     switch (titlePatterns) {
         case GALAXYONE: return [CCParticleSystemQuad particleWithFile:@"titleGalaxy.plist"];
         case GALAXYTWO: return [CCParticleSystemQuad particleWithFile:@"sideGalaxy.plist"];
@@ -74,7 +91,6 @@
             break;
     }
     return nil;
-    return [CCParticleSystemQuad particleWithFile:@""];
 }
 
 

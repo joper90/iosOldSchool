@@ -13,10 +13,12 @@
     CGSize screenSize;
     float screenWidth;
     float screenHeight;
+    bool  isHDmode;
 }
 
 @property float screenWidth;
 @property float screenHeight;
+@property bool isHDmode;
 @property (readonly) CGSize screenSize;
 
 +(Utils*) instance;
@@ -31,5 +33,7 @@
 -(CGPoint) convertToiPadPoint:(float)iPhonePoint_X:(float)iPhonePoint_Y;
 
 -(CGRect) convertToIPadMakeRect:(float)x y1:(float)y width:(float)width height:(float)height;
+
+-(bool) isHD;
 
 @end

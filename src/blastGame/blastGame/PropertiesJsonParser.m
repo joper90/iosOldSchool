@@ -56,6 +56,7 @@
         [Properties instance].LOCKON_SPRITE_FILE = [p objectForKey:@"lockon"];
         
         [Properties instance].BLASTED_MENU_FILE = [p objectForKey:@"menubackground"];
+        [Properties instance].BLASTED_TITLE_FILE = [p objectForKey:@"titlegfx"];
         
         [Properties instance].FONT_SIZE = [[p objectForKey:@"fontsize"]floatValue];
         [Properties instance].FONT_SIZE_COUNTDOWN = [[p objectForKey:@"fontsizecountdown"]floatValue];

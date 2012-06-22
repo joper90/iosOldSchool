@@ -9,7 +9,7 @@
 #import "Utils.h"
 
 @implementation Utils
-@synthesize screenWidth,screenHeight,screenSize;
+@synthesize screenWidth,screenHeight,screenSize,isHDmode;
 
 //Singleton
 static Utils* utils = nil;
@@ -30,6 +30,12 @@ static Utils* utils = nil;
         screenSize = [[CCDirector sharedDirector] winSize];
         screenWidth = screenSize.width;
         screenHeight = screenSize.height;  
+        
+        isHDmode = NO;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            isHDmode = YES;
+        }
     }
     return self;
 }
@@ -78,7 +84,7 @@ static Utils* utils = nil;
 
 -(CGPoint) convertToiPadPoint:(float)iPhonePoint_X:(float)iPhonePoint_Y
 {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    if (isHDmode)
         return ccp(iPhonePoint_X/480*1024,iPhonePoint_Y/320*768);
     else
         return ccp(iPhonePoint_X,iPhonePoint_Y);
@@ -86,7 +92,7 @@ static Utils* utils = nil;
 
 -(CGRect) convertToIPadMakeRect:(float)x y1:(float)y width:(float)width height:(float)height
 {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    if (isHDmode)
     {
         return CGRectMake(x/480*1024,y/320*768, width/480*1024, height/320*768);
     }
@@ -96,6 +102,10 @@ static Utils* utils = nil;
     }
 }
 
+-(bool)isHD
+{
+    return isHDmode;
+}
 
 
 @end

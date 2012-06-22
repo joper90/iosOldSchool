@@ -23,6 +23,8 @@
     
     NSString* BLASTED_MENU_FILE; 
     
+    NSString* BLASTED_TITLE_FILE;
+    
     float     GUN_X_POSISTION;
     
     float     FONT_SIZE;
@@ -50,7 +52,8 @@
 @property (retain, readwrite) NSString* BASE_SPRITE_FILE;
 @property (retain, readwrite) NSString* LOCKON_SPRITE_FILE;
 
-@property (retain, readwrite) NSString* BLASTED_MENU_FILE;  
+@property (retain, readwrite) NSString* BLASTED_MENU_FILE; 
+@property (retain, readwrite) NSString* BLASTED_TITLE_FILE;  
 
 @property (assign, readwrite) float GUN_X_POSISTION;
 

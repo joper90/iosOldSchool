@@ -10,6 +10,7 @@
       "gun": "gun.png",
       "menubackground": "blastedMenu.png",
       "lockon": "target.png",
+      "titlegfx":"titleHeader.png",
       "gunx": "40",
       "fontsize": "20",
       "fontsizecountdown": "70",
