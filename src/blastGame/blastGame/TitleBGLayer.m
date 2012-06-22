@@ -10,13 +10,14 @@
 
 @implementation TitleBGLayer
 
-@synthesize barPercentTime;
+@synthesize barPercentTime,partSystemTitleGalaxy2,partSystemTitleGalaxy1,partSystemTitleStars;
 
 -(id) init
 {
     CCLOG(@"TitleMenu BG Layer...with RC: %d",[self retainCount]);
 	if( (self=[super init])) 
     {
+        /*
         self.isTouchEnabled = YES;
         
         NSString* menuImage = [Properties instance].BLASTED_MENU_FILE;
@@ -42,6 +43,22 @@
         [self addChild:startButton z:Z_BG_MENU_STARTBUTTON];
         [self addChild:bgImage z:-1];
         [self addChild:gameName z:Z_BG_MENU_GAMENAME];
+         */
+        
+        NSString* menuImage = [Properties instance].BLASTED_MENU_FILE;
+        CCSprite* bgImage = [CCSprite spriteWithFile:menuImage];
+        
+        partSystemTitleGalaxy1 = [BGparticleEffects getTitleGalaxy:GALAXYONE];
+        partSystemTitleGalaxy2 = [BGparticleEffects getTitleGalaxy:GALAXYTWO];
+        partSystemTitleStars = [BGparticleEffects getTitleGalaxy:STARFIELD];
+    
+        [self addChild:partSystemTitleStars];
+        [self addChild:partSystemTitleGalaxy1];
+        [self addChild:partSystemTitleGalaxy2];
+        
+        [self addChild:bgImage z:-1];
+        
+        
     }
 	return self;
 }

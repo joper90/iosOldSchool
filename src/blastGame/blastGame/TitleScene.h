@@ -12,8 +12,9 @@
 
 @interface TitleScene : CCLayer
 {
-    
+
 }
+
 
 //This scence's static constructor.
 +(CCScene*) scene;

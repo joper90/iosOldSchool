@@ -62,5 +62,20 @@
     return retPart;
 }
 
++(CCParticleSystem*) getTitleGalaxy:(titlePatterns)titlePatterns
+{
+    switch (titlePatterns) {
+        case GALAXYONE: return [CCParticleSystemQuad particleWithFile:@"titleGalaxy.plist"];
+        case GALAXYTWO: return [CCParticleSystemQuad particleWithFile:@"sideGalaxy.plist"];
+        case STARFIELD: return [CCParticleSystemQuad particleWithFile:@"titleStars.plist"];
+           
+            
+        default:
+            break;
+    }
+    return nil;
+    return [CCParticleSystemQuad particleWithFile:@""];
+}
+
 
 @end

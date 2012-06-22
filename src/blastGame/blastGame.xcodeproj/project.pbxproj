@@ -377,6 +377,9 @@
 		CE909B2E150A5A1300E66CA4 /* MainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE909B2D150A5A1300E66CA4 /* MainLayer.m */; };
 		CE9342F8152B231600EE5233 /* iphone.json in Resources */ = {isa = PBXBuildFile; fileRef = CE9342F7152B231600EE5233 /* iphone.json */; };
 		CE9342FB152B294800EE5233 /* Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9342FA152B294800EE5233 /* Properties.m */; };
+		CE9936691594EC1900684BF3 /* sideGalaxy.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE9936661594EC1900684BF3 /* sideGalaxy.plist */; };
+		CE99366A1594EC1900684BF3 /* titleStars.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE9936671594EC1900684BF3 /* titleStars.plist */; };
+		CE99366B1594EC1900684BF3 /* titleGalaxy.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE9936681594EC1900684BF3 /* titleGalaxy.plist */; };
 		CEB042EE14FD16840005EF2B /* MainBGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042ED14FD16840005EF2B /* MainBGLayer.m */; };
 		CEB042F314FD16DC0005EF2B /* cocos2d_template.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042F214FD16DC0005EF2B /* cocos2d_template.m */; };
 		CEB042F614FD17620005EF2B /* BlastedEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042F514FD17620005EF2B /* BlastedEngine.m */; };
@@ -907,6 +910,9 @@
 		CE9342F7152B231600EE5233 /* iphone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iphone.json; sourceTree = "<group>"; };
 		CE9342F9152B294800EE5233 /* Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Properties.h; sourceTree = "<group>"; };
 		CE9342FA152B294800EE5233 /* Properties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Properties.m; sourceTree = "<group>"; };
+		CE9936661594EC1900684BF3 /* sideGalaxy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sideGalaxy.plist; sourceTree = "<group>"; };
+		CE9936671594EC1900684BF3 /* titleStars.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = titleStars.plist; sourceTree = "<group>"; };
+		CE9936681594EC1900684BF3 /* titleGalaxy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = titleGalaxy.plist; sourceTree = "<group>"; };
 		CEB042EC14FD16840005EF2B /* MainBGLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBGLayer.h; sourceTree = "<group>"; };
 		CEB042ED14FD16840005EF2B /* MainBGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBGLayer.m; sourceTree = "<group>"; };
 		CEB042F114FD16DC0005EF2B /* cocos2d_template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cocos2d_template.h; sourceTree = "<group>"; };
@@ -1729,6 +1735,9 @@
 		CEBABA8E15177718004F11E7 /* particles */ = {
 			isa = PBXGroup;
 			children = (
+				CE9936661594EC1900684BF3 /* sideGalaxy.plist */,
+				CE9936671594EC1900684BF3 /* titleStars.plist */,
+				CE9936681594EC1900684BF3 /* titleGalaxy.plist */,
 				5B92BFAE154DD365006F79A7 /* 2starfield1.plist */,
 				5B92BFAF154DD365006F79A7 /* starfield1.plist */,
 				CE39BA691518C46B006285C7 /* hitplanet.plist */,
@@ -2086,6 +2095,9 @@
 				5B37953E1593B31B0003DB3C /* titleBackgroundHD.png in Resources */,
 				5B37953F1593B31B0003DB3C /* titleButtonsHD.png in Resources */,
 				5B3795401593B31B0003DB3C /* titleHeaderHD.png in Resources */,
+				CE9936691594EC1900684BF3 /* sideGalaxy.plist in Resources */,
+				CE99366A1594EC1900684BF3 /* titleStars.plist in Resources */,
+				CE99366B1594EC1900684BF3 /* titleGalaxy.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

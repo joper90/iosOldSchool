@@ -15,6 +15,13 @@ typedef enum{
     
 } backroundPattern;
 
+typedef enum
+{
+    GALAXYONE,
+    GALAXYTWO,
+    STARFIELD
+} titlePatterns;
+
 @interface BGparticleEffects : NSObject
 {
     
@@ -22,4 +29,5 @@ typedef enum{
 
 +(CCParticleSystem*) getParticle:(backroundPattern) pattern;
 +(CCParticleSystem*) getHitPlanet;
++(CCParticleSystem*) getTitleGalaxy:(titlePatterns)titlePatterns;
 @end
