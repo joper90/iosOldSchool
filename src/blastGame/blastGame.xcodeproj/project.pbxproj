@@ -380,6 +380,7 @@
 		CE9936691594EC1900684BF3 /* sideGalaxyHD.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE9936661594EC1900684BF3 /* sideGalaxyHD.plist */; };
 		CE99366A1594EC1900684BF3 /* titleStarsHD.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE9936671594EC1900684BF3 /* titleStarsHD.plist */; };
 		CE99366B1594EC1900684BF3 /* titleGalaxyHD.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE9936681594EC1900684BF3 /* titleGalaxyHD.plist */; };
+		CE99366F1595CA3100684BF3 /* TitleFGlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE99366E1595CA3100684BF3 /* TitleFGlayer.m */; };
 		CEB042EE14FD16840005EF2B /* MainBGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042ED14FD16840005EF2B /* MainBGLayer.m */; };
 		CEB042F314FD16DC0005EF2B /* cocos2d_template.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042F214FD16DC0005EF2B /* cocos2d_template.m */; };
 		CEB042F614FD17620005EF2B /* BlastedEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042F514FD17620005EF2B /* BlastedEngine.m */; };
@@ -913,6 +914,8 @@
 		CE9936661594EC1900684BF3 /* sideGalaxyHD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sideGalaxyHD.plist; sourceTree = "<group>"; };
 		CE9936671594EC1900684BF3 /* titleStarsHD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = titleStarsHD.plist; sourceTree = "<group>"; };
 		CE9936681594EC1900684BF3 /* titleGalaxyHD.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = titleGalaxyHD.plist; sourceTree = "<group>"; };
+		CE99366D1595CA3100684BF3 /* TitleFGlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleFGlayer.h; sourceTree = "<group>"; };
+		CE99366E1595CA3100684BF3 /* TitleFGlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleFGlayer.m; sourceTree = "<group>"; };
 		CEB042EC14FD16840005EF2B /* MainBGLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBGLayer.h; sourceTree = "<group>"; };
 		CEB042ED14FD16840005EF2B /* MainBGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBGLayer.m; sourceTree = "<group>"; };
 		CEB042F114FD16DC0005EF2B /* cocos2d_template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cocos2d_template.h; sourceTree = "<group>"; };
@@ -1705,6 +1708,8 @@
 				CEB042F214FD16DC0005EF2B /* cocos2d_template.m */,
 				CEB042FB14FD1AEA0005EF2B /* TitleBGLayer.h */,
 				CEB042FC14FD1AEA0005EF2B /* TitleBGLayer.m */,
+				CE99366D1595CA3100684BF3 /* TitleFGlayer.h */,
+				CE99366E1595CA3100684BF3 /* TitleFGlayer.m */,
 				CEB0430114FD32FB0005EF2B /* FlashFGLayer.h */,
 				CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */,
 				CEBA46BD151A00AC00AE5E31 /* GameOverLayer.h */,
@@ -2234,6 +2239,7 @@
 				5BF2596C15408F3100DFA3E7 /* HiScoreLayer.m in Sources */,
 				CE36C30015494BB2006B56E5 /* RowPositions.m in Sources */,
 				CE287E8115610E9B00F6DC33 /* AudioElementData.m in Sources */,
+				CE99366F1595CA3100684BF3 /* TitleFGlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

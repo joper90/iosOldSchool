@@ -11,6 +11,7 @@
       "lockon": "targetHD.png",
       "titlegfx":"titleHeaderHD.png",
       "menubackground": "titleBackgroundHD.jpg",
+      "menulocation":"700x300",
       "gunx": "40",
       "fontsize": "20",
       "fontsizecountdown": "70",

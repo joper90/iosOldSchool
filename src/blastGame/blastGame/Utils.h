@@ -36,4 +36,6 @@
 
 -(bool) isHD;
 
+-(CGPoint) covertStringOfCGPointToCGPoint:(NSString*) stringOfPoints;
+
 @end

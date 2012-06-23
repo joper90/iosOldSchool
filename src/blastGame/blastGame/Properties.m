@@ -14,6 +14,7 @@
             GUN_X_POSISTION,
             GUN_SPRITE_FILE,
             BLASTED_TITLE_FILE,
+            BLASTED_MENU_LOCATION,
             LINE_ONE, LINE_TWO, LINE_THREE,
             FONT_SIZE, FONT_SIZE_COUNTDOWN,
             FONT_LEVEL_NAME_SIZE,

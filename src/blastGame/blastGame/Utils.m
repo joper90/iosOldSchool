@@ -107,5 +107,16 @@ static Utils* utils = nil;
     return isHDmode;
 }
 
+-(CGPoint) covertStringOfCGPointToCGPoint:(NSString*) stringOfPoints
+{
+    int xLoc = 	[stringOfPoints rangeOfString:@"x"].location;
+    int xPos = [[stringOfPoints substringToIndex:xLoc]intValue];
+    int yPos = [[stringOfPoints substringFromIndex:xLoc + 1]intValue];
+    
+    CCLOG(@" x = %d and y = %d", xPos, yPos);		
+      
+    return ccp(xPos,yPos);
+}
+
 
 @end
