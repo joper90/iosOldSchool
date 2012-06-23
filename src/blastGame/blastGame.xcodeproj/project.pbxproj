@@ -1695,7 +1695,7 @@
 			name = jsonFiles;
 			sourceTree = "<group>";
 		};
-		CEB042F014FD16A80005EF2B /* layers */ = {
+		CE9936701595E76400684BF3 /* MainGame Layers */ = {
 			isa = PBXGroup;
 			children = (
 				CEEE4B6414FE2D8A002621BC /* MainLayer.h */,
@@ -1704,12 +1704,28 @@
 				CEB042ED14FD16840005EF2B /* MainBGLayer.m */,
 				CEBABA8815173618004F11E7 /* MainFGLayer.h */,
 				CEBABA8915173618004F11E7 /* MainFGLayer.m */,
-				CEB042F114FD16DC0005EF2B /* cocos2d_template.h */,
-				CEB042F214FD16DC0005EF2B /* cocos2d_template.m */,
+			);
+			name = "MainGame Layers";
+			sourceTree = "<group>";
+		};
+		CE9936711595E78F00684BF3 /* TitleLayer */ = {
+			isa = PBXGroup;
+			children = (
 				CEB042FB14FD1AEA0005EF2B /* TitleBGLayer.h */,
 				CEB042FC14FD1AEA0005EF2B /* TitleBGLayer.m */,
 				CE99366D1595CA3100684BF3 /* TitleFGlayer.h */,
 				CE99366E1595CA3100684BF3 /* TitleFGlayer.m */,
+			);
+			name = TitleLayer;
+			sourceTree = "<group>";
+		};
+		CEB042F014FD16A80005EF2B /* layers */ = {
+			isa = PBXGroup;
+			children = (
+				CE9936701595E76400684BF3 /* MainGame Layers */,
+				CEB042F114FD16DC0005EF2B /* cocos2d_template.h */,
+				CEB042F214FD16DC0005EF2B /* cocos2d_template.m */,
+				CE9936711595E78F00684BF3 /* TitleLayer */,
 				CEB0430114FD32FB0005EF2B /* FlashFGLayer.h */,
 				CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */,
 				CEBA46BD151A00AC00AE5E31 /* GameOverLayer.h */,
