@@ -12,7 +12,7 @@
 #import "MainFGLayer.h"
 #import "MainBGLayer.h"
 
-@interface MainScene : CCLayer
+@interface MainScene : CCScene
 {
     
 }

@@ -240,6 +240,16 @@
 		5B37953E1593B31B0003DB3C /* titleBackgroundHD.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B37953A1593B31B0003DB3C /* titleBackgroundHD.png */; };
 		5B37953F1593B31B0003DB3C /* titleButtonsHD.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B37953B1593B31B0003DB3C /* titleButtonsHD.png */; };
 		5B3795401593B31B0003DB3C /* titleHeaderHD.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B37953C1593B31B0003DB3C /* titleHeaderHD.png */; };
+		5B37954C15972B020003DB3C /* IntroOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B37954B15972B010003DB3C /* IntroOne.m */; };
+		5B37955015972BA40003DB3C /* IntroOneLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B37954F15972BA40003DB3C /* IntroOneLayer.m */; };
+		5B37955515972D4C0003DB3C /* IntroTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B37955415972D4C0003DB3C /* IntroTwo.m */; };
+		5B37955815972D5E0003DB3C /* IntroThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B37955715972D5E0003DB3C /* IntroThree.m */; };
+		5B37955B15972D710003DB3C /* IntroFour.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B37955A15972D710003DB3C /* IntroFour.m */; };
+		5B37955E15972D800003DB3C /* IntroFive.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B37955D15972D7F0003DB3C /* IntroFive.m */; };
+		5B37956115972E260003DB3C /* IntroTwoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B37956015972E260003DB3C /* IntroTwoLayer.m */; };
+		5B37956415972F000003DB3C /* IntroThreeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B37956315972EFF0003DB3C /* IntroThreeLayer.m */; };
+		5B37956715972F0F0003DB3C /* IntroFourLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B37956615972F0F0003DB3C /* IntroFourLayer.m */; };
+		5B37956B15972F2D0003DB3C /* IntroFiveLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B37956A15972F2C0003DB3C /* IntroFiveLayer.m */; };
 		5B92BFB0154DD365006F79A7 /* 2starfield1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B92BFAE154DD365006F79A7 /* 2starfield1.plist */; };
 		5B92BFB1154DD365006F79A7 /* starfield1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B92BFAF154DD365006F79A7 /* starfield1.plist */; };
 		5BF25965153F434F00DFA3E7 /* PersistElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF25964153F434F00DFA3E7 /* PersistElements.m */; };
@@ -382,7 +392,6 @@
 		CE99366B1594EC1900684BF3 /* titleGalaxyHD.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE9936681594EC1900684BF3 /* titleGalaxyHD.plist */; };
 		CE99366F1595CA3100684BF3 /* TitleFGlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE99366E1595CA3100684BF3 /* TitleFGlayer.m */; };
 		CEB042EE14FD16840005EF2B /* MainBGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042ED14FD16840005EF2B /* MainBGLayer.m */; };
-		CEB042F314FD16DC0005EF2B /* cocos2d_template.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042F214FD16DC0005EF2B /* cocos2d_template.m */; };
 		CEB042F614FD17620005EF2B /* BlastedEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042F514FD17620005EF2B /* BlastedEngine.m */; };
 		CEB042FA14FD1A1C0005EF2B /* TitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042F914FD1A1C0005EF2B /* TitleScene.m */; };
 		CEB042FD14FD1AEA0005EF2B /* TitleBGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB042FC14FD1AEA0005EF2B /* TitleBGLayer.m */; };
@@ -641,6 +650,26 @@
 		5B37953A1593B31B0003DB3C /* titleBackgroundHD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleBackgroundHD.png; sourceTree = "<group>"; };
 		5B37953B1593B31B0003DB3C /* titleButtonsHD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleButtonsHD.png; sourceTree = "<group>"; };
 		5B37953C1593B31B0003DB3C /* titleHeaderHD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleHeaderHD.png; sourceTree = "<group>"; };
+		5B37954A15972B010003DB3C /* IntroOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroOne.h; sourceTree = "<group>"; };
+		5B37954B15972B010003DB3C /* IntroOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroOne.m; sourceTree = "<group>"; };
+		5B37954E15972BA30003DB3C /* IntroOneLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroOneLayer.h; sourceTree = "<group>"; };
+		5B37954F15972BA40003DB3C /* IntroOneLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroOneLayer.m; sourceTree = "<group>"; };
+		5B37955315972D4B0003DB3C /* IntroTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroTwo.h; sourceTree = "<group>"; };
+		5B37955415972D4C0003DB3C /* IntroTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroTwo.m; sourceTree = "<group>"; };
+		5B37955615972D5E0003DB3C /* IntroThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroThree.h; sourceTree = "<group>"; };
+		5B37955715972D5E0003DB3C /* IntroThree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroThree.m; sourceTree = "<group>"; };
+		5B37955915972D700003DB3C /* IntroFour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroFour.h; sourceTree = "<group>"; };
+		5B37955A15972D710003DB3C /* IntroFour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroFour.m; sourceTree = "<group>"; };
+		5B37955C15972D7D0003DB3C /* IntroFive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroFive.h; path = ../IntroFive.h; sourceTree = "<group>"; };
+		5B37955D15972D7F0003DB3C /* IntroFive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroFive.m; path = ../IntroFive.m; sourceTree = "<group>"; };
+		5B37955F15972E260003DB3C /* IntroTwoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroTwoLayer.h; sourceTree = "<group>"; };
+		5B37956015972E260003DB3C /* IntroTwoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroTwoLayer.m; sourceTree = "<group>"; };
+		5B37956215972EFF0003DB3C /* IntroThreeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroThreeLayer.h; sourceTree = "<group>"; };
+		5B37956315972EFF0003DB3C /* IntroThreeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroThreeLayer.m; sourceTree = "<group>"; };
+		5B37956515972F0E0003DB3C /* IntroFourLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroFourLayer.h; sourceTree = "<group>"; };
+		5B37956615972F0F0003DB3C /* IntroFourLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroFourLayer.m; sourceTree = "<group>"; };
+		5B37956915972F2C0003DB3C /* IntroFiveLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroFiveLayer.h; sourceTree = "<group>"; };
+		5B37956A15972F2C0003DB3C /* IntroFiveLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroFiveLayer.m; sourceTree = "<group>"; };
 		5B92BFAE154DD365006F79A7 /* 2starfield1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 2starfield1.plist; sourceTree = "<group>"; };
 		5B92BFAF154DD365006F79A7 /* starfield1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = starfield1.plist; sourceTree = "<group>"; };
 		5BB021DD15470E7F00299F34 /* dod.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dod.ttf; sourceTree = "<group>"; };
@@ -918,8 +947,6 @@
 		CE99366E1595CA3100684BF3 /* TitleFGlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleFGlayer.m; sourceTree = "<group>"; };
 		CEB042EC14FD16840005EF2B /* MainBGLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBGLayer.h; sourceTree = "<group>"; };
 		CEB042ED14FD16840005EF2B /* MainBGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBGLayer.m; sourceTree = "<group>"; };
-		CEB042F114FD16DC0005EF2B /* cocos2d_template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cocos2d_template.h; sourceTree = "<group>"; };
-		CEB042F214FD16DC0005EF2B /* cocos2d_template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cocos2d_template.m; sourceTree = "<group>"; };
 		CEB042F414FD17620005EF2B /* BlastedEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlastedEngine.h; sourceTree = "<group>"; };
 		CEB042F514FD17620005EF2B /* BlastedEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlastedEngine.m; sourceTree = "<group>"; };
 		CEB042F814FD1A1C0005EF2B /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
@@ -1206,6 +1233,55 @@
 				5B379429158D083B0003DB3C /* 16_yellowHD.png */,
 			);
 			name = wubwubs;
+			sourceTree = "<group>";
+		};
+		5B37954D15972B2F0003DB3C /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				5B37954A15972B010003DB3C /* IntroOne.h */,
+				5B37954B15972B010003DB3C /* IntroOne.m */,
+				5B37955315972D4B0003DB3C /* IntroTwo.h */,
+				5B37955415972D4C0003DB3C /* IntroTwo.m */,
+				5B37955615972D5E0003DB3C /* IntroThree.h */,
+				5B37955715972D5E0003DB3C /* IntroThree.m */,
+				5B37955915972D700003DB3C /* IntroFour.h */,
+				5B37955A15972D710003DB3C /* IntroFour.m */,
+				5B37955C15972D7D0003DB3C /* IntroFive.h */,
+				5B37955D15972D7F0003DB3C /* IntroFive.m */,
+			);
+			name = Intro;
+			sourceTree = "<group>";
+		};
+		5B37955115972BA90003DB3C /* Intro Layers */ = {
+			isa = PBXGroup;
+			children = (
+				5B37954E15972BA30003DB3C /* IntroOneLayer.h */,
+				5B37954F15972BA40003DB3C /* IntroOneLayer.m */,
+				5B37955F15972E260003DB3C /* IntroTwoLayer.h */,
+				5B37956015972E260003DB3C /* IntroTwoLayer.m */,
+				5B37956215972EFF0003DB3C /* IntroThreeLayer.h */,
+				5B37956315972EFF0003DB3C /* IntroThreeLayer.m */,
+				5B37956515972F0E0003DB3C /* IntroFourLayer.h */,
+				5B37956615972F0F0003DB3C /* IntroFourLayer.m */,
+				5B37956915972F2C0003DB3C /* IntroFiveLayer.h */,
+				5B37956A15972F2C0003DB3C /* IntroFiveLayer.m */,
+			);
+			name = "Intro Layers";
+			sourceTree = "<group>";
+		};
+		5B37955215972BF10003DB3C /* Other Layers */ = {
+			isa = PBXGroup;
+			children = (
+				CEB0430114FD32FB0005EF2B /* FlashFGLayer.h */,
+				CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */,
+				CEBA46BD151A00AC00AE5E31 /* GameOverLayer.h */,
+				CEBA46BE151A00AC00AE5E31 /* GameOverLayer.m */,
+				CE11B9D715232C75000EF2A0 /* LevelCompleteLayer.h */,
+				CE11B9D815232C75000EF2A0 /* LevelCompleteLayer.m */,
+				5BF2596A15408F3100DFA3E7 /* HiScoreLayer.h */,
+				5BF2596B15408F3100DFA3E7 /* HiScoreLayer.m */,
+			);
+			name = "Other Layers";
 			sourceTree = "<group>";
 		};
 		CE270CE514FCEAFF00C2DBA3 = {
@@ -1623,6 +1699,7 @@
 				CE11B9D415232C67000EF2A0 /* LevelCompleteScene.m */,
 				5BF2596715408E7F00DFA3E7 /* HiScoreScene.h */,
 				5BF2596815408E7F00DFA3E7 /* HiScoreScene.m */,
+				5B37954D15972B2F0003DB3C /* Intro */,
 			);
 			name = scene;
 			sourceTree = "<group>";
@@ -1700,7 +1777,7 @@
 			name = "MainGame Layers";
 			sourceTree = "<group>";
 		};
-		CE9936711595E78F00684BF3 /* TitleLayer */ = {
+		CE9936711595E78F00684BF3 /* Title Layer */ = {
 			isa = PBXGroup;
 			children = (
 				CEB042FB14FD1AEA0005EF2B /* TitleBGLayer.h */,
@@ -1708,24 +1785,16 @@
 				CE99366D1595CA3100684BF3 /* TitleFGlayer.h */,
 				CE99366E1595CA3100684BF3 /* TitleFGlayer.m */,
 			);
-			name = TitleLayer;
+			name = "Title Layer";
 			sourceTree = "<group>";
 		};
 		CEB042F014FD16A80005EF2B /* layers */ = {
 			isa = PBXGroup;
 			children = (
+				5B37955115972BA90003DB3C /* Intro Layers */,
 				CE9936701595E76400684BF3 /* MainGame Layers */,
-				CEB042F114FD16DC0005EF2B /* cocos2d_template.h */,
-				CEB042F214FD16DC0005EF2B /* cocos2d_template.m */,
-				CE9936711595E78F00684BF3 /* TitleLayer */,
-				CEB0430114FD32FB0005EF2B /* FlashFGLayer.h */,
-				CEB0430214FD32FB0005EF2B /* FlashFGLayer.m */,
-				CEBA46BD151A00AC00AE5E31 /* GameOverLayer.h */,
-				CEBA46BE151A00AC00AE5E31 /* GameOverLayer.m */,
-				CE11B9D715232C75000EF2A0 /* LevelCompleteLayer.h */,
-				CE11B9D815232C75000EF2A0 /* LevelCompleteLayer.m */,
-				5BF2596A15408F3100DFA3E7 /* HiScoreLayer.h */,
-				5BF2596B15408F3100DFA3E7 /* HiScoreLayer.m */,
+				CE9936711595E78F00684BF3 /* Title Layer */,
+				5B37955215972BF10003DB3C /* Other Layers */,
 			);
 			name = layers;
 			sourceTree = "<group>";
@@ -2221,7 +2290,6 @@
 				CE270E6B14FCEE2500C2DBA3 /* Utils.m in Sources */,
 				CE270E6F14FCF48F00C2DBA3 /* MainScene.m in Sources */,
 				CEB042EE14FD16840005EF2B /* MainBGLayer.m in Sources */,
-				CEB042F314FD16DC0005EF2B /* cocos2d_template.m in Sources */,
 				CEB042F614FD17620005EF2B /* BlastedEngine.m in Sources */,
 				CEB042FA14FD1A1C0005EF2B /* TitleScene.m in Sources */,
 				CEB042FD14FD1AEA0005EF2B /* TitleBGLayer.m in Sources */,
@@ -2248,6 +2316,16 @@
 				CE36C30015494BB2006B56E5 /* RowPositions.m in Sources */,
 				CE287E8115610E9B00F6DC33 /* AudioElementData.m in Sources */,
 				CE99366F1595CA3100684BF3 /* TitleFGlayer.m in Sources */,
+				5B37954C15972B020003DB3C /* IntroOne.m in Sources */,
+				5B37955015972BA40003DB3C /* IntroOneLayer.m in Sources */,
+				5B37955515972D4C0003DB3C /* IntroTwo.m in Sources */,
+				5B37955815972D5E0003DB3C /* IntroThree.m in Sources */,
+				5B37955B15972D710003DB3C /* IntroFour.m in Sources */,
+				5B37955E15972D800003DB3C /* IntroFive.m in Sources */,
+				5B37956115972E260003DB3C /* IntroTwoLayer.m in Sources */,
+				5B37956415972F000003DB3C /* IntroThreeLayer.m in Sources */,
+				5B37956715972F0F0003DB3C /* IntroFourLayer.m in Sources */,
+				5B37956B15972F2D0003DB3C /* IntroFiveLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

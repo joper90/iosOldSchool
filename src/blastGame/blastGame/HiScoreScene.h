@@ -10,7 +10,7 @@
 #import "HiScoreLayer.h"
 #import "cocos2d.h"
 
-@interface HiScoreScene : CCLayer 
+@interface HiScoreScene : CCScene 
 {
     
 }

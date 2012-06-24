@@ -9,7 +9,7 @@
 #import "cocos2d.h"
 #import "LevelCompleteLayer.h"
 
-@interface LevelCompleteScene : CCLayer {
+@interface LevelCompleteScene : CCScene {
     
 }
 +(CCScene*) scene;
