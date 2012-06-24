@@ -16,9 +16,23 @@
     CCLOG(@"TitleMenu BG Layer...with RC: %d",[self retainCount]);
 	if( (self=[super init])) 
     {
-        CCSprite* bgImage = [CCSprite spriteWithFile:[Properties instance].BLASTED_MENU_FILE];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            isHD = YES;
+        }else {
+            isHD = NO;
+        }
+        
+        
+        //Load the mob array.
+        mobList = [[NSMutableArray alloc]init];
+        [self loadUpMobs];
+        
+        CCSprite* bgImage = [CCSprite spriteWithFile:[Properties instance].BLASTED_MENU_BG_FILE];
         CCSprite* earth = [CCSprite spriteWithFile:[Properties instance].BASE_SPRITE_FILE];
         CCSprite* titleHeader = [CCSprite spriteWithFile:[Properties instance].BLASTED_TITLE_FILE];
+        
+        bgImage.position = [[Utils instance]center];
         
         earth.scale = 0.8f;
         earth.position = ccp(10,0);
@@ -53,33 +67,144 @@
         
         [self addChild:bgImage z:-1];
         [self addChild:earth z:10];
-        [self addChild:titleHeader];
+        [self addChild:titleHeader z:11];
         
-        
+        //Create a scheduler for random mob pops.
+        [self schedule:@selector(fireMob:) interval:3.3f];
         
     }
 	return self;
 }
 
--(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+-(void)fireMob:(ccTime)delta
 {
-    CGPoint touchLocation = [[Utils instance]locationFromTouchMultiPoint:touches];
-    if (CGRectContainsPoint(startGameRect, touchLocation))
+    CCLOG(@"Firing now..");
+    //Choose a random mob..
+    int choice = arc4random()%16;
+    CCSprite* flyMeToTheMoon = [mobList objectAtIndex:choice];
+    CGPoint movePoint;
+    if(isHD)
     {
-        CCLOG(@"StartGameRect");
-        //Reset the score and the multuplier and the level
-        
-        [[BlastedEngine instance]resetLevelCount];
-        [[BlastedEngine instance]resetScore];
-        [[BlastedEngine instance]resetMultiplier];
-        CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:2 scene:[MainScene scene]];
-        [[CCDirector sharedDirector]pushScene:ccFade];
-        
+        flyMeToTheMoon.position = ccp(980,750);
+        int yPos = arc4random()%768;
+        movePoint = ccp(20,yPos);
+    }else {
+        flyMeToTheMoon.position = ccp(480,320);
+        movePoint = ccp(10,10);
     }
-    else if (CGRectContainsPoint(hiScoreRect, touchLocation))
+    
+    flyMeToTheMoon.opacity = 1.0f;
+    flyMeToTheMoon.scale = 0.1f;
+    
+    id fadeIn = [CCFadeTo actionWithDuration:2 opacity:255.0f];
+    id moveTo = [CCMoveTo actionWithDuration:3 position:movePoint];
+    id scaleTo = [CCScaleTo actionWithDuration:3 scale:2.0f];
+    id allActions = [CCSpawn actions:fadeIn, moveTo, scaleTo, nil];
+    id cleanupAction = [CCCallFuncND actionWithTarget:self selector:@selector(cleanupSprite:) data:flyMeToTheMoon];
+    id seq = [CCSequence actions:allActions, cleanupAction, nil];
+    
+    [self addChild:flyMeToTheMoon z:5];
+    [flyMeToTheMoon runAction:seq];
+    
+}
+
+-(void)cleanupSprite:(CCSprite *)spriteToRemove
+{
+    [self removeChild:spriteToRemove cleanup:YES];
+}
+
+-(void)loadUpMobs
+{
+    //Another yuk function. .
+    //What are we running on phone/ipad
+    if (isHD)
     {
-        CCLOG(@"Hiscore Rect");
+        //Running on an iPad
+        CCSprite* red_1 = [CCSprite spriteWithFile:@"1_redHD.png"];
+        CCSprite* red_2 = [CCSprite spriteWithFile:@"2_redHD.png"];
+        CCSprite* red_3 = [CCSprite spriteWithFile:@"3_redHD.png"];
+        CCSprite* red_4 = [CCSprite spriteWithFile:@"4_greenHD.png"];
+        CCSprite* red_5 = [CCSprite spriteWithFile:@"5_greenHD.png"];
+        CCSprite* red_6 = [CCSprite spriteWithFile:@"6_blueHD.png"];
+        CCSprite* red_7 = [CCSprite spriteWithFile:@"7_blueHD.png"];
+        CCSprite* red_8 = [CCSprite spriteWithFile:@"8_purpleHD.png"];
+        CCSprite* red_9 = [CCSprite spriteWithFile:@"9_purpleHD.png"];
+        CCSprite* red_10 = [CCSprite spriteWithFile:@"10_yellowHD.png"];
+        CCSprite* red_11 = [CCSprite spriteWithFile:@"11_yellowHD.png"];
+        CCSprite* red_12 = [CCSprite spriteWithFile:@"12_pinkHD.png"];
+        CCSprite* red_13 = [CCSprite spriteWithFile:@"13_pinkHD.png"];
+        CCSprite* red_14 = [CCSprite spriteWithFile:@"14_whiteHD.png"];
+        CCSprite* red_15 = [CCSprite spriteWithFile:@"15_whiteHD.png"];
+        CCSprite* red_16 = [CCSprite spriteWithFile:@"16_redHD.png"];
+        
+        [mobList addObject:red_1];
+        [mobList addObject:red_2];
+        [mobList addObject:red_3];
+        [mobList addObject:red_4];
+        [mobList addObject:red_5];
+        [mobList addObject:red_6];
+        [mobList addObject:red_7];
+        [mobList addObject:red_8];
+        [mobList addObject:red_9];
+        [mobList addObject:red_10];
+        [mobList addObject:red_11];
+        [mobList addObject:red_12];
+        [mobList addObject:red_13];
+        [mobList addObject:red_14];
+        [mobList addObject:red_15];
+        [mobList addObject:red_16];
+    }
+    else {
+        //Running on a iPhone
+        CCSprite* red_1 = [CCSprite spriteWithFile:@"1_red.png"];
+        CCSprite* red_2 = [CCSprite spriteWithFile:@"2_red.png"];
+        CCSprite* red_3 = [CCSprite spriteWithFile:@"3_red.png"];
+        CCSprite* red_4 = [CCSprite spriteWithFile:@"4_green.png"];
+        CCSprite* red_5 = [CCSprite spriteWithFile:@"5_green.png"];
+        CCSprite* red_6 = [CCSprite spriteWithFile:@"6_blue.png"];
+        CCSprite* red_7 = [CCSprite spriteWithFile:@"7_blue.png"];
+        CCSprite* red_8 = [CCSprite spriteWithFile:@"8_purple.png"];
+        CCSprite* red_9 = [CCSprite spriteWithFile:@"9_purple.png"];
+        CCSprite* red_10 = [CCSprite spriteWithFile:@"10_yellow.png"];
+        CCSprite* red_11 = [CCSprite spriteWithFile:@"11_yellow.png"];
+        CCSprite* red_12 = [CCSprite spriteWithFile:@"12_pink.png"];
+        CCSprite* red_13 = [CCSprite spriteWithFile:@"13_pink.png"];
+        CCSprite* red_14 = [CCSprite spriteWithFile:@"14_white.png"];
+        CCSprite* red_15 = [CCSprite spriteWithFile:@"15_white.png"];
+        CCSprite* red_16 = [CCSprite spriteWithFile:@"16_red.png"];
+        
+        [mobList addObject:red_1];
+        [mobList addObject:red_2];
+        [mobList addObject:red_3];
+        [mobList addObject:red_4];
+        [mobList addObject:red_5];
+        [mobList addObject:red_6];
+        [mobList addObject:red_7];
+        [mobList addObject:red_8];
+        [mobList addObject:red_9];
+        [mobList addObject:red_10];
+        [mobList addObject:red_11];
+        [mobList addObject:red_12];
+        [mobList addObject:red_13];
+        [mobList addObject:red_14];
+        [mobList addObject:red_15];
+        [mobList addObject:red_16];
     }
     
 }
+
+-(void)onExit
+{
+    [mobList release];
+    CCLOG(@"Title BG Layer --->OnExit() Called with RC: %d",[self retainCount]);
+    [super onExit];
+}
+
+-(void) dealloc
+{
+	CCLOG(@"Tile BG Layer --->dealloc() Called with RC: %d",[self retainCount]);
+    [super dealloc];
+}
+
+
 @end

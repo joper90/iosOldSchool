@@ -9,6 +9,7 @@
 #import "cocos2d.h"
 #import "CoreImports.h"
 #import "TitleBGLayer.h"
+#import "TitleFGlayer.h"
 
 @interface TitleScene : CCLayer
 {

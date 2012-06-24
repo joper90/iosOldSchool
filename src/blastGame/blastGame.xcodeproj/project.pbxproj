@@ -1208,13 +1208,6 @@
 			name = wubwubs;
 			sourceTree = "<group>";
 		};
-		5B3794E6158D08510003DB3C /* oldSprites */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = oldSprites;
-			sourceTree = "<group>";
-		};
 		CE270CE514FCEAFF00C2DBA3 = {
 			isa = PBXGroup;
 			children = (
@@ -1665,7 +1658,6 @@
 				5B3794E7158D08670003DB3C /* target.png */,
 				5B3794E8158D08670003DB3C /* targetHD.png */,
 				5B37936C158D08130003DB3C /* wubwubs */,
-				5B3794E6158D08510003DB3C /* oldSprites */,
 			);
 			name = "game sprites";
 			sourceTree = "<group>";

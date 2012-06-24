@@ -50,15 +50,15 @@
     CCLOG(@"Planet Sprite : %@", planetSprite);
     globeSprite = [CCSprite spriteWithFile:planetSprite];
     globeSprite.scale = 4.0f;
-    globeSprite.position = ccp(-120, [Utils instance].screenHeight/2);
+    globeSprite.position = ccp(-170, [Utils instance].screenHeight/2);
     
     [self addChild:globeSprite z:Z_PLANET_TAG tag:PLANET_TAG];
     
     //Globe actions
-    CCScaleTo* zoom = [CCScaleTo actionWithDuration:3 scale:0.9f];
+    CCScaleTo* zoom = [CCScaleTo actionWithDuration:3 scale:0.4f];
     CCAction* rot  = [CCRotateBy actionWithDuration:3 angle:360.0f];
     CCSpawn* actions = [CCSpawn actions:zoom, rot, nil];
-    CCScaleTo* zoomOut = [CCScaleTo actionWithDuration:0.5f scale:1.0f];
+    CCScaleTo* zoomOut = [CCScaleTo actionWithDuration:0.5f scale:0.5f];
     CCSequence* seq = [CCSequence actions:actions, zoomOut, nil];
     
     [globeSprite runAction:seq];
@@ -112,6 +112,7 @@
 {
     CCLOG(@"InitGun...with RC: %d",[self retainCount]);
     NSString* sprite = [Properties instance].LOCKON_SPRITE_FILE;
+    CCLOG(@"lockon : %@",sprite);
     lockOnSprite = [CCSprite spriteWithFile:sprite];
     [lockOnSprite retain];
     
@@ -119,6 +120,7 @@
     bullets = [[NSMutableArray alloc]initWithCapacity:4];
     for (int x = 0; x < 4; x++)
     {
+        CCLOG(@"Rocket = %@",[Properties instance].ROCKET);
         [bullets addObject:[CCParticleSystemQuad particleWithFile:[Properties instance].ROCKET]];
     }
     

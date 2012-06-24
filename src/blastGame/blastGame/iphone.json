@@ -10,6 +10,7 @@
       "gun": "gun.png",
       "menubackground": "blastedMenu.png",
       "menulocation":"700x300",
+      "menubuttons":"titleButtonsHD.png",
       "lockon": "target.png",
       "titlegfx":"titleHeader.png",
       "gunx": "40",

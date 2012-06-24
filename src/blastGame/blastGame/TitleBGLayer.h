@@ -13,14 +13,18 @@
 
 @interface TitleBGLayer : CCLayer
 {
-    CGRect startGameRect;
-    CGRect hiScoreRect;
-    CGRect howToPlayRect;
+    
+    bool isHD;
     
     CCParticleSystem* partSystemTitleGalaxy1;
     CCParticleSystem* partSystemTitleGalaxy2;
     CCParticleSystem* partSystemTitleStars;
+    
+    NSMutableArray* mobList;
 }
 
+-(void)loadUpMobs;
+-(void)fireMob:(ccTime)delta;
+-(void)cleanupSprite:(CCSprite*)spriteToRemove;
 
 @end

@@ -21,10 +21,10 @@
     NSString* BASE_SPRITE_FILE;
     NSString* LOCKON_SPRITE_FILE;
     
-    NSString* BLASTED_MENU_FILE; 
-    
+    NSString* BLASTED_MENU_BG_FILE; 
     NSString* BLASTED_TITLE_FILE;
-    CGPoint BLASTED_MENU_LOCATION;
+    CGPoint   BLASTED_MENU_LOCATION;
+    NSString* BLASTED_MENU_BUTTONS;
     
     float     GUN_X_POSISTION;
     
@@ -46,16 +46,18 @@
 @property (assign, readwrite) float DRAG_SELECT_FREEDOM;
 @property (assign, readwrite) float QUIT_DRAG_SIZE;
 
-@property (assign, readwrite) NSString* ROCKET ;
-@property (assign, readwrite) NSString* EXPLODE ;
+@property (retain, readwrite) NSString* ROCKET ;
+@property (retain, readwrite) NSString* EXPLODE ;
 
-@property (assign, readwrite) NSString* GUN_SPRITE_FILE;
-@property (assign, readwrite) NSString* BASE_SPRITE_FILE;
-@property (assign, readwrite) NSString* LOCKON_SPRITE_FILE;
+@property (retain, readwrite) NSString* GUN_SPRITE_FILE;
+@property (retain, readwrite) NSString* BASE_SPRITE_FILE;
+@property (retain, readwrite) NSString* LOCKON_SPRITE_FILE;
 
-@property (assign, readwrite) NSString* BLASTED_MENU_FILE; 
-@property (assign, readwrite) NSString* BLASTED_TITLE_FILE; 
+@property (retain, readwrite) NSString* BLASTED_MENU_BG_FILE; 
+@property (retain, readwrite) NSString* BLASTED_TITLE_FILE; 
 @property (assign, readwrite) CGPoint BLASTED_MENU_LOCATION; 
+@property (retain, readwrite) NSString* BLASTED_MENU_BUTTONS; 
+
 
 @property (assign, readwrite) float GUN_X_POSISTION;
 

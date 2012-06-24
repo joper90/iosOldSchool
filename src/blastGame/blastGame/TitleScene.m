@@ -17,9 +17,10 @@
 	CCScene *scene = [CCScene node];
 
     CCLayer* titleScreenLayerBG = [TitleBGLayer node];
-    
+    CCLayer* titleScreenLayerFG = [TitleFGlayer node];
     
     [scene addChild:titleScreenLayerBG];
+    [scene addChild:titleScreenLayerFG];
 	
 	// return the scene
 	return scene;

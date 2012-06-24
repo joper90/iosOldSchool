@@ -12,6 +12,10 @@
 
 @interface TitleFGlayer : CCLayer {
     
+    CGRect startGameRect;
+    CGRect hiScoreRect;
+    CGRect howToPlayRect;
+
 }
 
 @end
