@@ -11,7 +11,7 @@
 
 @implementation BlastedEngine
 
-@synthesize iosDeviceProperties, isHdMode,
+@synthesize iosDeviceProperties, isHdMode, sound,
             currentScore, mobsArray, level, levelList, currentMobDisplayedCount, 
             currentPlayingLevel, currentMultiplier, 
             currentMultiplierCountDownSpeed ,levelPercentComplete, hiScores, rowPositionData,
@@ -48,6 +48,10 @@ static BlastedEngine* blastedEngine = nil;
             CCLOG(@"RUNNING ON iPHONE");
             self.isHdMode = NO;
         }
+        //Default to set sound enabled
+        self.sound = YES;
+        
+        
         //Load the properties files up now
         [Properties instance];
         

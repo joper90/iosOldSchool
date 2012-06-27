@@ -250,6 +250,8 @@
 		5B37956415972F000003DB3C /* IntroThreeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B37956315972EFF0003DB3C /* IntroThreeLayer.m */; };
 		5B37956715972F0F0003DB3C /* IntroFourLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B37956615972F0F0003DB3C /* IntroFourLayer.m */; };
 		5B37956B15972F2D0003DB3C /* IntroFiveLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B37956A15972F2C0003DB3C /* IntroFiveLayer.m */; };
+		5B37956E159B6BB50003DB3C /* noSoundHD.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B37956C159B6BB40003DB3C /* noSoundHD.png */; };
+		5B37956F159B6BB60003DB3C /* soundHD.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B37956D159B6BB40003DB3C /* soundHD.png */; };
 		5B92BFB0154DD365006F79A7 /* 2starfield1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B92BFAE154DD365006F79A7 /* 2starfield1.plist */; };
 		5B92BFB1154DD365006F79A7 /* starfield1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B92BFAF154DD365006F79A7 /* starfield1.plist */; };
 		5BF25965153F434F00DFA3E7 /* PersistElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF25964153F434F00DFA3E7 /* PersistElements.m */; };
@@ -381,7 +383,6 @@
 		CE39BA6C151914EB006285C7 /* exp2.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA6B151914EB006285C7 /* exp2.plist */; };
 		CE3D597B152B05D60085CD40 /* PropertiesJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3D597A152B05D60085CD40 /* PropertiesJsonParser.m */; };
 		CE55E123152B538300B3CD04 /* ipad.json in Resources */ = {isa = PBXBuildFile; fileRef = CE55E122152B538300B3CD04 /* ipad.json */; };
-		CE55E136152B7E6F00B3CD04 /* blastedMenu2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE55E135152B7E6F00B3CD04 /* blastedMenu2.png */; };
 		CE68D5E4152CA69B00680BF5 /* 2galaxyOne.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE68D5E3152CA69B00680BF5 /* 2galaxyOne.plist */; };
 		CE909B2B150A548F00E66CA4 /* FlightPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = CE909B2A150A548F00E66CA4 /* FlightPaths.m */; };
 		CE909B2E150A5A1300E66CA4 /* MainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE909B2D150A5A1300E66CA4 /* MainLayer.m */; };
@@ -670,6 +671,8 @@
 		5B37956615972F0F0003DB3C /* IntroFourLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroFourLayer.m; sourceTree = "<group>"; };
 		5B37956915972F2C0003DB3C /* IntroFiveLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroFiveLayer.h; sourceTree = "<group>"; };
 		5B37956A15972F2C0003DB3C /* IntroFiveLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroFiveLayer.m; sourceTree = "<group>"; };
+		5B37956C159B6BB40003DB3C /* noSoundHD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noSoundHD.png; sourceTree = "<group>"; };
+		5B37956D159B6BB40003DB3C /* soundHD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundHD.png; sourceTree = "<group>"; };
 		5B92BFAE154DD365006F79A7 /* 2starfield1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 2starfield1.plist; sourceTree = "<group>"; };
 		5B92BFAF154DD365006F79A7 /* starfield1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = starfield1.plist; sourceTree = "<group>"; };
 		5BB021DD15470E7F00299F34 /* dod.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dod.ttf; sourceTree = "<group>"; };
@@ -932,7 +935,6 @@
 		CE3D5979152B05D60085CD40 /* PropertiesJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertiesJsonParser.h; sourceTree = "<group>"; };
 		CE3D597A152B05D60085CD40 /* PropertiesJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertiesJsonParser.m; sourceTree = "<group>"; };
 		CE55E122152B538300B3CD04 /* ipad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ipad.json; sourceTree = "<group>"; };
-		CE55E135152B7E6F00B3CD04 /* blastedMenu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blastedMenu2.png; sourceTree = "<group>"; };
 		CE68D5E3152CA69B00680BF5 /* 2galaxyOne.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 2galaxyOne.plist; sourceTree = "<group>"; };
 		CE909B29150A548F00E66CA4 /* FlightPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightPaths.h; sourceTree = "<group>"; };
 		CE909B2A150A548F00E66CA4 /* FlightPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightPaths.m; sourceTree = "<group>"; };
@@ -1717,9 +1719,10 @@
 			children = (
 				5B3795391593B31B0003DB3C /* titleBackgroundHD.jpg */,
 				5B37953A1593B31B0003DB3C /* titleBackgroundHD.png */,
+				5B37956C159B6BB40003DB3C /* noSoundHD.png */,
+				5B37956D159B6BB40003DB3C /* soundHD.png */,
 				5B37953B1593B31B0003DB3C /* titleButtonsHD.png */,
 				5B37953C1593B31B0003DB3C /* titleHeaderHD.png */,
-				CE55E135152B7E6F00B3CD04 /* blastedMenu2.png */,
 				CEBA46C0151E237300AE5E31 /* blastedMenu.png */,
 			);
 			name = artAssets;
@@ -1939,7 +1942,6 @@
 				CEBA46C1151E237300AE5E31 /* blastedMenu.png in Resources */,
 				CE9342F8152B231600EE5233 /* iphone.json in Resources */,
 				CE55E123152B538300B3CD04 /* ipad.json in Resources */,
-				CE55E136152B7E6F00B3CD04 /* blastedMenu2.png in Resources */,
 				CE68D5E4152CA69B00680BF5 /* 2galaxyOne.plist in Resources */,
 				5B92BFB0154DD365006F79A7 /* 2starfield1.plist in Resources */,
 				5B92BFB1154DD365006F79A7 /* starfield1.plist in Resources */,
@@ -2180,6 +2182,8 @@
 				CE9936691594EC1900684BF3 /* sideGalaxyHD.plist in Resources */,
 				CE99366A1594EC1900684BF3 /* titleStarsHD.plist in Resources */,
 				CE99366B1594EC1900684BF3 /* titleGalaxyHD.plist in Resources */,
+				5B37956E159B6BB50003DB3C /* noSoundHD.png in Resources */,
+				5B37956F159B6BB60003DB3C /* soundHD.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

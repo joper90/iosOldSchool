@@ -25,6 +25,9 @@
     NSString* BLASTED_TITLE_FILE;
     CGPoint   BLASTED_MENU_LOCATION;
     NSString* BLASTED_MENU_BUTTONS;
+    NSString* BLASTED_MENU_SOUND_ON;
+    NSString* BLASTED_MENU_SOUND_OFF;
+    CGPoint   BLASTED_MENU_SOUND_LOCATION;
     
     float     GUN_X_POSISTION;
     
@@ -55,8 +58,11 @@
 
 @property (retain, readwrite) NSString* BLASTED_MENU_BG_FILE; 
 @property (retain, readwrite) NSString* BLASTED_TITLE_FILE; 
-@property (assign, readwrite) CGPoint BLASTED_MENU_LOCATION; 
-@property (retain, readwrite) NSString* BLASTED_MENU_BUTTONS; 
+@property (assign, readwrite) CGPoint BLASTED_MENU_LOCATION;
+@property (assign, readwrite) CGPoint BLASTED_MENU_SOUND_LOCATION; 
+@property (retain, readwrite) NSString* BLASTED_MENU_BUTTONS;
+@property (retain, readwrite) NSString* BLASTED_MENU_SOUND_ON; 
+@property (retain, readwrite) NSString* BLASTED_MENU_SOUND_OFF; 
 
 
 @property (assign, readwrite) float GUN_X_POSISTION;

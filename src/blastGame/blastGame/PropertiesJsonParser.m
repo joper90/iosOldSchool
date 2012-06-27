@@ -61,6 +61,12 @@
         [Properties instance].BLASTED_TITLE_FILE = [p objectForKey:@"titlegfx"];
         [Properties instance].BLASTED_MENU_BUTTONS = [p objectForKey:@"menubuttons"];
         
+        NSArray* soundArray = [[p objectForKey:@"soundbuttons"] componentsSeparatedByString:@"|"];
+        [Properties instance].BLASTED_MENU_SOUND_ON = [soundArray objectAtIndex:0];
+        [Properties instance].BLASTED_MENU_SOUND_OFF = [soundArray objectAtIndex:1];
+        
+        [Properties instance].BLASTED_MENU_SOUND_LOCATION = [[Utils instance]covertStringOfCGPointToCGPoint:[p objectForKey:@"soundbuttonslocation"]];
+        
         [Properties instance].FONT_SIZE = [[p objectForKey:@"fontsize"]floatValue];
         [Properties instance].FONT_SIZE_COUNTDOWN = [[p objectForKey:@"fontsizecountdown"]floatValue];
         [Properties instance].FONT_LEVEL_NAME_SIZE =[[p objectForKey:@"fontlevelnamesize"]floatValue];

@@ -25,6 +25,9 @@
     
     bool isHdMode;
     
+    //Sound info
+    bool sound;
+    
     //CCLayer CallBack information
     MainLayer* injectedGamePlayLayer;
     //SCore layer
@@ -88,6 +91,7 @@
 @property (assign, readwrite) int currentMobDisplayedCount;
 @property (assign, readwrite) int level;
 @property (assign, readwrite) bool isHdMode;
+@property (assign, readwrite) bool sound;
 @property (retain, readwrite) NSMutableArray* mobsArray;
 @property (retain, readwrite) NSMutableDictionary*  levelList;
 @property (assign, readwrite) float currentMultiplierCountDownSpeed;
@@ -97,6 +101,9 @@
 
 //singleton of the engine
 +(BlastedEngine*) instance;
+
+
+//Sound enabled
 
 //GamePlayLayer Stuff
 -(void)injectGamePlayLayer:(MainLayer*)gamePlayLayer;

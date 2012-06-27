@@ -13,6 +13,8 @@
       "menubackground": "titleBackgroundHD.jpg",
       "menulocation":"780x200",
       "menubuttons":"titleButtonsHD.png",
+      "soundbuttons":"soundHD.png|noSoundHD.png",
+      "soundbuttonslocation":"480x72",
       "gunx": "40",
       "fontsize": "20",
       "fontsizecountdown": "70",

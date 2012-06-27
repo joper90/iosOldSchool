@@ -11,6 +11,8 @@
       "menubackground": "blastedMenu.png",
       "menulocation":"700x300",
       "menubuttons":"titleButtonsHD.png",
+      "soundbuttons":"soundHD.png|noSoundHD.png",
+      "soundbuttonslocation":"920x460",
       "lockon": "target.png",
       "titlegfx":"titleHeader.png",
       "gunx": "40",

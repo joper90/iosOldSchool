@@ -24,15 +24,24 @@
         CCSprite* menuSprite = [CCSprite spriteWithFile:[Properties instance].BLASTED_MENU_BUTTONS];
         menuSprite.position = [Properties instance].BLASTED_MENU_LOCATION;
         
+        soundEnabledSprite = [CCSprite spriteWithFile:[Properties instance].BLASTED_MENU_SOUND_ON];
+        soundDisabledSprite = [CCSprite spriteWithFile:[Properties instance].BLASTED_MENU_SOUND_OFF];
+        soundEnabledSprite.visible = YES;
+        soundDisabledSprite.visible = NO;
+        soundEnabledSprite.position =[Properties instance].BLASTED_MENU_SOUND_LOCATION;
+        soundDisabledSprite.position =[Properties instance].BLASTED_MENU_SOUND_LOCATION;
+        
         //Start game rect
         //Needs to change to iphone orginal coords
         startGameRect = CGRectMake(565, 276, 429, 114);
         hiScoreRect   = CGRectMake(565, 146, 429, 114);
         howToPlayRect = CGRectMake(565, 16, 429, 114);
+        soundSet = CGRectMake(425, 14, 110, 110);
         
         
         [self addChild:menuSprite];
-        
+        [self addChild:soundEnabledSprite];
+        [self addChild:soundDisabledSprite];
 
     }
     return self;
@@ -65,6 +74,21 @@
     else if (CGRectContainsPoint(howToPlayRect, touchLocation))
     {
         CCLOG(@"How to play Rect");
+    }
+    else if (CGRectContainsPoint(soundSet,touchLocation))
+    {
+          if (soundEnabledSprite.visible == YES)
+          {
+              soundDisabledSprite.visible = YES;
+              soundEnabledSprite.visible = NO;
+              [BlastedEngine instance].sound = NO;
+              CCLOG(@"Sound disabled");
+          }else {
+              soundDisabledSprite.visible = NO;
+              soundEnabledSprite.visible = YES;
+              [BlastedEngine instance].sound = YES;
+              CCLOG(@"Sound enabled");
+          }
     }
      
     

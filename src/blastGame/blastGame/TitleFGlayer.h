@@ -15,6 +15,10 @@
     CGRect startGameRect;
     CGRect hiScoreRect;
     CGRect howToPlayRect;
+    CGRect soundSet;
+    
+    CCSprite* soundEnabledSprite;
+    CCSprite* soundDisabledSprite;
 
 }
 
