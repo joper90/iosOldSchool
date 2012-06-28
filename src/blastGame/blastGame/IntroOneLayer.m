@@ -19,7 +19,7 @@
     {
         
         self.isTouchEnabled = YES;
-        
+        //id snowParticle = [CCParticleSystemQuad 
     }
 	return self;
 }
