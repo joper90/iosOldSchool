@@ -14,5 +14,5 @@
 {
     
 }
-
++(CCScene*) scene;
 @end

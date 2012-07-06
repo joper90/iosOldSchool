@@ -19,7 +19,25 @@
     {
         
         self.isTouchEnabled = YES;
-        //id snowParticle = [CCParticleSystemQuad 
+        CGPoint midPoint = [[Utils instance]center];
+        //Load the bgImages
+        CCSprite* bgImages = [CCSprite spriteWithFile:@"background.png"];
+        bgImages.position = midPoint;
+        bgImages.opacity = 0;
+        
+        CCLabelTTF *skipText = [CCLabelTTF labelWithString:@"Touch to skip" fontName:@"efmi" fontSize:25];
+        skipText.position = ccp(midPoint.x,20);
+        [self addChild:skipText z:10];
+        
+        id snowParticle = [CCParticleSystemQuad particleWithFile:@"snowfall.plist"];
+        [self addChild:snowParticle z:5];
+        
+        [self addChild:bgImages z:0];
+        
+        CCFadeIn *fade = [CCFadeIn actionWithDuration:5.0f];
+        [bgImages runAction:fade];
+        
+        
     }
 	return self;
 }

@@ -1800,6 +1800,15 @@
 			name = jsonFiles;
 			sourceTree = "<group>";
 		};
+		CE949F4815A625270009DD5B /* IntroEffects */ = {
+			isa = PBXGroup;
+			children = (
+				5B379581159BAF880003DB3C /* snowfall.plist */,
+				5B379582159BAF880003DB3C /* starburst.plist */,
+			);
+			name = IntroEffects;
+			sourceTree = "<group>";
+		};
 		CE9936701595E76400684BF3 /* MainGame Layers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1853,8 +1862,7 @@
 		CEBABA8E15177718004F11E7 /* particles */ = {
 			isa = PBXGroup;
 			children = (
-				5B379581159BAF880003DB3C /* snowfall.plist */,
-				5B379582159BAF880003DB3C /* starburst.plist */,
+				CE949F4815A625270009DD5B /* IntroEffects */,
 				CE9936661594EC1900684BF3 /* sideGalaxyHD.plist */,
 				CE9936671594EC1900684BF3 /* titleStarsHD.plist */,
 				CE9936681594EC1900684BF3 /* titleGalaxyHD.plist */,

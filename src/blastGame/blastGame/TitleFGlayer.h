@@ -9,6 +9,7 @@
 #import "CoreImports.h"
 #import "cocos2d.h"
 #import "Properties.h"
+#import "IntroOne.h"
 
 @interface TitleFGlayer : CCLayer {
     
