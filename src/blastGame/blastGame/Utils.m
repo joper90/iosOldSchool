@@ -82,12 +82,28 @@ static Utils* utils = nil;
     return actualPath;
 }
 
--(CGPoint) convertToiPadPoint:(float)iPhonePoint_X:(float)iPhonePoint_Y
+-(CGPoint) convertToiPadPointX:(float)iPhonePoint_X andY:(float)iPhonePoint_Y
 {
     if (isHDmode)
         return ccp(iPhonePoint_X/480*1024,iPhonePoint_Y/320*768);
     else
         return ccp(iPhonePoint_X,iPhonePoint_Y);
+}
+
+-(float) convertXtoiPad:(float)pointX
+{
+    if (isHDmode)
+        return pointX/480*1024;
+    else
+        return pointX;
+}
+
+-(float) convertYtoiPad:(float)pointY
+{
+    if (isHDmode)
+        return pointY/320*768;
+    else
+        return pointY;
 }
 
 -(CGRect) convertToIPadMakeRect:(float)x y1:(float)y width:(float)width height:(float)height

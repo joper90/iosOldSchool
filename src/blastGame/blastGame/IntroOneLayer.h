@@ -10,7 +10,7 @@
 #import "CoreImports.h"
 
 @interface IntroOneLayer : CCLayer {
-    
+    CCLabelTTF *introText;
 }
 
 @end

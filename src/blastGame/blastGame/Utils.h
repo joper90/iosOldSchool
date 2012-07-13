@@ -30,7 +30,9 @@
 
 -(float)workOutBarFactorFromLenght:(float) lenght byTime:(float)time usingPollTime:(float)pollTime;
 
--(CGPoint) convertToiPadPoint:(float)iPhonePoint_X:(float)iPhonePoint_Y;
+-(CGPoint) convertToiPadPointX:(float)iPhonePoint_X andY:(float)iPhonePoint_Y;
+-(float) convertXtoiPad:(float) pointX;
+-(float) convertYtoiPad:(float) pointY;
 
 -(CGRect) convertToIPadMakeRect:(float)x y1:(float)y width:(float)width height:(float)height;
 

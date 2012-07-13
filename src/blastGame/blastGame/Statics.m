@@ -20,4 +20,13 @@ NSString *const IPHONE_PROPERTIES = @"iphone.json";
 
 NSString *const BLASTED_SCORES = @"blastedData";
 
+
+
+//Intro text strings
+NSString *const INTRO_ONE_TEXT =@"Intro one text";
+NSString *const INTRO_TWO_TEXT =@"Intro two text";
+NSString *const INTRO_THREE_TEXT =@"Intro three text";
+NSString *const INTRO_FOUR_TEXT =@"Intro four text";
+
+
 @end

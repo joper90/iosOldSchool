@@ -61,6 +61,7 @@
 #define T_MAIN_SCENE            5001
 
 
+
 typedef enum
 {
     SIMPLE,
@@ -107,6 +108,11 @@ extern NSString *const COMPANY_NAME;
 extern NSString *const COMPANY_SUBTEXT;
 extern NSString *const COPYRIGHT_MESSAGE;
 
+//Level Opening text
+extern NSString *const INTRO_ONE_TEXT;
+extern NSString *const INTRO_TWO_TEXT;
+extern NSString *const INTRO_THREE_TEXT;
+extern NSString *const INTRO_FOUR_TEXT;
 
 //JSON FILE
 extern NSString *const JSON_FILE;
