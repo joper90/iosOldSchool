@@ -13,5 +13,5 @@
 @interface IntroTwo : CCScene {
     
 }
-
++(CCScene*) scene;
 @end

@@ -8,9 +8,10 @@
 
 #import "CCLayer.h"
 #import "CoreImports.h"
+#import "IntroFour.h"
 
 @interface IntroThreeLayer : CCLayer {
-    
+    CCLabelTTF *introText;
 }
 
 @end

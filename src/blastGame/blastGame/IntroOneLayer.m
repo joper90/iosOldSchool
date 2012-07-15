@@ -73,7 +73,7 @@
 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    //CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:0.5f scene:[TitleScene scene]];
-    //[[CCDirector sharedDirector]pushScene:ccFade];
+    CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:0.5f scene:[IntroTwo scene]];
+    [[CCDirector sharedDirector]pushScene:ccFade];
 }
 @end

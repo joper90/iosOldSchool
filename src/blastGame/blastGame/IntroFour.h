@@ -13,5 +13,5 @@
 @interface IntroFour : CCScene {
     
 }
-
++(CCScene*) scene;
 @end

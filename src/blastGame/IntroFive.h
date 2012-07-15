@@ -13,5 +13,5 @@
 @interface IntroFive : CCScene {
     
 }
-
++(CCScene*) scene;
 @end
