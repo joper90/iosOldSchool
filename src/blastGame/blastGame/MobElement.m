@@ -26,17 +26,10 @@
     sprite = spriteToAdd;
     isAlive = NO;
     isPumping = NO;
-    [sprite retain];
 }
 
 -(void)removeSprite
 {
-    [sprite release];
 }
 
--(void)dealloc
-{
-    [sprite dealloc];
-    [super dealloc];
-}
 @end

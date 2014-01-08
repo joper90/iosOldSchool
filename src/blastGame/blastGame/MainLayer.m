@@ -12,23 +12,23 @@
 
 -(id) init
 {
-    CCLOG(@"MainLayer...with RC: %d",[self retainCount]);
+    CCLOG(@"MainLayer...with ");
 	if( (self=[super init])) 
     {
         
         //Testing injections
         [[BlastedEngine instance]injectGamePlayLayer:self];
-        CCLOG(@"-->injected...with RC: %d",[self retainCount]);
-        //CCLOG(@"-->removed...with RC: %d",[self retainCount]);
+        CCLOG(@"-->injected...with ");
+        //CCLOG(@"-->removed...with ");
      
         currentTouchesTags = [[NSMutableArray alloc]init];
               
-        CCLOG(@"----->currenTouchedAllocted...with RC: %d",[self retainCount]);
+        CCLOG(@"----->currenTouchedAllocted...with ");
         //Lets load level One up
         [[BlastedEngine instance]loadLevel:[BlastedEngine instance].level withLayer:self];  //load the level
-        CCLOG(@"----->loadLevelCompleted...with RC: %d",[self retainCount]);
+        CCLOG(@"----->loadLevelCompleted...with ");
         maxWave = [[BlastedEngine instance]getWaveCountByCurrentLevel]; //set the waves on this level.
-        CCLOG(@"----->GotWaveCount...with RC: %d",[self retainCount]);
+        CCLOG(@"----->GotWaveCount...with ");
         
         CCLOG(@"----->Starting music");
         [[SimpleAudioEngine sharedEngine]playBackgroundMusic:[[BlastedEngine instance]getBackGroundMusic]];
@@ -41,7 +41,7 @@
 
 -(void)levelCountDown
 {
-    CCLOG(@"levelCountDown...with RC: %d",[self retainCount]);
+    CCLOG(@"levelCountDown...with ");
     countDownLabel = [CCLabelTTF labelWithString:@"3" fontName:@"zxspectr.ttf" fontSize:[Properties instance].FONT_SIZE_COUNTDOWN];
     [self addChild:countDownLabel z:Z_COUNTDOWN_TEXT_TAG tag:COUNTDOWN_TEXT_TAG];
     
@@ -76,7 +76,7 @@
 
 -(void)levelCountDownTimeout:(id)sender
 {
-    CCLOG(@"levelCountDownTimeout...with RC: %d",[self retainCount]);
+    CCLOG(@"levelCountDownTimeout...with ");
     NSNumber* ttt = sender;
     int x = [ttt integerValue];
     
@@ -110,11 +110,10 @@
 
 -(void)initGun
 {
-    CCLOG(@"InitGun...with RC: %d",[self retainCount]);
+    CCLOG(@"InitGun...with ");
     NSString* sprite = [Properties instance].LOCKON_SPRITE_FILE;
     CCLOG(@"lockon : %@",sprite);
     lockOnSprite = [CCSprite spriteWithFile:sprite];
-    [lockOnSprite retain];
     
     //Load up the particle systems into the bullet array.
     bullets = [[NSMutableArray alloc]initWithCapacity:4];
@@ -138,12 +137,12 @@
     [self addChild:gunSprite z:Z_GUN_TAG tag:GUN_TAG];
     
     //enable touches
-    self.isTouchEnabled = YES;
+    self.touchEnabled = YES;
 }
 
 -(void)startAndMoveMobWave:(int) mobWavetoStart
 {
-    CCLOG(@"StartAndMoveWave...with RC: %d",[self retainCount]);
+    CCLOG(@"StartAndMoveWave...with ");
     int currentRowSize = [[BlastedEngine instance]getRowCountSizeByRowNumber:currentWave];
     int currentMobDisplayCount = [BlastedEngine instance].currentMobDisplayedCount;
     
@@ -177,7 +176,7 @@
 
 -(void)scheduleNewWave:(ccTime)delta
 {
-    CCLOG(@"scheduleNewWave...with RC: %d",[self retainCount]);
+    CCLOG(@"scheduleNewWave...with ");
     CCLOG(@"NEW WAVE CALLED... %d/%d", currentWave,maxWave);
 
     if (currentWave == maxWave)
@@ -202,7 +201,7 @@
 
 -(void)levelFinished:(ccTime)delta
 {
-    CCLOG(@"levelFinished...with RC: %d",[self retainCount]);
+    CCLOG(@"levelFinished...with ");
     BOOL completed = [[BlastedEngine instance]isLevelCompleted];
     if (completed)
     {
@@ -223,13 +222,13 @@
 //TOUCH Handlers
 -(void) registerWithTouchDispatcher
 {
-    CCLOG(@"RegisterWithTouchDispacther...with RC: %d",[self retainCount]);
-    [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+    CCLOG(@"RegisterWithTouchDispacther...with ");
+    [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 }
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    CCLOG(@"ccTouchBegan...with RC: %d",[self retainCount]);
+    CCLOG(@"ccTouchBegan...with ");
     //Reset the touch.
     touchMoved = NO;    
     
@@ -243,7 +242,7 @@
 
 -(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    CCLOG(@"ccTouchEnded...with RC: %d",[self retainCount]);
+    CCLOG(@"ccTouchEnded...with ");
     //May need to check of drag lenght, incase of use input error.
     endTouch = [[Utils instance]locationFromTouchSinglePoint:touch];
     
@@ -300,7 +299,7 @@
 
 -(void)checkSpriteTouchedAction
 {
-    CCLOG(@"CheckSpriteTouchedAction...with RC: %d",[self retainCount]);
+    CCLOG(@"CheckSpriteTouchedAction...with ");
     
     if (mobTouched != nil)
     {
@@ -348,7 +347,7 @@
 
 -(void) mobMoveCompleted:(id)sender //Called from flightPath when its reached the planet /base
 {
-    CCLOG(@"MoveCompleted...with RC: %d",[self retainCount]);
+    CCLOG(@"MoveCompleted...with ");
     NSNumber* ttt = sender;
     int x = [ttt integerValue];
     CCLOG(@"mobMoveCompleted (MainLayer): called with tag : %d", x);
@@ -363,7 +362,7 @@
     //Stop new waves comming in
     [self unschedule:@selector(scheduleNewWave:)];
     //Disable touches
-    self.isTouchEnabled = NO;
+    self.touchEnabled = NO;
     //Remove touches
     [currentTouchesTags removeAllObjects];
     
@@ -373,8 +372,8 @@
 
 -(void)mobMoveCompletedRemoveAllMobs:(ccTime) delta
 {
-    CCLOG(@"MoveCompletedRemvoeAllMobs...with RC: %d",[self retainCount]);
-    self.isTouchEnabled = NO;
+    CCLOG(@"MoveCompletedRemvoeAllMobs...with ");
+    self.touchEnabled = NO;
     [self unschedule:_cmd];
     //Remove all sprites
     NSMutableArray* spritesList = [[BlastedEngine instance]getMobListArray];
@@ -395,7 +394,7 @@
 
 -(void)clearAction
 {
-    CCLOG(@"ClearAction...with RC: %d",[self retainCount]);
+    CCLOG(@"ClearAction...with ");
     CCLOG(@"Clear Actions called - Clearing Objects : %d", [currentTouchesTags count]);
     for (int x =0; x < currentTouchesTags.count; x++)
     {
@@ -413,7 +412,7 @@
 
 -(void)laserAction
 {
-    CCLOG(@"LaserAction...with RC: %d",[self retainCount]);
+    CCLOG(@"LaserAction...with ");
     CCLOG(@"Laser called : with touched count %d", currentTouchesTags.count);
         
     for (int x =0; x < currentTouchesTags.count; x++)
@@ -459,7 +458,7 @@
                            
 -(void)bangAction:(id)object
 {
-    CCLOG(@"bangAction...with RC: %d",[self retainCount]);
+    CCLOG(@"bangAction...with ");
     BangAction* bang = (BangAction*) object;
     CCLOG(@"BangAction called : for tag %d", bang.tag);
     
@@ -473,7 +472,6 @@
     [self removeChildByTag:bang.tag cleanup:NO]; 
     [[BlastedEngine instance]setDeadMob:bang.tag];
     
-    [bang release];
     
 
 }
@@ -577,21 +575,16 @@
 
 -(void)onExit
 {
-    [lockOnSprite release];
-    [currentTouchesTags release];
-    [bullets release];
-    [bangArray release];
     [[BlastedEngine instance]releaseGamePlayLayer];
     currentTouchesTags = nil;
-    CCLOG(@"Main Layer --->OnExit() Called with RC: %d",[self retainCount]);
-    [[CCTouchDispatcher sharedDispatcher]removeDelegate:self];
+    CCLOG(@"Main Layer --->OnExit() Called with ");
+    [[[CCDirector sharedDirector] touchDispatcher]removeDelegate:self];
     [super onExit];
 }
 
 -(void) dealloc
 {
-	CCLOG(@"Main Layer --->dealloc() Called with RC: %d",[self retainCount]);
-    [super dealloc];
+	CCLOG(@"Main Layer --->dealloc() Called with ");
 }
 
 @end

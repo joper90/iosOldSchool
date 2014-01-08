@@ -49,20 +49,20 @@
 @property (assign, readwrite) float DRAG_SELECT_FREEDOM;
 @property (assign, readwrite) float QUIT_DRAG_SIZE;
 
-@property (retain, readwrite) NSString* ROCKET ;
-@property (retain, readwrite) NSString* EXPLODE ;
+@property (strong, readwrite) NSString* ROCKET ;
+@property (strong, readwrite) NSString* EXPLODE ;
 
-@property (retain, readwrite) NSString* GUN_SPRITE_FILE;
-@property (retain, readwrite) NSString* BASE_SPRITE_FILE;
-@property (retain, readwrite) NSString* LOCKON_SPRITE_FILE;
+@property (strong, readwrite) NSString* GUN_SPRITE_FILE;
+@property (strong, readwrite) NSString* BASE_SPRITE_FILE;
+@property (strong, readwrite) NSString* LOCKON_SPRITE_FILE;
 
-@property (retain, readwrite) NSString* BLASTED_MENU_BG_FILE; 
-@property (retain, readwrite) NSString* BLASTED_TITLE_FILE; 
+@property (strong, readwrite) NSString* BLASTED_MENU_BG_FILE; 
+@property (strong, readwrite) NSString* BLASTED_TITLE_FILE; 
 @property (assign, readwrite) CGPoint BLASTED_MENU_LOCATION;
 @property (assign, readwrite) CGPoint BLASTED_MENU_SOUND_LOCATION; 
-@property (retain, readwrite) NSString* BLASTED_MENU_BUTTONS;
-@property (retain, readwrite) NSString* BLASTED_MENU_SOUND_ON; 
-@property (retain, readwrite) NSString* BLASTED_MENU_SOUND_OFF; 
+@property (strong, readwrite) NSString* BLASTED_MENU_BUTTONS;
+@property (strong, readwrite) NSString* BLASTED_MENU_SOUND_ON; 
+@property (strong, readwrite) NSString* BLASTED_MENU_SOUND_OFF; 
 
 
 @property (assign, readwrite) float GUN_X_POSISTION;

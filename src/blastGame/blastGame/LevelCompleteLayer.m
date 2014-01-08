@@ -13,10 +13,10 @@
 
 -(id) init
 {
-    CCLOG(@"GameOver Layer...with RC: %d",[self retainCount]);
+    CCLOG(@"GameOver Layer...with ");
 	if( (self=[super init])) 
     {
-        self.isTouchEnabled = YES;
+        self.touchEnabled = YES;
         
         CCLabelTTF *levelComplete = [CCLabelTTF labelWithString:@"Level Complete..." fontName:@"efmi" fontSize:48];
         

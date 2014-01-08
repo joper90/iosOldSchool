@@ -31,17 +31,17 @@
 }
 
 @property int levelId;
-@property (readwrite, retain) NSString* levelType;
-@property (readwrite, retain) NSString* levelName;
+@property (readwrite, strong) NSString* levelType;
+@property (readwrite, strong) NSString* levelName;
 @property (readwrite, assign) float baseSpeed;
 @property (readwrite, assign) float lineTime;
 @property (readwrite, assign) int waveCount;
 @property (readwrite, assign) int bgParticle;
-@property (readwrite, retain) NSString* music;
-@property (readwrite, retain) NSMutableArray* rowData;
-@property (readwrite, retain) NSMutableArray* patternData;
-@property (readwrite, retain) NSMutableArray* rowSizeCountArray;
-@property (readwrite, retain) NSMutableArray* mobAliveStatus;
+@property (readwrite, strong) NSString* music;
+@property (readwrite, strong) NSMutableArray* rowData;
+@property (readwrite, strong) NSMutableArray* patternData;
+@property (readwrite, strong) NSMutableArray* rowSizeCountArray;
+@property (readwrite, strong) NSMutableArray* mobAliveStatus;
 @property (readwrite, assign) float dropDelay;
 @property (readwrite, assign) float pumpSpace;
 

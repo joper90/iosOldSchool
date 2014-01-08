@@ -21,7 +21,7 @@
         [[BlastedEngine instance]injectScoreLayer:self];
         
         //enable touches
-        self.isTouchEnabled = NO;
+        self.touchEnabled = NO;
         
         //Score:
         scoreString = [NSString stringWithFormat:@"Score: %d",[BlastedEngine instance].currentScore];

@@ -13,7 +13,7 @@
 
 @interface MainBGLayer : CCLayer
 {
-    CCParticleSystem* partSystem;
+    CCParticleSystem* __weak partSystem;
     
     CGPoint lineOneStart;
     CGPoint lineOneEnd;
@@ -23,6 +23,6 @@
     CGPoint lineThreeEnd;
 }
 
-@property (readwrite, assign) CCParticleSystem* partSystem;
+@property (readwrite, weak) CCParticleSystem* partSystem;
 
 @end

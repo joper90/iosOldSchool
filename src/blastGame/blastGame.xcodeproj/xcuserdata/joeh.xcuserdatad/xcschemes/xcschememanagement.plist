@@ -16,9 +16,39 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>cocos2d.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>cocos2dlibOld.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>5B0187B41876CE860084B110</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B0187C11876CE870084B110</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B0189161876D3BA0084B110</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B0189231876D3BB0084B110</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CE270CEF14FCEB0000C2DBA3</key>
 		<dict>
 			<key>primary</key>

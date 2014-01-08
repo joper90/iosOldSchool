@@ -1,20 +1,20 @@
-//
-//  AppDelegate.h
-//  blastGame
-//
-//  Created by AppleUser on 28/02/2012.
-//  Copyright __MyCompanyName__ 2012. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
+#import "cocos2d.h"
 
-@class RootViewController;
+// Added only for iOS 6 support
+@interface MyNavigationController : UINavigationController <CCDirectorDelegate>
+@end
 
-@interface AppDelegate : NSObject <UIApplicationDelegate> {
-	UIWindow			*window;
-	RootViewController	*viewController;
+@interface AppController : NSObject <UIApplicationDelegate>
+{
+	UIWindow *window_;
+	MyNavigationController *navController_;
+    
+	CCDirectorIOS	*__unsafe_unretained director_;							// weak ref
 }
 
-@property (nonatomic, retain) UIWindow *window;
+@property (nonatomic, strong) UIWindow *window;
+@property (readonly) MyNavigationController *navController;
+@property (unsafe_unretained, readonly) CCDirectorIOS *director;
 
 @end

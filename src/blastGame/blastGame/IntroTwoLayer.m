@@ -13,10 +13,10 @@
 
 -(id) init
 {
-    CCLOG(@"IntroTwo Layer...with RC: %d",[self retainCount]);
+    CCLOG(@"IntroTwo Layer...with ");
 	if( (self=[super init])) 
     {
-        self.isTouchEnabled = YES;
+        self.touchEnabled = YES;
         CGPoint midPoint = [[Utils instance]center];
         //Load the bgImages
 

@@ -24,14 +24,14 @@
     float offscreenStart;
 }
 
-@property (retain, readwrite) NSMutableDictionary* startPositionMap1;
-@property (retain, readwrite) NSMutableDictionary* startPositionMap2;
-@property (retain, readwrite) NSMutableDictionary* startPositionMap3;
-@property (retain, readwrite) NSMutableDictionary* startPositionMap4;
-@property (retain, readwrite) NSMutableDictionary* startPositionMap5;
-@property (retain, readwrite) NSMutableDictionary* startPositionMap6;
-@property (retain, readwrite) NSMutableDictionary* startPositionMap7;
-@property (retain, readwrite) NSMutableDictionary* startPositionMap8;
+@property (strong, readwrite) NSMutableDictionary* startPositionMap1;
+@property (strong, readwrite) NSMutableDictionary* startPositionMap2;
+@property (strong, readwrite) NSMutableDictionary* startPositionMap3;
+@property (strong, readwrite) NSMutableDictionary* startPositionMap4;
+@property (strong, readwrite) NSMutableDictionary* startPositionMap5;
+@property (strong, readwrite) NSMutableDictionary* startPositionMap6;
+@property (strong, readwrite) NSMutableDictionary* startPositionMap7;
+@property (strong, readwrite) NSMutableDictionary* startPositionMap8;
 
 -(void)createAllData;
 -(void)injectElements:(NSMutableDictionary*) elementToInject withRows:(int)rowCount;

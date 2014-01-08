@@ -84,9 +84,7 @@ static BlastedEngine* blastedEngine = nil;
 //GamePlayLayer Injection
 -(void)injectGamePlayLayer:(MainLayer *)gamePlayLayer
 {
-    CCLOG(@"---> INJECTING GamePlay Layer  ..with RC: %d",[gamePlayLayer retainCount]);
     injectedGamePlayLayer = gamePlayLayer;
-    CCLOG(@"---> INJECTED                  ..with RC: %d",[gamePlayLayer retainCount]);
 }
 
 -(void)releaseGamePlayLayer
@@ -97,9 +95,7 @@ static BlastedEngine* blastedEngine = nil;
 //SCore layer injection
 -(void)injectScoreLayer:(MainFGLayer *)scorePlayLayer
 {
-    CCLOG(@"---> INJECTING Score Layer  ..with RC: %d",[scorePlayLayer retainCount]);
     injectedScoreLayer = scorePlayLayer;
-    CCLOG(@"---> INJECTED                  ..with RC: %d",[scorePlayLayer retainCount]);
 
 }
 
@@ -280,9 +276,10 @@ static BlastedEngine* blastedEngine = nil;
                 mobCreated.mobType = [self insertMobEnumFromSpriteNumber:singleRowNum];
                 
                 //Get the required pattern
-                CCSequence* aSeq = [self getPatternFromInt:singleCharPattern movementModifer:0.0f withTag:currentSpriteTag currentPos:mobStartLocation withLayer:layer];
+                CCSequence* aSeq = [[CCSequence alloc]init];
+                aSeq = [self getPatternFromInt:singleCharPattern movementModifer:0.0f withTag:currentSpriteTag currentPos:mobStartLocation withLayer:layer];
                 
-                mobCreated.actionSequenceToRun = [aSeq copy];                                                            
+                mobCreated.actionSequenceToRun = aSeq;
                 currentSpriteTag++;
             }
             
@@ -442,8 +439,7 @@ static BlastedEngine* blastedEngine = nil;
         [mArray addObject:[mobsArray objectAtIndex:cPos]];
     }
     NSArray* retArray = [[NSArray alloc]initWithArray:mArray];
-    [mArray release];
-    return [retArray autorelease];
+    return retArray;
 }
 
 //Level Loading and setting
@@ -530,22 +526,6 @@ static BlastedEngine* blastedEngine = nil;
     currentMobDisplayedCount = currentMobDisplayedCount + incAmount;
 }
 
--(void)dealloc
-{
-    [rowPositionData release];
-    [mobsArray release];
-    [redMobSprites release];
-    [yellowMobSprites release];
-    [blueMobSprites release];
-    [greenMobSprites release];
-    [whiteMobSprites release];
-    [pinkMobSprites release];
-    [purpleMobSprites release];
-    [levelList release];
-    [iosDeviceProperties release];
-    [persistHiScoreElement release];
-    [super dealloc];
-}
 
 
 //Crap sprite loading..

@@ -27,6 +27,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5B0187C11876CE870084B110"
+               BuildableName = "cocos2dlibOldTests.xctest"
+               BlueprintName = "cocos2dlibOldTests"
+               ReferencedContainer = "container:blastGame.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5B0189231876D3BB0084B110"
+               BuildableName = "cocos2dTests.xctest"
+               BlueprintName = "cocos2dTests"
+               ReferencedContainer = "container:blastGame.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

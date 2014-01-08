@@ -15,10 +15,10 @@
 
 -(id) init
 {
-    CCLOG(@"TitleMenu BG Layer...with RC: %d",[self retainCount]);
+    CCLOG(@"TitleMenu BG Layer...with ");
 	if( (self=[super init])) 
     {
-        self.isTouchEnabled = YES;
+        self.touchEnabled = YES;
      
         
         CCSprite* menuSprite = [CCSprite spriteWithFile:[Properties instance].BLASTED_MENU_BUTTONS];

@@ -41,7 +41,7 @@
     int level;
     int currentMobDisplayedCount;
     
-    LevelElementData* currentPlayingLevel;
+    LevelElementData* __weak currentPlayingLevel;
     
     //HiScore Element;
     PersistElements* persistHiScoreElement;
@@ -69,22 +69,22 @@
      NSMutableDictionary*  levelList; 
     
     //Array of the hiScores:
-    NSMutableArray* hiScores;
+    NSMutableArray* __weak hiScores;
     
 }
 
-@property (retain, readwrite) NSMutableDictionary* iosDeviceProperties;
+@property (strong, readwrite) NSMutableDictionary* iosDeviceProperties;
 
-@property (retain, readwrite) NSMutableArray* redMobSprites;
-@property (retain, readwrite) NSMutableArray* yellowMobSprites;
-@property (retain, readwrite) NSMutableArray* blueMobSprites;
-@property (retain, readwrite) NSMutableArray* greenMobSprites;
-@property (retain, readwrite) NSMutableArray* pinkMobSprites;
-@property (retain, readwrite) NSMutableArray* whiteMobSprites;
-@property (retain, readwrite) NSMutableArray* purpleMobSprites;
+@property (strong, readwrite) NSMutableArray* redMobSprites;
+@property (strong, readwrite) NSMutableArray* yellowMobSprites;
+@property (strong, readwrite) NSMutableArray* blueMobSprites;
+@property (strong, readwrite) NSMutableArray* greenMobSprites;
+@property (strong, readwrite) NSMutableArray* pinkMobSprites;
+@property (strong, readwrite) NSMutableArray* whiteMobSprites;
+@property (strong, readwrite) NSMutableArray* purpleMobSprites;
 
-@property (assign, readwrite) LevelElementData* currentPlayingLevel;
-@property (assign, readwrite) RowPositions* rowPositionData;
+@property (weak, readwrite) LevelElementData* currentPlayingLevel;
+@property (strong, readwrite) RowPositions* rowPositionData;
 @property (assign, readwrite) float levelPercentComplete; 
 @property (assign, readwrite) int currentScore;
 @property (assign, readwrite) int currentMultiplier;
@@ -92,10 +92,10 @@
 @property (assign, readwrite) int level;
 @property (assign, readwrite) bool isHdMode;
 @property (assign, readwrite) bool sound;
-@property (retain, readwrite) NSMutableArray* mobsArray;
-@property (retain, readwrite) NSMutableDictionary*  levelList;
+@property (strong, readwrite) NSMutableArray* mobsArray;
+@property (strong, readwrite) NSMutableDictionary*  levelList;
 @property (assign, readwrite) float currentMultiplierCountDownSpeed;
-@property (assign, readwrite) NSMutableArray* hiScores;
+@property (weak, readwrite) NSMutableArray* hiScores;
 
 
 

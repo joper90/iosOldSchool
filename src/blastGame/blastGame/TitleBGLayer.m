@@ -13,7 +13,7 @@
 
 -(id) init
 {
-    CCLOG(@"TitleMenu BG Layer...with RC: %d",[self retainCount]);
+    CCLOG(@"TitleMenu BG Layer...");
 	if( (self=[super init])) 
     {
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
@@ -100,7 +100,7 @@
     id moveTo = [CCMoveTo actionWithDuration:3 position:movePoint];
     id scaleTo = [CCScaleTo actionWithDuration:3 scale:2.0f];
     id allActions = [CCSpawn actions:fadeIn, moveTo, scaleTo, nil];
-    id cleanupAction = [CCCallFuncND actionWithTarget:self selector:@selector(cleanupSprite:) data:flyMeToTheMoon];
+    id cleanupAction = [CCCallFuncND actionWithTarget:self selector:@selector(cleanupSprite:) data:(__bridge void *)(flyMeToTheMoon)];
     id seq = [CCSequence actions:allActions, cleanupAction, nil];
     
     [self addChild:flyMeToTheMoon z:5];
@@ -195,16 +195,9 @@
 
 -(void)onExit
 {
-    [mobList release];
-    CCLOG(@"Title BG Layer --->OnExit() Called with RC: %d",[self retainCount]);
     [super onExit];
 }
 
--(void) dealloc
-{
-	CCLOG(@"Tile BG Layer --->dealloc() Called with RC: %d",[self retainCount]);
-    [super dealloc];
-}
 
 
 @end

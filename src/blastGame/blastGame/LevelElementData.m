@@ -41,9 +41,7 @@
 -(void)addAllRowsPatterns:(NSMutableArray *)allRows andAllPatterns:(NSMutableArray *)allPatterns
 {
     rowData = [allRows copy];
-    [rowData retain];
     patternData = [allPatterns copy]; 
-    [patternData retain];
 }
 
 -(void)dumpLevelData
@@ -99,19 +97,5 @@
     return YES;
 }
 
--(void)dealloc
-{
-    [rowData release];
-    [rowData dealloc];
-    rowData = nil;
-    
-    [patternData release];
-    [patternData dealloc];
-    
-    [rowSizeCountArray release];
-    [rowSizeCountArray dealloc];
-    patternData = nil;
-    [super dealloc];
-}
 
 @end

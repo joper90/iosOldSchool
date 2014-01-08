@@ -14,11 +14,11 @@
 
 -(id) init
 {
-    CCLOG(@"IntroOne Layer...with RC: %d",[self retainCount]);
+    CCLOG(@"IntroOne Layer...with ");
 	if( (self=[super init])) 
     {
         
-        self.isTouchEnabled = YES;
+        self.touchEnabled = YES;
         
     }
 	return self;

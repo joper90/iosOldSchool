@@ -18,8 +18,7 @@
 	if( (self=[super init])) 
     {
         //disable touches
-        self.isTouchEnabled = YES;
-
+        self.touchEnabled = YES;
         int part = [[BlastedEngine instance]getBackGroundParticle];
         partSystem = [BGparticleEffects getParticle:part];
     
@@ -46,13 +45,13 @@
     
     //Line One
     glLineWidth(10);
-    glColor4ub(150, 0, 0, 40);
+    ccDrawColor4F(150, 0, 0, 40);
 	    
     ccDrawLine(lineOneStart, lineOneEnd);
     ccDrawLine(lineTwoStart, lineTwoEnd);
     ccDrawLine(lineThreeStart, lineThreeEnd);
     
-    glColor4ub(200, 0, 0, 100); 
+    ccDrawColor4F(200, 0, 0, 100);
     glLineWidth(2);
     ccDrawLine(lineOneStart, lineOneEnd);
     ccDrawLine(lineTwoStart, lineTwoEnd);

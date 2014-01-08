@@ -91,14 +91,4 @@
     return ccp(0,0);
 }
 
--(void)dealloc
-{
-    [startPositionMap1 release];
-    [startPositionMap2 release];
-    [startPositionMap3 release];
-    [startPositionMap4 release];
-    [startPositionMap5 release];
-    [startPositionMap6 release];
-    [super dealloc];
-}
 @end

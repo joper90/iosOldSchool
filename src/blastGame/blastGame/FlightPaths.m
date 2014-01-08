@@ -122,10 +122,5 @@ static FlightPaths* flightPaths = nil;
     [[BlastedEngine instance] callBackMobMoveComplete:sender];
 }
 
--(void)dealloc
-{
-    [flightPaths release];
-    [super dealloc];
-}
 
 @end

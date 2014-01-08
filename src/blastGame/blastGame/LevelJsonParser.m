@@ -45,7 +45,6 @@ static LevelJsonParser* levelJsonParser = nil;
     
     [self processMap:dict];
     
-    [jsonString release];
     return YES;
 }
 
@@ -121,9 +120,6 @@ static LevelJsonParser* levelJsonParser = nil;
         
         [[BlastedEngine instance]addLevelToLevelList:elementData];
         
-        [row release];
-        [pattern release];
-        [rowSizeCount release];
     }
 }
 

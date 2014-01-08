@@ -85,7 +85,6 @@
     //CCLOG(@" Processed : %@",i);
     CCLOG(@"Data : %@", [Properties instance].BASE_SPRITE_FILE);
     
-    [jsonString release];
 }
 
 @end

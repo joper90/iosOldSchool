@@ -15,14 +15,14 @@
     BOOL isEmptySpace;
     
     //The Sprite
-    CCSprite* sprite;
+    CCSprite* __weak sprite;
     int spriteTag;
     
     //Type of mob
     MOB_COLOUR mobType;
     
     //action to run when invoked
-    id actionSequenceToRun;
+    id __weak actionSequenceToRun;
     
     //is on the screen and running.
     BOOL isAlive;
@@ -34,8 +34,8 @@
     CGPoint initPos;
 }
 
-@property (readonly) CCSprite* sprite;
-@property (readwrite, assign) id actionSequenceToRun;
+@property (weak, readonly) CCSprite* sprite;
+@property (readwrite, weak) id actionSequenceToRun;
 @property (readwrite, assign) BOOL isEmptySpace;
 @property (readwrite, assign) BOOL isAlive;
 @property (readwrite, assign) BOOL isPumping;

@@ -46,14 +46,8 @@ static Properties* properties = nil;
 {
     PropertiesJsonParser* jsonParse = [[PropertiesJsonParser alloc]init];
     [jsonParse parseAndDigest];
-    [jsonParse release];
 }
 
 
--(void)dealloc
-{
-    [properties release];
-    [super dealloc];
-}
 
 @end

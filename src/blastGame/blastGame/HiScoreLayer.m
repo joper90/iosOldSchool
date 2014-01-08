@@ -14,7 +14,7 @@
 
 -(id) init
 {
-    CCLOG(@"hiScore Layer...with RC: %d",[self retainCount]);
+    CCLOG(@"hiScore Layer...with ");
 	if( (self=[super init])) 
     {
         
@@ -65,7 +65,7 @@
         [self addChild:scoreFour];
         [self addChild:scoreFive];
                 
-        self.isTouchEnabled = YES;
+        self.touchEnabled = YES;
         
     }
 	return self;
