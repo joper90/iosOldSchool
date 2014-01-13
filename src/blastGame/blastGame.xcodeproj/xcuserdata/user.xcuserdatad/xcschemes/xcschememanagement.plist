@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>cocos2d.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>5B0189161876D3BA0084B110</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CE270CEF14FCEB0000C2DBA3</key>
 		<dict>
 			<key>primary</key>
