@@ -22,7 +22,7 @@
         }else {
             isHD = NO;
         }
-        
+              
         
         //Load the mob array.
         mobList = [[NSMutableArray alloc]init];
@@ -32,8 +32,13 @@
         CCSprite* earth = [CCSprite spriteWithFile:[Properties instance].BASE_SPRITE_FILE];
         CCSprite* titleHeader = [CCSprite spriteWithFile:[Properties instance].BLASTED_TITLE_FILE];
         
-        bgImage.position = [[Utils instance]center];
         
+        
+        
+        bgImage.position = [[Utils instance]centerForTitle];
+        CCLOG(@"Xpos: %f , Ypos: %f", bgImage.position.x, bgImage.position.y);
+        bgImage.position = ccp(512,384);
+     
         earth.scale = 0.8f;
         earth.position = ccp(10,0);
         

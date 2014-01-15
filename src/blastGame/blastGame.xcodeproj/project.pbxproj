@@ -417,6 +417,7 @@
 		CE39BA6C151914EB006285C7 /* exp2.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE39BA6B151914EB006285C7 /* exp2.plist */; };
 		CE3D597B152B05D60085CD40 /* PropertiesJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3D597A152B05D60085CD40 /* PropertiesJsonParser.m */; };
 		CE55E123152B538300B3CD04 /* ipad.json in Resources */ = {isa = PBXBuildFile; fileRef = CE55E122152B538300B3CD04 /* ipad.json */; };
+		CE5D6079188474F200526F20 /* DayOfTheTentacle.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BB021DD15470E7F00299F34 /* DayOfTheTentacle.ttf */; };
 		CE68D5E4152CA69B00680BF5 /* 2galaxyOne.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE68D5E3152CA69B00680BF5 /* 2galaxyOne.plist */; };
 		CE909B2B150A548F00E66CA4 /* FlightPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = CE909B2A150A548F00E66CA4 /* FlightPaths.m */; };
 		CE909B2E150A5A1300E66CA4 /* MainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE909B2D150A5A1300E66CA4 /* MainLayer.m */; };
@@ -445,13 +446,13 @@
 		CEBABA6C15133C7C004F11E7 /* bullet_with_death.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBABA6B15133C7C004F11E7 /* bullet_with_death.plist */; };
 		CEBABA6F15133C83004F11E7 /* exp1.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBABA6E15133C83004F11E7 /* exp1.plist */; };
 		CEBABA7A1513656A004F11E7 /* BangAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBABA7915136569004F11E7 /* BangAction.m */; };
-		CEBABA86151735C0004F11E7 /* zxspectr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBABA85151735C0004F11E7 /* zxspectr.ttf */; };
+		CEBABA86151735C0004F11E7 /* ZXSpectrum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBABA85151735C0004F11E7 /* ZXSpectrum.ttf */; };
 		CEBABA8A15173618004F11E7 /* MainFGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBABA8915173618004F11E7 /* MainFGLayer.m */; };
 		CEBABA8D1517757B004F11E7 /* BGparticleEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBABA8C1517757B004F11E7 /* BGparticleEffects.m */; };
 		CEBABA9115177B0A004F11E7 /* galaxyOne.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBABA8F15177B0A004F11E7 /* galaxyOne.plist */; };
 		CEBABA9215177B0A004F11E7 /* spore.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBABA9015177B0A004F11E7 /* spore.plist */; };
 		CEEE4B6F14FE3897002621BC /* MobElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE4B6E14FE3897002621BC /* MobElement.m */; };
-		CEEE4B7E1504DD6E002621BC /* efmi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEEE4B7D1504DD6E002621BC /* efmi.ttf */; };
+		CEEE4B7E1504DD6E002621BC /* CaslonAntique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEEE4B7D1504DD6E002621BC /* CaslonAntique.ttf */; };
 		CEEE4B81150502B9002621BC /* levelData.json in Resources */ = {isa = PBXBuildFile; fileRef = CEEE4B80150502B9002621BC /* levelData.json */; };
 		CEEE4B84150502E2002621BC /* LevelJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE4B83150502E2002621BC /* LevelJsonParser.m */; };
 		CEEE4B87150503E9002621BC /* LevelElementData.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE4B86150503E9002621BC /* LevelElementData.m */; };
@@ -1012,7 +1013,7 @@
 		5B379582159BAF880003DB3C /* starburst.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = starburst.plist; sourceTree = "<group>"; };
 		5B92BFAE154DD365006F79A7 /* 2starfield1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 2starfield1.plist; sourceTree = "<group>"; };
 		5B92BFAF154DD365006F79A7 /* starfield1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = starfield1.plist; sourceTree = "<group>"; };
-		5BB021DD15470E7F00299F34 /* dod.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dod.ttf; sourceTree = "<group>"; };
+		5BB021DD15470E7F00299F34 /* DayOfTheTentacle.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DayOfTheTentacle.ttf; sourceTree = "<group>"; };
 		5BF25963153F434F00DFA3E7 /* PersistElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistElements.h; sourceTree = "<group>"; };
 		5BF25964153F434F00DFA3E7 /* PersistElements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistElements.m; sourceTree = "<group>"; };
 		5BF2596715408E7F00DFA3E7 /* HiScoreScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiScoreScene.h; sourceTree = "<group>"; };
@@ -1104,7 +1105,7 @@
 		CEBABA6E15133C83004F11E7 /* exp1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = exp1.plist; sourceTree = "<group>"; };
 		CEBABA7815136569004F11E7 /* BangAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BangAction.h; sourceTree = "<group>"; };
 		CEBABA7915136569004F11E7 /* BangAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BangAction.m; sourceTree = "<group>"; };
-		CEBABA85151735C0004F11E7 /* zxspectr.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = zxspectr.ttf; sourceTree = "<group>"; };
+		CEBABA85151735C0004F11E7 /* ZXSpectrum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ZXSpectrum.ttf; sourceTree = "<group>"; };
 		CEBABA8815173618004F11E7 /* MainFGLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainFGLayer.h; sourceTree = "<group>"; };
 		CEBABA8915173618004F11E7 /* MainFGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainFGLayer.m; sourceTree = "<group>"; };
 		CEBABA8B1517757B004F11E7 /* BGparticleEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGparticleEffects.h; sourceTree = "<group>"; };
@@ -1114,7 +1115,7 @@
 		CEEE4B6414FE2D8A002621BC /* MainLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainLayer.h; sourceTree = "<group>"; };
 		CEEE4B6D14FE3897002621BC /* MobElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobElement.h; sourceTree = "<group>"; };
 		CEEE4B6E14FE3897002621BC /* MobElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobElement.m; sourceTree = "<group>"; };
-		CEEE4B7D1504DD6E002621BC /* efmi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = efmi.ttf; sourceTree = "<group>"; };
+		CEEE4B7D1504DD6E002621BC /* CaslonAntique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaslonAntique.ttf; sourceTree = "<group>"; };
 		CEEE4B80150502B9002621BC /* levelData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = levelData.json; sourceTree = "<group>"; };
 		CEEE4B82150502E1002621BC /* LevelJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelJsonParser.h; sourceTree = "<group>"; };
 		CEEE4B83150502E2002621BC /* LevelJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelJsonParser.m; sourceTree = "<group>"; };
@@ -2161,9 +2162,9 @@
 		CEEE4B7F1504E326002621BC /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				5BB021DD15470E7F00299F34 /* dod.ttf */,
-				CEBABA85151735C0004F11E7 /* zxspectr.ttf */,
-				CEEE4B7D1504DD6E002621BC /* efmi.ttf */,
+				5BB021DD15470E7F00299F34 /* DayOfTheTentacle.ttf */,
+				CEBABA85151735C0004F11E7 /* ZXSpectrum.ttf */,
+				CEEE4B7D1504DD6E002621BC /* CaslonAntique.ttf */,
 			);
 			name = fonts;
 			sourceTree = "<group>";
@@ -2237,6 +2238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5D6079188474F200526F20 /* DayOfTheTentacle.ttf in Resources */,
 				CE270D0714FCEB0000C2DBA3 /* Default.png in Resources */,
 				CE270D0914FCEB0000C2DBA3 /* fps_images.png in Resources */,
 				CE270D0B14FCEB0000C2DBA3 /* Icon-72.png in Resources */,
@@ -2246,11 +2248,11 @@
 				CE270D1314FCEB0000C2DBA3 /* Icon.png in Resources */,
 				CE270D1514FCEB0000C2DBA3 /* Icon@2x.png in Resources */,
 				CE270D1814FCEB0100C2DBA3 /* iTunesArtwork in Resources */,
-				CEEE4B7E1504DD6E002621BC /* efmi.ttf in Resources */,
+				CEEE4B7E1504DD6E002621BC /* CaslonAntique.ttf in Resources */,
 				CEEE4B81150502B9002621BC /* levelData.json in Resources */,
 				CEBABA6C15133C7C004F11E7 /* bullet_with_death.plist in Resources */,
 				CEBABA6F15133C83004F11E7 /* exp1.plist in Resources */,
-				CEBABA86151735C0004F11E7 /* zxspectr.ttf in Resources */,
+				CEBABA86151735C0004F11E7 /* ZXSpectrum.ttf in Resources */,
 				CEBABA9115177B0A004F11E7 /* galaxyOne.plist in Resources */,
 				CEBABA9215177B0A004F11E7 /* spore.plist in Resources */,
 				CE39BA6315189D9D006285C7 /* TODO in Resources */,

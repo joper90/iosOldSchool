@@ -64,7 +64,7 @@
     [globeSprite runAction:seq];
     
     //Create levelName to display
-    levelNameLabel = [CCLabelTTF labelWithString:[[BlastedEngine instance]getCurrentLevelName] fontName:@"zxspectr.ttf" fontSize:[Properties instance].FONT_LEVEL_NAME_SIZE];
+    levelNameLabel = [CCLabelTTF labelWithString:[[BlastedEngine instance]getCurrentLevelName] fontName:@"ZXSpectrum" fontSize:[Properties instance].FONT_LEVEL_NAME_SIZE];
     levelNameLabel.position = [[Utils instance]center];
     
     [self addChild:levelNameLabel];

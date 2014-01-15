@@ -14,9 +14,7 @@
 +(CCScene*) scene
 {
     CCScene *scene = [CCScene node];
-    
 
-	
     MainFGLayer* mainFGLayer = [MainFGLayer node];
     [scene addChild:mainFGLayer z:1 tag:T_MAIN_FG_SCORE_LAYER];
     

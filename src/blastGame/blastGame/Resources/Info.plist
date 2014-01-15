@@ -35,6 +35,12 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DayOfTheTentacle.ttf</string>
+		<string>ZXSpectrum.ttf</string>
+		<string>CaslonAntique.ttf</string>
+	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>

@@ -63,8 +63,11 @@
         [[BlastedEngine instance]resetLevelCount];
         [[BlastedEngine instance]resetScore];
         [[BlastedEngine instance]resetMultiplier];
-        //CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:2 scene:[MainScene scene]];
-        CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:2 scene:[IntroOne scene]];
+        
+        //Adjust here to start from the intros/main scene.
+        
+        CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:2 scene:[MainScene scene]];
+        //CCTransitionFade* ccFade = [CCTransitionFade transitionWithDuration:2 scene:[IntroOne scene]];
         [[CCDirector sharedDirector]pushScene:ccFade];
         
     }

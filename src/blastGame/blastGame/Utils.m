@@ -36,6 +36,13 @@ static Utils* utils = nil;
         {
             isHDmode = YES;
         }
+        
+     /*   UIDevice *myDevice = [UIDevice currentDevice];
+        [myDevice beginGeneratingDeviceOrientationNotifications];
+        UIDeviceOrientation or = myDevice.orientation;
+        isLandscapeMode = UIDeviceOrientationIsLandscape(or);
+        [myDevice endGeneratingDeviceOrientationNotifications];
+       */
     }
     return self;
 }
@@ -62,10 +69,17 @@ static Utils* utils = nil;
     return [[CCDirector sharedDirector] convertToGL:touchLocation];
 }
 
--(CGPoint) center
-
+-(CGPoint) centerForTitle
 {
     return ccp(screenWidth/2, screenHeight/2);
+}
+
+-(CGPoint) center
+{
+    CGPoint cpPoint = ccp(screenHeight/2, screenWidth/2);
+    
+    CCLOG(@"----> CENTERPOINT XPOS %f , YPOS %f", cpPoint.x, cpPoint.y);
+    return cpPoint;
 }
 
 -(float)distanceBetweenPoints:(CGPoint)startPoint endPoint:(CGPoint)endPoint

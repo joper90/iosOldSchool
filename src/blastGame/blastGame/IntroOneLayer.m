@@ -20,6 +20,7 @@
         
         self.touchEnabled = YES;
         CGPoint midPoint = [[Utils instance]center];
+        //CGPoint midPoint = ccp(512,384);
         //Load the bgImages
         CCSprite* bgImages = [CCSprite spriteWithFile:@"background_part1HD.png"];
         bgImages.position = midPoint;
@@ -32,7 +33,7 @@
         CCSprite* village = [CCSprite spriteWithFile:@"background_housesHD.png"];
         village.position = ccp(midPoint.x, 150);
         
-        CCLabelTTF *skipText = [CCLabelTTF labelWithString:@"Touch to skip" fontName:@"efmi" fontSize:25];
+        CCLabelTTF *skipText = [CCLabelTTF labelWithString:@"Touch to skip" fontName:@"ZXSpectrum" fontSize:25];
         skipText.position = ccp(midPoint.x,20);
         [self addChild:skipText z:10];
         
@@ -54,7 +55,7 @@
         [bgMoon runAction:rep];
         
         //Create the text.
-        introText = [CCLabelTTF labelWithString:INTRO_ONE_TEXT fontName:@"efmi" fontSize:48];
+        introText = [CCLabelTTF labelWithString:INTRO_ONE_TEXT fontName:@"ZXSpectrum" fontSize:48];
         introText.position = ccp(midPoint.x, [[Utils instance]convertYtoiPad:40]);
         introText.opacity = 0;
         introText.scale =0;

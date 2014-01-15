@@ -14,6 +14,7 @@
     float screenWidth;
     float screenHeight;
     bool  isHDmode;
+    bool  isLandscapeMode;
 }
 
 @property float screenWidth;
@@ -25,6 +26,7 @@
 -(CGPoint) locationFromTouchSinglePoint:(UITouch *)touch;
 -(CGPoint) locationFromTouchMultiPoint:(NSSet*)touches;
 -(CGPoint) center;
+-(CGPoint) centerForTitle;
 -(float) distanceBetweenPoints:(CGPoint) startPoint endPoint:(CGPoint) endPoint;
 -(NSString*)getActualPath:(NSString*) path;
 
