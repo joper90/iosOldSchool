@@ -144,17 +144,6 @@
 	// set the Navigation Controller as the root view controller
 	[window_ setRootViewController:navController_];
 	
-    //Blasted startup Info goes here..
-    /*********************************************/
-    //
-    //  BLASTED ENGINE INIT
-    //
-    /********************************************/
-    //Init the BlastedEngine
-    [[BlastedEngine instance]setStartPositions];
-    [[Properties instance]setupAndParse];
-    [[BlastedEngine instance]loadAndParseLevels];
-    [[BlastedEngine instance]loadSprites];
     
     
 	// make main window visible

@@ -272,14 +272,12 @@ static BlastedEngine* blastedEngine = nil;
                 sprite.position = mobStartLocation;
                 mobCreated.initPos = mobStartLocation;
                 
-                [mobCreated addSprite:sprite]; //Add the sprite here...
+                //Get the required pattern
+                CCSequence* aSeq = [self getPatternFromInt:singleCharPattern movementModifer:0.0f withTag:currentSpriteTag currentPos:mobStartLocation withLayer:layer];
+                
+                [mobCreated addSprite:sprite with:aSeq]; //Add the sprite here...
                 mobCreated.mobType = [self insertMobEnumFromSpriteNumber:singleRowNum];
                 
-                //Get the required pattern
-                CCSequence* aSeq = [[CCSequence alloc]init];
-                aSeq = [self getPatternFromInt:singleCharPattern movementModifer:0.0f withTag:currentSpriteTag currentPos:mobStartLocation withLayer:layer];
-                
-                mobCreated.actionSequenceToRun = aSeq;
                 currentSpriteTag++;
             }
             

@@ -32,13 +32,9 @@
         CCSprite* earth = [CCSprite spriteWithFile:[Properties instance].BASE_SPRITE_FILE];
         CCSprite* titleHeader = [CCSprite spriteWithFile:[Properties instance].BLASTED_TITLE_FILE];
         
-        
-        
-        
-        bgImage.position = [[Utils instance]centerForTitle];
+        bgImage.position = [[Utils instance]center];
         CCLOG(@"Xpos: %f , Ypos: %f", bgImage.position.x, bgImage.position.y);
-        bgImage.position = ccp(512,384);
-     
+        
         earth.scale = 0.8f;
         earth.position = ccp(10,0);
         

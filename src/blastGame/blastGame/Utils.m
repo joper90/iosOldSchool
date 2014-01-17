@@ -76,7 +76,7 @@ static Utils* utils = nil;
 
 -(CGPoint) center
 {
-    CGPoint cpPoint = ccp(screenHeight/2, screenWidth/2);
+    CGPoint cpPoint = ccp(screenWidth/2, screenHeight/2);
     
     CCLOG(@"----> CENTERPOINT XPOS %f , YPOS %f", cpPoint.x, cpPoint.y);
     return cpPoint;

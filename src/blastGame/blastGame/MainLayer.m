@@ -162,8 +162,8 @@
         {
             
             //Ok we have a mob.. so place and run?
-            CCSprite* mob = m.sprite;
-            CCAction* action = m.actionSequenceToRun;
+            CCSprite* mob = [m getSprite];
+            CCAction* action = [m getSequence];
 
             [self addChild:mob];
             

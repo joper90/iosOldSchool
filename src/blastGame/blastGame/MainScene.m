@@ -13,6 +13,9 @@
 
 +(CCScene*) scene
 {
+
+    
+    
     CCScene *scene = [CCScene node];
 
     MainFGLayer* mainFGLayer = [MainFGLayer node];

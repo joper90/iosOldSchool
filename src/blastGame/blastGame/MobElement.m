@@ -9,21 +9,28 @@
 #import "MobElement.h"
 
 @implementation MobElement
-@synthesize mobType, spriteTag, initPos, isEmptySpace, actionSequenceToRun, sprite, isAlive, isPumping;
+@synthesize mobType, spriteTag, initPos, isEmptySpace,  isAlive, isPumping;
 
 -(CCSprite*) getSprite
 {
-    return sprite;
+    return localSprite;
 }
 
--(void)addSprite:(CCSprite *)spriteToAdd
+-(CCSequence*) getSequence
+{
+    return actionSequenceToRun;
+}
+
+-(void)addSprite:(CCSprite *)spriteToAdd with:(CCSequence *)actionSequence
 {
     //TO REMOVE set the initial posistion
     initPos = spriteToAdd.position;
     
     //set the tag so we can get it later by tag without drilling down
     spriteTag = spriteToAdd.tag;
-    sprite = spriteToAdd;
+    localSprite = spriteToAdd;
+    actionSequenceToRun = actionSequence;
+    //sprite = spriteToAdd;
     isAlive = NO;
     isPumping = NO;
 }

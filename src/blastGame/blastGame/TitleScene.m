@@ -13,7 +13,18 @@
 
 +(CCScene *) scene
 {
-	// 'scene' is an autorelease object.
+    //Blasted startup Info goes here..
+    /*********************************************/
+    //
+    //  BLASTED ENGINE INIT
+    //
+    /********************************************/
+    //Init the BlastedEngine
+    [[BlastedEngine instance]setStartPositions];
+    [[Properties instance]setupAndParse];
+    [[BlastedEngine instance]loadAndParseLevels];
+    [[BlastedEngine instance]loadSprites];
+
 	CCScene *scene = [CCScene node];
 
     CCLayer* titleScreenLayerBG = [TitleBGLayer node];
