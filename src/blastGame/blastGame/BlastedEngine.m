@@ -260,6 +260,7 @@ static BlastedEngine* blastedEngine = nil;
             {
                 //Create the mob
                 [mobCreated addCompleteSprite:[self getValidRandomSpriteFromSpriteNumber:singleRowNum]
+                            withTag:currentSpriteTag
                             withSequence: [self getPatternFromInt:singleCharPattern movementModifer:0.0f withTag:currentSpriteTag currentPos:
                                           [self getStartPositionByRowCount:currentRowCount andPosition:y] withLayer:layer]
                             withAnchorpoint:ccp(0.5f, 0.5f)

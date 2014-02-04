@@ -42,7 +42,7 @@
 -(void)levelCountDown
 {
     CCLOG(@"levelCountDown...with ");
-    countDownLabel = [CCLabelTTF labelWithString:@"3" fontName:@"zxspectr.ttf" fontSize:[Properties instance].FONT_SIZE_COUNTDOWN];
+    countDownLabel = [CCLabelTTF labelWithString:@"3" fontName:@"ZXSpectrum" fontSize:[Properties instance].FONT_SIZE_COUNTDOWN];
     [self addChild:countDownLabel z:Z_COUNTDOWN_TEXT_TAG tag:COUNTDOWN_TEXT_TAG];
     
     //Load in the globe and spin in.
