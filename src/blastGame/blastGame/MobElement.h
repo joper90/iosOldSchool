@@ -15,14 +15,14 @@
     BOOL isEmptySpace;
     
     //The Sprite
-    CCSprite* __strong localSprite;
+    CCSprite* localSprite;
     int spriteTag;
     
     //Type of mob
     MOB_COLOUR mobType;
     
     //action to run when invoked
-    id  __strong actionSequenceToRun;
+    id  actionSequenceToRun;
     
     //is on the screen and running.
     BOOL isAlive;
@@ -37,15 +37,25 @@
 @property (readwrite, assign) BOOL isEmptySpace;
 @property (readwrite, assign) BOOL isAlive;
 @property (readwrite, assign) BOOL isPumping;
-//@property (readwrite, assign) CCSprite* sprite;
-@property (readwrite, assign) MOB_COLOUR mobType;
 @property (readwrite, assign) int spriteTag;
-@property (readwrite, assign) CGPoint initPos;
+@property (readonly) MOB_COLOUR mobType;
+@property (readonly) CGPoint initPos;
 
 
 -(CCSprite*) getSprite;
 -(CCSequence*) getSequence;
--(void) addSprite:(CCSprite*) spriteToAdd with:(CCSequence*) actionSequence;
+//-(void) addSprite:(CCSprite*) spriteToAdd with:(CCSequence*) actionSequence;
+
+-(void)addCompleteSprite:(CCSprite *)pointerToSprite
+                 withTag:(int) tag
+       withSequence:(CCSequence *)actionsSequence
+       withAnchorpoint:(CGPoint) aPoint
+       withMobType:(MOB_COLOUR) mobType
+      andSetInitPosition:(CGPoint) initPositions
+       ;
+
+
+
 -(void) removeSprite;
 
 @end

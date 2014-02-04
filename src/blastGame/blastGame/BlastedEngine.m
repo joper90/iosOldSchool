@@ -258,25 +258,14 @@ static BlastedEngine* blastedEngine = nil;
             }
             else
             {
-                mobCreated.isEmptySpace = NO; // a real object
+                //Create the mob
+                [mobCreated addCompleteSprite:[self getValidRandomSpriteFromSpriteNumber:singleRowNum]
+                            withSequence: [self getPatternFromInt:singleCharPattern movementModifer:0.0f withTag:currentSpriteTag currentPos:
+                                          [self getStartPositionByRowCount:currentRowCount andPosition:y] withLayer:layer]
+                            withAnchorpoint:ccp(0.5f, 0.5f)
+                            withMobType:[self insertMobEnumFromSpriteNumber:singleRowNum]
+                            andSetInitPosition:[self getStartPositionByRowCount:currentRowCount andPosition:y]];
                 
-                CCSprite* copyOfSprite = [self getValidRandomSpriteFromSpriteNumber:singleRowNum];
-                
-                CCSprite* sprite = [[CCSprite alloc]initWithTexture:copyOfSprite.texture];
-                
-                sprite.anchorPoint = ccp(0.5f, 0.5f);
-                sprite.tag = currentSpriteTag;
-                
-                //Insert the start posistion 
-                CGPoint mobStartLocation = [self getStartPositionByRowCount:currentRowCount andPosition:y];
-                sprite.position = mobStartLocation;
-                mobCreated.initPos = mobStartLocation;
-                
-                //Get the required pattern
-                CCSequence* aSeq = [self getPatternFromInt:singleCharPattern movementModifer:0.0f withTag:currentSpriteTag currentPos:mobStartLocation withLayer:layer];
-                
-                [mobCreated addSprite:sprite with:aSeq]; //Add the sprite here...
-                mobCreated.mobType = [self insertMobEnumFromSpriteNumber:singleRowNum];
                 
                 currentSpriteTag++;
             }
@@ -343,15 +332,15 @@ static BlastedEngine* blastedEngine = nil;
         case RED:
             return [redMobSprites objectAtIndex:delta];
         case YELLOW:
-            return [redMobSprites objectAtIndex:delta];
+            return [yellowMobSprites objectAtIndex:delta];
         case BLUE:
-            return [redMobSprites objectAtIndex:delta];
+            return [blueMobSprites objectAtIndex:delta];
         case GREEN:
-            return [redMobSprites objectAtIndex:delta];
+            return [greenMobSprites objectAtIndex:delta];
         case WHITE:
-            return [redMobSprites objectAtIndex:delta];
+            return [whiteMobSprites objectAtIndex:delta];
         case PINK:
-            return [redMobSprites objectAtIndex:delta];
+            return [pinkMobSprites objectAtIndex:delta];
         case PURPLE:
             return [purpleMobSprites objectAtIndex:delta];
         default:
